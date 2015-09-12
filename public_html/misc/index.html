@@ -157,7 +157,11 @@
 	  //Wipe to open and close sidebar
 	  $(document).wipetouch({
 		wipeLeft: function() { $.sidr('close', 'sidebar'); },
-		wipeRight: function() { $.sidr('open', 'sidebar'); },
+		wipeRight: function() { 
+		  $.sidr('open', 'sidebar');
+		  $('header').removeClass('nav-up');
+		  $('footer').removeClass('foot-down');
+		},
 	  });
     </script>
 </body>
