@@ -249,6 +249,8 @@ any design idea quickly without resorting to the CAD system. </p>
 			name: 'sidebar',
 			source: '#sidr-main',
 			body:'header',
+			onOpen: function(){$('body').css({"overflow-y":"hidden"})},
+			onClose: function(){$('body').css({"overflow-y":"auto"})},
 		  });
 		  $(document).on("click.close", function () {		 
 		  	$.sidr('close', 'sidebar');
