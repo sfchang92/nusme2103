@@ -103,7 +103,9 @@
 		  $("#responsive-menu-button").sidr({
 			name: 'sidebar',
 			source: '#sidr-main',
-			body:'header',
+			body:'header',			
+			onOpen: function(){$('body').css({"overflow-y":"hidden"})},
+			onClose: function(){$('body').css({"overflow-y":"auto"})},
 		  });
 		  $("#gototop").css({"float":"right"});
 		  $('section').on("click.close", function () {		 
