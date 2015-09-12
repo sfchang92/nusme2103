@@ -11,7 +11,7 @@ this.scrollToTimerCache=setTimeout(function(){isNaN(parseInt(o,10))||(e.scrollTo
                 n = t.attr("href");
             e("html, body").stop().animate({
                 scrollTop: e(n).offset().top
-            }, 300)
+            }, 600)
         })
     })
 }(jQuery, this);
