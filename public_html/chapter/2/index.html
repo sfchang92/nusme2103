@@ -1161,6 +1161,11 @@
 	  };
 	  $(window).resize(resize);
 	  resize();
+	  //Show header and footer when anywhere is clicked
+	  $(document).on("click.nav", function () {	 
+		  $('header').removeClass('nav-up');
+		  $('footer').removeClass('foot-down');
+	  });
     </script>
 </body>
 </html>

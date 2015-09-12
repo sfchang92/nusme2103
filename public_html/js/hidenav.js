@@ -37,8 +37,3 @@
 		  }
 		  lastScrollTop = st;
 	  }
-	  //Show header and footer when anywhere is clicked
-	  $(document).on("click.nav", function () {	"use strict";	 
-		  $('header').removeClass('nav-up');
-		  $('footer').removeClass('foot-down');
-	  });
