@@ -1136,7 +1136,7 @@
 			onClose:function(){$('footer').css({"padding-left":"0px"})}
 		  });
 		  $.sidr('open', 'sidebar');
-		  $('a.anchor').css({"top":"-50px"});
+		  //$('a.anchor').css({"top":"-50px"});
 		  $(document).off("click.close");	
 		  $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');		  
@@ -1144,7 +1144,7 @@
 		else { 
 		  $("#gototop").css({"float":"right"});
 		  $.sidr('close', 'sidebar');
-		  $('a.anchor').css({"top":"0px"});
+		  //$('a.anchor').css({"top":"0px"});
 		  $("#responsive-menu-button").sidr({
 			name: 'sidebar',
 			source: '#sidr-main',
