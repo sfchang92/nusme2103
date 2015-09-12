@@ -1059,6 +1059,7 @@
 <script src="../../js/min.js"></script> 
 <script src="../../js/jquery.sidr.min.custom.js"></script>
 <script src="../../js/hidenav.js"></script>
+<script src="../../js/jquery.wipetouch.js"></script>
 
 <div id="sidr-main" class="sidr left">
   <div class="sidr-inner">
@@ -1181,6 +1182,11 @@
 	  $(document).on("click.nav", function () {	 
 		  $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');
+	  });
+	  //Wipe to open and close sidebar
+	  $(document).wipetouch({
+		wipeLeft: function() { $.sidr('close', 'sidebar'); },
+		wipeRight: function() { $.sidr('open', 'sidebar'); },
 	  });
     </script>
 </body>

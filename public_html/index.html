@@ -54,14 +54,10 @@
         <div class="row">
           <h1>tips for speed</h1>
           <ul style="font-size:inherit">
-          <li>Get back to the top of the page by pressing:
-          <ul>
-          <li> <em>title</em> on the header (eg. <em>nus:me2103</em> for this page).</li>
-          <li><em>nus:me2103</em> on the top of the sidebar menu.</li></ul></li>
-          <li>Press an animation to replay.</li>
+          <li>Get back to the top of the page by pressing the <em>title</em> on the header (eg. <em>nus:me2103</em> for this page).</li>
           <li>On a computer screen, zoom in with <b>'Ctrl'</b>+ <b>'+'</b> or <b>'Ctrl'</b>+ <b>Mouse Scroll Up</b> to a comfortable size.</li>
-          <li>On mobile devices, sidebar menu can also be closed by pressing anywhere.</li>
-		  <li>Header and footer autohides when scrolling down. Scroll up or click anywhere to show header and footer.</li>
+          <li>On mobile devices, sidebar menu can be controlled by <b>left/right swipes</b>. Sidebar can also be closed by pressing anywhere.</li>
+		  <li>Header and footer autohides when scrolling down. <b>Scroll up</b> or <b>click anywhere</b> to show header and footer.</li>
           </ul>
         </div>
     </section>
@@ -167,6 +163,7 @@ any design idea quickly without resorting to the CAD system. </p>
 	<script src="js/min.js"></script>   
     <script src="js/jquery.sidr.min.custom.js"></script>
     <script src="js/hidenav.js"></script>
+    <script src="js/jquery.wipetouch.js"></script>
     
     <footer>
         	<div class="footfont">
@@ -263,9 +260,15 @@ any design idea quickly without resorting to the CAD system. </p>
 	  $(window).resize(resize);
 	  resize();
 	  //Show header and footer when anywhere is clicked
-	  $(document).on("click.nav", function () {	 
+	  $(document).on("click tap", function () {	
+	  	  "use strict";
 		  $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');
+	  });
+	  //Wipe to open and close sidebar
+	  $(document).wipetouch({
+		wipeLeft: function() { $.sidr('close', 'sidebar'); },
+		wipeRight: function() { $.sidr('open', 'sidebar'); },
 	  });
     </script>
 </body>
