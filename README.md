@@ -6,3 +6,4 @@ Temporary development site on http://nusme2103.tk.
 
 ###credits to:<br>
 * sidr by artberri - https://github.com/artberri/sidr
+* wipetouch by igoramadas - https://wipetouch.codeplex.com/
