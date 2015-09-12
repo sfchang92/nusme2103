@@ -5,5 +5,6 @@ Welcome!  __nus:me2103__ is an online teaching aid webpage for NUS Mechanical En
 Temporary development site on http://nusme2103.tk.
 
 ###credits to:<br>
-* sidr by artberri - https://github.com/artberri/sidr
+* sidr by artberri - https://github.com/artberri/sidr/
 * wipetouch by igoramadas - https://wipetouch.codeplex.com/
+* animatron - http://animatron.com/
