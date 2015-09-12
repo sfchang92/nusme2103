@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">    
+	<title>Behind the Scenes | nus:me2103</title>
+    <meta name="description" content="Nerdy information behind this website">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../css/jquery.sidr.light.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <script src="../js/custom.modernizr.js"></script>
+</head>
+    
+<body>
+    <header class="header">
+        <div id="mobile-header">
+       	  <a id="responsive-menu-button" title="Menu" href="#sidebar"><img src="../images/Hamburger.gif" alt="Hamburger" style="vertical-align: baseline;display:inline-block;}"> BTS</a><a href="#" class="smooth" title="Go to top" id="gototop">behind the scenes</a> 
+      </div>
+    </header>
+
+    <!--[if lte IE 8]>
+    <div id="ie8orless" class="reveal-modal small" style="display:block">
+        <p>Your browser is not supported. Please upgrade or use <a href="https://www.google.com/chrome/" target="_blank">Google Chrome</a> or <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Mozilla Firefox</a> instead.</p>
+    </div>
+    <div class="reveal-modal-bg" style="display:block;top:0px"></div>
+	<![endif]-->
+	<section>
+    	<div class="row">
+        	<h1>wassup&#33 </h1>
+            <p>So you found out my secret chamber. </p>
+            <p>Love this website? Loathe it? Wanna fork it? or itch to contribute? Choose your red pill or blue pill below (or orange pill).</p>
+            <div class="row">
+              <div class="large-4 column">
+                <h3>&nbsp; visit github</h3>
+                <a class="button red" href="https://github.com/sfchang92/nusme2103" title="nus:me2103 GitHub"><img src="../images/github_logo_white.png" width="32px" alt="Github"><p style="margin-bottom:0px">nus:me2103</p></a>
+              </div>
+              <div class="large-4 column">
+                <h3>&nbsp; my github</h3>
+                <a class="button" href="https://github.com/sfchang92" title="nusme2103 GitHub"><img src="../images/github_logo_white.png" width="32px" alt="sfchang92's Github"><p style="margin-bottom:0px">sfchang92</p></a>
+              </div>
+              <div class="large-4 column">
+                <h3>&nbsp; email me</h3>
+                <a class="button orange" href="mailto:changsinfung@u.nus.edu?subject=nus:me2103 - " target="_top" title="Email me"><img src="../images/email-icon.png" width="32px" alt=""/><p style="margin-bottom: 0px; word-wrap: break-word;">changsinfung@u.nus.edu</p></a>
+              </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        	<div class="footfont">
+            	<div class="footspan">by chang sin fung 2015. all rights reserved.</div>
+                <div style="display:flex">
+                <a href="http://www.nus.edu.sg/" target="_blank" alt="National University of Singapore" style="margin-right:0"><img src="../images/nuslogo.jpg" alt="NUS logo"></a>
+                <a href="http://me.nus.edu.sg/" target="_blank" alt="Department of Mechanical Engineering, NUS"><img src="../images/nusmelogo.png" alt="NUS logo" style="border-left: thin solid white;"></a>
+                </div>
+            </div>
+    </footer>
+    
+	<script src="../js/min.js"></script>
+    <script src="../js/jquery.sidr.min.custom.js"></script>
+    <script src="../js/hidenav.js"></script>
+    <script src="../js/jquery.wipetouch.js"></script>
+    
+	<div id="sidr-main" class="sidr left">
+        <div class="sidr-inner">
+        	<nav class="nav">
+            	<div class="row">
+                	<div class="large-12 columns">
+                        <ul class="nav-bar">
+            				<li><h1><a>nus:me2103</a></h1></li>
+                            <li><a href="../">Home</a></li>
+                            <li><a>Chapters</a>
+                                <ul class="nav-bar">
+                                    <li><a href="../chapter/1/">1. Introduction</a></li>
+                                    <li><a href="../chapter/2/">2. Principles of projections</a></li>
+                                </ul>
+                            </li>
+                      	</ul>
+                    </div>
+                </div>
+            </nav>
+    	</div>
+    </div>
+    
+	<script>
+	  var min_width;
+	  if (Modernizr.mq('(min-width: 0px)')) {
+		// Browsers that support media queries
+		min_width = function (width) {
+		  return Modernizr.mq('(min-width: ' + width + 'px)');
+		};
+	  }
+	  else {
+		// Fallback for browsers that does not support media queries
+		min_width = function (width) {
+		  return $(window).width() >= width;
+		};
+	  }
+	  var resize = function() {
+		if (min_width(767)) {
+		  $("#responsive-menu-button").sidr({
+			name: 'sidebar',
+			source: '#sidr-main',
+			onOpen:function(){$('footer').css({"padding-left":"260px"})},
+			onClose:function(){$('footer').css({"padding-left":"0px"})}
+		  });
+		  $('header').removeClass('nav-up');
+		  $('footer').removeClass('foot-down');
+		  $.sidr('open', 'sidebar');
+		  $('section').off("click.close");		  
+		  $("#gototop").css({"float":"none"});
+		}
+		else {
+		  $.sidr('close', 'sidebar');
+          $('header').removeClass('nav-up');
+		  $('footer').removeClass('foot-down');
+		  $("#responsive-menu-button").sidr({
+			name: 'sidebar',
+			source: '#sidr-main',
+			body:'header',			
+			onOpen: function(){$('body').css({"overflow-y":"hidden"})},
+			onClose: function(){$('body').css({"overflow-y":"auto"})},
+		  });
+		  $("#gototop").css({"float":"right"});
+		  $('section').on("click.close", function () {		 
+		  	$.sidr('close', 'sidebar');
+		  });
+		  $('ul a').on("click",function() {
+			$.sidr('close', 'sidebar');
+		  });
+		}
+	  };
+	  $(window).resize(resize);
+	  resize();
+	  //Show header and footer when anywhere is clicked
+	  $(document).on("click.nav", function () {	 
+		  $('header').removeClass('nav-up');
+		  $('footer').removeClass('foot-down');
+	  });
+	  //Wipe to open and close sidebar
+	  $(document).wipetouch({
+		wipeLeft: function() { $.sidr('close', 'sidebar'); },
+		wipeRight: function() { $.sidr('open', 'sidebar'); },
+	  });
+    </script>
+</body>
+</html>
