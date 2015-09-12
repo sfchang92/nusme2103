@@ -15,7 +15,12 @@
 	/* [disabled]-webkit-box-shadow: 3px 0 2px rgba(100, 100, 100, 0.2); */
 	/* [disabled]-moz-box-shadow: 3px 0 2px rgba(100, 100, 100, 0.2); */
 	/* [disabled]box-shadow: 3px 0 2px rgba(100, 100, 100, 0.2); */
-}.sidr .sidr-inner{padding:0 0 15px}.sidr .sidr-inner>p{margin-left:15px;margin-right:15px}.sidr.right{left:auto;right:-260px}.sidr.left{left:-260px;right:auto}.sidr h1,.sidr h2,.sidr h3,.sidr h4,.sidr h5,.sidr h6{
+}.sidr .sidr-inner{
+	padding-top: 0;
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 15px;
+}.sidr .sidr-inner>p{margin-left:15px;margin-right:15px}.sidr.right{left:auto;right:-260px}.sidr.left{left:-260px;right:auto}.sidr h1,.sidr h2,.sidr h3,.sidr h4,.sidr h5,.sidr h6{
 	font-size: 25px;
 	font-weight: 100;
 	padding: 0 15px;
