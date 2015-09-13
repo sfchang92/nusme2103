@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="../css/app.css">
     <script src="../js/custom.modernizr.js"></script>
 </head>
-    
+
+  <a href="#" class="back-to-top">Back to Top</a>
+  
 <body>
     <header class="header">
         <div id="mobile-header">
-       	  <a id="responsive-menu-button" title="Menu" href="#sidebar"><img src="../images/Hamburger.gif" alt="Hamburger" style="vertical-align: baseline;display:inline-block;}"> bts</a><a href="#development" class="smooth" title="Go to top" id="gototop">behind the scenes</a> 
+       	  <a id="responsive-menu-button" title="Menu" href="#sidebar"><img src="../images/Hamburger.gif" alt="Hamburger" style="vertical-align: baseline;display:inline-block;}"> bts</a><a id="gototop">behind the scenes</a> 
       </div>
     </header>
 
@@ -49,12 +51,12 @@
     <section><a class="anchor" data-magellan-destination="about" id="about"></a>
       <div class="row">
         <h1>behind this project</h1>
-        <p>This website is actually my final year project, and no, I am not studying Computer Science or Computer Engineering. In fact, I am a Mechanical Engineering student. How is this a final year project for ME students, you might think. Same thoughts crossed my mind when I read through all the available projects: audio, electrical, health, programming, material science and what not. I guess this is the way they reaffirm us we are styding the most versatile course ever (heh!).</p>
-        <p>I always have a certain affinity towards IT stuff, just that I have never ventured into the coding or programming side. Having this as my final year project might be a blessing as this could be that first university project I have the most interest in, not to mention the lack of lab sessions or product fabrication (though this could increase my roundness).
+        <p>This website is actually my final year project, and no, I am not studying Computer Science or Computer Engineering. In fact, I am a Mechanical Engineering student. How is this a final year project for ME students, you might think. Same thoughts crossed my mind when I read through all the available projects: audio, electrical, health, programming, material science and what not. I guess this is the way they reaffirm us we are studying the most versatile course ever (heh!).</p>
+        <p>I always have a certain affinity towards IT stuff, just that I have never ventured into the coding or programming side. Having this as my final year project might be a blessing as this could be the first university project I have strong interest in, not to mention the lack of lab sessions and product fabrication (hello, round belly).
         </p>
-        <p>I started out with Adobe Dreamweaver and Notepad++ for lightweight editing. To have a backup for everything, automatically, I used my favourite Microsoft OneDrive. A few days into it, I have been trying different design, which I ultimtely settled for a sidebar. Working offline for all time feels wrong for an online website. So, I scouted for free web host and domain provider. Initially I chose Googiehost, along with 70% downtime and redirection issue for mobile device it brought. Again, I went for a hunt and settled down with <a href="http://www.dot.tk" title="dot tk Free Domain Provider" target="_blank">dot.tk</a> domain provider (or <a href="http://my.freenom.com" title="Freenom" target="_blank">freenom</a>) and <a href="http://000webhost.com" title="000webhost Free Web Hosting" target="_blank">000webhost</a>. It has been working well since, and most importantly, no FTP downtime at all.</p>
-        <p>Two weeks into the project, I experimented around with my software setup. Version control and change tracking are always a pain with only Dreamweaver, so I tried my hand with GitHub. At first, it was a total stranger to me, all the pulls, branches, commits, all the more headache I already had. Everything about GitHub seemed to indicate heavy use of command line, which is not my cup of tea, until I stumbled upon GitHub for Desktop. That was the point when I fell in love with GitHub without getting my hands dirty with commands. So, there I have it, the ultimate combo: Dreamweaver, Notepad++, OneDrive, GitHub Desktop and Animatron. Oh did I missed out Animatron?</p>
-        <p>If you are new to animation, but loved to make a few with the easiet tool and the latest HTML5 technology, Animatron is, dare I say it, the best option you can find in the whole goddamn universe. It is free, fully-online, has an idiot-proof interface and ever so many options. The only caveat is that it eats through your RAM like nobody's business. Use it on Google Chrome, restart it once in a while (everything is saved online in real-time, nothing to worry here), and you will be a happy man.</p>
+        <p>I started out with Adobe Dreamweaver and Notepad++ for lightweight editing. To have a backup for everything, automatically of course, I used my favourite <a href="http://onedrive.live.com" title="Microsoft OneDrive">Microsoft OneDrive</a>, and you should too. A few days into it, I have been trying different design, ultimately went for a sidebar menu. Developing a website offline felt wrong somehow. So, I scouted for free web host and domain provider. Initially I chose Googiehost web host, unknowingly brought along 70% server downtime and redirection issue for mobile device. Again, I went for a hunt and settled down with <a href="http://www.dot.tk" title="dot tk Free Domain Provider" target="_blank">dot.tk</a> domain provider (or <a href="http://my.freenom.com" title="Freenom" target="_blank">freenom</a>) and <a href="http://000webhost.com" title="000webhost Free Web Hosting" target="_blank">000webhost</a>. It has been working well since, and most importantly, no FTP downtime at all.</p>
+        <p>Two weeks into the project, I experimented around with my software setup. Version control and change tracking were a pain with only Dreamweaver, so I tried my hand with GitHub. At first, it was a total stranger to me, all the pulls, branches, commits, all the more headache I already had. Everything about GitHub seemed to indicate heavy use of command line, which is not my cup of tea, until I stumbled upon GitHub for Desktop. That was the point when I fell in love with GitHub without getting my hands dirty with commands. So, there I have it, the ultimate combo: Dreamweaver, Notepad++, OneDrive, GitHub Desktop and Animatron. Oh did I missed out Animatron?</p>
+        <p>If you are new to animation, but loved to make a few with the easiest tool and the latest HTML5 technology, Animatron is, dare I say it, the best option you can find in the whole goddamn universe. It is free, fully-online, has an idiot-proof interface and ever so many options. The only caveat is that it eats through your RAM like nobody's business. Use it in Google Chrome, restart it once in a while (everything is saved online in real-time, nothing to worry here), and you will be a happy lad.</p>
       </div>
     </section>
     <footer>
@@ -117,14 +119,13 @@
 		  $("#responsive-menu-button").sidr({
 			name: 'sidebar',
 			source: '#sidr-main',
-			onOpen:function(){$('footer').css({"padding-left":"260px"})},
-			onClose:function(){$('footer').css({"padding-left":"0px"})}
+			onOpen:function(){$('footer').css({"padding-left":"260px"});$('#gototop').css({"margin-right":"265px"})},
+			onClose:function(){$('footer').css({"padding-left":"0px"});$('#gototop').css({"margin-right":"5px"})}
 		  });
 		  $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');
 		  $.sidr('open', 'sidebar');
 		  $('section').off("click.close");		  
-		  $("#gototop").css({"float":"none"});
 		}
 		else {
 		  $.sidr('close', 'sidebar');
@@ -137,7 +138,6 @@
 			onOpen: function(){$('body').css({"overflow-y":"hidden"})},
 			onClose: function(){$('body').css({"overflow-y":"auto"})},
 		  });
-		  $("#gototop").css({"float":"right"});
 		  $('section').on("click.close", function () {		 
 		  	$.sidr('close', 'sidebar');
 		  });
@@ -161,6 +161,21 @@
 		  $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');
 		},
+	  });
+	  	  //Back to Top button
+	  var amountScrolled = 300;
+	  $(window).scroll(function() {
+		  if ( $(window).scrollTop() > amountScrolled ) {
+			  $('a.back-to-top').fadeIn('300');
+		  } else {
+			  $('a.back-to-top').fadeOut('300');
+		  }
+	  });
+	  $('a.back-to-top').click(function() {
+		  $('body, html').animate({
+			  scrollTop: 0
+		  }, 600);
+		  return false;
 	  });
     </script>
 </body>

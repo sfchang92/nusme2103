@@ -5742,25 +5742,17 @@ footer p {
 	background: #003D7C;
 }
 
-/* Header Go to top/title button */
+/* Header title */
 #mobile-header #gototop {
 	color: #FFFFFF;
-	font-size: 1.5em;
+	font-size: 1.2em;
 	font-weight: lighter;
 	margin-left: 5px;
 	margin-right: 5px;
 	float: right;
-	outline: 1px solid;
-	outline-color: rgba(255,255,255,0.00);
-	transition: background 0.2s ease-in-out;
-	-moz-transition: background 0.2s ease-in-out;
-	-webkit-transition: background 0.2s ease-in-out;
-	padding: 0 5px;
-	-ms-transition: background 0.2s ease-in-out;
-}
-
-#mobile-header #gototop:hover {
-	background: #1C8DFF;
+	transition: margin-right 0.2s ease-in-out;
+	-moz-transition: margin-right 0.2s ease-in-out;
+	-webkit-transition: margin-right 0.2s ease-in-out;
 }
 
 /* Overflow ellipsis */
@@ -5862,15 +5854,25 @@ a.anchor {
 	display:block;
 }
 
+a.back-to-top {
+	display: none;
+	width: 80px;
+	height: 40px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999999;
+	right: -10px;
+	bottom: 70px;
+	opacity:0.9;
+	background: #369AFF url("../images/up-arrow.png") no-repeat 40%;
+	-webkit-box-shadow: 1px 2px 3px 0px #888;
+	-moz-box-shadow: 1px 2px 3px 0px #888;
+	box-shadow: 1px 2px 3px 0px #888;
+}
 
 /* Mobile */
 @media only screen and (max-width : 767px ){
-  
-  /* line 314, ../sass/app.scss */
-  #navigation {
-    display: none;
-  }
- 
+
   /* line 325, ../sass/app.scss */
   .button.tiny {
     margin: 20px;

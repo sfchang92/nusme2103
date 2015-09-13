@@ -14,7 +14,7 @@
 
 <body>
   <header class="header">
-    <div id="mobile-header"> <a id="responsive-menu-button" href="#sidebar"><img src="../../images/Hamburger.gif" alt="Hamburger"> 2</a><a href="#" id="gototop" title="Go to top">principles of projections</a> </div>
+    <div id="mobile-header"> <a id="responsive-menu-button" href="#sidebar"><img src="../../images/Hamburger.gif" alt="Hamburger"> 2</a><a id="gototop">princ. of projections</a></div>
   </header>
     
     <!--[if lte IE 8]>
@@ -23,6 +23,7 @@
     </div>
     <div class="reveal-modal-bg" style="display:block;top:0px"></div>
 	<![endif]-->
+  <a href="#" class="back-to-top">Back to Top</a>
 
 <section><a class="anchor" data-magellan-destination="type" id="type"></a>
   <div class="row">
@@ -103,23 +104,19 @@
 	  }
 	  var resize = function() {
 		if (min_width(767)) {
-		  $("#gototop").css({"float":"none"});
 		  $("#responsive-menu-button").sidr({
 			name: 'sidebar',
 			source: '#sidr-main',
-			onOpen:function(){$('footer').css({"padding-left":"260px"})},
-			onClose:function(){$('footer').css({"padding-left":"0px"})}
+			onOpen:function(){$('footer').css({"padding-left":"260px"});$('#gototop').css({"margin-right":"265px"})},
+			onClose:function(){$('footer').css({"padding-left":"0px"});$('#gototop').css({"margin-right":"5px"})}
 		  });
 		  $.sidr('open', 'sidebar');
-		  //$('a.anchor').css({"top":"-50px"});
 		  $(document).off("click.close");	
 		  $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');		  
 		}
 		else { 
-		  $("#gototop").css({"float":"right"});
 		  $.sidr('close', 'sidebar');
-		  //$('a.anchor').css({"top":"0px"});
 		  $("#responsive-menu-button").sidr({
 			name: 'sidebar',
 			source: '#sidr-main',
@@ -149,6 +146,21 @@
 		  $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');
 		},
+	  });
+	  	  //Back to Top button
+	  var amountScrolled = 300;
+	  $(window).scroll(function() {
+		  if ( $(window).scrollTop() > amountScrolled ) {
+			  $('a.back-to-top').fadeIn('300');
+		  } else {
+			  $('a.back-to-top').fadeOut('300');
+		  }
+	  });
+	  $('a.back-to-top').click(function() {
+		  $('body, html').animate({
+			  scrollTop: 0
+		  }, 600);
+		  return false;
 	  });
     </script>
 </body>

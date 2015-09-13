@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="../css/app.css">
     <script src="../js/custom.modernizr.js"></script>
 </head>
-    
+
+  <a href="#" class="back-to-top">Back to Top</a>
+  
 <body>
     <header class="header">
         <div id="mobile-header">
-       	  <a id="responsive-menu-button" title="Menu" href="#sidebar"><img src="../images/Hamburger.gif" alt="Hamburger" style="vertical-align: baseline;display:inline-block;}"> 404</a><a href="#" title="Go to top" id="gototop">page not found</a> 
+       	  <a id="responsive-menu-button" title="Menu" href="#sidebar"><img src="../images/Hamburger.gif" alt="Hamburger" style="vertical-align: baseline;display:inline-block;}"> 404</a><a id="gototop">page not found</a> 
       </div>
     </header>
 
@@ -27,9 +29,9 @@
 	<section>
     	<div class="row">
         	<h1>whoops&#33 </h1>
-            <p>Seems like the page you are looking for cease to exist. <em>Would you kindly</em> inform <a href="mailto:changsinfung@u.nus.edu">me</a> what's wrong with it? Your help will be very much appreciated.</p>
+            <p>Seems like the page you are looking for cease to exist. <em>Would you kindly</em> inform <a href="mailto:changsinfung@u.nus.edu?subject=nus:me2103 - Missing page">me</a> what's wrong with it? Your help will be very much appreciated.</p>
             <h2>what's next?</h2>
-            <p>Good question. Feel free to linger around if you found peace within a wall of texts. Or, prehaps you would like to press <a href="../">here</a> for the Homepage, or click the <em>tasty</em> <img src="../images/HamburgerBlack.gif" alt="Menu" style="height:16px;}"> on the header to go somewhere deeper.</p>
+            <p>Good question. Feel free to linger around if you found peace within a wall of texts. Or, perhaps you would like to press <a href="../">here</a> for the Homepage, or click the <em>tasty</em> <img src="../images/HamburgerBlack.gif" alt="Menu" style="height:16px;}"> on the header to go somewhere deeper.</p>
         </div>
     </section>
     
@@ -89,14 +91,13 @@
 		  $("#responsive-menu-button").sidr({
 			name: 'sidebar',
 			source: '#sidr-main',
-			onOpen:function(){$('footer').css({"padding-left":"260px"})},
-			onClose:function(){$('footer').css({"padding-left":"0px"})}
+			onOpen:function(){$('footer').css({"padding-left":"260px"});$('#gototop').css({"margin-right":"265px"})},
+			onClose:function(){$('footer').css({"padding-left":"0px"});$('#gototop').css({"margin-right":"5px"})},
 		  });
 		  $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');
 		  $.sidr('open', 'sidebar');
 		  $('section').off("click.close");		  
-		  $("#gototop").css({"float":"none"});
 		}
 		else {
 		  $.sidr('close', 'sidebar');
@@ -109,7 +110,6 @@
 			onOpen: function(){$('body').css({"overflow-y":"hidden"})},
 			onClose: function(){$('body').css({"overflow-y":"auto"})},
 		  });
-		  $("#gototop").css({"float":"right"});
 		  $('section').on("click.close", function () {		 
 		  	$.sidr('close', 'sidebar');
 		  });
@@ -129,6 +129,21 @@
 	  $(document).wipetouch({
 		wipeLeft: function() { $.sidr('close', 'sidebar'); },
 		wipeRight: function() { $.sidr('open', 'sidebar'); },
+	  });
+	  	  //Back to Top button
+	  var amountScrolled = 300;
+	  $(window).scroll(function() {
+		  if ( $(window).scrollTop() > amountScrolled ) {
+			  $('a.back-to-top').fadeIn('300');
+		  } else {
+			  $('a.back-to-top').fadeOut('300');
+		  }
+	  });
+	  $('a.back-to-top').click(function() {
+		  $('body, html').animate({
+			  scrollTop: 0
+		  }, 600);
+		  return false;
 	  });
     </script>
 </body>

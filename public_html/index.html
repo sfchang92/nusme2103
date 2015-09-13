@@ -13,9 +13,11 @@
 <body>
 	<header class="header">
         <div id="mobile-header">
-       	  <a id="responsive-menu-button" title="Menu" href="#sidebar"><img src="images/Hamburger.gif" alt="Menu" style="vertical-align: baseline;display:inline;"> home</a><a class="smooth" href="#welcome" id="gototop" title="Go to top">nus:me2103</a>
+       	  <a id="responsive-menu-button" title="Menu" href="#sidebar"><img src="images/Hamburger.gif" alt="Menu" style="vertical-align: baseline;display:inline;"> home</a><a id="gototop">nus:me2103</a>
       </div>
     </header>
+    
+  <a href="#" class="back-to-top">Back to Top</a>
   
   <div id="revealtips" class="reveal-modal">	
 	<svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" style="float:left;margin-right:10px">
@@ -50,19 +52,6 @@
     </section>
     
     <section>
-    <a class="anchor" id="tips" data-magellan-destination="tips"></a>
-        <div class="row">
-          <h1>tips for speed</h1>
-          <ul style="font-size:inherit">
-          <li>Get back to the top of the page by pressing the <em>title</em> on the header (eg. <em>nus:me2103</em> for this page).</li>
-          <li>On a computer screen, zoom in with <b>'Ctrl'</b>+ <b>'+'</b> or <b>'Ctrl'</b>+ <b>Mouse Scroll Up</b> to a comfortable size.</li>
-          <li>On mobile devices, sidebar menu can be controlled by <b>left/right swipes</b>. Sidebar can also be closed by pressing anywhere.</li>
-		  <li>Header and footer autohides when scrolling down. <b>Scroll up</b> or <b>click anywhere</b> to show header and footer.</li>
-          </ul>
-        </div>
-    </section>
-    
-    <section>
     <a class="anchor" id="about" data-magellan-destination="about"></a>
     	<div class="row">
         	<h1>module background</h1>
@@ -85,7 +74,6 @@ modeling techniques. Furthermore, mastering the manual sketching technique enabl
 any design idea quickly without resorting to the CAD system. </p>
 		</div>
     </section>
-
 
     <section>
     <a class="anchor" id="descrip" data-magellan-destination="descrip"></a>
@@ -111,19 +99,14 @@ any design idea quickly without resorting to the CAD system. </p>
                     <li>GD &amp T </li>
                 </ol>
             </p>
-        </div>
-    </section>
-    
-    <section>
-    <a class="anchor" id="outcome" data-magellan-destination="outcome"></a>
-    	<div class="row">
-            <h1>learning outcome</h1>
+            <p>Learning outcome:
             <ol style="font-size:1em">
                 <li>Able to use advance 3D modelling software in solid modelling, 
                 assembly and preparing engineering drawings.</li>
                 <li>Acquire the basic knowledge in engineering drawing principles, 
                 tolerances, engineering conventions and representations.</li>
             </ol>
+            </p>
         </div>
     </section>
     
@@ -185,10 +168,8 @@ any design idea quickly without resorting to the CAD system. </p>
                             <li class="active"><a class="smooth" href="#welcome">Home</a>
                                 <ul class="nav-bar">
                                     <li data-magellan-arrival="welcome"><a class="smooth" href="#welcome">Welcome</a></li>
-                                    <li data-magellan-arrival="tips"><a class="smooth" href="#tips">Usage tips</a></li>
                                     <li data-magellan-arrival="about"><a class="smooth" href="#about">Module background</a></li>
                                     <li data-magellan-arrival="descrip"><a class="smooth" href="#descrip">Module description</a></li>
-                                    <li data-magellan-arrival="outcome"><a class="smooth" href="#outcome">Learning outcome</a></li>
                                     <li data-magellan-arrival="profile"><a class="smooth" href="#profile">Lecturer profile </a></li>
                                 </ul>
                             </li>
@@ -274,6 +255,21 @@ any design idea quickly without resorting to the CAD system. </p>
 		  $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');
 		},
+	  });
+	  //Back to Top button
+	  var amountScrolled = 300;
+	  $(window).scroll(function() {
+		  if ( $(window).scrollTop() > amountScrolled ) {
+			  $('a.back-to-top').fadeIn('300');
+		  } else {
+			  $('a.back-to-top').fadeOut('300');
+		  }
+	  });
+	  $('a.back-to-top').click(function() {
+		  $('body, html').animate({
+			  scrollTop: 0
+		  }, 600);
+		  return false;
 	  });
     </script>
 </body>
