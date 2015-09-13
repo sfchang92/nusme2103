@@ -1157,7 +1157,8 @@
 		  $.sidr('open', 'sidebar');
 		  $(document).off("click.close");	
 		  $('header').removeClass('nav-up');
-		  $('footer').removeClass('foot-down');		  
+		  $('footer').removeClass('foot-down');
+		  $('a.back-to-top').removeClass('btt-out');		  
 		}
 		else { 
 		  $.sidr('close', 'sidebar');
@@ -1173,14 +1174,16 @@
 		  });
 		  $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');
+		  $('a.back-to-top').removeClass('btt-out');
 		}	
 	  };
 	  $(window).resize(resize);
 	  resize();
 	  //Show header and footer when anywhere is clicked
-	  $(document).on("click.nav", function () {	 
+	  $(document).on("click tap", function () {	 
 		  $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');
+		  $('a.back-to-top').removeClass('btt-out');
 	  });
 	  //Wipe to open and close sidebar
 	  $(document).wipetouch({
@@ -1191,7 +1194,7 @@
 		  $('footer').removeClass('foot-down');
 		},
 	  });
-	  	  //Back to Top button
+	  //Back to Top button
 	  var amountScrolled = 300;
 	  $(window).scroll(function() {
 		  if ( $(window).scrollTop() > amountScrolled ) {

@@ -1,4 +1,4 @@
-	  // Hide Header on on scroll down
+	  // Hide Header, Footer and Btt on scroll down
 	  var didScroll;
 	  var lastScrollTop = 0;
 	  var delta = 48;
@@ -27,12 +27,14 @@
 		  if (st > lastScrollTop && st > navbarHeight){
 			  // Scroll Down
 			  $('header').addClass('nav-up');
-			  $('footer').addClass('foot-down');		  
+			  $('footer').addClass('foot-down');
+			  $('a.back-to-top').addClass('btt-out');		  
 		  } else {
 			  // Scroll Up
 			  if(st + $(window).height() < $(document).height()) {
 				  $('header').removeClass('nav-up');
-				  $('footer').removeClass('foot-down');	
+				  $('footer').removeClass('foot-down');
+				  $('a.back-to-top').removeClass('btt-out');
 			  }
 		  }
 		  lastScrollTop = st;

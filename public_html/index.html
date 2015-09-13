@@ -215,15 +215,14 @@ any design idea quickly without resorting to the CAD system. </p>
 			}
 		  });
 		  $.sidr('open', 'sidebar');
-		  //$('a.anchor').css({"top":"-50px"});
 		  $(document).off("click.close");
 		  $('header').removeClass('nav-up');
-		  $('footer').removeClass('foot-down');		  
+		  $('footer').removeClass('foot-down');
+		  $('a.back-to-top').removeClass('btt-out');	  
 		}
 		else {
 		  $('#revealtips,#revealtipsbg').css({"display":"block"});
 	      $.sidr('close', 'sidebar');		   
-		  //$('a.anchor').css({"top":"0px"});
 		  $("#responsive-menu-button").sidr({
 			name: 'sidebar',
 			source: '#sidr-main',
@@ -237,6 +236,7 @@ any design idea quickly without resorting to the CAD system. </p>
 		  });
 		  $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');
+		  $('a.back-to-top').removeClass('btt-out');
 		}
 	  };
 	  $(window).resize(resize);
@@ -246,6 +246,7 @@ any design idea quickly without resorting to the CAD system. </p>
 	  	  "use strict";
 		  $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');
+		  $('a.back-to-top').removeClass('btt-out');
 	  });
 	  //Wipe to open and close sidebar
 	  $(document).wipetouch({

@@ -96,13 +96,15 @@
 		  });
 		  $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');
+		  $('a.back-to-top').removeClass('btt-out');	  
 		  $.sidr('open', 'sidebar');
-		  $('section').off("click.close");		  
+		  $(document).off("click.close");		  
 		}
 		else {
 		  $.sidr('close', 'sidebar');
           $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');
+		  $('a.back-to-top').removeClass('btt-out');	  		  
 		  $("#responsive-menu-button").sidr({
 			name: 'sidebar',
 			source: '#sidr-main',
@@ -110,11 +112,8 @@
 			onOpen: function(){$('body').css({"overflow-y":"hidden"})},
 			onClose: function(){$('body').css({"overflow-y":"auto"})},
 		  });
-		  $('section').on("click.close", function () {		 
+		  $(document).on("click.close", function () {		 
 		  	$.sidr('close', 'sidebar');
-		  });
-		  $('ul a').on("click",function() {
-			$.sidr('close', 'sidebar');
 		  });
 		}
 	  };
@@ -124,6 +123,7 @@
 	  $(document).on("click.nav", function () {	 
 		  $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');
+		  $('a.back-to-top').removeClass('btt-out');
 	  });
 	  //Wipe to open and close sidebar
 	  $(document).wipetouch({

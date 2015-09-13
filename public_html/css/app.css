@@ -5831,6 +5831,7 @@ ul li .nobulletem {
 	stroke:#FF5F00;
 }
 
+/* No idea what is this */
 body style {
 	display: block;
 	font: 14px monospace;
@@ -5854,10 +5855,11 @@ a.anchor {
 	display:block;
 }
 
+/* Back to top button */
 a.back-to-top {
 	display: none;
 	width: 80px;
-	height: 40px;
+	height: 50px;
 	text-indent: -9999px;
 	position: fixed;
 	z-index: 999999;
@@ -5868,6 +5870,13 @@ a.back-to-top {
 	-webkit-box-shadow: 1px 2px 3px 0px #888;
 	-moz-box-shadow: 1px 2px 3px 0px #888;
 	box-shadow: 1px 2px 3px 0px #888;
+	-webkit-transition: right 0.2s ease-in-out;
+	-moz-transition: right 0.2s ease-in-out;
+	transition: right 0.2s ease-in-out;
+}
+
+a.back-to-top.btt-out {
+	right: -80px !important;
 }
 
 /* Mobile */
