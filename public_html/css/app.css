@@ -3880,7 +3880,7 @@ form.custom .custom.disabled {
 	width: 100%;
 	background: rgba(0, 0, 0, 0.45);
 	z-index: 9999997;
-	display: block;
+	display: none;
 	top: 0px;
 	left: 0;
 	transition: opacity 0.2s, visibility 0s 0.2s;
@@ -3893,7 +3893,7 @@ form.custom .custom.disabled {
 .reveal-modal {
 	visibility: visible;
 	opacity: 1;
-	display: block;
+	display: none;
 	position: fixed;
 	left: 50%;
 	z-index: 9999999;
