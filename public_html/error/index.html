@@ -12,6 +12,7 @@
 </head>
 
   <a href="#" class="back-to-top">Back to Top</a>
+  <div id="sidebarbg" class="sidebarbg"></div>
   
 <body>
     <header class="header">
@@ -88,6 +89,7 @@
 	  }
 	  var resize = function() {
 		if (min_width(767)) {
+		  $.sidr('close', 'sidebar');
 		  $("#responsive-menu-button").sidr({
 			name: 'sidebar',
 			source: '#sidr-main',
@@ -109,8 +111,8 @@
 			name: 'sidebar',
 			source: '#sidr-main',
 			body:'header',			
-			onOpen: function(){$('body').css({"overflow-y":"hidden"})},
-			onClose: function(){$('body').css({"overflow-y":"auto"})},
+			onOpen: function(){$('body').css({"overflow-y":"hidden"});$('.sidebarbg').addClass("show")},
+			onClose: function(){$('body').css({"overflow-y":"auto"});$('.sidebarbg').removeClass("show")},
 		  });
 		  $(document).on("click.close", function () {		 
 		  	$.sidr('close', 'sidebar');

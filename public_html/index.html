@@ -18,6 +18,7 @@
     </header>
     
   <a href="#" class="back-to-top">Back to Top</a>
+  <div id="sidebarbg" class="sidebarbg"></div>
   
   <div id="revealtips" class="reveal-modal">
     <div class="row">
@@ -231,6 +232,7 @@ any design idea quickly without resorting to the CAD system. </p>
 	  }
 	  var resize = function() {
 		if (min_width(767)) {
+		  $.sidr('close', 'sidebar');
 		  $('#revealtips,#revealtipsbg').css({"display":"none"});
 		  $("#responsive-menu-button").sidr({
 			name: 'sidebar',
@@ -246,7 +248,7 @@ any design idea quickly without resorting to the CAD system. </p>
 		  $(document).off("click.close");
 		  $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');
-		  $('a.back-to-top').removeClass('btt-out');	  
+		  $('a.back-to-top').removeClass('btt-out');
 		}
 		else {
 		  $('#revealtips,#revealtipsbg').css({"display":"block"});
@@ -255,12 +257,12 @@ any design idea quickly without resorting to the CAD system. </p>
 			name: 'sidebar',
 			source: '#sidr-main',
 			body:'header',
-			onOpen: function(){$('body').css({"overflow-y":"hidden"});$("#revealtips,#revealtipsbg").css({"display":"none","visibility":"hidden"});},
-			onClose: function(){$('body').css({"overflow-y":"auto"})},
+			onOpen: function(){$('body').css({"overflow-y":"hidden"});$("#revealtips,#revealtipsbg").addClass("reveal-hide");$('.sidebarbg').addClass("show")},
+			onClose: function(){$('body').css({"overflow-y":"auto"});$(".sidebarbg").removeClass("show")},
 		  });
 		  $(document).on("click.close", function () {		 
 		  	$.sidr('close', 'sidebar');
-			$("#revealtips,#revealtipsbg").css({"display":"none","visibility":"hidden"});
+			$("#revealtips,#revealtipsbg").addClass("reveal-hide");
 		  });
 		  $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');
