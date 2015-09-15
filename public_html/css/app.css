@@ -5690,6 +5690,7 @@ footer {
 	display: block;
 	width: 100%;
 	left: 0px;
+	z-index: 999999;
 }
 /* line 284, ../sass/app.scss */
 
@@ -5918,6 +5919,38 @@ a.back-to-top.btt-out {
 	opacity: 1;
 }
 
+#construction {
+	position: fixed;
+	opacity: 0.8;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 49px;
+	width: 200%;
+	text-align: center;
+	z-index: 999998;
+	font-size: 1.7em;
+	color: white;
+	font-weight: bold;
+	margin: auto;
+	-webkit-transform: translate(-20%,-200%) rotate(315deg) scale(1) skew(1deg);
+	-moz-transform: translate(-20%,-200%) rotate(315deg) scale(1) skew(1deg);
+	-o-transform: translate(-20%,-200%) rotate(315deg) scale(1) skew(1deg);
+	-ms-transform: translate(-20%,-200%) rotate(315deg) scale(1) skew(1deg);
+	transform: translate(-20%,-100%) rotate(315deg) scale(1) skew(1deg);
+	background-color: #FF6E00;
+	-webkit-box-shadow: 0px 0px 7px 0 rgba(0, 0, 0, .4);
+	box-shadow: 0px 0px 7px 0 rgba(0, 0, 0, .4);
+	cursor: not-allowed;
+	padding-top: 10px;
+	padding-right: 50px;
+}
+
+#construction p {
+	margin: auto;
+
+}
 /* Mobile */
 @media only screen and (max-width : 767px ){
 
