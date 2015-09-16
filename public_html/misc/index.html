@@ -141,8 +141,7 @@
 		  $("#responsive-menu-button").sidr({
 			name: 'sidebar',
 			source: '#sidr-main',
-			onOpen:function(){$('footer').css({"padding-left":"260px"});$('#gototop').css({"margin-right":"265px"})},
-			onClose:function(){$('footer').css({"padding-left":"0px"});$('#gototop').css({"margin-right":"5px"})}
+			body:'body,#mobile-header,footer'
 		  });
 		  $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');

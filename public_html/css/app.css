@@ -5475,6 +5475,8 @@ h2 {
 	z-index: 9999998;
 	-moz-transition: top 0.2s ease-in-out;
 	-webkit-transition: top 0.2s ease-in-out;
+	left: 0px;
+	right: 0px;
 }
 /* line 113, ../sass/app.scss */
 .header h1 {
@@ -5681,9 +5683,9 @@ footer {
 	background: #003D7C;
 	position: fixed;
 	bottom: 0px;
-	-moz-transition: bottom 0.2s ease-in-out,padding-left 0.2s ease-in-out;
-	-webkit-transition: bottom 0.2s ease-in-out, padding-left 0.2s ease-in-out;
-	transition: bottom 0.2s ease-in-out, padding-left 0.2s ease-in-out;
+	-moz-transition: bottom 0.2s ease-in-out;
+	-webkit-transition: bottom 0.2s ease-in-out;
+	transition: bottom 0.2s ease-in-out;
 	-webkit-box-shadow: 2px -2px 6px -1px rgba(107,107,107,0.55);
 	-moz-box-shadow: 2px -2px 6px -1px rgba(107,107,107,0.55);
 	box-shadow: 2px -2px 6px -1px rgba(107,107,107,0.55);
@@ -5710,7 +5712,7 @@ footer p {
 	width: 100%;
 	height: 48px;
 	background: #369AFF;
-	text-align: left;
+	text-align: right;
 	line-height: 48px;
 	white-space: nowrap;
 	overflow: hidden;
@@ -5756,15 +5758,11 @@ footer p {
 
 /* Header title */
 #mobile-header #gototop {
+	display:block;
 	color: #FFFFFF;
-	font-size: 1.2em;
+	font-size: 36px;
 	font-weight: lighter;
-	margin-left: 5px;
 	margin-right: 5px;
-	float: right;
-	transition: margin-right 0.2s ease-in-out;
-	-moz-transition: margin-right 0.2s ease-in-out;
-	-webkit-transition: margin-right 0.2s ease-in-out;
 }
 
 /* Overflow ellipsis */
@@ -5951,9 +5949,13 @@ a.back-to-top.btt-out {
 	margin: auto;
 
 }
+
 /* Mobile */
 @media only screen and (max-width : 767px ){
-
+  #mobile-header #gototop {
+	  font-size:1.2em;
+  }
+  
   /* line 325, ../sass/app.scss */
   .button.tiny {
     margin: 20px;

@@ -84,9 +84,9 @@
     <h1>1.2 basic terminologies </h1>
     <a class="anchor" data-magellan-destination="2dterm" id="2dterm"></a>
     <h2>1.2.1 basic terminology for 2D</h2>
-    <div class="row">
-      <div class="large-6 columns">
-        <ul>
+    <div class="row" style="margin-bottom:0px">
+      <div class="large-6 columns" style="margin-bottom:0px">
+        <ul style="margin-bottom:0px">
           <li>Point<br>
             <svg width="200" height="45">
               <path class="thick-line" d="M 41 5 L 23 23 L 41 41 M 23 23 L 5 41 M 5 5 L 23 23"></path>
@@ -130,8 +130,8 @@
           </li>
         </ul>
       </div>
-      <div class="large-6 columns">
-        <ul>
+      <div class="large-6 columns" style="margin-bottom:0px">
+        <ul style="margin-bottom:0px">
           <li>Radii/Fillet/Arc<br>
             <svg width="200" height="90">
               <path class="thick-line" d="M5 17L65 17M65 17Q95 17 95 47M95 47L95 80"/>
@@ -165,7 +165,7 @@
         </ul>
       </div>
     </div>
-    <ul>
+    <ul style="margin-top:0px">
       <li>Polygon
         <div class="row">
           <div class="large-6 columns">
@@ -1174,8 +1174,7 @@
 		  $("#responsive-menu-button").sidr({
 			name: 'sidebar',
 			source: '#sidr-main',
-			onOpen:function(){$('footer').css({"padding-left":"260px"});$('#gototop').css({"margin-right":"265px"})},
-			onClose:function(){$('footer').css({"padding-left":"0px"});$('#gototop').css({"margin-right":"5px"})}
+			body:'body,#mobile-header,footer'
 		  });
 		  $.sidr('open', 'sidebar');
 		  $(document).off("click.close");	
