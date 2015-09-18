@@ -3902,7 +3902,7 @@ form.custom .custom.disabled {
 	margin-left: -40%;
 	width: 80%;
 	padding: 1.25em;
-	border: 2px solid #369AFF;
+	/* [disabled]border: 2px solid #369AFF; */
 	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 	top: 60px;
