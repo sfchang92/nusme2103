@@ -17,12 +17,28 @@ var hide_nav = function() {
   $('footer').addClass('foot-down');
   $('.nav-float').addClass('btt-out');
 };
-var hide_time = 3000;
-var hide_timeout = setTimeout(function(){"use strict";hide_nav();}, hide_time);
+var hide_time = 2000;
+function hide_timeout(){setTimeout(function(){"use strict";hide_nav();}, hide_time)};
+
+//Responsive
+var min_width;
+if (Modernizr.mq('(min-width: 0px)')) {
+// Browsers that support media queries
+min_width = function (width) {
+  return Modernizr.mq('(min-width: ' + width + 'px)');
+};
+}
+else {
+// Fallback for browsers that does not support media queries
+min_width = function (width) {
+	"use strict";
+	return $(window).width() >= width;
+};
+}
 
 //Show header and footer when anywhere is clicked and hide afterwards
 $(document).on("click tap", function (e) {
-	if(!$(e.target).is('figure','figure img')&&autohide){
+	if(!$(e.target).is('figure, figure *,.reveal-modal,.reveal-modal *,#responsive-menu-button,#responsive-menu-button *')&&autohide){
 		clearTimeout(hide_timeout);
 		hide_timeout = setTimeout(function(){"use strict";hide_nav();}, hide_time);
 		show_nav();
@@ -53,36 +69,19 @@ function hasScrolled() {
   // This is necessary so you never see what is "behind" the navbar.
   if (st > lastScrollTop && st > navbarHeight){
 	  // Scroll Down
-	  $('header').addClass('nav-up');
-	  $('footer').addClass('foot-down');
-	  $('.nav-float').addClass('btt-out');
       clearTimeout(hide_timeout);
+	  hide_nav();
   } else {
 	  // Scroll Up
 	  if(st + $(window).height() < $(document).height()) {
-		  $('header').removeClass('nav-up');
-		  $('footer').removeClass('foot-down');
-		  $('.nav-float').removeClass('btt-out');
+		  clearTimeout(hide_timeout);
+		  show_nav();
 	  }
   }
   lastScrollTop = st;
 }
 
-//Responsive
-var min_width;
-if (Modernizr.mq('(min-width: 0px)')) {
-// Browsers that support media queries
-min_width = function (width) {
-  return Modernizr.mq('(min-width: ' + width + 'px)');
-};
-}
-else {
-// Fallback for browsers that does not support media queries
-min_width = function (width) {
-	"use strict";
-	return $(window).width() >= width;
-};
-}
+//Screen size matters
 var resize = function() {
 	"use strict";
 	if (min_width(767)) {
@@ -90,7 +89,8 @@ var resize = function() {
 	  $("#responsive-menu-button").sidr({
 		name: 'sidebar',
 		source: '#sidr-main',
-		body:'body,#mobile-header,footer'
+		body:'body,#mobile-header,footer',
+		onOpen: function(){clearTimeout(hide_timeout);}
 	  });
 	  $.sidr('open', 'sidebar');
 	  $(document).off("click.close");
@@ -102,7 +102,7 @@ var resize = function() {
 		name: 'sidebar',
 		source: '#sidr-main',
 		body:'header',
-		onOpen: function(){$('body').css({"overflow-y":"hidden"});$("#revealtips,#revealtipsbg").addClass("reveal-hide");$('.sidebarbg').addClass("show");},
+		onOpen: function(){$('body').css({"overflow-y":"hidden"});$("#revealtips,#revealtipsbg").addClass("reveal-hide");$('.sidebarbg').addClass("show");clearTimeout(hide_timeout);},
 		onClose: function(){$('body').css({"overflow-y":"auto"});$(".sidebarbg").removeClass("show");},
 	  });
 	  $(document).on("click.close", function () {		 
@@ -114,14 +114,17 @@ var resize = function() {
 };
 $(window).resize(resize);
 resize();
+
 //Wipe to open and close sidebar
 $(document).wipetouch({
 wipeLeft: function() { $.sidr('close', 'sidebar');},
 wipeRight: function() { 
   $.sidr('open', 'sidebar');
+  clearTimeout(hide_timeout);
   show_nav();
 },
 });
+
 //Back to Top button
 var amountScrolled = 300;
 $(window).scroll(function() {
@@ -137,5 +140,6 @@ $('.back-to-top').click(function() {
 	$('body, html').animate({
 		scrollTop: 0
 	}, 600);
+	clearTimeout(hide_timeout);
 	return false;
 });
