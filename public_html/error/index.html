@@ -36,9 +36,6 @@
 	</script>
 </head>
 
-  <a href="#" class="back-to-top">Back to Top</a>
-  <div id="sidebarbg" class="sidebarbg"></div>
-  
 <body>
     <header class="header">
         <div id="mobile-header">
@@ -52,6 +49,14 @@
     </div>
     <div class="reveal-modal-bg" style="display:block;top:0px"></div>
 	<![endif]-->
+  <!--floating button
+  <div class="nav-float row">
+    <a class="small-6 column button back" href="../" title="Home"></a>
+    <a class="small-6 column button back-to-top" href="#" title="Back to Top"></a>
+  </div>
+  -->
+  <div id="sidebarbg" class="sidebarbg"></div>
+
 	<section>
     	<div class="row">
         	<h1>whoops&#33 </h1>
@@ -81,7 +86,8 @@
                             <li><a href="../" title="Home">Home</a></li>
                             <li><a>Chapters</a>
                                 <ul class="nav-bar">
-                                    <li><a href="../chapter/1/" title="Chapter 1">1. Introduction</a></li>
+                                    <li><a href="../chapter/1/" title="Chapter 1 (Part 1)">1. Introduction (part 1)</a></li>
+                                    <li><a href="../chapter/1_2/" title="Chapter 1 (Part 2)">1. Introduction (part 2)</a></li>
                                     <li><a href="../chapter/2/" title="Chapter 2">2. Principles of projections</a></li>
                                 </ul>
                             </li>
@@ -114,17 +120,14 @@
 			source: '#sidr-main',
 			body:'body,#mobile-header,footer'
 		  });
+		  $.sidr('open', 'sidebar');
+		  $(document).off("click.close");
 		  $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');
-		  $('a.back-to-top').removeClass('btt-out');	  
-		  $.sidr('open', 'sidebar');
-		  $(document).off("click.close");		  
+		  $('.nav-float').removeClass('btt-out');		  		  
 		}
 		else {
 		  $.sidr('close', 'sidebar');
-          $('header').removeClass('nav-up');
-		  $('footer').removeClass('foot-down');
-		  $('a.back-to-top').removeClass('btt-out');	  		  
 		  $("#responsive-menu-button").sidr({
 			name: 'sidebar',
 			source: '#sidr-main',
@@ -135,35 +138,26 @@
 		  $(document).on("click.close", function () {		 
 		  	$.sidr('close', 'sidebar');
 		  });
+          $('header').removeClass('nav-up');
+		  $('footer').removeClass('foot-down');
+		  $('.nav-float').removeClass('btt-out');
 		}
 	  };
 	  $(window).resize(resize);
 	  resize();
 	  //Show header and footer when anywhere is clicked
-	  $(document).on("click.nav", function () {	 
-		  $('header').removeClass('nav-up');
-		  $('footer').removeClass('foot-down');
-		  $('a.back-to-top').removeClass('btt-out');
+	  $(document).on("click tap", function (e) {	 
+	  	  "use strict";
+		  if(!$(e.target).is('figure')){
+			$('header').removeClass('nav-up');
+			$('footer').removeClass('foot-down');
+			$('.nav-float').removeClass('btt-out');
+		  }
 	  });
 	  //Wipe to open and close sidebar
 	  $(document).wipetouch({
 		wipeLeft: function() { $.sidr('close', 'sidebar'); },
 		wipeRight: function() { $.sidr('open', 'sidebar'); },
-	  });
-	  	  //Back to Top button
-	  var amountScrolled = 300;
-	  $(window).scroll(function() {
-		  if ( $(window).scrollTop() > amountScrolled ) {
-			  $('a.back-to-top').fadeIn('300');
-		  } else {
-			  $('a.back-to-top').fadeOut('300');
-		  }
-	  });
-	  $('a.back-to-top').click(function() {
-		  $('body, html').animate({
-			  scrollTop: 0
-		  }, 600);
-		  return false;
 	  });
     </script>
 </body>

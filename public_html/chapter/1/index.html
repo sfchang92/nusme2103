@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>1. Introduction | nus:me2013</title>
+<title>1. Introduction (Part 1) | nus:me2013</title>
 <meta name="description" content="Introduction to ME2103.">
 <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
 <link rel="stylesheet" href="../../css/jquery.sidr.light.css">
@@ -30,7 +30,7 @@
 		"position": 2,
 		"item": {
 		  "@id": "http://nusme2103.tk/chapter/1",
-		  "name": "Chapter 1"
+		  "name": "Chapter 1 (Part 1)"
 		}
 	  }]
 	}
@@ -39,7 +39,7 @@
 
 <body>
   <header class="header">
-    <div id="mobile-header"> <a id="responsive-menu-button" href="#sidebar"><img src="../../images/Hamburger.gif" alt="Hamburger"> 1</a><a id="gototop">introduction</a></div>
+    <div id="mobile-header"> <a id="responsive-menu-button" href="#sidebar"><img src="../../images/Hamburger.gif" alt="Hamburger"> 1</a><a id="gototop">introduction (part 1)</a></div>
   </header>
     
     <!--[if lte IE 8]>
@@ -48,34 +48,39 @@
     </div>
     <div class="reveal-modal-bg" style="display:block;top:0px"></div>
 	<![endif]-->
-  <a href="#" class="back-to-top">Back to Top</a>
-  <div id="sidebarbg" class="sidebarbg"></div>
-  <div id="construction">
-   <p>Under Construction</p>
+    
+  <!--floating button-->
+  <div class="nav-float row">
+    <a class="small-4 column button back" href="../../" title="Home"></a>
+    <a class="small-4 column button back-to-top" href="#" title="Back to Top"></a>
+    <a class="small-4 column button forward" href="../1_2/" title="Chapter 1 (Part 2)"></a>
   </div>
+  
+  <div id="sidebarbg" class="sidebarbg"></div>
+
 <section>
 <a class="anchor" data-magellan-destination="instrument" id="instrument"></a>
   <div class="row">
     <h1>1.1 manual drawing instruments </h1>
     <ul>
       <li>Pencils (H/2H for constructions, 2B for outlines)<br>
-        <img src="../../images/1/pencils.jpg" alt="Pencils" width="300"></li>
+        <img class="large-6" src="../../images/1/pencils.jpg" alt="Pencils"></li>
       <li>Set Squares (30&deg &amp; 45&deg)<br>
-        <img src="../../images/1/setsquares.jpg" alt="Set Squares" width="300"></li>
+        <img class="large-6" src="../../images/1/setsquares.jpg" alt="Set Squares"></li>
       <li>Ruler and Scale rule<br>
-        <img src="../../images/1/ruler.jpg" alt="Ruler" width="300"><img src="../../images/1/scalerule.jpg" alt="Scale rule" width="303"></li>
+        <img class="large-6" src="../../images/1/ruler.jpg" alt="Ruler"><img class="large-6" src="../../images/1/scalerule.jpg" alt="Scale rule" width="303"></li>
       <li>Protractor<br>
-        <img src="../../images/1/protractorhalf.jpg" alt="Half Protractor" width="300" onload="lzld(this)"><img src="../../images/1/protractorfull.jpg" alt="Full Protractor" width="206.5"></li>
+        <img class="large-6" src="../../images/1/protractorfull.jpg" alt="Full Protractor"><img class="large-6" src="../../images/1/protractorhalf.jpg" alt="Half Protractor" onload="lzld(this)"></li>
       <li>Compass set<br>
-        <img src="../../images/1/compassset.jpg" alt="Compass Set" width="300" onload="lzld(this)"></li>
+        <img class="large-6" src="../../images/1/compassset.jpg" alt="Compass Set" onload="lzld(this)"></li>
       <li>Eraser and Shield<br>
-        <img src="../../images/1/eraser.jpg" alt="Eraser & Shield" width="300" onload="lzld(this)"></li>
+        <img class="large-6" src="../../images/1/eraser.jpg" alt="Eraser & Shield" onload="lzld(this)"></li>
       <li>Radii &amp; Circle template ruler<br>
-        <img src="../../images/1/radiitemplate.jpg" alt="Radii Template" width="197" onload="lzld(this)"><img src="../../images/1/circletemplate.jpg" alt="Circle Template Ruler" width="300" onload="lzld(this)"></li>
-      <li>French &amp; Flexible curves<br>
-        <img src="../../images/1/frenchcurve.jpg" alt="French Curve" width="300" onload="lzld(this)"><img src="../../images/1/flexiblecurve.jpg" alt="Flexible Curve" width="261" onload="lzld(this)"></li>
+        <img  class="large-6" src="../../images/1/radiitemplate.jpg" alt="Radii Template" onload="lzld(this)"><img class="large-6" src="../../images/1/circletemplate.jpg" alt="Circle Template Ruler" onload="lzld(this)"></li>
+      <li>Flexible &amp; French curves<br>
+        <img class="large-6" src="../../images/1/flexiblecurve.jpg" alt="Flexible Curve" onload="lzld(this)"><img class="large-6" src="../../images/1/frenchcurve.jpg" alt="French Curve" onload="lzld(this)"></li>
       <li>T-square<br>
-        <img src="../../images/1/tsquare.jpg" alt="T-square" width="300" onload="lzld(this)"></li>
+        <img class="large-6" src="../../images/1/tsquare.jpg" alt="T-square" onload="lzld(this)"></li>
     </ul>
   </div>
 </section>
@@ -565,7 +570,6 @@
     </div>
   </div>
 </section>
-
 <section> <a class="anchor" id="linework" data-magellan-destination="linework"></a>
   <div class="row">
     <h1>1.3 line works </h1>
@@ -573,129 +577,157 @@
     <h2>1.3.1 line types</h2>
     <ul>
       <li>Thick continuous line<br>
-        <svg width="300" height="20">
-          <path class="thick-line" d="M 10 15 L 300 15"></path>
+        <svg class="large-12" height="20">
+          <path class="thick-line" d="M 10 15 L 980 15"></path>
         </svg>
-        <ul class="nobulletem">
-          <li>
-            <img src="../../images/1/visibleout.png" alt="Visible outline & Edges" width="250" hspace="10" onload="lzld(this)"><br>- Visible outline &amp; edges</li><br>
+        <ul class="nobullet">
+          <li class="large-6">
+            <img src="../../images/1/visibleout.png" alt="Visible outline & Edges" onload="lzld(this)"><br>- Visible outline &amp; edges</li><br>
         </ul>
       </li>
       <li>Thin continuous line<br>
-        <svg width="300" height="20">
-          <path class="thin-line" d="M 10 15 L 300 15"></path>
+        <svg class="large-12" height="20">
+          <path class="thin-line" d="M 10 15 L 980 15"></path>
         </svg>
         <div class="row">
           <div class="large-6 columns">
-            <ul class="nobulletem">
+            <ul class="nobullet">
               <li>
-                <img src="../../images/1/dimension.png" alt="Dimension & Projection lines" width="250" hspace="10" onload="lzld(this)"><br>- Dimension &amp; Projection/extension lines</li><br>
+                <img src="../../images/1/dimension.png" alt="Dimension & Projection lines" onload="lzld(this)"><br>- Dimension &amp; Projection/extension lines</li><br>
               <li>
-                <img src="../../images/1/leader.png" alt="Leader lines" width="250" hspace="10"><br>- Leader lines</li><br>
+                <img src="../../images/1/leader.png" alt="Leader lines" width="100%"><br>- Leader lines</li><br>
             </ul>
           </div>
           <div class="large-6 columns">
-            <ul class="nobulletem">
+            <ul class="nobullet">
               <li>
-                <img src="../../images/1/hatching.png" alt="Hatching/Sectioning" width="250" hspace="10" onload="lzld(this)"><br>- Hatching/Sectioning</li><br>
+                <img src="../../images/1/hatching.png" alt="Hatching/Sectioning" onload="lzld(this)"><br>- Hatching/Sectioning</li><br>
               <li>
-                <img src="../../images/1/revolvesection.png" alt="Revolved Section" width="250" hspace="10" onload="lzld(this)"><br>- Outline of revolved section</li><br>
+                <img src="../../images/1/revolvesection.png" alt="Revolved Section" onload="lzld(this)"><br>- Outline of revolved section</li><br>
             </ul>
           </div>
         </div>
       </li>
+
       <li>Thin dashed line<br>
-        <svg width="300" height="20">
-          <path class="thin-line dashed-line" d="M 10 15 L 300 15"/>
+        <svg class="large-12" height="20">
+          <path class="thin-line dashed-line" d="M 10 15 L 980 15"/>
         </svg>
-        <ul class="nobulletem">
+        <div class="large-6">
+        <ul class="nobullet">
           <li>
-            <img src="../../images/1/hiddenoutline.png" alt="Hidden Outline & Edges" width="250" hspace="10" onload="lzld(this)"><br>- Hidden outline &amp; Edges</li><br>
+            <img src="../../images/1/hiddenoutline.png" alt="Hidden Outline & Edges" onload="lzld(this)"><br>- Hidden outline &amp; Edges</li><br>
         </ul>
+        </div>
       </li>
+      
       <li>Thin chain line<br>
-        <svg width="300" height="20">
-          <path class="thin-line chain-line" d="M 10 15 L 300 15"/>
+        <svg class="large-12" height="20">
+          <path class="thin-line chain-line" d="M 10 15 L 980 15"/>
         </svg>
-        <ul class="nobulletem">
-          <li>- Centre line<br>
-            <img src="../../images/1/centreline.png" alt="Centre line" width="250" hspace="10" onload="lzld(this)"></li>
+        <ul class="large-6 nobullet">
+          <li>
+            <img src="../../images/1/centreline.png" alt="Centre line" onload="lzld(this)"><br>- Centre line</li><br>
         </ul>
       </li>
+           
       <li>Thick chain line<br>
-        <svg width="300" height="20">
-          <path class="thin-line thickchain-line" stroke-width="5" d="M10 15L300 15"/>
+        <svg class="large-12" height="20">
+          <path class="thin-line thickchain-line" stroke-width="5" d="M10 15L980 15"/>
         </svg>
-        <ul class="nobulletem">
+        <ul class="large-6 nobullet">
           <li>
-            <img src="../../images/1/treatment.png" alt="Surface requires Treatment" width="250" hspace="10" onload="lzld(this)"><br>- To indicate a surface that requires additional treatment</li><br>
+            <img src="../../images/1/treatment.png" alt="Surface requires Treatment" onload="lzld(this)"><br>- To indicate a surface that requires additional treatment</li><br>
         </ul>
       </li>
       <li>Thin chain line + Thick short line at ends<br>
-        <svg width="300" height="25">
-          <path class="thin-line chain-line" d="M 5 10 L 300 10"/>
-          <path class="thin-line half-thick-line" d="M5 2.5L5 17.5M12.5 2.5L12.5 17.5M290 2.5L290 17.5M298 2.5L298 17.5"/>
+        <svg class="large-12" height="25">
+          <path class="thin-line chain-line" d="M 5 10 L 1000 10"/>
+		  <path class="thin-line half-thick-line" d="M5 2.5L5 17.5M12.5 2.5L12.5 17.5"/>
+		  <svg width="100%" height="25" viewBox="0 0 25 25" preserveAspectRatio="xMaxYMin meet">
+			<path class="thin-line half-thick-line" d="M15 2.5L15 17.5M23 2.5L23 17.5"/>
+		  </svg>
         </svg>
-        <ul class="nobulletem">
+        <ul class="large-6 nobullet">
           <li>
-            <img src="../../images/1/symmetryline.png" alt="Symmetry lines" width="250" hspace="10"><br>- Symmetry lines</li><br>
+            <img src="../../images/1/symmetryline.png" alt="Symmetry lines"><br>- Symmetry lines</li><br>
         </ul>
       </li>
+      
+      
       <li>Thick freehand continuous line<br>
-        <svg width="300" height="25">
+        <svg class="large-12" height="25">
           <path class="thick-line" d="M8 18c2 0 6 1 13 2c6 0 15 0 23 -1c10 -1 18 -3 26 -4c13 -1 24 -1 33 -1c10 0 17 -3 23 -2c7 1 10 2 16 4c5 1 10 3 13 4c5 1 10 0 11 0c5 0 8 -1 13 -2c5 -2 8 -3 15 -4c5 0 10 -2 13 -2c5 0 7 0 10 0c2 0 3 0 7 0c2 0 7 0 8 0c5 0 7 0 11 0c2 0 3 0 7 0c2 0 4 -1 7 0c3 1 3 2 7 3c2 0 3 0 7 1c2 0 3 0 7 0l2 0l2 0"/>
-        </svg>
-        <ul class="nobulletem">
-          <li>
-            <img src="../../images/1/shortbreak.png" alt="Short break lines" width="280" hspace="10"><br>- Short break lines</li><br>
+		  <path transform="translate(275,0)" class="thick-line" d="M8 18c2 0 6 1 13 2c6 0 15 0 23 -1c10 -1 18 -3 26 -4c13 -1 24 -1 33 -1c10 0 17 -3 23 -2c7 1 10 2 16 4c5 1 10 3 13 4c5 1 10 0 11 0c5 0 8 -1 13 -2c5 -2 8 -3 15 -4c5 0 10 -2 13 -2c5 0 7 0 10 0c2 0 3 0 7 0c2 0 7 0 8 0c5 0 7 0 11 0c2 0 3 0 7 0c2 0 4 -1 7 0c3 1 3 2 7 3c2 0 3 0 7 1c2 0 3 0 7 0l2 0l2 0"/>
+		  <path transform="translate(550,0)" class="thick-line" d="M8 18c2 0 6 1 13 2c6 0 15 0 23 -1c10 -1 18 -3 26 -4c13 -1 24 -1 33 -1c10 0 17 -3 23 -2c7 1 10 2 16 4c5 1 10 3 13 4c5 1 10 0 11 0c5 0 8 -1 13 -2c5 -2 8 -3 15 -4c5 0 10 -2 13 -2c5 0 7 0 10 0c2 0 3 0 7 0c2 0 7 0 8 0c5 0 7 0 11 0c2 0 3 0 7 0c2 0 4 -1 7 0c3 1 3 2 7 3c2 0 3 0 7 1c2 0 3 0 7 0l2 0l2 0"/>
+		  <path transform="translate(825,0)" class="thick-line" d="M8 18c2 0 6 1 13 2c6 0 15 0 23 -1c10 -1 18 -3 26 -4c13 -1 24 -1 33 -1c10 0 17 -3 23 -2c7 1 10 2 16 4c5 1 10 3 13 4c5 1 10 0 11 0c5 0 8 -1 13 -2c5 -2 8 -3 15 -4c5 0 10 -2 13 -2c5 0 7 0 10 0c2 0 3 0 7 0c2 0 7 0 8 0c5 0 7 0 11 0c2 0 3 0 7 0c2 0 4 -1 7 0c3 1 3 2 7 3c2 0 3 0 7 1c2 0 3 0 7 0l2 0l2 0"/>
+        </svg>       
+        <ul class="large-6">
+          <li class="nobullet">
+            <img src="../../images/1/shortbreak.png" alt="Short break lines"><br>- Short break lines</li><br>
         </ul>
       </li>
+
       <li>Thin chain line + Thick ends + Changes direction<br>
-        <svg width="300" height="25">
-          <path class="thin-line chain-line" d="M15 15L298 15"/>
-          <path class="thin-line half-thick-line" d="M5 15L15 15M288 15L298 15"/>
+        <svg class="large-12" height="25">
+          <path class="thin-line chain-line" d="M15 15L980 15"/>
+          <path class="thin-line half-thick-line" d="M1 15L11 15"/>
+		  <svg width="100%" height="25" viewBox="0 0 12 25" preserveAspectRatio="xMaxYMin meet">
+			<path class="thin-line half-thick-line" d="M1 15L11 15"/>
+		  </svg>
         </svg>
-        <ul class="nobulletem">
-          <li>
-            <img src="../../images/1/cuttingplane.png" alt="Short break lines" width="210" hspace="10" align="middle"> <img src="../../images/1/cuttingplane2.png" alt="Short break lines" width="250" hspace="10" align="middle"><br>- Cutting planes</li><br>
+        <ul>
+          <li class="nobullet">
+            <div class="large-6 column">
+            <img src="../../images/1/cuttingplane.png" alt="Short break lines"></div><div class="large-6"><img src="../../images/1/cuttingplane2.png" alt="Short break lines"></div><br>- Cutting planes</li><br>
         </ul>
       </li>
       <li>Thin double-dashed chain line<br>
-        <svg width="300" height="25">
-          <path class="thin-line" d="M 10 15 L 298 15" stroke-width="0.3" stroke-dasharray="35,5,5,5,5,5"/>
+        <svg class="large-12" height="25">
+          <path class="thin-line" d="M 0 15 L 980 15" stroke-width="0.3" stroke-dasharray="35,5,5,5,5,5"/>
         </svg>
-        <ul class="nobulletem">
+        <ul class="large-6 nobullet">
           <li>
-            <img src="../../images/1/phantomline.png" alt="Short break lines" width="200" hspace="10"><br>- Phantom lines</li><br>
+            <img src="../../images/1/phantomline.png" alt="Short break lines"><br>- Phantom lines</li><br>
         </ul>
       </li>
       <li>Thin continuous line with zigzags<br>
-        <svg width="300" height="30" class="thin-line">
-          <line y2="15" x2="70" y1="15" x1="2"/>
-          <line transform="rotate(35 73,9)" y2="1" x2="73" y1="17" x1="73"/>
-          <line y2="15" x2="153" y1="15" x1="85"/>
-          <line transform="rotate(35 82,20) " y2="12" x2="82" y1="29" x1="82"/>
-          <line y2="29" x2="77" y1="1" x1="77"/>
-          <line transform="rotate(35 156,9) " y2="1" x2="156" y1="17" x1="156"/>
-          <line y2="14" x2="236" y1="14" x1="168"/>
-          <line transform="rotate(35 165,20) " y2="12" x2="165" y1="28" x1="165"/>
-          <line y2="28" x2="160" y1="1" x1="160"/>
-          <line transform="rotate(35 239,9) " y2="1" x2="239" y1="17" x1="239"/>
-          <line y2="14" x2="319" y1="14" x1="251"/>
-          <line transform="rotate(35 248,20) " y2="12" x2="248" y1="28" x1="248"/>
-          <line y2="28" x2="243" y1="1" x1="243"/>
+        <svg class="large-12" height="30">
+		  <defs>
+		    <pattern id="zigzag" x="0" y="0" width="250" height="30" patternUnits="userSpaceOnUse">
+			  <g class="thin-line">
+			  <line y2="15" x2="70" y1="15" x1="2"/>
+			  <line transform="rotate(35 73,9)" y2="1" x2="73" y1="17" x1="73"/>
+			  <line y2="15" x2="153" y1="15" x1="85"/>
+			  <line transform="rotate(35 82,20) " y2="12" x2="82" y1="29" x1="82"/>
+			  <line y2="29" x2="77" y1="1" x1="77"/>
+			  <line transform="rotate(35 156,9) " y2="1" x2="156" y1="17" x1="156"/>
+			  <line y2="14" x2="236" y1="14" x1="168"/>
+			  <line transform="rotate(35 165,20) " y2="12" x2="165" y1="28" x1="165"/>
+			  <line y2="28" x2="160" y1="1" x1="160"/>
+			  <line transform="rotate(35 239,9) " y2="1" x2="239" y1="17" x1="239"/>
+			  <line y2="14" x2="319" y1="14" x1="251"/>
+			  <line transform="rotate(35 248,20) " y2="12" x2="248" y1="28" x1="248"/>
+			  <line y2="28" x2="243" y1="1" x1="243"/>
+			  </g>
+			</pattern>
+	      </defs>
+		  <rect fill="url(#zigzag)" x="0" y="0" width="100%" height="30"/>
         </svg>
-        <ul class="nobulletem">
+        <div class="large-6">
+        <ul class="nobullet">
           <li>
-            <img src="../../images/1/longbreak.png" alt="Long break lines" width="250" hspace="10"><br>- Long break lines</li><br>
+            <img src="../../images/1/longbreak.png" alt="Long break lines"><br>- Long break lines</li><br>
         </ul>
+        </div>
       </li>
     </ul>
     <a class="anchor" id="hiddenline" data-magellan-destination="hiddenline"></a>
     <h2>1.3.2 hidden line drawing</h2>
     <ul>
       <li>Begins with dash, not space<br>
-        <svg width="120" height="105">
+        <div class="row">
+        <svg class="small-4 column" viewBox="0 0 120 105">
           <defs>
             <mask id="maskhline">
               <rect width="100%" height="100%" fill="#fff" fill-opacity="0.3"></rect>
@@ -710,7 +742,7 @@
             <circle class="tick-circle" cx="52.5" cy="24" r="18"></circle>
           </g>
         </svg> 
-        <svg width="120" height="105">
+        <svg class="small-4" viewBox="0 0 120 105">
           <line class="tick-line cross-line" y2="89" x2="81" y1="60" x1="104"/>
           <line class="tick-line cross-line" y2="84" x2="102" y1="63" x1="83"/>
           <g mask="url(#maskhline)">
@@ -719,9 +751,11 @@
             <circle class="tick-circle" cx="52.5" cy="24" r="18"/>
           </g>
         </svg>
+        </div>
       </li>
       <li>No space between intersection<br>
-        <svg width="120" height="105">
+      <div class="row">
+        <svg class="small-4 column" viewBox="0 0 120 105">
           <line class="tick-line" y2="62" x2="108" y1="90" x1="89"/>
           <line class="tick-line" y2="77" x2="82" y1="90" x1="89"/>
           <g mask="url(#maskhline)">
@@ -730,7 +764,7 @@
             <circle class="tick-circle" cx="52.5" cy="24" r="18"/>
           </g>
         </svg>
-        <svg width="120" height="105">
+        <svg class="small-4" viewBox="0 0 120 105">
           <line class="tick-line cross-line" y2="89" x2="81" y1="60" x1="104"/>
           <line class="tick-line cross-line" y2="84" x2="102" y1="63" x1="83"/>
           <g mask="url(#maskhline)">
@@ -739,9 +773,11 @@
             <circle class="tick-circle" cx="52.5" cy="24" r="18"/>
           </g>
         </svg>
+        </div>
       </li>
       <li>No space between intersection at corner<br>
-        <svg width="120" height="105">
+      <div class="row">
+        <svg class="small-4 column" viewBox="0 0 120 105">
           <line class="tick-line" y2="62" x2="108" y1="90" x1="89"/>
           <line class="tick-line" y2="77" x2="82" y1="90" x1="89"/>
           <g mask="url(#maskhline)">
@@ -750,7 +786,7 @@
             <circle class="tick-circle" cx="52.5" cy="23" r="18"/>
           </g>
         </svg>
-        <svg width="120" height="105">
+        <svg class="small-4" viewBox="0 0 120 105">
           <line class="tick-line cross-line" y2="89" x2="81" y1="60" x1="104"/>
           <line class="tick-line cross-line" y2="84" x2="102" y1="63" x1="83"/>
           <g mask="url(#maskhline)">
@@ -759,9 +795,11 @@
             <circle class="tick-circle" cx="52.5" cy="23" r="18"/>
           </g>
         </svg>
+        </div>
       </li>
       <li>Three hidden lines meet at corner<br>
-        <svg width="120" height="105">
+      <div class="row"> 
+	    <svg class="small-4 column" viewBox="0 0 120 105">
           <defs>
             <mask id="maskhline2">
               <rect width="100%" height="100%" fill="#fff" fill-opacity="0.3"></rect>
@@ -777,7 +815,7 @@
             <circle class="tick-circle" cx="52.5" cy="60" r="18"/>
           </g>
         </svg>
-        <svg width="120" height="105">
+        <svg class="small-4" viewBox="0 0 120 105">
           <line class="tick-line cross-line" y2="89" x2="81" y1="60" x1="104"/>
           <line class="tick-line cross-line" y2="84" x2="102" y1="63" x1="83"/>
           <g mask="url(#maskhline2)">
@@ -787,9 +825,11 @@
             <circle class="tick-circle" cx="52.5" cy="60" r="18"/>
           </g>
         </svg>
+        </div>
       </li>
       <li>Hidden line continued from visible line begins with space<br>
-        <svg width="120" height="105">
+      <div class="row">
+        <svg class="small-4 column" viewBox="0 0 120 105">
           <line class="tick-line" y2="62" x2="108" y1="90" x1="89"/>
           <line class="tick-line" y2="77" x2="82" y1="90" x1="89"/>
           <g mask="url(#maskhline2)">
@@ -799,7 +839,7 @@
             <circle class="tick-circle" cx="52.5" cy="60" r="18"/>
           </g>
         </svg>
-        <svg width="120" height="105">
+        <svg class="small-4" viewBox="0 0 120 105">
           <line class="tick-line cross-line" y2="89" x2="81" y1="60" x1="104"/>
           <line class="tick-line cross-line" y2="84" x2="102" y1="63" x1="83"/>
           <g mask="url(#maskhline2)">
@@ -809,9 +849,11 @@
             <circle class="tick-circle" cx="52.5" cy="60" r="18"/>
           </g>
         </svg>
+        </div>
       </li>
       <li>Invisible arc starts with a dash<br>
-        <svg width="120" height="105">
+      <div class="row">
+        <svg class="small-4 column" viewBox="0 0 120 105">
 		  <defs>
             <mask id="maskhline3">
               <rect width="100%" height="100%" fill="#fff" fill-opacity="0.3"></rect>
@@ -827,7 +869,7 @@
             <circle class="tick-circle" cx="21" cy="79" r="20"/>
           </g>
         </svg>
-        <svg width="120" height="105">
+        <svg class="small-4" viewBox="0 0 120 105">
 		  <line class="tick-line cross-line" y2="89" x2="61" y1="60" x1="84"/>
 		  <line class="tick-line cross-line" y2="84" x2="82" y1="63" x1="63"/>
           <g mask="url(#maskhline3)">
@@ -837,9 +879,11 @@
             <circle class="tick-circle" cx="21" cy="79" r="20"/>
           </g>
         </svg>
+        </div>
       </li>
       <li>Tiny invisible arc may be made solid<br>
-        <svg width="120" height="105">
+      <div class="row">
+        <svg class="small-4 column" viewBox="0 0 120 105">
 		  <defs>
             <mask id="maskhline4">
               <rect width="100%" height="100%" fill="#fff" fill-opacity="0.3"></rect>
@@ -856,7 +900,7 @@
             <circle class="tick-circle" cx="50" cy="79" r="20"/>
           </g>
         </svg>
-        <svg width="120" height="105">
+        <svg class="small-4" viewBox="0 0 120 105">
           <line class="tick-line cross-line" y2="89" x2="81" y1="60" x1="104"/>
           <line class="tick-line cross-line" y2="84" x2="102" y1="63" x1="83"/>
           <g mask="url(#maskhline4)">
@@ -867,9 +911,11 @@
             <circle class="tick-circle" cx="50" cy="79" r="20"/>
           </g>
         </svg>
+      </div>
       </li>
       <li>Hidden arc continued from visible line begins with space<br>
-        <svg width="130" height="105">
+      <div class="row">
+        <svg class="small-4 column" viewBox="0 0 130 105">
 		  <defs>
             <mask id="maskhline5">
               <rect width="100%" height="100%" fill="#fff" fill-opacity="0.3"></rect>
@@ -885,7 +931,7 @@
 			<circle class="tick-circle" cx="62.5" cy="60" r="20"/>
           </g>
         </svg>
-        <svg width="130" height="105">
+        <svg class="small-4" viewBox="0 0 130 105">
 		  <line class="tick-line cross-line" y2="94" x2="86" y1="65" x1="109"/>
 		  <line class="tick-line cross-line" y2="89" x2="107" y1="68" x1="88"/>
           <g mask="url(#maskhline5)">
@@ -895,9 +941,11 @@
 			<circle class="tick-circle" cx="62.5" cy="60" r="20"/>
           </g>
         </svg>
+        </div>
       </li>
       <li>Two hidden arcs meet at point of tangency<br>
-        <svg width="130" height="105">
+      <div class="row">
+        <svg class="small-4 column" viewBox="0 0 130 105">
 		  <defs>
             <mask id="maskhline6">
               <rect width="100%" height="100%" fill="#fff" fill-opacity="0.3"></rect>
@@ -916,7 +964,7 @@
 			<path d="M110 100L30 100" class="thin-line chain-line"/>
           </g>
         </svg>
-        <svg width="130" height="105">
+        <svg class="small-4" viewBox="0 0 130 105">
 		  <line class="tick-line cross-line" y2="94" x2="86" y1="65" x1="109"/>
 		  <line class="tick-line cross-line" y2="89" x2="107" y1="68" x1="88"/>
           <g mask="url(#maskhline6)">
@@ -929,11 +977,11 @@
 			<path d="M110 100L30 100" class="thin-line chain-line"/>
           </g>
         </svg>
+        </div>
       </li>     
     </ul>
   </div>
 </section>
-
 <section> <a class="anchor" id="scale" data-magellan-destination="scale"></a>
   <div class="row">
     <h1>1.4 scale </h1>
@@ -947,12 +995,13 @@
     </p>
     <a class="anchor" id="scaleondwg" data-magellan-destination="scaleondwg"></a>
     <h2>1.4.1 scale on a drawing</h2>
-    <img src="../../images/1/scale.png" alt="Scale" width="320" onload="lzld(this)">
+    <img class="large-6" src="../../images/1/scale.png" alt="Scale" onload="lzld(this)">
     <a class="anchor" id="scaleapplication" data-magellan-destination="scaleapplication"></a>
     <h2>1.4.2 application of scale</h2>
     <p>Commonly used in maps for reduction.</p>
-    <iframe src="http://clips.animatron.com/a359e7374f24a3d3afa45c955ab47db5?w=320&h=198" width="320" height="198" frameborder="0" onload="lzld(this)"></iframe>
+    <div class="large-6"><figure><img src="../../images/1/scalemapzoom.jpg" alt="Scale in a Map" data-alt="../../images/1/scalemapzoom.gif" onload="lzld(this)"></figure>
     <p><em>For scale 1:7500, 1cm on the map represent 75m on ground.</em></p>
+    </div>
   </div>
 </section>
  
@@ -970,22 +1019,27 @@
     <li>A4 - 297 x 210 mm</li>
     </ul>
     </p>
-    <img src="../../images/1/a_size.png" alt="A_size" width="320">
+    <img class="large-6" src="../../images/1/a_size.png" alt="A_size" onload="lzld(this)">
     <a class="anchor" id="drawingme2103" data-magellan-destination="drawingme2103"></a>
     <h2>1.5.2 me2103 drawing sheet</h2>
-    <img src="../../images/1/dwgme2103.png" alt="ME2103 Drawing Sheet" width="320" onload="lzld(this)">
+    <div class="large-6"><figure><img src="../../images/1/me2103tb.jpg" alt="ME2103 Title Block" data-alt="../../images/1/me2103tb.gif" onload="lzld(this)"></figure>
+    </div>
     <p>Default settings:</p>
     <ul style="font-size:1em">
     <li>Third angle projection</li>
     <li>A4 size</li>
     <li>Landscape orientation</li>
     </ul>
-    <a href="../../images/1/dwgme2103zoom.png" target="_blank"><img src="../../images/1/dwgme2103zoom.png" alt="ME2103 Drawing Sheet" width="320" onload="lzld(this)"></a>
     <a class="anchor" id="drawingexamples" data-magellan-destination="drawingexamples"></a>
     <h2>1.5.3 examples</h2>
-    <a href="../../images/1/egdrawings.png" target="_blank"><img src="../../images/1/egdrawings.png" alt="Example of Drawings" width="350" onload="lzld(this)"></a><p><em>Drawings</em></p>
-    <a href="../../images/1/egassembly.png" target="_blank"><img src="../../images/1/egassembly.png" alt="Example of Assembly" width="350" onload="lzld(this)"></a><p><em>Assembly</em></p>
-    <a href="../../images/1/egexplode.png" target="_blank"><img src="../../images/1/egexplode.png" alt="Example of Exploded View" width="250" onload="lzld(this)"></a><a href="../../images/1/egexplodebill.png" target="_blank"><img src="../../images/1/egexplodebill.png" alt="Bill of Materials" width="200" onload="lzld(this)"></a>
+    <img class="large-6" src="../../images/1/egdrawings.png" alt="Example of Drawings" onload="lzld(this)"><p><em>Drawings</em></p>
+    <img class="large-6" src="../../images/1/egassembly.png" alt="Example of Assembly" onload="lzld(this)"><p><em>Assembly</em></p>
+    <div class="row">
+    <div class="large-6 column">
+    <img src="../../images/1/egexplode.png" alt="Example of Exploded View" onload="lzld(this)"></div>
+    <div class="large-6 column"><img src="../../images/1/egexplodebill.png" alt="Bill of Materials" onload="lzld(this)">
+    </div>
+    </div>
     <p><em>Exploded View</em></p>
   </div>
 </section>
@@ -994,7 +1048,7 @@
   <div class="row">
   	<h1>1.6 title block</h1>
     <p>Title block contains vital part and/or assembly information, such as:
-    <ol style="font-size:1em;padding-left:30px;">
+    <ol style="font-size:1em">
     <li>Name of company</li>
     <li>Drawing number</li>
     <li>Date</li>
@@ -1010,8 +1064,8 @@
     <li>Checked by</li>
     <li>Approved by</li>
     </ol>
-    </p><br>
-    <p>It is usually situated at the base of the drawing sheet with a border enclosing the drawing views.</p><br>
+    </p>
+    <p>It is usually situated at the base of the drawing sheet with a border enclosing the drawing views.</p>
     <p>Each organisation can have its own unique version of a title block, although there are different standards of title blocks such as:
     <ul style="font-size:1em;">
     <li>ANSI</li>
@@ -1022,66 +1076,23 @@
     </p><br>
     <a class="anchor" id="egtitleblock" data-magellan-destination="egtitleblock"></a>
     <h2>1.6.1 examples of title block</h2>
-    <ol style="padding-left:30px;">
+    <ol>
     <li><em>ME2103</em> title block<br>
-    <iframe src="http://clips.animatron.com/c71a9d9e1a11f3e2dc2e6a5ec98a1294?w=300&h=212" width="300" height="212" frameborder="0" onload="lzld(this)"></iframe></li>
+    <img class="large-6" src="../../images/1/dwgme2103.png" alt="ME2103 Drawing Sheet" onload="lzld(this)"></li>
     <li><em>ANSI</em> title block<br>
-    <a href="../../images/1/ansitb.png" target="_blank"><img src="../../images/1/ansitb.png" alt="ANSI Title Block" width="320" onload="lzld(this)"></a></li>
+    <img class="large-6" src="../../images/1/ansitb.png" alt="ANSI Title Block" onload="lzld(this)"></li>
     <li><em>DIN</em> title block<br>
-    <a href="../../images/1/dintb.png" target="_blank"><img src="../../images/1/dintb.png" alt="DIN Title Block" width="320" onload="lzld(this)"></a></li>
+    <img class="large-6" src="../../images/1/dintb.png" alt="DIN Title Block" onload="lzld(this)"></li>
     <li><em>ISO</em> title block<br>
-    <a href="../../images/1/isotb.png" target="_blank"><img src="../../images/1/isotb.png" alt="ISO Title Block" width="320" onload="lzld(this)"></a></li>
+    <img class="large-6" src="../../images/1/isotb.png" alt="ISO Title Block" onload="lzld(this)"></li>
     <li><em>JIS</em> title block<br>
-    <a href="../../images/1/jistb.png" target="_blank"><img src="../../images/1/jistb.png" alt="JIS Title Block" width="320" onload="lzld(this)"></a></li>
+    <img class="large-6" src="../../images/1/jistb.png" alt="JIS Title Block" onload="lzld(this)"></li>
     </ol>
   </div>
 </section>
-    
-<section> <a class="anchor" id="geometry" data-magellan-destination="geometry"></a>
-  <div class="row">
-    <h1>1.7 geometrical construction</h1>
-    <a class="anchor" id="parallelpoint" data-magellan-destination="parallelpoint"></a>
-    <h2>1.7.1 draw a parallel line through a point</h2>
-    <iframe src="http://clips.animatron.com/9cc7fe64b0c636d6496214386819e001?w=320&h=274" width="320" height="274" frameborder="0" onload="lzld(this)"></iframe>
-    <a class="anchor" id="paralleldistance" data-magellan-destination="paralleldistance"></a>
-    <h2>1.7.2 draw a parallel line at a given distance</h2>
-    <iframe src="http://clips.animatron.com/49237b5f81818b278f8d7c5f0f640bee?w=320&h=274" width="320" height="274" frameborder="0" onload="lzld(this)"></iframe>
-    <a class="anchor" id="perpendicular" data-magellan-destination="perpendicular"></a>
-    <h2>1.7.3 draw a perpendicular line</h2>
-    <iframe src="http://clips.animatron.com/41ccc908a30e29c4f62a111a61feb608?w=320&h=320" width="320" height="320" frameborder="0" onload="lzld(this)"></iframe>
-    <a class="anchor" id="bisectangle" data-magellan-destination="bisectangle"></a>
-    <h2>1.7.4 bisecting an angle</h2>
-    <iframe src="http://clips.animatron.com/87b5e45ebc98fc4483f21299480875e3?w=320&h=320" width="320" height="320" frameborder="0" onload="lzld(this)"></iframe>
-    <a class="anchor" id="pentagon" data-magellan-destination="pentagon"></a>
-    <h2>1.7.5 pentagon</h2>
-    <iframe src="http://clips.animatron.com/acae4fcbe19a8ba1eb995630b4f23a3c?w=320&h=320" width="320" height="320" frameborder="0" onload="lzld(this)"></iframe>
-    <a class="anchor" id="hexagon" data-magellan-destination="hexagon"></a>
-    <h2>1.7.6 hexagon</h2>
-    <iframe src="http://clips.animatron.com/45ca14904bc09269570e74f6f53ed11c?w=320&h=320" width="320" height="320" frameborder="0" onload="lzld(this)"></iframe>
-    <a class="anchor" id="ellipse" data-magellan-destination="ellipse"></a>
-    <h2>1.7.7 ellipse</h2>
-    <a class="anchor" id="isoellipse" data-magellan-destination="isoellipse"></a>
-    <h2>1.7.8 isometric ellipse</h2>
-  </div>
-</section>
-  
-<section> <a class="anchor" id="tangents" data-magellan-destination="tangents"></a>
-  <div class="row">
-  	<h1>1.8 tangents</h1>
-    <a class="anchor" id="tangents2circles" data-magellan-destination="tangents2circles"></a>
-    <h2>1.8.1 tangents between two circles</h2>
-    <iframe src="http://clips.animatron.com/da33d4dec39d3db71e7d59a9efd939e0?w=300&h=200" width="300" height="200" frameborder="0" onload="lzld(this)"></iframe>
-    <a class="anchor" id="ctangents2" data-magellan-destination="ctangents2"></a>
-    <h2>1.8.2 crossed tangents between two circles</h2>
-    <a class="anchor" id="arctangent" data-magellan-destination="arctangent"></a>
-    <h2>1.8.3 arc tangent in right angle</h2>
-    <a class="anchor" id="arctangent2" data-magellan-destination="arctangent2"></a>
-    <h2>1.8.4 arc tangents of 2 arcs</h2>
-    </div>
-</section>
-    
-    <footer>
-        	<div class="footfont">
+
+<footer>
+       	<div class="footfont">
             	<div class="footspan">by chang sin fung 2015. all rights reserved.</div>
                 <div style="display:flex">
                 <a href="http://www.nus.edu.sg/" target="_blank" alt="National University of Singapore" style="margin-right:0"><img src="../../images/nuslogo.jpg" alt="NUS logo"></a>
@@ -1102,7 +1113,7 @@
             <li><a href="../../" title="Home">Home</a></li>
             <li class="active"><a>Chapters</a>
               <ul class="nav-bar">
-                <li class="active"><a class="smooth" href="#">1. Introduction</a>
+                <li class="active"><a>1. Introduction (part 1)</a>
                   <ul class="nav-bar">
                     <li data-magellan-arrival="instrument"><a class="smooth" href="#instrument">1.1 Manual drawing instruments</a></li>
                     <li data-magellan-arrival="term"><a class="smooth" href="#term">1.2 Basic terminologies</a>
@@ -1135,26 +1146,10 @@
                       <li data-magellan-arrival="egtitleblock"><a class="smooth" href="#egtitleblock">1.6.1 Examples of title block</a></li>
                       </ul> 
                     </li>
-                    <li data-magellan-arrival="geometry"><a class="smooth" href="#geometry">1.7 Geometrical construction</a>
-                      <ul class="nav-bar">
-                      <li data-magellan-arrival="parallelpoint"><a class="smooth" href="#parallelpoint">1.7.1 Parallel line through a point</a></li>
-                      <li data-magellan-arrival="paralleldistance"><a class="smooth" href="#paralleldistance">1.7.2 Parallel line at a distance</a></li>
-                      <li data-magellan-arrival="perpendicular"><a class="smooth" href="#perpendicular">1.7.3 Perpendicular line</a></li>
-                      <li data-magellan-arrival="bisectangle"><a class="smooth" href="#bisectangle">1.7.4 Bisect of an angle</a></li>
-                      <li data-magellan-arrival="pentagon"><a class="smooth" href="#pentagon">1.7.5 Pentagon</a></li>
-                      <li data-magellan-arrival="hexagon"><a class="smooth" href="#hexagon">1.7.6 Hexagon</a></li>
-                      <li data-magellan-arrival="ellipse"><a class="smooth" href="#ellipse">1.7.7 Ellipse</a></li>
-                      <li data-magellan-arrival="isoellipse"><a class="smooth" href="#isoellipse">1.7.8 Isometric ellipse</a></li>
-                      </ul>
-                    </li>
-                    <li data-magellan-arrival="tangents"><a class="smooth" href="#tangents">1.8 Tangents</a>
-                      <ul class="nav-bar">
-                      <li data-magellan-arrival="tangents2circles"><a class="smooth" href="#tangents2circles">1.8.1 Tangents between 2 circles</a></li>
-                      </ul>
-                    </li>
                   </ul>
                 </li>
-                <li><a href="../../chapter/2/" title="Chapter 2">2. Principles of projections</a></li>
+                <li><a href="../1_2/" title="Chapter 1 (part 2)">1. Introduction (part 2)</a></li>
+                <li><a href="../2/" title="Chapter 2">2. Principles of projections</a></li>
               </ul>
             </li>
             <li><a href="../../misc/" title="Behind the Scenes">Behind the Scenes</a></li>
@@ -1186,10 +1181,10 @@
 			body:'body,#mobile-header,footer'
 		  });
 		  $.sidr('open', 'sidebar');
-		  $(document).off("click.close");	
+		  $(document).off("click.close");
 		  $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');
-		  $('a.back-to-top').removeClass('btt-out');		  
+		  $('.nav-float').removeClass('btt-out');	  
 		}
 		else { 
 		  $.sidr('close', 'sidebar');
@@ -1205,16 +1200,24 @@
 		  });
 		  $('header').removeClass('nav-up');
 		  $('footer').removeClass('foot-down');
-		  $('a.back-to-top').removeClass('btt-out');
+		  $('.nav-float').removeClass('btt-out');
 		}	
 	  };
 	  $(window).resize(resize);
 	  resize();
 	  //Show header and footer when anywhere is clicked
-	  $(document).on("click tap", function () {	 
-		  $('header').removeClass('nav-up');
-		  $('footer').removeClass('foot-down');
-		  $('a.back-to-top').removeClass('btt-out');
+	  $(document).on("click tap", function (e) {	 
+	  	  "use strict";
+		  if(!$(e.target).is('figure')){
+			$('header').removeClass('nav-up');
+			$('footer').removeClass('foot-down');
+			$('.nav-float').removeClass('btt-out');
+			setTimeout(function() {
+				$('header').addClass('nav-up');
+				$('footer').addClass('foot-down');
+				$('.nav-float').addClass('btt-out');
+			}, 2000);
+		  }
 	  });
 	  //Wipe to open and close sidebar
 	  $(document).wipetouch({
@@ -1229,17 +1232,18 @@
 	  var amountScrolled = 300;
 	  $(window).scroll(function() {
 		  if ( $(window).scrollTop() > amountScrolled ) {
-			  $('a.back-to-top').fadeIn('300');
+			  $('.nav-float').css({"display":"block"});
 		  } else {
-			  $('a.back-to-top').fadeOut('300');
+			  $('.nav-float').css({"display":"none"});
 		  }
 	  });
-	  $('a.back-to-top').click(function() {
+	  $('.back-to-top').click(function() {
 		  $('body, html').animate({
 			  scrollTop: 0
 		  }, 600);
 		  return false;
 	  });
     </script>
+<script src="../../js/gif.min.js"></script>
 </body>
 </html>

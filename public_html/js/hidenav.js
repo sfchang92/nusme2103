@@ -28,13 +28,18 @@
 			  // Scroll Down
 			  $('header').addClass('nav-up');
 			  $('footer').addClass('foot-down');
-			  $('a.back-to-top').addClass('btt-out');		  
+			  $('.nav-float').addClass('btt-out');		  
 		  } else {
 			  // Scroll Up
 			  if(st + $(window).height() < $(document).height()) {
 				  $('header').removeClass('nav-up');
 				  $('footer').removeClass('foot-down');
-				  $('a.back-to-top').removeClass('btt-out');
+				  $('.nav-float').removeClass('btt-out');
+				  /*setTimeout(function() {
+					  $('header').addClass('nav-up');
+					  $('footer').addClass('foot-down');
+					  $('.nav-float').addClass('btt-out');
+			      }, 2000);*/
 			  }
 		  }
 		  lastScrollTop = st;
