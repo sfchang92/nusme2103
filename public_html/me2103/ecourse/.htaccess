@@ -1,1 +1,4 @@
-ErrorDocument 404 /error/index.html
+# Do not remove this line, otherwise mod_rewrite rules will stop working
+RewriteBase /
+ErrorDocument 404 /me2103/ecourse/error/404/index.html
+

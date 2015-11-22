@@ -111,6 +111,10 @@ h1 {
 	margin-bottom: 0.67em;
 }
 
+section > .row > h1 {
+	margin-top: 0.3em;
+}
+
 /**
  * Address styling not present in IE 8/9, Safari 5, and Chrome.
  */
@@ -424,7 +428,7 @@ body {
 
 /* line 168, ../../../../lib/gems/1.9.1/gems/zurb-foundation-4.0.0/scss/foundation/_foundation-global.scss */
 body {
-	background: white;
+	background: #f2f2f2;
 	color: #555555;
 	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
 	font-weight: normal;
@@ -546,7 +550,7 @@ footer .row {
 footer a img {
 	display: block;
 	padding-left: 5px;
-	padding-right: 5px;
+	padding-right: 10px;
 	max-height: 40px;
 }
 	
@@ -1645,7 +1649,10 @@ a:hover, a:focus {
 }
 /* line 154, ../../../../lib/gems/1.9.1/gems/zurb-foundation-4.0.0/scss/foundation/components/_type.scss */
 a img {
-  border: none;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 0;
+	border: none;
 }
 
 /* Default paragraph styles */
@@ -1670,7 +1677,7 @@ p aside {
 /* line 175, ../../../../lib/gems/1.9.1/gems/zurb-foundation-4.0.0/scss/foundation/components/_type.scss */
 h1, h2, h3, h4, h5, h6 {
 	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
-	font-weight: normal;
+	font-weight: lighter;
 	font-style: normal;
 	color: #222222;
 	text-rendering: optimizeLegibility;
@@ -2023,13 +2030,13 @@ blockquote p {
 	padding-bottom: 0.8125em;
 	padding-left: 0.75em;
 	font-size: 1em;
-	background-color: #005DBA;
+	background-color: rgba(3,128,255,0.8);
 	color: white;
 }
 
 /* line 112, ../../../../lib/gems/1.9.1/gems/zurb-foundation-4.0.0/scss/foundation/components/_buttons.scss */
 .button:hover, .button:focus {
-	background-color: #004988;
+	background-color: rgba(0,103,207,1);
 }
 /* line 123, ../../../../lib/gems/1.9.1/gems/zurb-foundation-4.0.0/scss/foundation/components/_buttons.scss */
 .button:hover, .button:focus {
@@ -2236,16 +2243,16 @@ button.button.large {
 @media only screen {
   /* line 195, ../../../../lib/gems/1.9.1/gems/zurb-foundation-4.0.0/scss/foundation/components/_buttons.scss */
   .button {
-    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
-    -webkit-transition: background-color 300ms ease-out;
-    -moz-transition: background-color 300ms ease-out;
-    transition: background-color 300ms ease-out;
+	/* [disabled]-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5); */
+	/* [disabled]box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; */
+	-webkit-transition: background-color 300ms ease-out;
+	-moz-transition: background-color 300ms ease-out;
+	transition: background-color 300ms ease-out;
   }
   /* line 109, ../../../../lib/gems/1.9.1/gems/zurb-foundation-4.0.0/scss/foundation/_foundation-global.scss */
   .button:active {
-    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) inset;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) inset;
+	-webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);
   }
   /* line 203, ../../../../lib/gems/1.9.1/gems/zurb-foundation-4.0.0/scss/foundation/components/_buttons.scss */
   .button.radius {
@@ -3893,6 +3900,7 @@ form.custom .custom.disabled {
 	-moz-transition: opacity 0.2s, visibility 0s 0.2s;
 	-webkit-transition: opacity 0.2s, visibility 0s 0.2s;
 	-ms-transition: opacity 0.2s, visibility 0s 0.2s;
+	cursor: pointer;
 }
 
 /* line 106, ../../../../lib/gems/1.9.1/gems/zurb-foundation-4.0.0/scss/foundation/components/_reveal.scss */
@@ -4436,35 +4444,32 @@ form.custom .custom.disabled {
 /* Breadcrumbs */
 /* line 108, ../../../../lib/gems/1.9.1/gems/zurb-foundation-4.0.0/scss/foundation/components/_breadcrumbs.scss */
 .breadcrumbs {
-  display: block;
-  padding: 0.375em 0.875em 0.5625em;
-  overflow: hidden;
-  margin-left: 0;
-  list-style: none;
-  border-style: solid;
-  border-width: 1px;
-  background-color: #f6f607;
-  border-color: #c4c405;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+	display: block;
+	overflow: hidden;
+	margin-left: 0;
+	list-style: none;
+	background-color: #fff;
 }
 /* line 112, ../../../../lib/gems/1.9.1/gems/zurb-foundation-4.0.0/scss/foundation/components/_breadcrumbs.scss */
 .breadcrumbs li {
-  margin: 0;
-  padding: 0 0.75em 0 0;
-  float: left;
+	margin: 0;
+	padding-top: 0;
+	padding-right: 0.5em;
+	padding-left: 0;
+	padding-bottom: 0;
+	float: left;
 }
 /* line 59, ../../../../lib/gems/1.9.1/gems/zurb-foundation-4.0.0/scss/foundation/components/_breadcrumbs.scss */
 .breadcrumbs li:hover a, .breadcrumbs li:focus a {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 /* line 62, ../../../../lib/gems/1.9.1/gems/zurb-foundation-4.0.0/scss/foundation/components/_breadcrumbs.scss */
 .breadcrumbs li a,
 .breadcrumbs li span {
-  font-size: 0.6875em;
-  padding-left: 0.75em;
-  text-transform: uppercase;
-  color: #cc9752;
+	font-size: 1.1em;
+	padding-left: 0.75em;
+	text-transform: none;
+	color: #cc9752;
 }
 /* line 71, ../../../../lib/gems/1.9.1/gems/zurb-foundation-4.0.0/scss/foundation/components/_breadcrumbs.scss */
 .breadcrumbs li.current a {
@@ -5405,9 +5410,9 @@ table tfoot tr td {
 
 /* line 57, ../sass/app.scss */
 body {
-	background: #ffffff;
-	padding-top: 48px;
-	padding-bottom: 60px;
+
+
+
 }
 
 /* line 61, ../sass/app.scss */
@@ -5484,18 +5489,22 @@ h2 {
 	-webkit-transition: top 0.2s ease-in-out;
 	left: 0px;
 	right: 0px;
+	background: rgba(3,128,255,0.8);
+	height: 48px;
+	width: 100%;
+	line-height: 48px;
+	-webkit-box-shadow: -2px 0px 3px 1px rgba(107,107,107,0.55);
+	-moz-box-shadow: -2px 1px 3px 1px rgba(107,107,107,0.55);
+	box-shadow: -2px 0px 3px 1px rgba(107,107,107,0.55);
+	align-items: center;
+	display: flex;
+	align-content: center;
 }
 /* line 113, ../sass/app.scss */
 .header h1 {
-  font-family: "Ranchers", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-size: 16em;
-  font-weight: normal;
-  color: #dddd06;
-  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6);
-  position: relative;
-  display: inline-block;
-  clear: both;
-  margin: 0;
+	font-size:1.8em;
+	color:#fff;
+	font-weight:lighter;
 }
 /* line 124, ../sass/app.scss */
 .header h2 {
@@ -5622,11 +5631,26 @@ h2 {
   position: absolute;
 }
 
-/* line 231, ../sass/app.scss */
-section {
-	padding-left: 10px;
-	padding-right: 10px;
+section:not(:first-of-type) {
+	padding-top: 8px;
 }
+
+section:first-of-type > .row:first-of-type {
+	padding-top: 52px;
+}
+
+section:last-of-type > .row:last-of-type {
+	padding-bottom: 60px;
+}
+
+section > .row {
+	padding-top: 0px;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	background: white;
+}
+
 
 /* line 235, ../sass/app.scss */
 .function {
@@ -5688,18 +5712,20 @@ section {
 /* line 281, ../sass/app.scss */
 footer {
 	background: #003D7C;
-	position: fixed;
+	position: static;
 	bottom: 0px;
 	-moz-transition: bottom 0.2s ease-in-out;
 	-webkit-transition: bottom 0.2s ease-in-out;
 	transition: bottom 0.2s ease-in-out;
-	-webkit-box-shadow: 2px -2px 6px -1px rgba(107,107,107,0.55);
-	-moz-box-shadow: 2px -2px 6px -1px rgba(107,107,107,0.55);
-	box-shadow: 2px -2px 6px -1px rgba(107,107,107,0.55);
+	/* [disabled]-webkit-box-shadow: 2px -2px 6px -1px rgba(107,107,107,0.55); */
+	/* [disabled]-moz-box-shadow: 2px -2px 6px -1px rgba(107,107,107,0.55); */
+	/* [disabled]box-shadow: 2px -2px 6px -1px rgba(107,107,107,0.55); */
 	display: block;
 	width: 100%;
-	left: 0px;
 	z-index: 999999;
+	max-width: 62.5em;
+	margin-left: auto;
+	margin-right: auto;
 }
 /* line 284, ../sass/app.scss */
 
@@ -5714,62 +5740,60 @@ footer p {
 /* Header */  
 /* line 317, ../sass/app.scss */
 #mobile-header {
-	display: block;
-	position: fixed;
+	display: inline-block;
+	position: relative;
 	width: 100%;
 	height: 48px;
-	background: #369AFF;
-	text-align: right;
-	line-height: 48px;
+	text-align: center;
 	white-space: nowrap;
 	overflow: hidden;
-	-webkit-box-shadow: -2px 2px 4px rgba(100,100,100,0.68);
-	-moz-box-shadow: -1px 4px 8px -2px rgba(100,100,100,0.68);
-	box-shadow: -2px 2px 4px rgba(100,100,100,0.68);
-	-moz-transition: background 0.5s ease;
-	-webkit-transition: background 0.5s ease;
-	transition: background 0.5s ease;
+	align-items: center;
+	-ms-flex-align: center;
+	-webkit-align-content: center;
+	align-content: center;
 }
 
 .nav-up {
 	top: -52px;
 }
 
+/*
 .foot-down {
 	bottom: -60px;
 }
+*/
 
 /* Header Menu button */
 /* line 299, ../sass/app.scss */
-#mobile-header #responsive-menu-button {
-	margin-left: auto;
-	color: #FFFFFF;
+#responsive-menu-button {
 	background: #005DBA;
 	padding-right: 8px;
 	padding-left: 8px;
-	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
-	font-size: 36px;
-	margin-right: auto;
-	font-weight: 100;
 	transition: background 0.5s ease;
 	-moz-transition: background 0.5s ease;
 	-webkit-transition: background 0.5s ease;
 	display: block;
-	float: left;
+	height: 48px;
+	width: 70px;
+	margin-right: 0px;
+	flex: 0 0 70px;
 }
 
 /* Header Menu button hover change background */
-#mobile-header #responsive-menu-button:hover {
+#responsive-menu-button:hover {
 	background: #003D7C;
 }
 
 /* Header title */
-#mobile-header #gototop {
-	display:block;
+#gototop {
+	display: inline-block;
 	color: #FFFFFF;
-	font-size: 36px;
 	font-weight: lighter;
-	margin-right: 5px;
+	text-align: left;
+	width: calc(100% + 70px);
+	max-width: 62.5em;
+	padding-left: 20px;
+	margin-right: -70px;
 }
 
 /* Overflow ellipsis */
@@ -5888,22 +5912,22 @@ a.anchor {
 /* Back to top button */
 .nav-float {
 	visibility: visible;
-	display: none;
+	display: block;
 	width: 240px;
 	height: 50px;
 	text-indent: -9999px;
 	position: fixed;
 	z-index: 999999;
 	bottom: 70px;
-	opacity: 0.9;
 	-webkit-box-shadow: 0px 0px 6px 2px rgba(0,0,0,0.3);
-	-moz-box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 0px 6px 2px rgba(0,0,0,0.3);
 	box-shadow: 0px 0px 6px 2px rgba(0,0,0,0.3);
 	-webkit-transition: opacity 0.2s ease-in-out;
 	-moz-transition: opacity 0.2s ease-in-out;
 	transition: opacity 0.2s ease-in-out;
 	border-radius: 1px;
-	right: 0px;
+	right: 50%;
+	margin-right: 20px;
 }
 
 .nav-float.btt-out {
@@ -5952,7 +5976,8 @@ a.anchor {
 	-moz-transition: visibility 0s 0.2s, opacity 0.2s;
 	-webkit-transition: visibility 0s 0.2s, opacity 0.2s;
 	-ms-transition: visibility 0s 0.2s, opacity 0.2s;
-	transition: visibility 0s 0.2s, opacity 0.2s;	
+	transition: visibility 0s 0.2s, opacity 0.2s;
+	cursor: pointer;
 }
 
 .sidebarbg.show {
@@ -6039,8 +6064,10 @@ figure.play:after {
 
 /* Mobile */
 @media only screen and (max-width : 767px ){
-  #mobile-header #gototop {
-	  font-size:1.2em;
+  #gototop {
+	  font-size:0.8em;
+	  vertical-align:middle;
+	  line-height:1.2;
   }
   
   /* line 325, ../sass/app.scss */
@@ -6048,27 +6075,14 @@ figure.play:after {
     margin: 20px;
   }
 
-  /* line 331, ../sass/app.scss */
-  .header h1 {
-    padding-top: 50px;
-    font-size: 8em;
-  }
-  /* line 335, ../sass/app.scss */
-  .header h2 {
-    font-size: 0.875em;
-  }
-  /* line 338, ../sass/app.scss */
-  .header .author {
-    left: 0;
-    font-size: 0.6875em;
-    position: relative;
-    top: auto;
-    text-align: center;
-    margin-left: 0;
-    width: 100%;
-  }
   .nav-float {
 	right: 50%;
 	margin-right: -120px;
+  }
+  section > .row {
+	padding: 0px 10px;
+  }
+  #gototop {
+	padding: 0px 10px;
   }
 }

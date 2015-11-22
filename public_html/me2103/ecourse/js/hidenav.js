@@ -3,21 +3,24 @@ var lastScrollTop = 0;
 var delta = 48;
 var navbarHeight = $('header').outerHeight();
 var st;
+var hidable = true;
 
 //Navigation hide/show
 var show_nav = function() { 
   "use strict";		  
-  $('header').removeClass('nav-up');
-  $('footer').removeClass('foot-down');
+  $('.header').removeClass('nav-up');
+  //$('footer').removeClass('foot-down');
   $('.nav-float').removeClass('btt-out');
+  clearTimeout(hide_timeout);
 };
 var hide_nav = function() { 
   "use strict";	  
-  $('header').addClass('nav-up');
-  $('footer').addClass('foot-down');
+  $('.header').addClass('nav-up');
+  //$('footer').addClass('foot-down');
   $('.nav-float').addClass('btt-out');
+  clearTimeout(hide_timeout);
 };
-var hide_time = 2000;
+var hide_time = 4000;
 function hide_timeout(){setTimeout(function(){"use strict";hide_nav();}, hide_time)};
 
 //Responsive
@@ -38,10 +41,10 @@ min_width = function (width) {
 
 //Show header and footer when anywhere is clicked and hide afterwards
 $(document).on("click tap", function (e) {
-	if(!$(e.target).is('figure, figure *,.reveal-modal,.reveal-modal *,#responsive-menu-button,#responsive-menu-button *')&&autohide){
-		clearTimeout(hide_timeout);
-		hide_timeout = setTimeout(function(){"use strict";hide_nav();}, hide_time);
+	if(!$(e.target).is('figure, figure *,.reveal-modal,.reveal-modal *,#responsive-menu-button,#responsive-menu-button *')&&autohide&&hidable){
 		show_nav();
+		clearTimeout(hide_timeout);
+		hide_timeout = setTimeout(function(){hide_nav();}, hide_time);
 	}
 });
 
@@ -65,18 +68,24 @@ function hasScrolled() {
   // Make sure they scroll more than delta
   if(Math.abs(lastScrollTop - st) <= delta)
   {return;}
-  // If they scrolled down and are past the navbar, add class .nav-up.
+  // If they scrolled down and are past the navbar, show navbar.
   // This is necessary so you never see what is "behind" the navbar.
-  if (st > lastScrollTop && st > navbarHeight){
-	  // Scroll Down
-      clearTimeout(hide_timeout);
-	  hide_nav();
+
+  // Show navbar when reaching bottom.
+  if (st + $(window).height() > $(document).height() - 40) {
+	  show_nav();
+	  hidable=false;
   } else {
-	  // Scroll Up
-	  if(st + $(window).height() < $(document).height()) {
-		  clearTimeout(hide_timeout);
-		  show_nav();
-	  }
+	  // Scroll Down
+      if (st > lastScrollTop && st > navbarHeight){
+	      hide_nav();
+      } else {
+	      // Scroll Up
+	      if(st + $(window).height() < $(document).height()) {
+		      show_nav();
+			  hidable=true;
+	      }
+      }
   }
   lastScrollTop = st;
 }
@@ -89,7 +98,8 @@ var resize = function() {
 	  $("#responsive-menu-button").sidr({
 		name: 'sidebar',
 		source: '#sidr-main',
-		body:'body,#mobile-header,footer',
+		body:'body, .header',
+		side:'right',
 		onOpen: function(){clearTimeout(hide_timeout);}
 	  });
 	  $.sidr('open', 'sidebar');
@@ -101,7 +111,8 @@ var resize = function() {
 	  $("#responsive-menu-button").sidr({
 		name: 'sidebar',
 		source: '#sidr-main',
-		body:'header',
+		body:'.header',
+		side:'right',
 		onOpen: function(){$('body').css({"overflow-y":"hidden"});$("#revealtips,#revealtipsbg").addClass("reveal-hide");$('.sidebarbg').addClass("show");clearTimeout(hide_timeout);},
 		onClose: function(){$('body').css({"overflow-y":"auto"});$(".sidebarbg").removeClass("show");},
 	  });
@@ -117,24 +128,14 @@ resize();
 
 //Wipe to open and close sidebar
 $(document).wipetouch({
-wipeLeft: function() { $.sidr('close', 'sidebar');},
-wipeRight: function() { 
+wipeRight: function() { $.sidr('close', 'sidebar');},
+wipeLeft: function() { 
   $.sidr('open', 'sidebar');
-  clearTimeout(hide_timeout);
   show_nav();
 },
 });
 
 //Back to Top button
-var amountScrolled = 300;
-$(window).scroll(function() {
-	"use strict";
-	if ( $(window).scrollTop() > amountScrolled ) {
-		$('.nav-float').css({"display":"block"});
-	} else {
-		$('.nav-float').css({"display":"none"});
-	}
-});
 $('.back-to-top').click(function() {
 	"use strict";
 	$('body, html').animate({

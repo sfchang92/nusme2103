@@ -1,0 +1,6 @@
+# Do not remove this line, otherwise mod_rewrite rules will stop working
+RewriteBase /
+ErrorDocument 404 /error/404/index.html
+<FilesMatch "\.(html)$">
+php_value auto_append_file none
+</FilesMatch>
