@@ -138,7 +138,7 @@
    @include transform(skew(#{$x}deg, #{$y}deg));
 }
 @mixin transform-origin ($origin) {
-    moz-transform-origin: $origin;
+			moz-transform-origin: $origin;
 	     -o-transform-origin: $origin;
 	    -ms-transform-origin: $origin;
 	-webkit-transform-origin: $origin;
@@ -150,4 +150,9 @@
 	-webkit-box-shadow:$top $left $blur $color #{$inset};
 	-moz-box-shadow:$top $left $blur $color #{$inset};
 	box-shadow:$top $left $blur $color #{$inset};
+}
+@mixin box-shadow-none {
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
 }

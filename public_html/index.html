@@ -17,9 +17,11 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
-    <!--Navigation Bar-->
-    <nav class="navbar navbar-default navbar-fixed-top">
+  <body class="homepage-body">
+  	<div class="container-fluid homepage">
+
+  	  <!--Navigation Bar-->
+  	  <nav class="navbar navbar-default clear">
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -108,12 +110,36 @@
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
-    </nav>
+    </nav> 
+          
+      <!--Info-->
+      <div class="jumbotron">
+        <div class="container">
+          <div class="row">
+            <div class="hidden-xs hidden-sm col-md-5 col-md-push-7 col-lg-4 col-lg-push-8">
+    
+              <img class="prof-pic" src="images/personal.jpg" alt="Handsome Profile Pic"/>
+            </div>
+            <div class="col-sm-12 col-md-7 col-md-pull-5 col-lg-8 col-lg-pull-4">
+              <h1>LEE Kim Seng</h1>
+              <p><em>Associate Professor</em></p>
+              <p><a href="http://me.nus.edu.sg" target="_blank" title="NUS Department of Mechanical Engineering">Department of Mechanical Engineering, NUS</a></p>
+              <p>PhD, MSc, BSc Manc., Assoc UMIST, MIES, SrMSME, MASME</p>
+              <h2 class="h3">Contact</h2>
+                <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <a href="http://map.nus.edu.sg/#page=map&long=103.7709400000000000&lat=1.3005500000000000" target="_blank">EA-04-17</a> (<a href="http://maps.google.com/maps?q=1.30056,103.77079" target="_blank" title="Locate on Map">Locate on Google Maps</a>)</p>
+                <p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> <a href="tel:+6568742574" title="Call Professor">(65) 6874 2574</a></p>
+          <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <a href="mailto:mpeleeks@nus.edu.sg" title="Email Professor" target="_top">mpeleeks@nus.edu.sg</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
     
     <!--Body container with white background-->
-    <div class="container white">      
+    <div class="container white" id="myBackground">      
       
-      <!--Info-->
+      <!--Info
       <div class="row">
         <div class="col-md-5 col-md-push-7 col-lg-4 col-lg-push-8">
 
@@ -130,6 +156,7 @@
 			<p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <a href="mailto:mpeleeks@nus.edu.sg" title="Email Professor" target="_top">mpeleeks@nus.edu.sg</a></p>
         </div>
       </div>
+      -->
       
       <!-- Introduction -->
       <div class="row">
@@ -670,6 +697,7 @@
     
     <!-- Footer -->
     <footer class="footer">
+    <div class="container-fluid whitebg">
       <div class="container">
         <div class="row">
           <div class="footer-left">by chang sin fung 2015. all rights reserved.</div>
@@ -683,6 +711,7 @@
           </div>
         </div>
       </div>
+     </div>
     </footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -691,24 +720,35 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap.mod.js"></script>
     <script>
-	// Hide Brand first
-	$(document).ready(function(){
-		if($(window).width() > 980) {
-		    $('.navbar-brand').fadeOut(100);
-		}
+	
+	$('#bs-example-navbar-collapse-1').on('show.bs.collapse', function () {
+		$('.homepage-body, .navbar-default').addClass('jhide');
 	});
-	// Show Brand when scrolling
-	$(window).scroll(function() {	  
-	  if($(this).width() > 980) {
-		if ($(this).scrollTop() > 300) { //use `this`, not `document`
+	$('#bs-example-navbar-collapse-1').on('hidden.bs.collapse', function () {
+		$('.homepage-body, .navbar-default').removeClass('jhide');
+	});	
+	
+	$(window).scroll(function() {
+		// Show Brand when scrolling
+		targetOffset = $("#myBackground").offset().top - 50;
+
+		/*if ( $(this).scrollTop() > targetOffset ) { //use `this`, not `document`
 			$('.navbar-brand').fadeIn(100);
 		}else{
 			$('.navbar-brand').fadeOut(100);
 		}
-	  }else{
-		  $('.navbar-brand').fadeIn(100);
-	  }
-    });
+		*/
+	
+		if ( $(this).scrollTop() > targetOffset ) {
+			$('.navbar-default').removeClass('clear');
+			$('.navbar-default').addClass('affix-top');
+			$('#myBackground').addClass('homepage-container');
+		} else {
+			$('.navbar-default').addClass('clear');
+			$('.navbar-default').removeClass('affix-top');
+			$('#myBackground').removeClass('homepage-container');
+		}
+	});
 	</script>
   </body>
 </html>

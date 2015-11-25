@@ -2,7 +2,7 @@
 $(window).scroll(function() {
   "use strict";
   
-  if($(this).width() < 849 || ($(this).width() > 979 && $(this).width() < 1069) || ($(this).width() > 1187 && $(this).width() < 1269)){
+  /*if($(this).width() < 849 || ($(this).width() > 979 && $(this).width() < 1069) || ($(this).width() > 1187 && $(this).width() < 1269)){
 	 if($(this).scrollTop() < 100) {
 		 $('.btn.btt').stop(true,false).animate({
 			opacity:0,
@@ -31,7 +31,24 @@ $(window).scroll(function() {
 			bottom:"0px"
 		},200);
 	  }
-  }
+  }*/
+	
+	if($(this).scrollTop() < 100) {
+		 $('.btn.btt').stop(true,false).animate({
+			opacity:0,
+			bottom:"0px"
+		 },200);
+	 }else if($(this).scrollTop() >= $(document).height() - $(this).height() - 60){
+		$('.btn.btt').stop(true,false).animate({
+			opacity:1,
+			bottom:"90px"
+		},200);
+	 }else{
+		 $('.btn.btt').stop(true,false).animate({
+			opacity:0.8,
+			bottom:"10px"
+		 },200);
+	 }
 });
 
 $(document).ready(function() {
