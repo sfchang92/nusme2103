@@ -1,231 +1,155 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Home | nus:me2013</title>
-    <meta name="description" content="Welcome to nus:me2103.">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="css/jquery.sidr.light.css">
-    <link rel="stylesheet" href="css/app.css">
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.mod.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src="js/custom.modernizr.js"></script> 
-	<script src="js/min.js"></script>   
-    <script src="js/jquery.sidr.min.custom.js"></script>
-    <script src="js/jquery.wipetouch.js"></script>
-</head>
-    
-<body>
-	<header>
-       <div class="header">
-         <div id="mobile-header">
-             <div id="gototop"><h1>Home</h1></div>
-          </div>
-          <a id="responsive-menu-button" title="Menu" href="#sidebar"><img src="images/Hamburger.gif" alt="Menu" style="display: block; position: absolute; top: 50%; transform: translate(0, -50%);-ms-transform: translate(0, -50%);-webkit-transform: translate(0,-50%);-moz-transform:translate(0,-50%); width: 48px;"></a>
-       </div>
-    </header>
-    
-  <div class="nav-float row">
-    <a class="small-6 column button back-to-top" href="#" title="Back to Top"></a>
-    <a class="small-6 column button forward" href="chapter/1/" title="Chapter 1 (Part 2)"></a>
-  </div>
-  <div id="sidebarbg" class="sidebarbg"></div>
-  
-  <div id="revealtips" class="reveal-modal">
-    <div class="row">
-	  <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" style="float:right;margin-right:10px">
-       <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
-       <title>arrow</title>
-       <g transform="rotate(90 25,25)">
-        <title>Layer 1</title>
-        <line fill="none" stroke-width="6" x1="2.982146" y1="-0.178571" x2="2.982146" y2="50.078008" id="svg_5" stroke="#005dba"/>
-        <line fill="none" stroke-width="6" x1="0.232146" y1="3.071429" x2="50.073158" y2="3.071429" id="svg_6" stroke="#005dba"/>
-        <rect fill="#ffffff" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="20.823819" y="4.312501" width="80.013085" height="18" id="svg_22" transform="rotate(-110 60.830360412597656,13.312500953674313) " stroke="#005dba"/>
-        <line stroke="#005dba" id="svg_1" y2="47.502974" x2="47.627974" y1="2.625" x1="2.75" stroke-width="6" fill="none"/>
-        <rect id="svg_4" fill="#ffffff" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="-32.38154" y="49.875003" width="80.013085" height="18" transform="rotate(-160 7.625003814697265,58.875003814697266) " stroke="#005dba"/>
-       </g>
-      </svg>
-      <p style="margin-bottom:0px;text-align:center">Press here to open sidebar menu.</p>
-    </div>
-    <hr>
-    <div class="row">
-      <svg width="30" height="80" viewBox="0 0 50 70" xmlns="http://www.w3.org/2000/svg" class="small-2 column" style="float:left">
-		 <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
-		 <title>arrow</title>
-		 <g>
-		  <title>Layer 1</title>
-		  <line transform="rotate(-45 20.83320999145507,50.98319625854492) " stroke="#005dba" y2="76.111484" x2="20.83321" y1="25.854904" x1="20.83321" stroke-width="6" fill="none"/>
-		  <line transform="rotate(-45 20.756992340087898,19.55314826965332) " stroke="#005dba" y2="19.55315" x2="45.677497" y1="19.55315" x1="-4.163513" stroke-width="6" fill="none"/>
-		  <rect transform="rotate(-155 53.50931930541992,1.8495712280273457) " stroke="#005dba" height="18" width="80.01309" y="-7.150429" x="13.502771" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#ffffff"/>
-		  <rect stroke="#005dba" transform="rotate(-205 47.8221549987793,71.4061508178711) " height="18" width="80.01309" y="62.406152" x="7.815609" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#ffffff"/>
-		 </g>
-		</svg>
-        <div class="small-8 column" style="margin: auto 0; vertical-align: middle;"><p class="text-center" style="margin-bottom:0px;font-style:italic">(touchscreen)</p><p class="text-center" style="margin-bottom:0px"> Swipe to open or close sidebar menu.</p></div>
-		<svg width="30" height="80" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 70" class="small-2 column">
-		 <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
-	      <title>arrow</title>
-		   <g transform="translate(-20,0)">
-			<title>Layer 1</title>
-			<line transform="rotate(-225 48.80274200439453,19.272533416748047) " stroke="#005dba" y2="44.400825" x2="48.802746" y1="-5.855755" x1="48.802746" stroke-width="6" fill="none"/>
-			<line transform="rotate(-225 48.87895202636719,50.70257949829101) " stroke="#005dba" y2="50.702579" x2="73.799457" y1="50.702579" x1="23.958447" stroke-width="6" fill="none"/>
-			<rect transform="rotate(-335 16.126628875732415,68.40615844726562) " stroke="#005dba" height="18" width="80.01309" y="59.406158" x="-23.879921" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#ffffff"/>
-			<rect stroke="#005dba" transform="rotate(-385 21.81379318237305,-1.1504211425781279) " height="18" width="80.01309" y="-10.15042" x="-18.192753" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#ffffff"/>
-		   </g>
-		  </svg>
-    </div>
-  </div>
-  <div id="revealtipsbg" class="reveal-modal-bg"></div>
-    
-    <!--[if lte IE 8]>
-    <div id="ie8orless" class="reveal-modal small" style="display:block">
-        <p>Your browser is not supported. Please upgrade or use <a href="https://www.google.com/chrome/" target="_blank">Google Chrome</a> or <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Mozilla Firefox</a> instead.</p>
-    </div>
-    <div class="reveal-modal-bg" style="display:block;top:0px"></div>
-	<![endif]-->
-    
-	<section>
-      <a class="anchor" id="welcome" data-magellan-destination="welcome"></a>
-      <div class="row">
-        <h1>Welcome&#33; </h1>
-        <p>This website contains learning materials for ME2103 : Engineering Visualization &amp; Modelling module (More info on <a target="_blank" href="https://ivle.nus.edu.sg/lms/public/view_moduleoutline.aspx?CourseID=99AFA812-7CDC-4A2A-AA41-7D2E6FA62183&ClickFrom=StuViewBtn">IVLE</a>) taught by <a href="#profile" class="smooth">A/Prof Lee Kim Seng.</a></p>
+  </head>
+	<body data-spy="scroll" data-target="#sidebar-wrapper" data-offset="80">
+		<nav class="navbar navbar-default">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button role="button" href="#menu-toggle" id="menu-toggle" class="navbar-toggle">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar top-bar"></span>
+          <span class="icon-bar middle-bar"></span>
+          <span class="icon-bar bottom-bar"></span>
+        </button>
+        <a class="navbar-title" href="#">nus:me2103</a>
+				<div class="container"><a class="navbar-brand">Home</a></div>
       </div>
-    </section>
-    
-    <section>
-    <a class="anchor" id="about" data-magellan-destination="about"></a>
-    	<div class="row">
-        	<h1>Module background</h1>
-            <p>For years, Designers and Engineers used 2D drawings for technical communication because many 
-components are just too complex to be described. Since drawings are the fundamental of all technical 
-communication, one must learn to accept and understand the drawings, and be able to visualize in 3D 
-and vice-versa.</p>
-			<p>In manual drawing, certain standards, such as symbols and conventions, have been adopted because 
-they enable the drawing to be produced much faster. However, one must also learn to recognize these 
-standards and mastered them if one is to be successful in any engineering design.</p>
-			<p>Today, the advancement of IT and 3D CAD software has brought life to the way engineering drawings 
-are presented. Flat drawings on a paper in the past, is now a 3D model that can be rotated on the 
-screen. Something black and dull in the past is today bright and colourful with a wide array of colours. 
-3D modeling software enables the designers to model/design components and assemblies much quickly 
-and accurately. Modifying of components and assemblies can easily be accomplished. This in turns 
-enabled a product to reach the market in a much shorter time.</p>
-			<p>However, many design and fabrication industries today have still not fully integrated the 3D CAD into 
-their design office, it is thus important that students are equipped with both manual drawing and CAD 
-modeling techniques. Furthermore, mastering the manual sketching technique enables one to formulate 
-any design idea quickly without resorting to the CAD system. </p>
-		</div>
-    </section>
-
-    <section>
-    <a class="anchor" id="descrip" data-magellan-destination="descrip"></a>
-    	<div class="row">
-            <h1>Module description</h1>
-            <p>The objective of this module is to enable students to 
-            learn various standards and techniques of geometrical sketching, 
-            engineering drawings and specifications, and learn how to 
-            interpret drawings. Students also get to learn and use an advanced 
-            commercial 3D CAD software, <em>Solidworks</em> to do 3D solid modeling. Above all, this 
-            module aims to expand the students' creative talent and to communicate 
-            their ideas in a meaningful manner.</p>
-            <p>Main topics covered include:
-                <ol style="font-size:1em">
-                    <li>Principles of projections</li>
-                    <li>Isometric and Auxiliary views</li>
-                    <li>Isometric &amp; orthographic sketching</li>
-                    <li>3D solid modelling</li>
-                    <li>Sectioning and Dimensioning</li>
-                    <li>Machine and Assembly drawings</li>
-                    <li>Drawing standards</li>
-                    <li>Limits Tolerances</li>
-                    <li>GD &amp; T </li>
+		</nav>
+		<div id="wrapper" class="container">
+			<div id="modal-bg"></div>
+			<div id="sidebar-wrapper">
+				<ul class="nav sidebar-nav">
+					<li>
+						<a role="button" class="collapse-button" data-toggle="collapse" data-parent="#sidebar-wrapper" href="#collapseHome" aria-expanded="true" aria-controls="collapseHome">Home</a>
+			      <ul class="collapse in" id="collapseHome">
+			        <li><a href="#welcome">Welcome</a></li>
+							<li><a href="#about">Module background</a></li>
+							<li><a href="#descrip">Module description</a></li>
+							<li><a href="#profile">Lecturer profile </a></li>
+			            </ul>
+		          	</li>
+					<li><a role="button" class="collapse-button" data-toggle="collapse" data-parent="#sidebar-wrapper" href="#collapseChapter" aria-expanded="false" aria-controls="collapseChapter">Chapters</a>
+						<ul class="collapse" id="collapseChapter">
+							<li><a href="chapter/1/" title="Chapter 1 (Part 1)">1 - Introduction (part 1)</a></li>
+							<li><a href="chapter/1_2/" title="Chapter 1 (Part 2)">1 - Introduction (part 2)</a></li>
+							<li><a href="chapter/2/" title="Chapter 2">2 - Principles of projection</a></li>
+						</ul>
+					</li>
+					<li><a href="misc/">Behind the scenes</a></li>
+					<a class="btn btn-block btn-primary btn-lg" href="../../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Prof Homepage</a>
+				</ul>
+			</div>
+			<div id="page-content-wrapper">
+      	<div id="page-content">
+          <div class="container-fluid">
+            <div class="row">
+            	<div class="section-header">
+              	<h1 id="welcome">Welcome&#33; </h1>
+              </div>
+              <p>This website contains learning materials for ME2103 : Engineering Visualization &amp; Modelling module (More info on <a target="_blank" href="https://ivle.nus.edu.sg/lms/public/view_moduleoutline.aspx?CourseID=99AFA812-7CDC-4A2A-AA41-7D2E6FA62183&ClickFrom=StuViewBtn">IVLE</a>) taught by <a href="#profile" >A/Prof Lee Kim Seng.</a></p>
+            </div>
+  
+            <div class="row">
+            	<div class="section-header">
+              	<h1 id="about">Module background</h1>
+              </div>
+              <p>For years, Designers and Engineers used 2D drawings for technical communication because many components are just too complex to be described. Since drawings are the fundamental of all technical communication, one must learn to accept and understand the drawings, and be able to visualize in 3D and vice-versa.</p>
+              <p>In manual drawing, certain standards, such as symbols and conventions, have been adopted because they enable the drawing to be produced much faster. However, one must also learn to recognize these standards and mastered them if one is to be successful in any engineering design.</p>
+              <p>Today, the advancement of IT and 3D CAD software has brought life to the way engineering drawings are presented. Flat drawings on a paper in the past, is now a 3D model that can be rotated on the screen. Something black and dull in the past is today bright and colourful with a wide array of colours. 3D modeling software enables the designers to model/design components and assemblies much quickly and accurately. Modifying of components and assemblies can easily be accomplished. This in turns enabled a product to reach the market in a much shorter time.</p>
+              <p>However, many design and fabrication industries today have still not fully integrated the 3D CAD into their design office, it is thus important that students are equipped with both manual drawing and CAD modeling techniques. Furthermore, mastering the manual sketching technique enables one to formulate any design idea quickly without resorting to the CAD system.</p>
+            </div>
+  
+            <div class="row">
+              <div class="section-header">
+              	<h1 id="descrip">Module description</h1>
+              </div>
+              <p>The objective of this module is to enable students to learn various standards and techniques of geometrical sketching, engineering drawings and specifications, and learn how to interpret drawings. Students also get to learn and use an advanced commercial 3D CAD software, <em>Solidworks</em> to do 3D solid modeling. Above all, this module aims to expand the students' creative talent and to communicate their ideas in a meaningful manner.</p>
+              <p>Main topics covered include:
+                <ol>
+                  <li>Principles of projections</li>
+                  <li>Isometric and Auxiliary views</li>
+                  <li>Isometric &amp; orthographic sketching</li>
+                  <li>3D solid modelling</li>
+                  <li>Sectioning and Dimensioning</li>
+                  <li>Machine and Assembly drawings</li>
+                  <li>Drawing standards</li>
+                  <li>Limits Tolerances</li>
+                  <li>GD &amp; T </li>
                 </ol>
-            </p>
-            <p>Learning outcome:
-            <ol style="font-size:1em">
-                <li>Able to use advance 3D modelling software in solid modelling, 
-                assembly and preparing engineering drawings.</li>
-                <li>Acquire the basic knowledge in engineering drawing principles, 
-                tolerances, engineering conventions and representations.</li>
-            </ol>
-            </p>
+              </p>
+              <p>Learning outcome:
+                <ol>
+                  <li>Able to use advance 3D modelling software in solid modelling, assembly and preparing engineering drawings.</li>
+                  <li>Acquire the basic knowledge in engineering drawing principles, tolerances, engineering conventions and representations.</li>
+                </ol>
+              </p>
+            </div>
+  
+            <div class="row">
+              <div class="section-header">
+              	<h1 id="profile">Lecturer profile</h1>
+              </div>
+              <div class="row">
+                <div class="col-lg-5">
+                  <img width="100%" style="padding-top:15px" src="images/personal.jpg" alt="Handsome Profile Pic">
+                </div>
+                <div class="col-lg-7">
+                  <h2 style="margin-top:10px">A/Prof Lee Kim Seng</h2>
+                  <p><a href="http://me.nus.edu.sg" target="_blank" title="NUS Department of Mechanical Engineering">Department of Mechanical Engineering, NUS</a></p>
+                  <p>PhD, MSc, BSc Manc., Assoc UMIST, MIES, SrMSME, MASME</p>
+                  <h3>Contact</h3>
+                  <p>Room : <a href="http://map.nus.edu.sg/#page=map&long=103.7709400000000000&lat=1.3005500000000000" target="_blank">EA-04-17</a> (<a href="http://maps.google.com/maps?q=1.30056,103.77079" target="_blank" title="Locate on Map">Locate on Google Maps</a>)</p>
+                  <p>Telephone : <a href="tel:+6568742574" title="Call Professor">(65) 6874 2574</a></p>
+                  <p>Email : <a href="mailto:mpeleeks@nus.edu.sg" title="Email Professor" target="_top">mpeleeks@nus.edu.sg</a></p>
+                  <a href="../../" class="btn btn-primary btn-block" title="Personal Homepage">Personal Homepage</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <br><p>K S Lee obtained his BSc(Hons) from the University of Manchester in 1977, MSc and PhD from UMIST in 1978 and 1982 respectively. He joined the Department of Mechanical Engineering, National University of Singapore in March 1982 as a Lecturer. He was promoted to Senior Lecturer in 1988 and Associate Professor in 1998 respectively. In 1989, he received the Outstanding Young Manufacturing Engineer Award from Mr Frank J Riley Jr, President of the Society of Manufacturing Engineers (USA). He is currently heading the intelligent plastic injection mould design research &amp; development program in the department.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
-    
-    <section>
-    <a class="anchor" id="profile" data-magellan-destination="profile"></a>
-    	<div class="row">
-    	  <h1>Lecturer profile</h1>
-    	  <div class="row">
-            	<div class="large-5 columns">
-                	<img width="100%" style="padding-top:10px" src="images/personal.jpg" alt="Handsome Profile Pic">
-                </div>
-              	<div class="large-7 columns" style="padding-left:10px">
-                    <h2>A/Prof Lee Kim Seng</h2>
-					<p><a href="http://me.nus.edu.sg" target="_blank" title="NUS Department of Mechanical Engineering">Department of Mechanical Engineering, NUS</a><br>
-                    PhD, MSc, BSc Manc., Assoc UMIST, MIES, SrMSME, MASME</p>
-                    <h3>Contact</h3>
-                    <p>Room : <a href="http://map.nus.edu.sg/#page=map&long=103.7709400000000000&lat=1.3005500000000000" target="_blank">EA-04-17</a> (<a href="http://maps.google.com/maps?q=1.30056,103.77079" target="_blank" title="Locate on Map">Locate on Google Maps</a>)<br>
-                    Telephone : <a href="tel:+6568742574" title="Call Professor">(65) 6874 2574</a><br>
-					Email : <a href="mailto:mpeleeks@nus.edu.sg" title="Email Professor" target="_top">mpeleeks@nus.edu.sg</a><br>
-					<a href="../../" class="button" title="Personal Homepage">Personal Homepage</a></p>
-                </div>
+				<footer class="footer">
+        	<div class="container-fluid">
+            <div class="row">
+              <div class="footer-left">&copy; Chang Sin Fung 2015. All rights reserved.</div>
+              <div class="footer-right">
+                <a href="http://www.nus.edu.sg/" target="_blank" alt="National University of Singapore">
+                	<img src="images/nuslogo.jpg" alt="NUS logo">				
+								</a>
+                <a href="http://me.nus.edu.sg/" target="_blank" alt="Department of Mechanical Engineering, NUS">
+                	<img src="images/nusmelogo.png" alt="NUS ME logo">
+                </a>
+              </div>
             </div>
-           	<div class="row">
-             		<p>K S Lee obtained his BSc(Hons) from the University of Manchester 
-                    in 1977, MSc and PhD from UMIST in 1978 and 1982 respectively. 
-                    He joined the Department of Mechanical Engineering, National University of Singapore 
-                    in March 1982 as a Lecturer. He was promoted to Senior Lecturer in 1988 and Associate
-                     Professor in 1998 respectively. In 1989, he received the Outstanding Young Manufacturing
-                      Engineer Award from Mr Frank J Riley Jr, President of the Society of Manufacturing 
-                      Engineers (USA). He is currently heading the intelligent plastic injection mould design
-                       research &amp; development program in the department.
-                	</p>
-             </div>
-         </div>
-    </section>
-    
-    <footer>
-        	<div class="footfont">
-            	<div class="footspan">by chang sin fung 2015. all rights reserved.</div>
-                <div class="footlogo">
-                <a href="http://www.nus.edu.sg/" target="_blank" alt="National University of Singapore"><img src="images/nuslogo.jpg" alt="NUS logo"></a>
-                <a href="http://me.nus.edu.sg/" target="_blank" alt="Department of Mechanical Engineering, NUS"><img src="images/nusmelogo.png" alt="NUS logo" style="border-left: thin solid white;"></a>
-                </div>
-            </div>
-    </footer>
-    
-	<div id="sidr-main" class="sidr right">
-        <h1>nus:me2103</h1>
-        	<nav class="nav" data-magellan-expedition>
-            	<div class="row">
-                	<div class="large-12 columns">
-                        <ul class="nav-bar">
-                            <li class="active"><a class="smooth" href="#welcome" title="Home">Home <div class="arrow-down"></div></a>
-                                <ul>
-                                    <li data-magellan-arrival="welcome"><a class="smooth" href="#welcome">Welcome</a></li>
-                                    <li data-magellan-arrival="about"><a class="smooth" href="#about">Module background</a></li>
-                                    <li data-magellan-arrival="descrip"><a class="smooth" href="#descrip">Module description</a></li>
-                                    <li data-magellan-arrival="profile"><a class="smooth" href="#profile">Lecturer profile </a></li>
-                                </ul>
-                            </li>
-                            <li><a>Chapters <div class="arrow-down"></div></a>
-                                <ul>
-                                  <li><a href="chapter/1/" title="Chapter 1 (Part 1)">1 - Introduction (part 1)</a></li>
-                                  <li><a href="chapter/1_2/" title="Chapter 1 (Part 2)">1 - Introduction (part 2)</a></li>
-                                  <li><a href="chapter/2/" title="Chapter 2">2 - Principles of projection</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="misc/">Behind the scenes</a></li>
-                      	</ul>
-                    </div>
-                </div>
-            </nav>
-    </div>
-	<script>var autohide = true;</script>
-	<script src="js/hidenav.js"></script>
-</body>
+          </div>
+				</footer>
+			</div>    
+		</div>
+    <a href="#" class="btn btn-primary pull-right btt" id="back-to-top"><span class="glyphicon glyphicon-chevron-up"></span><span class="sr-only">Back to Top</span></a>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-anchor.min.js"></script>
+    <script src="js/jquery.wipetouch.js"></script>
+		<script src="js/bootstrap.mod.js"></script>
+	</body>
 </html>
