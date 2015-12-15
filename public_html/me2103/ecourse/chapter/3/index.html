@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>3 - Sectioning &amp; Dimensioning | nus:me2013</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+    <!-- Bootstrap -->
+    <link href="../../css/bootstrap-3.3.6.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.mod.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+	<body data-spy="scroll" data-target="#sidebar-wrapper" data-offset="80">
+		<!--[if lt IE 9]>
+		<div id="ie8-modal" class="modal fade" tabindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Blimey! Still using Internet Explorer
+						<![if IE 8]> 8?<![endif]>
+						<![if IE 7]> 7?<![endif]>
+						<![if IE 6]> 6?<![endif]>
+						<![if lt IE 6]>?<![endif]>
+						</h4>
+					</div>
+					<div class="modal-body">
+						<p>It is time to</p>
+						<ul>
+							<li><p><a href="//browsehappy.com">Upgrade your browser today</a></p>
+								<div class="row text-center">
+									<div class="col-xs-3">
+										<a href="//opera.com/download/">
+											<img src="../../images/browserlogo/opera_256.png" alt="Opera">
+											<p>Opera</p>
+										</a>
+									</div>
+									<div class="col-xs-3">
+										<a href="//mozilla.org/firefox/new/">
+											<img src="../../images/browserlogo/firefox_256.png" alt="Firefox">
+											<p>Firefox</p>
+										</a>
+									</div>
+									<div class="col-xs-3">
+										<a href="//google.com/chrome/browser/">
+											<img src="../../images/browserlogo/chrome_256.png" alt="Chrome">
+											<p>Chrome</p>
+										</a>
+									</div>
+									<div class="col-xs-3">
+										<a href="//maxthon.com">
+											<img src="../../images/browserlogo/maxthon_256.png" alt="Maxthon">
+											<p>Maxthon</p>
+										</a>
+									</div>
+								</div>
+							</li>
+							<li><a href="//www.microsoft.com/download/internet-explorer-11-for-windows-7-details.aspx">Upgrade Internet Explorer (Windows 7)</a></li>
+							<li><a href="//www.microsoft.com/en-us/windows/windows-10-upgrade">Upgrade Windows</a></li>
+							<li>or continue using this website with limited functionality</li>
+						</ul>
+					</div>
+					<div class="modal-footer">
+						<a type="button" class="btn btn-default" href="../../">Back to Prof Homepage</a>
+						<button type="button" class="btn btn-primary" data-dismiss="modal" >Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<![endif]-->
+		<nav class="navbar navbar-default">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button role="button" href="#menu-toggle" id="menu-toggle" class="navbar-toggle">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar top-bar"></span>
+          <span class="icon-bar middle-bar"></span>
+          <span class="icon-bar bottom-bar"></span>
+        </button>
+        <div class="container container-navbar-brand"><a class="navbar-brand">Sectioning &amp; dimensioning</a></div>
+      </div>
+		</nav>
+	<div id="wrapper" class="container">
+    	<div id="modal-bg"></div>
+			<div id="sidebar-wrapper">
+				<div class="sidebar-brand">
+					<a href="#" id="back-to-top2">nus:me2103</a>
+					<button role="button" href="#menu-toggle" id="menu-toggle2" class="navbar-toggle toggled">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar top-bar"></span>
+						<span class="icon-bar middle-bar"></span>
+						<span class="icon-bar bottom-bar"></span>
+					</button>
+				</div>
+				<ul class="nav sidebar-nav">
+					<li>
+						<a href="../../" role="button">Home</a>
+		      </li>
+					<li><a class="collapse-button" data-toggle="collapse" href="#collapseChapter" aria-expanded="true" aria-controls="collapseChapter">Chapters</a>
+						<ul class="collapse in" id="collapseChapter">
+							<li><a href="../1/">1 - Introduction</a></li>
+							<li><a href="../2/">2 - Principles of projection</a></li>
+							<li><a class="collapse-button" data-toggle="collapse" href="#collapse1" aria-expanded="true" aria-controls="collapse1">3 - Sectioning &amp; dimensioning</a>
+								<ul class="collapse in" id="collapse1">
+									<li><a href="#sectioning">3.1 - Sectioning</a>
+										<ul>
+											<li><a href="#typeofs">3.1.1 - Types of sectioning</a>
+												<ul>
+													<li><a href="#fulls">3.1.1.1 - Full section</a></li>
+													<li><a href="#halfs">3.1.1.2 - Half section</a></li>
+													<li><a href="#offsets">3.1.1.3 - Offset section</a></li>
+													<li><a href="#aligneds">3.1.1.4 - Aligned section</a></li>
+													<li><a href="#parts">3.1.1.5 - Broken-out section</a></li>
+													<li><a href="#revolveds">3.1.1.6 - Revolved section</a></li>
+													<li><a href="#removeds">3.1.1.7 - Removed section</a></li>
+												</ul>
+											</li>
+											<li><a href="#exception">3.1.2 - Sectioning exceptions</a></li>
+											<li><a href="#faults">3.1.3 - Faults in hatch lines</a></li>
+											<li><a href="#adjacent">3.1.4 - Adjacent components</a></li>
+											<li><a href="#drawhl">3.1.5 - Drawing hatch lines</a></li>
+											<li><a href="#slope">3.1.6 - Hatching slope</a></li>
+										</ul>
+									</li>
+									<li><a href="#dimensioning">3.2 - Dimensioning</a>
+										<ul>
+											<li><a href="#principled">3.2.1 - Principles</a></li>
+											<li><a href="#projl">3.2.2 - Projection lines</a></li>
+											<li><a href="#diml">3.2.3 - Dimension lines</a></li>
+											<li><a href="#dimcdatum">3.2.4 - Common datum</a></li>
+											<li><a href="#chaindim">3.2.5 - Chain dimensioning</a></li>
+											<li><a href="#leader">3.2.6 - Leader</a></li>
+											<li><a href="#linear">3.2.7 - Linear dimensions</a></li>
+											<li><a href="#angular">3.2.8 - Angular dimensions</a></li>
+											<li><a href="#arrangement">3.2.9 - Arrangement</a></li>
+											<li><a href="#redundant">3.2.10 - Redundant dimensions</a></li>
+											<li><a href="#auxiliary">3.2.11 - Auxiliary dimensions</a></li>
+											<li><a href="#dimfeatures">3.2.12 - Common features</a>
+												<ul>
+													<li><a href="#diameter">3.2.12.1 - Diameter</a></li>
+													<li><a href="#radii">3.2.12.2 - Radii</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="../4/">4 - Limits, fits &amp; geometrical tolerances</a></li>
+						</ul>
+					</li>
+					<li><a href="../../misc/">Behind the scenes</a></li>
+				</ul>
+				<a role="button" class="btn btn-block btn-primary btn-lg btn-profhome" href="../../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Prof Homepage</a>
+			</div>
+			<div id="page-content-wrapper">
+      	<div id="page-content">
+          <div class="container-fluid">
+						<div class="row">
+							<h1 id="sectioning">3.1 Sectioning</h1>
+							<h2 id="typeofs">3.1.1 Types of sectioning</h2>
+							<h2 id="fulls">3.1.1.1 Full section</h2>
+							<p>The cutting planes passes completely through the object.</p>
+							<p>All visible edges behind the planes must be shown or the view will be incomplete.</p>
+							<div class="row text-center">
+								<div class="col-xs-6 col-md-4"><img alt="Full Section" data-src="../../images/3/fulls.jpg"></div>
+								<div class="col-xs-6 col-md-4"><img alt="Full Sectional View" data-src="../../images/3/fullsview.jpg"></div>
+							</div>
+							<p class="h3">Example - Bearing bracket</p>
+							<div class="row text-center">
+								<div class="col-xs-6 col-md-4"><img alt="Sectioned Planes" data-src="../../images/3/fullsplane.jpg"></div>
+								<div class="col-xs-6 col-md-4"><img alt="Sectioned Part - Right" data-src="../../images/3/fullspartright.jpg"></div>
+							</div>
+							<h2 id="halfs">3.1.1.2 Half section</h2>
+							<p>Enable the shape description of the outside and inside of a component to be whoen in the minimum number of view.</p>
+							<p>Only symmetrical components are drawn this way.</p>
+							<p>Hidden lines are shown on the outside view only.</p>
+							<p>The halves of a half section should be separated by a center line and not an outline.</p>
+							<div class="row text-center">
+								<div class="col-xs-7 col-md-4"><img alt="Half Section" data-src="../../images/3/halfs.jpg"></div>
+								<div class="col-xs-9 col-md-5"><img alt="Half Sectional View" data-src="../../images/3/halfsview.jpg"></div>
+							</div>
+							<h2 id="offsets">3.1.1.3 Offset section</h2>
+							<p>The cutting plane need not pass straight through the object, but may be offset as required to include features which are not in a straight line.</p>
+							<div class="row text-center">
+								<div class="col-xs-6 col-md-4"><img alt="Offset Section" data-src="../../images/3/offsets.jpg"></div>
+								<div class="col-xs-8 col-md-4"><img alt="Offset Sectional View" data-src="../../images/3/offsetsview.jpg"></div>
+							</div>  
+							<h2 id="aligneds">3.1.1.4 Aligned section</h2>
+							<p>Section by rotating the cutting plane to a position which will pass through more than one features and then treating it as a single plane.</p>
+							<div class="row text-center">
+								<div class="col-xs-6 col-md-4"><img alt="Aligned Section" data-src="../../images/3/aligneds.jpg"></div>
+							</div>
+							<p class="h3">Example - Indicator sleeve</p>
+							<div class="row text-center">
+								<div class="col-xs-8 col-md-5"><img alt="Aligned Section Example" data-src="../../images/3/alignedseg2.png"></div>
+								<div class="col-xs-6 col-xs-offset-3 col-md-5 col-md-offset-1"><img alt="Aligned Sectioned Plane" data-src="../../images/3/alignedseg1.jpg"></div>
+								<div class="col-md-7">
+									<div class="row">
+										<div class="col-xs-6">
+											<img alt="Aligned Sectioned Part Left" data-src="../../images/3/alignedseg3.jpg">
+										</div>
+										<div class="col-xs-6"><img alt="Aligned Sectioned Part Right" data-src="../../images/3/alignedseg4.jpg"></div>
+									</div>
+								</div>
+							</div>
+							<h2 id="parts">3.1.1.5 Broken-out or part section</h2>
+							<p>When a part of a view in seciton is all that is needed to show the internal details of an object.</p>
+							<p>Sometimes a whole view cannot be sectioned because it would conceal external features which must be shown.</p>
+							<div class="row text-center">
+								<div class="col-xs-5 col-md-3"><img alt="Part or Broken-out Section" data-src="../../images/3/parts.jpg"></div>
+								<div class="col-xs-7 col-md-5"><img alt="Part or Broken-out Sectional View" data-src="../../images/3/partsview.jpg"></div>
+							</div>
+							<h2 id="revolveds">3.1.1.6 Revolved section</h2>
+							<p>Section drawn directly on an outside view to show the local cross-section of an arm or rib.</p>
+							<p>The cutting plane is revolved through 90 &deg;.</p>
+							<div class="row text-center">
+								<div class="col-xs-7 col-md-5"><img alt="Revolved Section" data-src="../../images/3/revolveds.jpg"></div>
+							</div>
+							<h2 id="removeds">3.1.1.7 Removed section</h2>
+							<p>Sections are removed to another part of the drawing instead of beaing drawn on the outside view.</p>
+							<div class="row text-center">
+								<div class="col-xs-7 col-md-5"><img alt="Removed Section" data-src="../../images/3/removeds.jpg"></div>
+							</div>
+							<h2 id="exception">3.1.2 Exceptions to sectioning</h2>
+							<p>Reinforcing ribs or webs of a casting are not cross hatched when the cutting plane passes through them longitudinally.</p>
+							<p>Gear teeth are treated in a similar way.</p>
+							<p>Shaft, bolts, nuts, rods, rivets, keys, pins and similar parts are normally not sectioned.</p>
+							<div class="row text-center">
+								<div class="col-xs-7 col-md-5"><img alt="Exception for Ribs" data-src="../../images/3/exception.jpg"></div>
+							</div>
+							<h2 id="faults">3.1.3 Faults in hatch lines</h2>
+							<div class="row text-center">
+								<div class="col-xs-12 col-md-7"><img alt="Faults in Hatch Lines" data-src="../../images/3/faults.jpg"></div>
+							</div>
+							<h2 id="adjacent">3.1.4 Hatching for adjacent components</h2>
+							<div class="row text-center">
+								<div class="col-xs-10 col-xs-offset-1 col-md-7 col-md-offset-0"><img alt="Hatching adjacent Components" data-src="../../images/3/adjacent1.jpg"></div>
+							</div>
+							<div class="row text-center">
+								<div class="col-xs-6 col-md-5">
+									<img alt="Hatching Lines for Single Component" data-src="../../images/3/adjacent2.jpg">
+									<p>Single component</p>
+								</div>
+								<div class="col-xs-6 col-md-5">
+									<img alt="Hatching Lines for Adjacent Component" data-src="../../images/3/adjacent3.jpg">
+									<p>Adjacent component</p>
+								</div>
+							</div>
+							<h2 id="drawhl">3.1.5 Drawing hatch lines</h2>
+							<div class="row">
+								<div class="col-xs-6 col-xs-push-6 col-md-3 col-md-push-9"><img alt="Hatching adjacent Components" data-src="../../images/3/drawinghl.jpg"></div>
+								<div class="col-xs-6 col-xs-pull-6 col-md-9 col-md-pull-3">
+									<p>Sectional view is distinguished from outside view by section lines or hatching drawn on the cut surfaces.</p>
+									<p>Thin lines (0.3mm), inclined at 45&deg; are used.</p>
+									<p>Equally spaced by eye (4-6mm).</p>
+									<p>When the outlines or axes of a sectional view slope at 45&deg;, then the sectional lines should be drawn at some other angle.</p>
+								</div>
+							</div>
+							<h2 id="slope">3.1.6 Alternation of hatching slope</h2>
+							<div class="row text-center">
+								<div class="col-xs-6 col-md-5 col-md-offset-1">
+									<img alt="Bad Hatching Slope" data-src="../../images/3/drawinghlangle1.jpg">
+									<p>Bad hatching slope</p>
+								</div>
+								<div class="col-xs-6 col-md-5">
+									<img alt="Good Hatching Slope" data-src="../../images/3/drawinghlangle2.jpg">
+									<p>Good hatching slope</p>
+								</div>
+							</div>
+							<h2 id="drawhlthin">3.1.7 Sectioning thin details</h2>
+							<div class="col-xs-6 col-md-5">
+								<img alt="Sectioning Thin Details" data-src="../../images/3/drawinghlthin.jpg">
+							</div>
+						</div>
+						
+						<div class="row">
+							<h1 id="dimensioning">3.2 Dimensioning</h1>
+							<h2 id="principled">3.2.1 Principles of dimensioning</h2>
+							<ol>
+								<li>Each dimension necessary for the complete definition of a finished product should be given on the drawing and should appear once only.</li>
+								<li>There should be no more dimensions than are necessary to define the component.</li>
+								<li>Dimensions relating to a particular feature should preferably be place adjacent to a single suitable view rather than on several.</li>
+							</ol>
+							<h2 id="projl">3.2.2 Projection lines</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-5">
+									<img alt="Projection Lines" data-src="../../images/3/projl.jpg">
+								</div>
+							</div>
+							<h2 id="diml">3.2.3 Dimension lines</h2>
+							<div class="row">
+								<div class="col-xs-9 col-md-5">
+									<img alt="Dimension Lines" data-src="../../images/3/diml.jpg">
+								</div>
+							</div>
+							<h2 id="dimcdatum">3.2.4 Dimensions from a common datum</h2>
+							<div class="row">
+								<div class="col-xs-9 col-md-5">
+									<img alt="Dimensions from a Common Datum" data-src="../../images/3/dimcomdatum.jpg">
+								</div>
+							</div>
+							<h2 id="chaindim">3.2.5 Chain dimensioning</h2>
+							<p>Should only be used where the possible accumulation of tolerances does not endanger the functional requirements of the part.</p>
+							<div class="row">
+								<div class="col-xs-9 col-md-5">
+									<img alt="Chain Dimensioning" data-src="../../images/3/chaindim.jpg">
+								</div>
+							</div>
+							<h2 id="leader">3.2.6 Leader</h2>
+							<ul>
+								<li><p>Used to indicate where dimensions or notes are intend to apply.</p>
+									<div class="row">
+										<div class="col-xs-10 col-md-6">
+											<img alt="Leader" data-src="../../images/3/leader.jpg">
+										</div>
+									</div>
+								</li>
+								<li><p>Dimension repeated to avoid long leader.</p>
+									<div class="row">
+										<div class="col-xs-12 col-md-6">
+											<img alt="Avoid Long Leader" data-src="../../images/3/leaderrep.jpg">
+										</div>
+									</div>
+								</li>
+								<li><p>Letter symbols to avoid long and intersecting leaders.</p>
+									<div class="row">
+										<div class="col-xs-12 col-md-6">
+											<img alt="Use Symbols to Avoid Intersecting Leaders" data-src="../../images/3/leaderletter.jpg">
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h2 id="linear">3.2.7 Linear dimensions</h2>
+							<ul>
+								<li>Drawings should state the limit of dimension.</li>
+								<li>Any feature which the standard designation is in imperial unit, then the imperial designation should be used. E.g a 5/8 in. bolt should be shown as 5/8 in.</li>
+								<li>Where drawings are dimensioned mainly in one unit abbreviation may be omitted provided the drawing carries a statement of the unit used.</li>
+								<li>Dimension should be expressed to the least number of significant figure. (E.g 35 not 35.0)</li>
+								<li>Decimal marker for use with metric units is a point which should be bold, should be given a full letter space and should be placed on the base line. (E.g 12.5)</li>
+								<li>Dimension less than unity should be preceded by a cipher 0. (E.g 0.5)</li>
+								<li>Strongly deprecated unless necessary, a conversion is shown in parentheses. E.g 100mm (3.94in.)</li>
+							</ul>
+							<h2 id="angular">3.2.8 Angular dimensions</h2>
+							<ul>
+								<li>The radian is the preferred SI unit.</li>
+								<li>Angular dimensions on engineering drawings should be expressed in degrees, minutes and seconds.<br>Example:
+									<ul class="list-unstyled">
+										<li>22&deg;</li>
+										<li>22&deg;30’</li>
+										<li>22&deg;30’30”</li>
+									</ul>
+								</li>
+							</ul>
+							<h2 id="arrangement">3.2.9 Arrangement of dimensions</h2>
+							<ul>
+								<li>Dimensions placed to read from the bottom or from the right hand side of the drawing.
+									<div class="row">
+										<div class="col-xs-9 col-md-4">
+											<img alt="Dimension Positioning" data-src="../../images/3/dimarrangement.jpg">
+										</div>
+									</div>
+								</li>
+								<li>Figures and letter should be large enough for easy reading.</li>
+								<li>Figures or letters should be placed near the middle of, and above and clear of the dimension.</li>
+								<li>To facilitate reading dimensions, figures should be placed so that they can be read from the bottom or from the right of the drawing.
+									<div class="row">
+										<div class="col-xs-12 col-md-6">
+											<img alt="Dimension Placement" data-src="../../images/3/dimdirection.jpg">
+										</div>
+									</div>
+								</li>
+								<li>When there are several parallel dimension lines the dimensions should be staggered.
+									<div class="row">
+										<div class="col-xs-8 col-md-4">
+											<img alt="Staggered Dimension" data-src="../../images/3/dimstaggered.jpg">
+										</div>
+									</div>
+								</li>
+								<li>Where narrow spaces are being dimensioned, figures or letters should be placed centrally or above the extension of one of the arrowheads.</li>
+								<li>Large dimensions should be placed outside smaller dimensions.</li>
+							</ul>
+							<h2 id="redundant">3.2.10 Redundant dimensions</h2>
+							<p>Where an overall dimension is shown, one of the intermediate distances is redundant and should not be dimensioned.</p>
+							<div class="row">
+								<div class="col-xs-12 col-md-6">
+									<img alt="Redundant Dimension" data-src="../../images/3/redundant.jpg">
+								</div>
+							</div>
+							<h2 id="auxiliary">3.2.11 Auxiliary dimensions</h2>
+							<p>Auxiliary dimension should not be tolerated but should be included in parenthesis (....)</p>
+							<div class="row">
+								<div class="col-xs-12 col-md-6">
+									<img alt="Auxiliary Dimension" data-src="../../images/3/auxiliary.jpg">
+								</div>
+							</div>
+							<h2 id="dimfeatures">3.2.12 Dimensioning common features</h2>
+							<h3 id="diameter">3.2.12.1 Diameter</h3>
+							<div class="row">
+								<div class="col-xs-12 col-md-6">
+									<img alt="Dimensioning Diameter 1" data-src="../../images/3/diameter1.jpg">
+								</div>
+								<div class="col-xs-12 col-md-6">
+									<img alt="Dimensioning Diameter 2" data-src="../../images/3/diameter2.jpg">
+								</div>
+							</div>
+							<h3 id="radii">3.2.12.2 Radii</h3>
+							<ul>
+								<li>
+									<p>The abbreviation R should precede the dimension.</p>
+									<div class="row">
+										<div class="col-xs-12 col-md-6">
+											<img alt="Dimensioning Radii 1" data-src="../../images/3/radii1.jpg">
+										</div>
+									</div>
+								</li>
+								<li>
+									<p>Dimensioning radii of arcs which need not have their centers located.</p>
+									<div class="row">
+										<div class="col-xs-12 col-md-6">
+											<img alt="Dimensioning Radii 2" data-src="../../images/3/radii2.jpg">
+										</div>
+									</div>
+								</li>									
+								<li>A curve line composed of circular arcs should preferably be dimensioned by radii.
+									<div class="row">
+										<div class="col-xs-12 col-md-6">
+											<img alt="Dimensioning Radii 3" data-src="../../images/3/radii3.jpg">
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<footer class="footer">
+        	<div class="container-fluid">
+            <div class="row">
+              <div class="footer-left">&copy; 2015 Chang Sin Fung. All rights reserved.</div>
+              <div class="footer-right">
+                <a href="http://www.nus.edu.sg/" target="_blank" alt="National University of Singapore">
+                	<img src="../../images/nuslogo.jpg" alt="NUS logo">				
+								</a>
+                <a href="http://me.nus.edu.sg/" target="_blank" alt="Department of Mechanical Engineering, NUS">
+                	<img src="../../images/nusmelogo.png" alt="NUS ME logo">
+                </a>
+              </div>
+            </div>
+          </div>
+				</footer>
+			</div>    
+		</div>
+		<a href="#" class="btn btn-primary pull-right btt" id="back-to-top"><span class="glyphicon glyphicon-chevron-up"></span><span class="sr-only">Back to Top</span></a>
+		<!-- Support for Internet Explorer 8 or less -->
+		<!--[if lt IE 9]>
+			<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+			<script src="../../js/bootstrap-3.3.6.min.js"></script>
+			<script src="../../js/bootstrap.mod.min.js"></script>
+			<script type="text/javascript">
+				$(document).ready(function(){
+						$('#ie8-modal').modal('show');
+				});
+			</script>
+		<![endif]-->
+		
+		<!-- For IE9+ or others -->
+		<!--[if gte IE 9]><!-->
+		<script src="../../js/fallback.min.js"></script>
+		<script>
+			fallback.load({
+				jQuery: [
+					'//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js',
+					'//code.jquery.com/jquery-2.1.4.min.js',
+					'../../js/jquery-2.1.4.min.js'
+				],
+				'jQuery.fn.modal': [ // bootstrap
+					'//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js',
+					'../../js/bootstrap-3.3.6.min.js'
+				],
+				mod_js: [ // global js
+					'../../js/bootstrap.mod.min.js'
+				]
+			}, {
+				shim: {
+					'jQuery.fn.modal': [ 'jQuery' ], // bootstrap
+					mod_js: [ 'jQuery','jQuery.fn.modal' ] // global js
+				}
+			});
+		</script><!--<![endif]-->
+	</body>
+</html>

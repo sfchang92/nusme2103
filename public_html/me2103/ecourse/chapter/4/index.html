@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>4 - Limits, Fits &amp; Geometrical Tolerances | nus:me2013</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+    <!-- Bootstrap -->
+    <link href="../../css/bootstrap-3.3.6.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.mod.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+	<body data-spy="scroll" data-target="#sidebar-wrapper" data-offset="80">
+	
+		<div>
+		<!--[if lt IE 9]>
+		<div id="ie8-modal" class="modal fade" tabindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Blimey! Still using Internet Explorer
+						<![if IE 8]> 8?<![endif]>
+						<![if IE 7]> 7?<![endif]>
+						<![if IE 6]> 6?<![endif]>
+						<![if lt IE 6]>?<![endif]>
+						</h4>
+					</div>
+					<div class="modal-body">
+						<p>It is time to</p>
+						<ul>
+							<li><p><a href="//browsehappy.com">Upgrade your browser today</a></p>
+								<div class="row text-center">
+									<div class="col-xs-3">
+										<a href="//opera.com/download/">
+											<img src="../../images/browserlogo/opera_256.png" alt="Opera">
+											<p>Opera</p>
+										</a>
+									</div>
+									<div class="col-xs-3">
+										<a href="//mozilla.org/firefox/new/">
+											<img src="../../images/browserlogo/firefox_256.png" alt="Firefox">
+											<p>Firefox</p>
+										</a>
+									</div>
+									<div class="col-xs-3">
+										<a href="//google.com/chrome/browser/">
+											<img src="../../images/browserlogo/chrome_256.png" alt="Chrome">
+											<p>Chrome</p>
+										</a>
+									</div>
+									<div class="col-xs-3">
+										<a href="//maxthon.com">
+											<img src="../../images/browserlogo/maxthon_256.png" alt="Maxthon">
+											<p>Maxthon</p>
+										</a>
+									</div>
+								</div>
+							</li>
+							<li><a href="//www.microsoft.com/download/internet-explorer-11-for-windows-7-details.aspx">Upgrade Internet Explorer (Windows 7)</a></li>
+							<li><a href="//www.microsoft.com/en-us/windows/windows-10-upgrade">Upgrade Windows</a></li>
+							<li>or continue using this website with limited functionality</li>
+						</ul>
+					</div>
+					<div class="modal-footer">
+						<a type="button" class="btn btn-default" href="../../">Back to Prof Homepage</a>
+						<button type="button" class="btn btn-primary" data-dismiss="modal" >Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<![endif]-->
+		</div>
+		
+		<nav class="navbar navbar-default">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button role="button" href="#menu-toggle" id="menu-toggle" class="navbar-toggle">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar top-bar"></span>
+          <span class="icon-bar middle-bar"></span>
+          <span class="icon-bar bottom-bar"></span>
+        </button>
+        <div class="container container-navbar-brand"><a class="navbar-brand">Limits, fits &amp; geometrical tolerances</a></div>
+      </div>
+		</nav>
+		<div id="wrapper" class="container">
+    	<div id="modal-bg"></div>
+			<div id="sidebar-wrapper">
+				<div class="sidebar-brand">
+					<a href="#" id="back-to-top2">nus:me2103</a>
+					<button role="button" href="#menu-toggle" id="menu-toggle2" class="navbar-toggle toggled">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar top-bar"></span>
+						<span class="icon-bar middle-bar"></span>
+						<span class="icon-bar bottom-bar"></span>
+					</button>
+				</div>
+				<ul class="nav sidebar-nav">
+					<li>
+						<a href="../../" role="button">Home</a>
+		      </li>
+					<li><a class="collapse-button" data-toggle="collapse" href="#collapseChapter" aria-expanded="true" aria-controls="collapseChapter">Chapters</a>
+						<ul class="collapse in" id="collapseChapter">
+							<li><a href="../1/">1 - Introduction</a></li>
+							<li><a href="../2/">2 - Principles of projection</a></li>
+							<li><a href="../3/">3 - Sectioning &amp; dimensioning</a></li>
+							<li><a class="collapse-button" data-toggle="collapse" href="#collapse1" aria-expanded="true" aria-controls="collapse1">4 - Limits, fits &amp; geometrical tolerances</a>
+								<ul class="collapse in" id="collapse1">
+									<li><a href="#limits">4.1 - Limit tolerances</a>
+										<ul>
+											<li><a href="#limtolint">4.1.1 - Limit interpretation</a></li>
+											<li><a href="#limtoltype">4.1.2 - Type of tolerances</a></li>
+											<li><a href="#limtolacc">4.1.3 - Accuracy comparison</a></li>
+										</ul>
+									</li>
+									<li><a href="#dimensioning">3.2 - Dimensioning</a>
+										<ul>
+											<li><a href="#principled">3.2.1 - Principles</a></li>
+											<li><a href="#projl">3.2.2 - Projection lines</a></li>
+											<li><a href="#diml">3.2.3 - Dimension lines</a></li>
+											<li><a href="#dimcdatum">3.2.4 - Common datum</a></li>
+											<li><a href="#chaindim">3.2.5 - Chain dimensioning</a></li>
+											<li><a href="#leader">3.2.6 - Leader</a></li>
+											<li><a href="#linear">3.2.7 - Linear dimensions</a></li>
+											<li><a href="#angular">3.2.8 - Angular dimensions</a></li>
+											<li><a href="#arrangement">3.2.9 - Arrangement</a></li>
+											<li><a href="#redundant">3.2.10 - Redundant dimensions</a></li>
+											<li><a href="#auxiliary">3.2.11 - Auxiliary dimensions</a></li>
+											<li><a href="#dimfeatures">3.2.12 - Common features</a>
+												<ul>
+													<li><a href="#diameter">3.2.12.1 - Diameter</a></li>
+													<li><a href="#radii">3.2.12.2 - Radii</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><a href="../../misc/">Behind the scenes</a></li>
+				</ul>
+				<a role="button" class="btn btn-block btn-primary btn-lg btn-profhome" href="../../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Prof Homepage</a>
+			</div>
+			<div id="page-content-wrapper">
+      	<div id="page-content">
+          <div class="container-fluid">
+						<div class="row">
+							<h1 id="limits">4.1 Limit tolerances</h1>
+							<p>Limit tolerance is the permissible deviation on a dimension.</p>
+							<div class="row row-border-between text-center">
+								<div class="col-xs-6">
+									<div class="row row-no-gutter-full">
+										<div class="col-md-6"><img alt="Limit of Size 1" data-src="../../images/4/limtol1.jpg"></div>
+										<div class="col-md-6"><img alt="Limit of Size 2" data-src="../../images/4/limtol4.jpg"></div>
+									</div>
+									<p>Limit of size</p>
+								</div>
+								<div class="col-xs-6">
+									<div class="row row-no-gutter-full">
+										<div class="col-md-6"><img alt="Limiting Range 1" data-src="../../images/4/limtol2.jpg"></div>
+										<div class="col-md-6"><img alt="Limiting Range 2" data-src="../../images/4/limtol3.jpg"></div>
+									</div>
+									<p>Limiting range</p>
+								</div>
+							</div><br/>
+							<div class="row">
+								<div class="col-xs-6 col-md-4"><img alt="ISO Tolerance" data-src="../../images/4/limtoleg1.jpg"></div>
+								<div class="col-xs-6 col-md-8">
+									<p>Limit Tolerances can be referred to the tables on Limits and Fits.</p>
+									<ul>
+										<li>SS ISO 406:1987 (Technical drawings -- Tolerancing of linear and angular dimensions)</li>
+										<li>SS ISO 286-1&amp;2:1988 (ISO system of limits and fits)</li>
+									</ul>
+								</div>
+							</div>
+							<h2 id="limtolint">4.1.1 Limit interpretation</h2>
+							<div class="row">
+								<div class="col-md-8"><img alt="Half Section" data-src="../../images/4/limtoleg0.png"></div>
+							</div>
+							<h2 id="limtoltype">4.1.2 Type of tolerances</h2>
+							<div class="row text-center">
+								<div class="col-xs-8 col-md-5"><img alt="Press Fit and Precision Running" data-src="../../images/4/limtoleg5.png"></div>
+							</div>
+							<h2 id="limtolacc">4.1.3 Accuracy of tolerances</h2>
+							<!-- Carousel -->
+							<div class="row">
+								<div class="col-xs-9 col-sm-8 col-lg-6">
+									<div id="carousel4_1_1_3" class="carousel carousel-dark slide" data-ride="carousel" data-interval="false">
+										<ol class="carousel-indicators">
+											<li data-target="#carousel4_1_1_3" data-slide-to="0" class="active"></li>
+											<li data-target="#carousel4_1_1_3" data-slide-to="1"></li>
+											<li data-target="#carousel4_1_1_3" data-slide-to="2"></li>
+											<li data-target="#carousel4_1_1_3" data-slide-to="3"></li>
+										</ol>
+										<div class="carousel-inner" role="listbox">
+											<div class="item active"><img src="../../images/4/limtoleg6.png" alt="Human Hair vs Razor Blade" class="center-block">
+												<!--<div class="carousel-caption">
+													<h3>Human Hair vs Razor Blade</h3>
+												</div>-->
+											</div>
+											<div class="item"><img src="../../images/4/limtoleg7.png" alt="Tolerance Accuracy" class="center-block">
+												<!--<div class="carousel-caption">
+													<h3>Tolerance Accuracy</h3>
+												</div>-->
+											</div>
+											<div class="item"><img src="../../images/4/limtoleg8.png" alt="Machining Method Accuracy" class="center-block">
+												<!--<div class="carousel-caption">
+													<h3>Machining Method Accuracy</h3>
+												</div>-->
+											</div>
+											<div class="item"><img src="../../images/4/limtoleg9.png" alt="Comparison of Tolerance and Machining Accuracy" class="center-block">
+												<!--<div class="carousel-caption">
+													<h3>Comparison of Tolerance and Machining Accuracy</h3>
+												</div>-->
+											</div>
+										</div>
+										<a class="left carousel-control" href="#carousel4_1_1_3" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#carousel4_1_1_3" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>
+									</div>
+								</div>
+							</div>
+							<!-- Carousel end -->
+							<h1 id="fits">4.2 Fits</h1>
+							<h2 id="fundev">4.2.1 Fundamental deviation</h2>
+							<p>Deviation closest to the basic size, designated by letter (e.g. H, g…)</p>
+							<ul>
+								<li><p>International tolerance grade (IT Grade) establishes the magnitude of the tolerance zone or amount of size variation allowed. Smaller number grade provides smaller tolerances zone.</p>
+									<div class="row row-no-gutter text-center">
+										<div class="col-xs-8 col-md-5"><img alt="Fundamental Deviation" data-src="../../images/4/fundev.jpg"></div>
+										<div class="col-xs-4 col-md-4">
+											<dl class="barchart bar-7">
+												<dt>IT Grade</dt>
+												<dd><span style="height:6%"><em>5</em></span></dd>
+												<dd><span style="height:9%"><em>6</em></span></dd>
+												<dd><span style="height:15%"><em>7</em></span></dd>
+												<dd><span style="height:22%"><em>8</em></span></dd>
+												<dd><span style="height:36%"><em>9</em></span></dd>
+												<dd><span style="height:58%"><em>10</em></span></dd>
+												<dd><span style="height:90%"><em>11</em></span></dd>
+											</dl>
+										</div>
+									</div>
+									<br/>
+									<div class="row"><div class="col-md-10">
+										<table class="table table-bordered table-condensed table-striped table-text-center">
+											<thead>
+												<tr>
+													<th rowspan="2" scope="col" id="a"></th>
+													<th colspan="8" scope="colgroup" id="itg">IT Grades</th>
+												</tr>
+												<tr>
+													<th class="text-center" scope="col" id="itg4" headers="itg">4</th>
+													<th scope="col" id="itg5" headers="itg">5</th>
+													<th scope="col" id="itg6" headers="itg">6</th>
+													<th scope="col" id="itg7" headers="itg">7</th>
+													<th scope="col" id="itg8" headers="itg">8</th>
+													<th scope="col" id="itg9" headers="itg">9</th>
+													<th scope="col" id="itg10" headers="itg">10</th>
+													<th scope="col" id="itg11" headers="itg">11</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td headers="a">Lapping and Honing</td>
+													<td headers="itg itg4" class="cell-dark"></td>
+													<td headers="itg itg5" class="cell-dark"></td>
+													<td headers="itg itg6"></td>
+													<td headers="itg itg7"></td>
+													<td headers="itg itg8"></td>
+													<td headers="itg itg9"></td>
+													<td headers="itg itg10"></td>
+													<td headers="itg itg11"></td>
+												</tr>
+												<tr>
+													<td headers="a">Cylindrical Grinding</td>
+													<td headers="itg itg4"></td>
+													<td headers="itg itg5" class="cell-dark"></td>
+													<td headers="itg itg6" class="cell-dark"></td>
+													<td headers="itg itg7" class="cell-dark"></td>
+													<td headers="itg itg8"></td>
+													<td headers="itg itg9"></td>
+													<td headers="itg itg10"></td>
+													<td headers="itg itg11"></td>
+												</tr>
+												<tr>
+													<td headers="a">Surface Grinding</td>
+													<td headers="itg itg4"></td>
+													<td headers="itg itg5" class="cell-dark"></td>
+													<td headers="itg itg6" class="cell-dark"></td>
+													<td headers="itg itg7" class="cell-dark"></td>
+													<td headers="itg itg8" class="cell-dark"></td>
+													<td headers="itg itg9"></td>
+													<td headers="itg itg10"></td>
+													<td headers="itg itg11"></td>
+												</tr>
+												<tr>
+													<td headers="a">Diamond Turning</td>
+													<td headers="itg itg4"></td>
+													<td headers="itg itg5" class="cell-dark"></td>
+													<td headers="itg itg6" class="cell-dark"></td>
+													<td headers="itg itg7" class="cell-dark"></td>
+													<td headers="itg itg8"></td>
+													<td headers="itg itg9"></td>
+													<td headers="itg itg10"></td>
+													<td headers="itg itg11"></td>
+												</tr>
+												<tr>
+													<td headers="a">Diamond Boring</td>
+													<td headers="itg itg4"></td>
+													<td headers="itg itg5" class="cell-dark"></td>
+													<td headers="itg itg6" class="cell-dark"></td>
+													<td headers="itg itg7" class="cell-dark"></td>
+													<td headers="itg itg8"></td>
+													<td headers="itg itg9"></td>
+													<td headers="itg itg10"></td>
+													<td headers="itg itg11"></td>
+												</tr>
+												<tr>
+													<td headers="a">Broaching</td>
+													<td headers="itg itg4"></td>
+													<td headers="itg itg5" class="cell-dark"></td>
+													<td headers="itg itg6" class="cell-dark"></td>
+													<td headers="itg itg7" class="cell-dark"></td>
+													<td headers="itg itg8" class="cell-dark"></td>
+													<td headers="itg itg9"></td>
+													<td headers="itg itg10"></td>
+													<td headers="itg itg11"></td>
+												</tr>
+												<tr>
+													<td headers="a">Reaming</td>
+													<td headers="itg itg4"></td>
+													<td headers="itg itg5" class="cell-dark"></td>
+													<td headers="itg itg6" class="cell-dark"></td>
+													<td headers="itg itg7" class="cell-dark"></td>
+													<td headers="itg itg8" class="cell-dark"></td>
+													<td headers="itg itg9" class="cell-dark"></td>
+													<td headers="itg itg10" class="cell-dark"></td>
+													<td headers="itg itg11"></td>
+												</tr>
+												<tr>
+													<td headers="a">Powder Metal - Sizes</td>
+													<td headers="itg itg4"></td>
+													<td headers="itg itg5"></td>
+													<td headers="itg itg6" class="cell-dark"></td>
+													<td headers="itg itg7" class="cell-dark"></td>
+													<td headers="itg itg8" class="cell-dark"></td>
+													<td headers="itg itg9"></td>
+													<td headers="itg itg10"></td>
+													<td headers="itg itg11"></td>
+												</tr>
+												<tr>
+													<td headers="a">Turning</td>
+													<td headers="itg itg4"></td>
+													<td headers="itg itg5"></td>
+													<td headers="itg itg6"></td>
+													<td headers="itg itg7" class="cell-dark"></td>
+													<td headers="itg itg8" class="cell-dark"></td>
+													<td headers="itg itg9" class="cell-dark"></td>
+													<td headers="itg itg10" class="cell-dark"></td>
+													<td headers="itg itg11" class="cell-dark"></td>
+												</tr>
+												<tr>
+													<td headers="a">Powder Metal - Sintered</td>
+													<td headers="itg itg4"></td>
+													<td headers="itg itg5"></td>
+													<td headers="itg itg6"></td>
+													<td headers="itg itg7" class="cell-dark"></td>
+													<td headers="itg itg8" class="cell-dark"></td>
+													<td headers="itg itg9" class="cell-dark"></td>
+													<td headers="itg itg10" class="cell-dark"></td>
+													<td headers="itg itg11"></td>
+												</tr>
+												<tr>
+													<td headers="a">Boring</td>
+													<td headers="itg itg4"></td>
+													<td headers="itg itg5"></td>
+													<td headers="itg itg6"></td>
+													<td headers="itg itg7" class="cell-dark"></td>
+													<td headers="itg itg8" class="cell-dark"></td>
+													<td headers="itg itg9" class="cell-dark"></td>
+													<td headers="itg itg10" class="cell-dark"></td>
+													<td headers="itg itg11" class="cell-dark"></td>
+												</tr>
+												<tr>
+													<td headers="a">Milling</td>
+													<td headers="itg itg4"></td>
+													<td headers="itg itg5"></td>
+													<td headers="itg itg6"></td>
+													<td headers="itg itg7"></td>
+													<td headers="itg itg8"></td>
+													<td headers="itg itg9"></td>
+													<td headers="itg itg10" class="cell-dark"></td>
+													<td headers="itg itg11" class="cell-dark"></td>
+												</tr>
+												<tr>
+													<td headers="a">Planning and Shaping</td>
+													<td headers="itg itg4"></td>
+													<td headers="itg itg5"></td>
+													<td headers="itg itg6"></td>
+													<td headers="itg itg7"></td>
+													<td headers="itg itg8"></td>
+													<td headers="itg itg9"></td>
+													<td headers="itg itg10" class="cell-dark"></td>
+													<td headers="itg itg11" class="cell-dark"></td>
+												</tr>
+												<tr>
+													<td headers="a">Drilling</td>
+													<td headers="itg itg4"></td>
+													<td headers="itg itg5"></td>
+													<td headers="itg itg6"></td>
+													<td headers="itg itg7"></td>
+													<td headers="itg itg8"></td>
+													<td headers="itg itg9"></td>
+													<td headers="itg itg10" class="cell-dark"></td>
+													<td headers="itg itg11" class="cell-dark"></td>
+												</tr>
+												<tr>
+													<td headers="a">Punching</td>
+													<td headers="itg itg4"></td>
+													<td headers="itg itg5"></td>
+													<td headers="itg itg6"></td>
+													<td headers="itg itg7"></td>
+													<td headers="itg itg8"></td>
+													<td headers="itg itg9"></td>
+													<td headers="itg itg10" class="cell-dark"></td>
+													<td headers="itg itg11" class="cell-dark"></td>
+												</tr>
+												<tr>
+													<td headers="a">Die Casting</td>
+													<td headers="itg itg4"></td>
+													<td headers="itg itg5"></td>
+													<td headers="itg itg6"></td>
+													<td headers="itg itg7"></td>
+													<td headers="itg itg8"></td>
+													<td headers="itg itg9"></td>
+													<td headers="itg itg10"></td>
+													<td headers="itg itg11" class="cell-dark"></td>
+												</tr>
+											</tbody>
+										</table>
+									</div></div>
+								</li>
+								<li><p>Fundamental Deviation establishes the position of the tolerance zone with respect to the basic size.</p>
+									<ul class="row">
+										<div class="col-xs-6 col-md-3 col-lg-3">
+										<li><b>Internal dimensions</b> (Hole): <em>capital letter</em><br/>
+												Commonly used:
+												<ul>
+													<li>H7</li>
+													<li>H8</li>
+													<li>H9</li>
+													<li>H11</li>
+												</ul>
+										</li>
+										</div>
+										<div class="col-xs-6 col-md-3 col-lg-3">
+										<li><b>External dimensions</b> (Shaft): <em>small letter</em><br>
+												Commonly used: 
+												<ul class="row">
+													<div class="col-xs-6">
+													<li>c11</li>
+													<li>d9</li>
+													<li>e8</li>
+													<li>f7</li>
+													<li>g6</li>
+													<li>h6</li>
+													</div>
+													<div class="col-xs-6">
+													<li>k6</li>
+													<li>n6</li>
+													<li>p6</li>
+													<li>s6</li>
+													<li>u6</li>
+													</div>
+												</ul>
+										</li>
+										</div>
+										<div class="col-xs-10 col-md-6 col-lg-5">
+											<img alt="Hole and Shaft Tolerances" data-src="../../images/4/holeshafttol.jpg">
+										</div>
+									</ul>
+								</li>
+							</ul>
+							<h3 id="bs4500">4.2.1.1 BS 4500 'ISO Limits &amp; Fits'</h3>
+							<div class="row">
+								<div class="col-xs-10 col-md-8 col-lg-6">
+									<table class="table table-bordered table-text-center-full">
+								<thead>
+									<tr>
+										<th scope="col">For Hole</th>
+										<th scope="col">Basic size &empty;90</th>
+										<th scope="col">For Shaft</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>90H7</td>
+										<td></td>
+										<td>90g6</td>
+									</tr>
+									<tr>
+										<td>90.035<br/>
+												90.000</td>
+										<td>First Choice</td>
+										<td>89.988<br/>
+												89.966</td>
+									</tr>
+									<tr>
+										<td class="cell-subsup">90
+											<span class="supsub">
+													<sup class="sup">+0.035</sup>
+													<sub class="sub">-0</sub>
+											</span>
+										</td>
+										<td></td>
+										<td class="cell-subsup">90
+											<span class="supsub">
+													<sup class="sup">-0.012</sup>
+													<sub class="sub">-0.034</sub>
+											</span>
+										</td>
+									</tr>
+									<tr>
+										<td class="text-right" colspan="3" style="padding:2px 8px">Fundamental deviation f = 0.012</td>
+									</tr>
+								</tbody>
+							</table>
+								</div>
+							</div>
+							<h3 id="tolillus">4.2.1.2 Illustration</h3>
+							<div class="row">
+								<div class="col-md-10">
+									<img alt="Tolerance Illustration" data-src="../../images/4/tolillus2.jpg">
+									<p><span style="color:red">f</span> = fundamental deviation<br>
+									<span style="color:blue">*</span> = international tolerance grade</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6 col-md-5 col-lg-4">
+									<span style="color:red">For shaft: 90g6</span><br>
+									<span style="color:blue">Max shaft &empty; = 89.988 mm6</span><br>
+									<span>Min shaft &empty; = 89.966 mm6</span><br>
+									<span style="color:red">f = 0.012 mm</span>
+								</div>
+								<div class="col-xs-6 col-md-5 col-lg-4">
+									<span style="color:red">For hole: 90H7</span><br>
+									<span style="color:blue">Max hole &empty; = 90.035 mm</span><br>
+									Min hole &empty; = 90.000 mm<br>
+									<span style="color:red">f = 0</span>
+								</div>
+							</div>
+							<h2 id="parts">4.2.2 Type of engineering fits</h2>
+							<h3 id="clearance">4.2.2.1 Clearence fit</h3>
+							<p>Relation between assembled parts when clearance occurs under all tolerance conditions.</p>
+							<p>Applications: Disc couplings, elastomer couplings</p>
+							<div class="row text-center">
+								<div class="col-xs-6 col-md-4"><img alt="Clearence Fit" data-src="../../images/4/fittype1.png"></div>
+								<div class="col-xs-6 col-md-4"><img alt="Clearence Fit Range" data-src="../../images/4/clearancerange.png"><p>Tolerance - Hole basis</p></div>
+							</div>
+							<h3 id="transition">4.2.2.2 Transition fit</h3>
+							<p>Relation between assembled parts when interference occurs under all tolerance conditions.</p>
+							<p>Applications: Track roller/Cam follower in fork lift truck</p>
+							<div class="row text-center">
+								<div class="col-xs-6 col-md-4"><img alt="Transition Fit" data-src="../../images/4/fittype3.png"></div>
+								<div class="col-xs-6 col-md-4"><img alt="Transition Fit Range" data-src="../../images/4/transitionrange.png"><p>Tolerance - Hole basis</p></div>
+							</div>
+							<h3 id="interference">4.2.2.3 Interference fit</h3>
+							<p>Relation between assembled parts when either a clearance or interference fit can result depending on the tolerance conditions of the mating parts.</p>
+							<p>Applications: Bearing &amp; shaft</p>
+							<div class="row text-center">
+								<div class="col-xs-6 col-md-4"><img alt="Interference Fit" data-src="../../images/4/fittype2.png"></div>
+								<div class="col-xs-6 col-md-4"><img alt="Interference Fit Range" data-src="../../images/4/interferencerange.png"><p>Tolerance - Hole basis</p></div>
+							</div>
+							<h2 id="limandfits">4.3 Limits and fits</h2>
+							<h3 id="holebasis">4.3.1 Hole basis</h3>
+							<div class="row">
+								<div class="col-sm-6 col-sm-push-6 col-md-5 col-md-push-6 col-lg-4 col-lg-push-5">
+									<ul>
+										<li>Constant hole basic diameter</li>
+										<li>Shaft size varies according to type of fit</li>
+										<li>Recommend for general applications</li>
+										<li>Gives greater economy of production</li>
+									</ul>
+								</div>
+								<div class="col-xs-9 col-sm-6 col-sm-pull-6 col-md-6 col-md-pull-5 col-lg-5 col-lg-pull-4"><img alt="=Hole Basis Fits" data-src="../../images/4/holebasis.png"></div>
+							</div><br>
+							<div class="row text-center">
+								<div class="col-md-10 col-lg-8"><img alt="Hole Basis Fit Selections" data-src="../../images/4/holebasis1.png"></div>
+								<div class="col-md-10 col-lg-8"><img alt="Hole Basis Fit Selections 2" data-src="../../images/4/holebasis2.png"><p>Selection of fits based on hole basis</p></div>
+							</div>
+							<div class="row text-center">
+								<div class="col-md-10 col-lg-8"><img alt="Hole Basis Fit Table" data-src="../../images/4/holebasis3.png"></div>
+							</div>
+							<h3 id="shaftbasis">4.3.2 Shaft basis</h3>
+							<div class="row">
+								<div class="col-sm-6 col-sm-push-6 col-md-5 col-md-push-6 col-lg-4 col-lg-push-5">
+									<ul>
+										<li>Constant shaft basic diameter</li>
+										<li>Hole size varies according to type of fit</li>
+										<li>Costly</li>
+									</ul>
+								</div>
+								<div class="col-xs-9 col-sm-6 col-sm-pull-6 col-md-6 col-md-pull-5 col-lg-5 col-lg-pull-4"><img alt="=Shaft Basis Fits" data-src="../../images/4/shaftbasis.png"></div><br>
+							</div>
+							<div class="row text-center">
+								<div class="col-md-10 col-lg-8"><img alt="Shaft Basis Fit Selections" data-src="../../images/4/shaftbasis1.png"><p>Selection of fits based on shaft basis</p></div>
+							</div>
+							<div class="row text-center">
+								<div class="col-md-10 col-lg-8"><img alt="Shaft Basis Fit Table" data-src="../../images/4/shaftbasis2.png"></div>
+							</div>
+							<h3 id="preferredfits">4.3.3 Preferred fits</h3>
+							<div class="row">
+								<div class="col-md-8">
+									<table class="table table-bordered table-text-center-full table-last-col-left">
+										<thead>
+											<tr>
+												<th rowspan="2" scope="col">Fit</th>
+												<th colspan="2" scope="colgroup">ISO Symbol</th>
+												<th rowspan="2" scope="col" class="text-left">Descriptions</th>
+											</tr>
+											<tr>
+												<th scope="col">Hole base</th>
+												<th scope="col">Shaft base</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th rowspan="5" scope="row">Clearance fit</th>
+												<td>H11/c11</td>
+												<td>C11/h11</td>
+												<td>Loose running fit</td>
+											</tr>
+											<tr>
+												<td>H9/d9</td>
+												<td>D9/h9</td>
+												<td>Free running fit</td>
+											</tr>
+											<tr>
+												<td>H8/f7</td>
+												<td>F8/h7</td>
+												<td>Close running fit</td>
+											</tr>
+											<tr>
+												<td>H7/g6</td>
+												<td>G7/h6</td>
+												<td>Sliding fit</td>
+											</tr>
+											<tr>
+												<td>H7/h6</td>
+												<td>H7/h6</td>
+												<td>Locational clearance fit</td>
+											</tr>
+											<tr>
+												<th rowspan="2" scope="row">Transition fit</th>
+												<td>H7/k6</td>
+												<td>K7/h6</td>
+												<td>Locational transition fit</td>
+											</tr>
+											<tr>
+												<td>H7/n6</td>
+												<td>N7/h6</td>
+												<td>Locational transition fit</td>
+											</tr>
+											<tr>
+												<th rowspan="3" scope="row">Interference fit</th>
+												<td>H7/p6</td>
+												<td>P7/h6</td>
+												<td>Locational interference fit</td>
+											</tr>
+											<tr>
+												<td>H7/s6</td>
+												<td>S7/h6</td>
+												<td>Medium drive fit</td>
+											</tr>
+											<tr>
+												<td>H7/u6</td>
+												<td>U7/h6</td>
+												<td>Force fit</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<h2 id="mettol">4.4 Method of tolerancing</h2>
+							<h3 id="permdev">4.4.1 Permissible deviations for linear dimensions (ISO 2768-1)</h3>
+							<div class="row">
+								<div class="col-md-8">
+									<table class="table table-text-center-full table-bordered table-condensed">
+										<thead>
+											<tr>
+												<th colspan="2">Permissible deviation for basic size range</th>
+												<th colspan="4">Tolerance class (Designation)</th>
+											</tr>
+											<tr>
+												<th>Over (mm)</th>
+												<th>Up to (mm)</th>
+												<th>Fine (f)</th>
+												<th>Medium (m)</th>
+												<th>Coarse (c)</th>
+												<th>Very coarse (v)</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>0.5</td>
+												<td>3</td>
+												<td>&plusmn;0.05</td>
+												<td>&plusmn;0.1</td>
+												<td>&plusmn;0.2</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td>6</td>
+												<td>&plusmn;0.05</td>
+												<td>&plusmn;0.1</td>
+												<td>&plusmn;0.3</td>
+												<td>&plusmn;0.5</td>
+											</tr>
+											<tr>
+												<td>6</td>
+												<td>30</td>
+												<td>&plusmn;0.1</td>
+												<td>&plusmn;0.2</td>
+												<td>&plusmn;0.5</td>
+												<td>&plusmn;1</td>
+											</tr>
+											<tr>
+												<td>30</td>
+												<td>120</td>
+												<td>&plusmn;0.15</td>
+												<td>&plusmn;0.3</td>
+												<td>&plusmn;0.8</td>
+												<td>&plusmn;1.5</td>
+											</tr>
+											<tr>
+												<td>120</td>
+												<td>400</td>
+												<td>&plusmn;0.2</td>
+												<td>&plusmn;0.5</td>
+												<td>&plusmn;1.2</td>
+												<td>&plusmn;2.5</td>
+											</tr>
+											<tr>
+												<td>400</td>
+												<td>1000</td>
+												<td>&plusmn;0.3</td>
+												<td>&plusmn;0.8</td>
+												<td>&plusmn;2</td>
+												<td>&plusmn;4</td>
+											</tr>
+											<tr>
+												<td>1000</td>
+												<td>2000</td>
+												<td>&plusmn;0.5</td>
+												<td>&plusmn;1.2</td>
+												<td>&plusmn;3</td>
+												<td>&plusmn;6</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<h3 id="unitol">4.4.2 Unilateral tolerances</h3>
+							<p>Variation is permitted only in <em>one</em> direction from specified dimension.</p>
+							<div class="row">
+								<div class="col-xs-8 col-md-5 col-lg-4">
+									<table class="table table-bordered table-condensed table-text-center-full">
+										<tbody>
+											<tr>
+												<td><img alt="Unilateral Tolerance 1" data-src="../../images/4/unilateral1.jpg"></td>
+												<td class="text-nowrap">57.02 - 57.15</td>
+											</tr>
+											<tr>
+												<td><img alt="Unilateral Tolerance 2" data-src="../../images/4/unilateral2.jpg"></td>
+												<td class="text-nowrap">16.51 - 16.59</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<h3 id="bitol">4.4.3 Bilateral tolerances</h3>
+							<p>Variation is permitted in <em>both</em> direction from specified dimension.</p>
+							<div class="row">
+								<div class="col-xs-8 col-md-5 col-lg-4">
+									<table class="table table-bordered table-condensed table-text-center-full">
+										<tbody>
+											<tr>
+												<td><img alt="Unilateral Tolerance 1" data-src="../../images/4/bilateral1.jpg"></td>
+												<td class="text-nowrap">55.7 – 58.7</td>
+											</tr>
+											<tr>
+												<td><img alt="Unilateral Tolerance 2" data-src="../../images/4/bilateral2.jpg"></td>
+												<td class="text-nowrap">55.7 - 58.0</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<h3 id="cumtol">4.4.4 Cumulative tolerances</h3>
+							<div class="row row-no-gutter text-center">
+								<div class="col-xs-6 col-md-5">
+									<img alt="Cumulative Tolerance" data-src="../../images/4/cumtol1.jpg">
+									<p>Cumulative tolerances</p>
+								</div>
+								<div class="col-xs-6 col-md-5">
+									<img alt="Ordinate Dimensioning" data-src="../../images/4/cumtol2.jpg">
+									<p>Ordinate dimensioning</p>
+								</div>
+							</div>
+							<h3 id="screw">4.4.5 Dimensioning screw threads</h3>
+							<p>Threads are shown conventionally on drawings, hence need to be designated by dimensions or notes.</p>
+							<p>Metric thread example:
+								<ul>
+									<li>M16 x 1.5 – 6H (internal thread)</li>
+									<li>M6 x 0.75 – 6g (external thread)</li>
+								</ul>
+							</p>
+							<p>Representation: 
+								<ul>
+									<li>M – Thread system symbol for metric thread</li>
+									<li>16, 6 – Nominal diameter in mm</li>
+									<li>1.5 &amp; 0.75 – Pitch in mm</li>
+									<li>6H, 6g – Thread tolerance class symbol</li>
+								</ul>
+							</p>
+							<p>Note:
+								<ol>
+									<li>If no pitch is shown in dimension, coarse thread is implied. (fine threads are used mainly in special applications, not common)</li>
+									<li>Thread tolerance provide 3 classes of fit:
+										<ol type="a">
+											<li>Free – (7H/8g) for application requiring quick &amp; easy assembly</li>
+											<li>Medium – (6H/6g) suitable for most general applications</li>
+											<li>Close – (5H/4h) commonly used</li>
+										</ol>
+									</li>
+									<li>If thread is left hand, abbreviation LH should be used.<br>
+											No indication of hand is required if thread is right-handed.</li>
+								</ol>
+							</p>
+							<h2 id="geotol">4.5 Geometrical tolerances</h2>
+							<p>Very often, specifying the limit tolerances on the parts may not be sufficient, as they do not consider the tolerances due to the geometrical shape or form of the parts such as straightness and cylindricity etc.</p>
+							<p>In today’s industry where mass production and interchangeability of parts are a norm, the control of both limit tolerances and geometrical tolerances are essential.</p>
+							<div class="row">
+								<div class="col-md-6 col-lg-5">
+									<img alt="Geometrical Tolerances" data-src="../../images/4/geotol.png">
+								</div>
+							</div>
+							<h3 id="linear">4.5.1 Linear tolerances</h3>
+							<div class="row">
+								<div class="col-md-6 col-lg-5">
+									<img alt="Linear Tolerances" data-src="../../images/4/lintol.jpg">
+								</div>
+							</div>
+							<h3 id="inspecttol">4.5.2 Inspecting tolerances</h3>
+							<div class="row">
+								<div class="col-md-6 col-lg-5">
+									<img alt="Inspecting Tolerances 1" data-src="../../images/4/inspecttol1.jpg">
+								</div>
+								<div class="col-md-6 col-lg-5">
+									<img alt="Inspecting Tolerances 2" data-src="../../images/4/inspecttol2.jpg">
+								</div>
+								<div class="col-md-6 col-lg-5">
+									<img alt="Inspecting Tolerances 3" data-src="../../images/4/inspecttol3.jpg">
+								</div>
+							</div>
+							<h3 id="spectol">4.5.3 Specifying tolerances</h3>
+							<div class="row text-center">
+								<div class="col-md-6 col-lg-5">
+									<img alt="Specifying Tolerances 1" data-src="../../images/4/spectol1.jpg">
+									<p>Designed part</p>
+								</div>
+								<div class="col-md-6 col-lg-5">
+									<img alt="Specifying Tolerances 2" data-src="../../images/4/spectol2.jpg">
+									<p>Fabricated part</p>
+								</div>
+							</div>
+							<h2 id="drawtol">4.6 Geometrical dimensioning &amp; tolerancing</h2>
+							<h3 id="drawtoleg1">4.6.1 Example 1</h3>
+							<div class="row text-center">
+								<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+									<img alt="Eg 1: Geo Dimensioning and Tolerancing" data-src="../../images/4/drawtol3.png">
+								</div>
+							</div>
+							<div class="row text-center row-no-gutter row-border-between">
+								<div class="col-xs-6 col-lg-5 col-lg-offset-1">
+									<img alt="Eg 1: Designed part" data-src="../../images/4/drawtol1.png">
+									<p>Designed part</p>
+								</div>
+								<div class="col-xs-6 col-lg-5">
+									<img alt="Eg 1: Fabricated part" data-src="../../images/4/drawtol2.png">
+									<p>Fabricated part</p>
+								</div>
+							</div>
+							<h3 id="drawtoleg2">4.6.2 Example 2</h3>
+							<div class="row text-center">
+								<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+									<img alt="Eg 2: Geo Dimensioning and Tolerancing" data-src="../../images/4/drawtol4g.png">
+								</div>
+							</div>
+							<div class="row text-center row-no-gutter row-border-between">
+								<div class="col-md-7">
+									<img alt="Eg 2: Designed part" data-src="../../images/4/drawtol4d.png">
+									<p>Designed part</p>
+								</div>
+								<div class="col-xs-8 col-xs-offset-2 col-md-5 col-md-offset-0">
+									<img alt="Eg 2: Fabricated part" data-src="../../images/4/drawtol4f.png">
+									<p>Fabricated part</p>
+								</div>
+							</div>
+							<h3 id="gdtsym">4.6.3 GDT symbols</h3>
+							<!-- GDT symbols table -->
+							<div class="row">
+								<div class="col-md-10">
+									<table class="table table-bordered table-condensed table-last-col-gdt">
+										<thead>
+											<tr>
+												<th scope="col">Feature</th>
+												<th scope="col">Tolerance</th>
+												<th scope="col" class="text-left">Characteristic</th>
+												<th scope="col">Symbol</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td rowspan="4">Individual features</td>
+												<td rowspan="4">Form</td>
+												<td>Straightness</td>
+												<td>e</td>
+											</tr>
+											<tr>
+												<td>Flatness</td>
+												<td>d</td>
+											</tr>
+											<tr>
+												<td>Circularity (Roundness)</td>
+												<td>f</td>
+											</tr>
+											<tr>
+												<td>Cylindricity</td>
+												<td>g</td>
+											</tr>
+											<tr>
+												<td rowspan="2">Individual or related features</td>
+												<td rowspan="2">Profile</td>
+												<td>Profile of any line</td>
+												<td>m</td>
+											</tr>
+											<tr>
+												<td>Profile of any surface</td>
+												<td>l</td>
+											</tr>
+											<tr>
+												<td rowspan="8">Related features</td>
+												<td rowspan="3">Orientation</td>
+												<td>Parallelism</td>
+												<td>j</td>
+											</tr>
+											<tr>
+												<td>Perpendicularity</td>
+												<td>i</td>
+											</tr>
+											<tr>
+												<td>Angularity</td>
+												<td>h</td>
+											</tr>
+											<tr>
+												<td rowspan="3">Location</td>
+												<td>Position</td>
+												<td>k</td>
+											</tr>
+											<tr>
+												<td>Concentricity</td>
+												<td>q</td>
+											</tr>
+											<tr>
+												<td>Symmetry</td>
+												<td>p</td>
+											</tr>
+											<tr>
+												<td rowspan="2">Run-out</td>
+												<td>Circular run-out</td>
+												<td>n</td>
+											</tr>
+											<tr>
+												<td>Total run-out</td>
+												<td>o</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<h3 id="postol">4.6.4 Position tolerance <span class="gdt">k</span></h3>
+							<p>The actual point of intersection must be within a circle of &empty; 0.1 mm, the center of which is the theoretical exact position of the considered point.</p>
+							<div class="row">	
+								<div class="col-xs-5 col-md-4">
+									<img alt="Position Tolerance in Drawing" data-src="../../images/4/postol1.png">
+								</div>
+								<div class="col-xs-6 col-md-3">
+									<img alt="Position Tolerance" data-src="../../images/4/postol2.png">
+								</div>
+							</div>
+							<h3 id="strtol">4.6.5 Straightness of surface elements <span class="gdt">e</span></h3>
+							<p>Straightness is a condition where an element of an axis is a straight line. The tolerance zone of which when projected in a plane must be within 2 parallel straight lines a distance 0.1 mm apart.</p>
+							<div class="row text-center row-border-between">
+								<div class="col-md-6">
+									<div class="row">	
+										<div class="col-xs-4 col-md-6">
+											<img alt="Straightness for Flat Surface in Drawing" data-src="../../images/4/strtol1.png">
+										</div>
+										<div class="col-xs-5 col-md-6">
+											<img alt="Straightness for Flat Surface" data-src="../../images/4/strtol2.png">
+										</div>
+									</div>
+									<p>Flat surface</p>
+								</div>
+								<div class="col-md-6">
+									<div class="row">	
+										<div class="col-xs-4 col-md-6">
+											<img alt="Straightness for Cylindrical Surface in Drawing" data-src="../../images/4/strtol3.png">
+										</div>
+										<div class="col-xs-6 col-md-6">
+											<img alt="Straightness for Cylindrical Surface" data-src="../../images/4/strtol4.png">
+										</div>
+									</div>
+									<p>Cylindrical surface</p>
+								</div>
+							</div>
+							<h3 id="flttol">4.6.6 Flatness <span class="gdt">d</span></h3>
+							<p>The tolerance zone must be between two parallel planes 0.05 mm.</p>
+							<div class="row">	
+								<div class="col-xs-4 col-md-3">
+									<img alt="Flatness in Drawing" data-src="../../images/4/flttol1.png">
+								</div>
+								<div class="col-xs-5 col-md-3">
+									<img alt="Flatness" data-src="../../images/4/flttol2.png">
+								</div>
+							</div>
+							<h3 id="rndtol">4.6.7 Roundness (Circularity) of cylinder / cone <span class="gdt">f</span></h3>
+							<p>The tolerance zone at a given plane must be within two concentric circles of 0.01 mm.</p>
+							<div class="row text-center row-border-between">
+								<div class="col-md-6">
+									<div class="row">	
+										<div class="col-xs-4 col-md-6">
+											<img alt="Roundness of Cylinder in Drawing" data-src="../../images/4/rndtol1.png">
+										</div>
+										<div class="col-xs-5 col-md-6">
+											<img alt="Roundness of Cylinder" data-src="../../images/4/rndtol2.png">
+										</div>
+									</div>
+									<p>Cylinder</p>
+								</div>
+								<div class="col-md-6">
+									<div class="row">	
+										<div class="col-xs-4 col-md-6">
+											<img alt="Roundness of Conical Frustum in Drawing" data-src="../../images/4/rndtol3.png">
+										</div>
+										<div class="col-xs-6 col-md-6">
+											<img alt="Roundness of Conical Frustum" data-src="../../images/4/rndtol4.png">
+										</div>
+									</div>
+									<p>Conical frustum</p>
+								</div>
+							</div>
+							<h3 id="cyltol">4.6.8 Cylindricity <span class="gdt">g</span></h3>
+							<p>The tolerance zone must be within two coaxial cylinder of 0.01 mm.</p>
+							<div class="row">	
+								<div class="col-xs-4 col-md-3">
+									<img alt="Cylindricity in Drawing" data-src="../../images/4/cyltol1.png">
+								</div>
+								<div class="col-xs-5 col-md-3">
+									<img alt="Cylindricity" data-src="../../images/4/cyltol2.png">
+								</div>
+							</div>
+							<h3 id="contol">4.6.9 Concentricity <span class="gdt">q</span></h3>
+							<p>The tolerance zone of the shaft must be within a cylinder &empty; 0.1 mm, which is coaxial with datum axis A.</p>
+							<div class="row">	
+								<div class="col-xs-4 col-md-3">
+									<img alt="Concentricity 1 in Drawing" data-src="../../images/4/contol1.png">
+								</div>
+								<div class="col-xs-5 col-md-3">
+									<img alt="Concentricity 1" data-src="../../images/4/contol2.png">
+								</div>
+							</div>
+							<p>The tolerance zone of the shaft must be within a cylinder &empty; 0.1
+mm, which is coaxial with datum axis B-C.</p>
+							<div class="row">	
+								<div class="col-xs-4 col-md-4">
+									<img alt="Concentricity 2 in Drawing" data-src="../../images/4/contol3.png">
+								</div>
+								<div class="col-xs-6 col-md-3">
+									<img alt="Concentricity 2" data-src="../../images/4/contol4.png">
+								</div>
+							</div>
+							<h3 id="partol">4.6.10 Parallelism <span class="gdt">j</span></h3>
+							<p>The tolerance surface must be within 2 parallel planes 0.3 mm apart, and parallel to the datum surface D.</p>
+							<div class="row">	
+								<div class="col-xs-4 col-md-3">
+									<img alt="Parallelism in Drawing" data-src="../../images/4/partol1.png">
+								</div>
+								<div class="col-xs-5 col-md-3">
+									<img alt="Parallelism" data-src="../../images/4/partol2.png">
+								</div>
+							</div>
+							<h3 id="pertol">4.6.11 Perpendicularity for plane surface <span class="gdt">i</span></h3>
+							<p>The tolerance surface must be within 2 parallel planes 0.1 mm apart, and perpendicular to the datum surface D.</p>
+							<div class="row">	
+								<div class="col-xs-4 col-md-3">
+									<img alt="Perpendicularity for Plane Surface in Drawing" data-src="../../images/4/pertol1.png">
+								</div>
+								<div class="col-xs-5 col-md-3">
+									<img alt="Perpendicularity for Plane Surface" data-src="../../images/4/pertol2.png">
+								</div>
+							</div>
+							<h3 id="angtol">4.6.11 Angularity for plane surface <span class="gdt">h</span></h3>
+							<p>The tolerance zone must be within two parallel planes 0.2 mm apart, which are inclined at 30° to the datum face A.</p>
+							<div class="row">	
+								<div class="col-xs-4 col-md-3">
+									<img alt="Angularity for Plane Surface in Drawing" data-src="../../images/4/angtol1.png">
+								</div>
+								<div class="col-xs-5 col-md-3">
+									<img alt="Angularity for Plane Surface" data-src="../../images/4/angtol2.png">
+								</div>
+							</div>
+							<h3 id="cruntol">4.6.12 Circular runout <span class="gdt">n</span></h3>
+							<p>The run-out at a given plane must be less than 0.08 mm during one revolution about datum axis C-D.</p>
+							<div class="row">	
+								<div class="col-xs-4 col-md-3">
+									<img alt="Circular Runout in Drawing" data-src="../../images/4/cruntol1.png">
+								</div>
+								<div class="col-xs-5 col-md-3">
+									<img alt="Circular Runout" data-src="../../images/4/cruntol2.png">
+								</div>
+							</div>
+							<h3 id="truntol">4.6.13 Total runout <span class="gdt">o</span></h3>
+							<p>The total run-out on the specified surface must be less than 0.1 mm during several revolutions about datum axis C-D.</p>
+							<div class="row">	
+								<div class="col-xs-4 col-md-3">
+									<img alt="Total Runout in Drawing" data-src="../../images/4/truntol1.png">
+								</div>
+								<div class="col-xs-5 col-md-3">
+									<img alt="Total Runout" data-src="../../images/4/truntol2.png">
+								</div>
+							</div>
+							<h2 id="incdatum">4.7 Datum references</h2>
+							<div class="row text-center">
+								<div class="col-xs-4 col-md-3 col-md-offset-1">
+									<img alt="Datum on Extension Line" data-src="../../images/4/datextline.png">
+									<p>On extension line</p>
+								</div>
+								<div class="col-xs-3 col-lg-3">
+									<img alt="Datum on Outline of the Part" data-src="../../images/4/datoutline.png">
+									<p>On outline of the part</p>
+								</div>
+								<div class="col-xs-5 col-md-4">
+									<img alt="Datum on Centre Line" data-src="../../images/4/datcentre.png">
+									<p>On centre line</p>
+								</div>
+							</div>
+							<h3 id="dateg1">4.7.1 Example 1</h3>
+							<div class="row text-center row-border-between">
+								<div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-0">
+									<img alt="Incorporating Datum References" data-src="../../images/4/dateg1.png">
+								</div>
+								<div class="col-md-5">
+									<div class="row">
+										<div class="col-xs-5 col-xs-push-7 col-md-10 col-md-push-0">
+											<img alt="Incorporating Datum References 3D view" data-src="../../images/4/dateg13d.png">
+										</div>
+										<div class="col-xs-7 col-xs-pull-5 col-md-12 col-md-pull-0">
+											<img alt="Incorporating Datum References Multi-view" data-src="../../images/4/dateg1mv.png">
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3 id="dateg2">4.7.2 Example 2 (from <a href="#drawtoleg1">4.6.1)</a></h3>
+							<div class="row">
+								<div class="col-xs-10 col-xs-offset-1 col-md-5 col-md-offset-0">
+									<img alt="Incorporating Datum References 3D view" data-src="../../images/4/dateg2.png">
+								</div>
+								<div class="col-md-6">
+									<img alt="Incorporating Datum References Multi-view" data-src="../../images/4/drawtol3.png">
+								</div>
+							</div>
+							<h3 id="datappdwg">4.7.3 Application in drawings</h3>
+							<img alt="Application of datum in drawing 1" data-src="../../images/4/datdwg1.jpg">
+							<img alt="Application of datum in drawing 2" data-src="../../images/4/datdwg2.jpg">
+						</div>
+					</div>
+				</div>
+				<footer class="footer">
+        	<div class="container-fluid">
+            <div class="row">
+              <div class="footer-left">&copy; 2015 Chang Sin Fung. All rights reserved.</div>
+              <div class="footer-right">
+                <a href="http://www.nus.edu.sg/" target="_blank" alt="National University of Singapore">
+                	<img src="../../images/nuslogo.jpg" alt="NUS logo">				
+								</a>
+                <a href="http://me.nus.edu.sg/" target="_blank" alt="Department of Mechanical Engineering, NUS">
+                	<img src="../../images/nusmelogo.png" alt="NUS ME logo">
+                </a>
+              </div>
+            </div>
+          </div>
+				</footer>
+			</div>    
+		</div>
+		<button href="#" class="btn btn-primary pull-right btt" id="back-to-top"><span class="glyphicon glyphicon-chevron-up"></span><span class="sr-only">Back to Top</span></button>
+		<!-- Support for Internet Explorer 8 or less -->
+		<!--[if lt IE 9]>
+			<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+			<script src="../../js/bootstrap-3.3.6.min.js"></script>
+			<script src="../../js/bootstrap.mod.min.js"></script>
+			<script type="text/javascript">
+				$(document).ready(function(){
+						$('#ie8-modal').modal('show');
+				});
+			</script>
+		<![endif]-->
+		
+		<!-- For IE9+ or others -->
+		<!--[if gte IE 9]><!-->
+		<script src="../../js/fallback.min.js"></script>
+		<script>
+			fallback.load({
+				jQuery: [
+					'//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js',
+					'//code.jquery.com/jquery-2.1.4.min.js',
+					'../../js/jquery-2.1.4.min.js'
+				],
+				'jQuery.fn.modal': [ // bootstrap
+					'//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js',
+					'../../js/bootstrap-3.3.6.min.js'
+				],
+				mod_js: [ // global js
+					'../../js/bootstrap.mod.min.js'
+				]
+			}, {
+				shim: {
+					'jQuery.fn.modal': [ 'jQuery' ], // bootstrap
+					mod_js: [ 'jQuery','jQuery.fn.modal' ] // global js
+				}
+			});
+		</script><!--<![endif]-->
+	</body>
+</html>

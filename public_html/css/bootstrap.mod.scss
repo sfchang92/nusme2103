@@ -33,10 +33,17 @@ body {
   font-weight: 300;
 }
 
+.page-header{
+	border-bottom:none;
+	padding-bottom:0;
+}
 .section-header {
 	padding-bottom: 5px;
 	margin: 10px 0 15px;
 	border-bottom: 1px solid #ccc;
+}
+.alert {
+	margin-bottom:0;
 }
 //Panel
 .panel-default {
@@ -57,21 +64,26 @@ body {
       border-bottom-color: #333;
       margin-top: 6px;
       margin-right: 10px;
-      @include transition(border-color 0.6s);
+      @include transition(border-color 0.6s ease);
     }
 		//Caret collapsed
     &.collapsed:before {
       border-width: 5px 5px 0 5px;
       border-bottom-color: transparent;
       border-top-color: rgb(51, 51, 51);
-      @include transition(border-color 0.6s);
+      @include transition(border-color 0.6s ease);
     }
   }
   .panel-heading {
     background-color: transparent;
+		padding: 0;
   }
 	.panel-title {
 		font-weight: 400;
+		> a{
+			display:block;
+			padding:10px 15px;
+		}
 	}
 	.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
 		&:first-child{
@@ -158,16 +170,22 @@ body {
 		display: block;
 		text-align: left;
 		font-weight: lighter;
+		@include flex(1 1 1);
 	}
 
 	.footer-right {
 		@include flexbox;
-		@include flex-shrink(0.7);
+		@include flex(1 0.5 1);
 		img {
-			display: block;
 			padding-left: 8px;
 			max-height: 60px;
 			max-width: 100%;
+		}
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			img { width:100%; }
+		}
+		@-moz-document url-prefix() {
+			img { width:100%; }
 		}
 		a {
 			&:not(:last-of-type) {
@@ -180,19 +198,51 @@ body {
 	}
 }
 
-/*Back to top button*/
-
 .btn {
   border-radius: 2px;
-  &.btt {
-    position: fixed;
-    bottom: 10px;
-    right: 15px;
-    z-index: 1;
-    @include opacity(0);
-  }
 }
 
+/*Back to top button*/
+.btt {
+	position: fixed;
+	bottom: 0px;
+	right: 15px;
+	@include transition(opacity 0.2s ease, bottom 0.2s ease);
+	z-index: 1;
+	@include opacity(0);
+	&.btt-show {
+		@include opacity (0.8);
+		bottom: 10px;
+	}
+	&.btt-end {
+		@include opacity (1);
+		bottom: 90px;
+	}
+}
+/*Navbar open dim background */
+
+#modal-bg {
+	display:block;
+	visibility:hidden;
+	opacity:0;
+	@include transition (opacity 0.2s ease-in, visibility 0s 0.2s);
+	@include minwidth(tablet) {
+		display:none;
+	}
+	position:fixed;
+	width:100%;
+	height:100%;
+	top:0;
+	z-index:99;
+	cursor:pointer;
+	background-color: #000;
+	background-color: rgba(0,0,0,0.7);
+	&.bg-show {
+		visibility: visible;
+		opacity:1;
+		@include transition (opacity 0.2s ease);
+	}
+}
 /*Profile picture adjustment*/
 
 .prof-pic {
@@ -202,21 +252,15 @@ body {
 
 /*Navigation bar*/
 .navbar-default {
-	z-index:1;
+	z-index:100;
 	margin-bottom:0;
 	width:100%;
-	position:relative;
-	background-color:transparent;
-	
-	@include maxwidth(mobile) {
-		position:fixed;
-		top:0;
-		//@include transition(background-color 0.2s);
-		&.jhide {
-			background-color: $vdblue;
-			@include transition(background-color 0.2s);
-		}
-	}
+	//position:relative;
+	//background-color:transparent;
+	position: fixed;
+	top:0;
+	//bottom:auto;
+	background-color: $vdblue;
 
   border-style: none;
 	@include border-radius(0);
@@ -230,7 +274,7 @@ body {
     color: white;
 		text-transform: uppercase;
 		@include opacity(1);
-		@include transition(opacity 0.2s, padding 0.2s);
+		@include transition(opacity 0.2s ease, padding 0.2s ease);
     &:focus, &:hover {
       color: white;
       background-color: transparent;
@@ -247,11 +291,11 @@ body {
 				color: white;
 				@include minwidth(tablet)	{color: $whitet;}
 				text-transform: uppercase;
-				@include transition(background-color 0.2s, color 0.2s, padding 0.2s);
+				@include transition(background-color 0.2s ease, color 0.2s ease, padding 0.2s ease);
 				&:hover, &:focus {
 					color: white;
 					@include maxwidth(mobile) {background-color: $lblue;}
-					@include transition(background-color 0.2s, color 0.2s, padding 0.2s);
+					@include transition(background-color 0.2s ease, color 0.2s ease, padding 0.2s ease);
 				}
 			}
 			//Navbar item with menu open
@@ -259,7 +303,7 @@ body {
 				color: white;
 				background-color: transparent;
 				@include maxwidth(mobile) {background-color: $lblue;}
-				@include transition(color 0.2s);
+				@include transition(color 0.2s ease);
 				&:focus, &:hover {
 					color: white;
 					background-color: transparent;
@@ -271,7 +315,7 @@ body {
 				color: white;
 				background-color:transparent;
 				@include maxwidth(mobile) {background-color: $dblue;}
-				@include transition(background-color 0.2s,color 0.2s, padding 0.2s);
+				@include transition(background-color 0.2s ease,color 0.2s ease, padding 0.2s ease);
 				&:hover, &:focus {
 					color: white;
 					background-color:transparent;
@@ -316,10 +360,21 @@ body {
 					margin: 0 0 0 30px;
 				}
 			}
-			
+			&:before {
+				@include minwidth(tablet) {
+					content: '';
+					display: inline-block;
+					border-left: 8px solid transparent;
+					border-right: 8px solid transparent;
+					border-bottom: 8px solid #fff;
+					position: absolute;
+					top: -7px;
+					right: 60px;
+				}
+			}
 			> li {
 				> a {
-					@include transition(background-color 0.2s, color 0.2s);
+					@include transition(background-color 0.2s ease, color 0.2s ease);
 					@include minwidth(tablet) {
 						padding-left: 15px;
 					}
@@ -327,7 +382,7 @@ body {
 					&:focus, &:hover {
 						color: white;
 						background-color: $lblue;
-						@include transition(background-color 0.2s, color 0.2s);
+						@include transition(background-color 0.2s ease, color 0.2s ease);
 					}
 				}
 				
@@ -342,7 +397,17 @@ body {
 			@include minwidth(tablet) {
 				&.dropdown-left {
 					right:auto;
+					&:before {
+						left: 40px;
+						right: auto;
+					} 
 				}
+			}
+		}
+		
+		.multi-level {
+			.dropdown-menu:before {
+				content:none;
 			}
 		}
 		//Dropdown menu caret
@@ -362,20 +427,20 @@ body {
 				@include minwidth(tablet) {border-top-color: $whitet;};
 				margin-left: 6px;
 				margin-top: 9px;
-				@include transition(border-color 0.3s);
+				@include transition(border-color 0.3s ease);
 			}
 			&.open > a:after {
 				border-width: 0 5px 5px 5px;
 				border-top-color: transparent;
 				border-bottom-color:white;
-				@include transition(border-color 0.3s);
+				@include transition(border-color 0.3s ease);
 			}
 			&:hover > a:after {
 				@include minwidth(tablet) {
 					border-width: 0 5px 5px 5px;
 					border-top-color: transparent;
 					border-bottom-color:white;
-					@include transition(border-color 0.3s);
+					@include transition(border-color 0.3s ease);
 				}
 			}
 		}
@@ -413,7 +478,7 @@ body {
 					border-top-color: white;
 					border-left-color: transparent;
 					float: none;
-					@include transition(border-color 0.3s);
+					@include transition(border-color 0.3s ease);
 				}
 			}
 			&.open > a:after {
@@ -421,7 +486,7 @@ body {
 					border-width: 0 4px 4px 4px;
 					border-top-color: transparent;
 					border-bottom-color: white;
-					@include transition(border-color 0.3s);
+					@include transition(border-color 0.3s ease);
 				}
 			}
 			&:hover, &.active {
@@ -456,13 +521,16 @@ body {
 	
 	//Clear header style
 	&.clear {
+		background-color:transparent;
+
 		.navbar-brand {
 			padding-top:20px;
 			@include opacity(0);
 		}
 		@include minwidth(tablet) {
+			position:absolute;
 			//background-color:transparent;
-			@include transition(background-color 0.2s);
+			@include transition(background-color 0.2s ease);
 			@include box-shadow-none;
 			
 			.navbar-nav {
@@ -470,34 +538,34 @@ body {
 					> a {
 						color:$whitet;
 						padding-top:25px;
-						padding-bottom:5px;
-						@include transition(color 0.2s);
+						//padding-bottom:5px;
+						@include transition(color 0.2s ease);
 						&:focus , &:hover {
 							color: white;
 							background-color: transparent;
-							@include transition(color 0.2s);
+							@include transition(color 0.2s ease);
 						}
 					}
 					//Navbar item with menu open
 					&.open > a {
 						color: white;
 						background-color: transparent;
-						@include transition(color 0.2s);
+						@include transition(color 0.2s ease);
 						&:focus , &:hover {
 							color: white;
 							background-color: transparent;
-							@include transition(color 0.2s);
+							@include transition(color 0.2s ease);
 						}
 					}
 					//Navbar item active
 					&.active > a {
 						color: white;
 						background-color: transparent;
-						@include transition(color 0.2s);
+						@include transition(color 0.2s ease);
 						&:hover , &:focus {
 							color: white;
 							background-color: transparent;
-							@include transition(color 0.2s);
+							@include transition(color 0.2s ease);
 						}
 					}
 				}
@@ -516,6 +584,16 @@ body {
 					}
 				}
 			}
+		}
+	}
+		
+	@include maxwidth(mobile) {
+		position:fixed;
+		top:0;
+		//@include transition(background-color 0.2s);
+		&.jhide {
+			background-color: $vdblue;
+			@include transition(background-color 0.2s ease);
 		}
 	}
 	
@@ -557,7 +635,7 @@ body {
   .icon-bar {
     width: 27px;
     margin: 6px 2px;
-    @include transition(all 0.2s);
+    @include transition(all 0.2s ease);
     background-color: white !important;
     + .icon-bar {
       margin-top: 6px;
@@ -586,12 +664,18 @@ body {
     }
   }
 }
-
-.breadcrumb {
-  @include border-radius(0px);
-  margin-top: 20px;
+/*Label show only on hover*/
+.label-hover-show {
+	.label{
+		@include opacity(0.5);
+		@include transition(opacity 0.2s ease);
+	}
+	li:hover{
+		.label{
+			@include opacity(1);
+		}
+	}
 }
-
 /*Full pages*/
 .fullpage {
   height: 100%;
@@ -613,9 +697,6 @@ body.jerror {
 	padding-top:0;
 	.container-fluid.homepage {
 		padding:0;
-		&.nav-affix {
-			@include minwidth(tablet) {margin-top:50px;}
-		}
 		@include maxwidth(mobile) {
 			padding-top:20px;
 		}
@@ -627,7 +708,7 @@ body.jerror {
 		//position:relative;
 		.jumbotron {
 			@include opacity(1);
-			@include transition(opacity 0.2s);
+			@include transition(opacity 0.2s ease);
 			
 			background-color:transparent;
 			margin-bottom:0;
@@ -635,7 +716,7 @@ body.jerror {
 			@include minwidth(tablet) {
 				padding-right:0;
 				padding-left:0;
-				padding-top:20px;
+				padding-top:50px;
 			}
 			h1, .h1 {
 				font-size: 36px;
@@ -653,10 +734,9 @@ body.jerror {
 	&.jhide {
 		@include maxwidth(mobile) {
 			.container-fluid.homepage {
-				background-image: none;
 				.jumbotron {
-					@include opacity(0);
-					@include transition(opacity 0.2s);
+					@include opacity(0.5);
+					@include transition(opacity 0.2s ease);
 				}
 			}
 		}

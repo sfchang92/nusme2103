@@ -5,13 +5,11 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<title>1 - Introduction 1 | nus:me2013</title>
+		<title>1 - Introduction | nus:me2013</title>
 		<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
 		<!-- Bootstrap -->
-		<link href="../../css/bootstrap.min.css" rel="stylesheet">
-		<link href="../../css/bootstrap.mod.css" rel="stylesheet">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="../../js/lazyload.min.js"></script>
+    <link href="../../css/bootstrap-3.3.6.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.mod.css" rel="stylesheet">
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -21,6 +19,63 @@
 	</head>
 
 	<body data-spy="scroll" data-target="#sidebar-wrapper" data-offset="80">
+		<!--[if lt IE 9]>
+		<div id="ie8-modal" class="modal fade" tabindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Blimey! Still using Internet Explorer
+						<![if IE 8]> 8?<![endif]>
+						<![if IE 7]> 7?<![endif]>
+						<![if IE 6]> 6?<![endif]>
+						<![if lt IE 6]>?<![endif]>
+						</h4>
+					</div>
+					<div class="modal-body">
+						<p>It is time to</p>
+						<ul>
+							<li><p><a href="//browsehappy.com">Upgrade your browser today</a></p>
+								<div class="row text-center">
+									<div class="col-xs-3">
+										<a href="//opera.com/download/">
+											<img src="../../images/browserlogo/opera_256.png" alt="Opera">
+											<p>Opera</p>
+										</a>
+									</div>
+									<div class="col-xs-3">
+										<a href="//mozilla.org/firefox/new/">
+											<img src="../../images/browserlogo/firefox_256.png" alt="Firefox">
+											<p>Firefox</p>
+										</a>
+									</div>
+									<div class="col-xs-3">
+										<a href="//google.com/chrome/browser/">
+											<img src="../../images/browserlogo/chrome_256.png" alt="Chrome">
+											<p>Chrome</p>
+										</a>
+									</div>
+									<div class="col-xs-3">
+										<a href="//maxthon.com">
+											<img src="../../images/browserlogo/maxthon_256.png" alt="Maxthon">
+											<p>Maxthon</p>
+										</a>
+									</div>
+								</div>
+							</li>
+							<li><a href="//www.microsoft.com/download/internet-explorer-11-for-windows-7-details.aspx">Upgrade Internet Explorer (Windows 7)</a></li>
+							<li><a href="//www.microsoft.com/en-us/windows/windows-10-upgrade">Upgrade Windows</a></li>
+							<li>or continue using this website with limited functionality</li>
+						</ul>
+					</div>
+					<div class="modal-footer">
+						<a type="button" class="btn btn-default" href="../../">Back to Prof Homepage</a>
+						<button type="button" class="btn btn-primary" data-dismiss="modal" >Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<![endif]-->
 		<nav class="navbar navbar-default">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -30,20 +85,28 @@
 					<span class="icon-bar middle-bar"></span>
 					<span class="icon-bar bottom-bar"></span>
 				</button>
-				<a class="navbar-title"><span>nus:me2103</span></a>
-				<div class="container"><a class="navbar-brand">Introduction 1</a></div>
+				<div class="container container-navbar-brand"><a class="navbar-brand">Introduction</a></div>
 			</div>
 		</nav>
 		<div id="wrapper" class="container">
 			<div id="modal-bg"></div>
 			<div id="sidebar-wrapper">
+				<div class="sidebar-brand">
+					<a href="#" id="back-to-top2">nus:me2103</a>
+					<button role="button" href="#menu-toggle" id="menu-toggle2" class="navbar-toggle toggled">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar top-bar"></span>
+						<span class="icon-bar middle-bar"></span>
+						<span class="icon-bar bottom-bar"></span>
+					</button>
+				</div>
 				<ul class="nav sidebar-nav">
 					<li>
 						<a href="../../" role="button">Home</a>
 		      </li>
 					<li><a class="collapse-button" data-toggle="collapse" href="#collapseChapter" aria-expanded="true" aria-controls="collapseChapter">Chapters</a>
 						<ul class="collapse in" id="collapseChapter">
-							<li><a class="collapse-button" data-toggle="collapse" href="#collapse1" aria-expanded="true" aria-controls="collapse1">1 - Introduction (part 1)</a>
+							<li><a class="collapse-button" data-toggle="collapse" href="#collapse1" aria-expanded="true" aria-controls="collapse1">1 - Introduction</a>
 								<ul class="collapse in" id="collapse1">
 									<li><a href="#instrument">1.1 - Manual drawing instruments</a></li>
 									<li><a href="#term">1.2 - Basic terminologies</a>
@@ -73,16 +136,41 @@
 									</li>
 									<li><a href="#titleblock">1.6 - Title block</a> 
 									</li>
+									<li><a href="#geometry">1.7 - Geometrical construction</a>
+										<ul>
+											<li><a href="#parallelpoint">1.7.1 - Parallel line through a point</a></li>
+											<li><a href="#paralleldistance">1.7.2 - Parallel line at a distance</a></li>
+										<li><a href="#perpendicular">1.7.3 - Perpendicular line</a></li>
+										<li><a href="#bisectangle">1.7.4 - Bisect of an angle</a></li>
+										<li><a href="#pentagon">1.7.5 - Pentagon</a></li>
+										<li><a href="#hexagon">1.7.6 - Hexagon</a></li>
+										<li><a href="#ellipse">1.7.7 - Ellipse</a></li>
+										<li><a href="#isoellipse">1.7.8 - Isometric ellipse</a></li>
+										</ul>
+									</li>
+									<li><a href="#tangents">1.8 - Tangents</a>
+										<ul>
+										<li><a href="#tangents2">1.8.1 - Tangents btw 2 circles</a></li>
+										<li><a href="#ctangents2">1.8.2 - Cross Tangents btw 2 circles</a></li>
+										</ul>
+									</li>
+									<li><a href="#tangentarcs">1.9 - Tangent arcs</a>
+										<ul>
+										<li><a href="#tangentarcra">1.9.1 - Tangent arc in right angle </a></li>
+										<li><a href="#tangentarc2arcs">1.9.2 - Tangent arc to 2 arcs</a></li>
+										<li><a href="#tangentarceg">1.9.3 - More examples</a></li>
+										</ul>
+									</li>
 								</ul>
 							</li>
-							
-							<li><a href="../1_2/" title="Chapter 1 (Part 2)">1 - Introduction (part 2)</a></li>
-							<li><a href="../2/" title="Chapter 2">2 - Principles of projection</a></li>
+							<li><a href="../2/">2 - Principles of projection</a></li>
+							<li><a href="../3/">3 - Sectioning &amp; dimensioning</a></li>
+							<li><a href="../4/">4 - Limits, fits &amp; geometrical tolerances</a></li>
 						</ul>
 					</li>
 					<li><a href="../../misc/">Behind the scenes</a></li>
-					<a class="btn btn-block btn-primary btn-lg" href="../../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Prof Homepage</a>
 				</ul>
+				<a role="button" class="btn btn-block btn-primary btn-lg btn-profhome" href="../../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Prof Homepage</a>
 			</div>
 			<div id="page-content-wrapper">
 				<div id="page-content">
@@ -90,32 +178,89 @@
 						<div class="row">
 							<h1 id="instrument">1.1 Manual drawing instruments </h1>
 							<ul>
-								<li>Pencils (H/2H for constructions, 2B for outlines)<br>
-									<img class="large-6" src="../../images/1/pencils.jpg" alt="Pencils"></li>
-								<li>Set Squares (30&deg; &amp; 45&deg;)<br>
-									<img class="large-6" src="../../images/1/setsquares.jpg" alt="Set Squares"></li>
-								<li>Ruler and Scale rule<br>
-									<img class="large-6" src="../../images/1/ruler.jpg" alt="Ruler"><img class="large-6" src="../../images/1/scalerule.jpg" alt="Scale rule"></li>
-								<li>Protractor<br>
-									<img class="large-6" src="../../images/1/protractorfull.jpg" alt="Full Protractor"><img class="large-6" src="../../images/1/protractorhalf.jpg" alt="Half Protractor" onload="lzld(this)"></li>
-								<li>Compass set<br>
-									<img class="large-6" src="../../images/1/compassset.jpg" alt="Compass Set" onload="lzld(this)"></li>
-								<li>Eraser and Shield<br>
-									<img class="large-6" src="../../images/1/eraser.jpg" alt="Eraser & Shield" onload="lzld(this)"></li>
-								<li>Radii &amp; Circle template ruler<br>
-									<img class="large-6" src="../../images/1/radiitemplate.jpg" alt="Radii Template" onload="lzld(this)"><img class="large-6" src="../../images/1/circletemplate.jpg" alt="Circle Template Ruler" onload="lzld(this)"></li>
-								<li>Flexible &amp; French curves<br>
-									<img class="large-6" src="../../images/1/flexiblecurve.jpg" alt="Flexible Curve" onload="lzld(this)"><img class="large-6" src="../../images/1/frenchcurve.jpg" alt="French Curve" onload="lzld(this)"></li>
-								<li>T-square<br>
-									<img class="large-6" src="../../images/1/tsquare.jpg" alt="T-square" onload="lzld(this)"></li>
+								<li>Pencils (H/2H for constructions, 2B for outlines)
+									<div class="row row-no-gutter">
+										<div class="col-xs-6">
+											<img alt="Pencils" data-src="../../images/1/pencils.jpg">
+										</div>
+									</div>
+								</li>
+								<li>Set Squares (30&deg; &amp; 45&deg;)
+									<div class="row row-no-gutter">
+										<div class="col-xs-6">
+											<img alt="Set Squares" data-src="../../images/1/setsquares.jpg">
+										</div>
+									</div>
+								</li>
+								<li>Ruler and Scale rule
+									<div class="row row-no-gutter">
+										<div class="col-xs-6">
+											<img alt="Ruler" data-src="../../images/1/ruler.jpg">
+										</div>
+										<div class="col-xs-6">
+											<img alt="Scale rule" data-src="../../images/1/scalerule.jpg">
+										</div>
+									</div>
+								</li>
+								<li>Protractor
+									<div class="row row-no-gutter">
+										<div class="col-xs-6">
+											<img alt="Full Protractor" data-src="../../images/1/protractorfull.jpg">
+										</div>
+										<div class="col-xs-6">
+											<img alt="Half Protractor" data-src="../../images/1/protractorhalf.jpg">
+										</div>
+									</div>
+								</li>
+								<li>Compass set
+									<div class="row row-no-gutter">
+										<div class="col-xs-6">
+											<img alt="Compass Set" data-src="../../images/1/compassset.jpg">
+										</div>
+									</div>
+								</li>
+								<li>Eraser and Shield
+									<div class="row row-no-gutter">
+										<div class="col-xs-6">
+											<img alt="Eraser & Shield" data-src="../../images/1/eraser.jpg">
+										</div>
+									</div>
+								</li>
+								<li>Radii &amp; Circle template ruler
+									<div class="row row-no-gutter">
+										<div class="col-xs-6">
+											<img alt="Radii Template" data-src="../../images/1/radiitemplate.jpg">
+										</div>
+										<div class="col-xs-6">
+											<img alt="Circle Template Ruler" data-src="../../images/1/circletemplate.jpg">
+										</div>
+									</div>
+								</li>
+								<li>Flexible &amp; French curves
+									<div class="row row-no-gutter">
+										<div class="col-xs-6">
+											<img alt="Flexible Curve" data-src="../../images/1/flexiblecurve.jpg">
+										</div>
+										<div class="col-xs-6">
+											<img alt="French Curve" data-src="../../images/1/frenchcurve.jpg">
+										</div>
+									</div>
+								</li>
+								<li>T-square
+									<div class="row row-no-gutter">
+										<div class="col-xs-6">
+											<img alt="T-square" data-src="../../images/1/tsquare.jpg">
+										</div>
+									</div>
+								</li>
 							</ul>
 						</div>
 						<div class="row">
 							<h1 id="term">1.2 Basic terminologies </h1>
 							<h2 id="2dterm">1.2.1 2D terminology</h2>
 							<div class="row">
-								<div class="col-sm-6">
-									<ul style="margin-bottom:0px">
+								<div class="col-md-6">
+									<ul>
 										<li>Point<br>
 											<svg width="200" height="45">
 												<path class="thick-line" d="M 41 5 L 23 23 L 41 41 M 23 23 L 5 41 M 5 5 L 23 23"></path>
@@ -155,8 +300,8 @@
 										</li>
 									</ul>
 								</div>
-								<div class="col-sm-6" style="margin-bottom:0px">
-									<ul style="margin-bottom:0px">
+								<div class="col-md-6">
+									<ul>
 										<li>Radii/Fillet/Arc<br>
 											<svg width="200" height="90">
 												<path class="thick-line" d="M5 17L65 17M65 17Q95 17 95 47M95 47L95 80"/>
@@ -190,10 +335,10 @@
 									</ul>
 								</div>
 							</div>
-							<ul style="margin-top:0px">
+							<ul>
 								<li>Polygon
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-md-6">
 											<ul>
 												<li>Right angle triangle<br>
 													<svg width="100" height="60">
@@ -233,7 +378,7 @@
 												</li>
 											</ul>
 										</div>
-										<div class="col-sm-6">
+										<div class="col-md-6">
 											<ul>
 												<li>Parallelogram<br>
 													<svg width="200" height="65">
@@ -274,7 +419,7 @@
 								<ul>
 									<li>Cone
 										<div class="row">
-											<div class="col-md-6">
+											<div class="col-xs-6">
 												<svg width="100" height="111" viewBox="0 0 20 10">
 													<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,1)">
 														<path d="M 9 -5 L 9 10" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="1,1,6,1"/>
@@ -283,7 +428,7 @@
 													</g>
 												</svg>
 												<em>vertical</em> </div>
-											<div class="col-md-6">
+											<div class="col-xs-6">
 												<svg width="100" height="111" viewBox="0 0 20 10">
 													<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,1)">
 														<path d="M 12 -5 L 9 10" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="1,1,6,1"/>
@@ -296,7 +441,7 @@
 									</li>
 									<li>Cylinder
 										<div class="row">
-											<div class="col-md-6 ">
+											<div class="col-xs-6">
 												<svg width="100" height="133.2" viewBox="0 0 20 12">
 													<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,4)">
 														<path d="M 9 10 L 9 -5" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="7,1,1,1"/>
@@ -306,7 +451,7 @@
 													</g>
 												</svg>
 												<em>vertical</em> </div>
-											<div class="col-md-6 ">
+											<div class="col-xs-6">
 												<svg width="110" height="133.2" viewBox="0 0 22 12">
 													<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,4)">
 														<path d="M 9 10 L 13 -5" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="7,1,1,1"/>
@@ -322,7 +467,7 @@
 										<ul>
 											<li>Triangular Pyramid
 												<div class="row">
-													<div class="col-md-6 ">
+													<div class="col-xs-6">
 														<svg width="100" height="111" viewBox="0 0 20 10">
 															<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,1)">
 																<path d="M 10 -5 L 10 10" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="1,1,6,1"/>
@@ -331,7 +476,7 @@
 															</g>
 														</svg>
 														<em>vertical</em> </div>
-													<div class="col-md-6 ">
+													<div class="col-xs-6">
 														<svg width="100" height="111" viewBox="0 0 20 10">
 															<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,1)">
 																<path d="M 14 -5 L 10 10" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="1,1,6,1"/>
@@ -344,7 +489,7 @@
 											</li>
 											<li>Square Pyramid
 												<div class="row">
-													<div class="col-md-6 ">
+													<div class="col-xs-6">
 														<svg width="100" height="111" viewBox="0 0 20 10">
 															<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,1)">
 																<path d="M 10 10 L 10 -5" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="5,1,1,1"/>
@@ -353,7 +498,7 @@
 															</g>
 														</svg>
 														<em>vertical</em> </div>
-													<div class="col-md-6 ">
+													<div class="col-xs-6">
 														<svg width="100" height="111" viewBox="0 0 20 10">
 															<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,1)">
 																<path d="M 10 10 L 14 -5" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="5,1,1,1"/>
@@ -366,7 +511,7 @@
 											</li>
 											<li>Pentagonal Pyramid
 												<div class="row">
-													<div class="col-md-6 ">
+													<div class="col-xs-6">
 														<svg width="100" height="111" viewBox="0 0 20 10">
 															<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,1)">
 																<path d="M 10 -5 L 10 9.5" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="1,1,6,1"/>
@@ -375,7 +520,7 @@
 															</g>
 														</svg>
 														<em>vertical</em> </div>
-													<div class="col-md-6 ">
+													<div class="col-xs-6">
 														<svg width="100" height="111" viewBox="0 0 20 10">
 															<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,1)">
 																<path d="M 14 -5 L 10 9.5" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="1,1,6,1"/>
@@ -388,7 +533,7 @@
 											</li>
 											<li>Hexagonal Pyramid
 												<div class="row">
-													<div class="col-md-6 ">
+													<div class="col-xs-6">
 														<svg width="100" height="111" viewBox="0 0 20 10">
 															<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,1)">
 																<path d="M 10 -5 L 10 9.5" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="1,1,6,1"/>
@@ -397,7 +542,7 @@
 															</g>
 														</svg>
 														<em>vertical</em> </div>
-													<div class="col-md-6 ">
+													<div class="col-xs-6">
 														<svg width="100" height="111" viewBox="0 0 20 10">
 															<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,1)">
 																<path d="M 17 -5 L 10 9.5" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="1,1,6,1"/>
@@ -412,7 +557,7 @@
 									</li>
 									<li>Cube
 										<div class="row">
-											<div class="col-md-6 ">
+											<div class="col-xs-6">
 												<svg width="100" height="111" viewBox="0 0 20 10">
 													<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,1)">
 														<path d="M 18 8 L 6 7 M 6 7 L 1 13 M 6 7 L 6 -5.5" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="1,1"/>
@@ -420,7 +565,7 @@
 													</g>
 												</svg>
 												<em>vertical</em> </div>
-											<div class="col-md-6 ">
+											<div class="col-xs-6">
 												<svg width="115" height="111" viewBox="0 0 23 10">
 													<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,1)">
 														<path d="M 18 8 L 6 7 M 6 7 L 1 13 M 6 7 L 10 -4.5" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="1,1"/>
@@ -438,7 +583,7 @@
 										<ul>
 											<li>Triangular Prism
 												<div class="row">
-													<div class="col-md-6">
+													<div class="col-xs-6">
 														<svg width="100" height="122" viewBox="0 0 20 11">
 															<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,3.5)">
 																<path d="M 10 -5 L 10 10" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="1,1,6,1"/>
@@ -447,7 +592,7 @@
 															</g>
 														</svg>
 														<em>vertical</em> </div>
-													<div class="col-md-6">
+													<div class="col-xs-6">
 														<svg width="100" height="122" viewBox="0 0 20 11">
 															<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,3.5)">
 																<path d="M 13 -5 L 10 10" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="1,1,6,1"/>
@@ -460,7 +605,7 @@
 											</li>
 											<li>Square Prism
 												<div class="row">
-													<div class="col-md-6">
+													<div class="col-xs-6">
 														<svg width="100" height="133" viewBox="0 0 20 12">
 															<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,4)">
 																<path d="M 18 8 L 6.5 7 M 6.5 7 L 1 13 M 6.5 7 L 6.5 -9" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="1,1"/>
@@ -468,7 +613,7 @@
 															</g>
 														</svg>
 														<em>vertical</em> </div>
-													<div class="col-md-6 ">
+													<div class="col-xs-6">
 														<svg width="115" height="133" viewBox="0 0 23 12">
 															<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,4)">
 																<path d="M 18 8 L 6.5 7 M 6.5 7 L 1 13 M 6.5 7 L 10.5 -9" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="1,1"/>
@@ -480,7 +625,7 @@
 											</li>
 											<li>Rectangular Prism
 												<div class="row">
-													<div class="col-md-6 ">
+													<div class="col-xs-6">
 														<svg width="100" height="133" viewBox="0 0 20 12">
 															<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,4)">
 																<path d="M 18 8 L 4.5 7 M 4.5 7 L 1 13 M 4.5 7 L 4.5 -9" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="1,1"/>
@@ -488,7 +633,7 @@
 															</g>
 														</svg>
 														<em>vertical</em> </div>
-													<div class="col-md-6 ">
+													<div class="col-xs-6">
 														<svg width="115" height="133" viewBox="0 0 23 12">
 															<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,4)">
 																<path d="M 18 8 L 4.5 7 M 4.5 7 L 1 13 M 4.5 7 L 8.5 -9" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="1,1"/>
@@ -500,7 +645,7 @@
 											</li>
 											<li>Pentagonal Prism
 												<div class="row">
-													<div class="col-md-6 ">
+													<div class="col-xs-6">
 														<svg width="100" height="133" viewBox="0 0 20 12">
 															<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,4)">
 																<path d="M 10 -5.5 L 10 9.5" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="7,1,1,1"/>
@@ -509,7 +654,7 @@
 															</g>
 														</svg>
 														<em>vertical</em> </div>
-													<div class="col-md-6 ">
+													<div class="col-xs-6">
 														<svg width="110" height="133" viewBox="0 0 22 12">
 															<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,4)">
 																<path d="M 14 -5.5 L 10 9.5" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="7,1,1,1"/>
@@ -522,7 +667,7 @@
 											</li>
 											<li>Hexagonal Prism
 												<div class="row">
-													<div class="col-md-6 ">
+													<div class="col-xs-6">
 														<svg width="100" height="133" viewBox="0 0 20 12">
 															<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,4)">
 																<path d="M 10 -6 L 10 9.5" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="7,1,1,1"/>
@@ -531,7 +676,7 @@
 															</g>
 														</svg>
 														<em>vertical</em> </div>
-													<div class="col-md-6 ">
+													<div class="col-xs-6">
 														<svg width="110" height="133" viewBox="0 0 22 12">
 															<g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,4)">
 																<path d="M 14 -6 L 10 9.5" stroke-width="0.3" stroke="#FF113E" stroke-dasharray="7,1,1,1"/>
@@ -544,7 +689,7 @@
 											</li>
 										</ul>
 									</li>
-									<li>Sphere<br>
+									<li>Sphere
 										<svg width="300" height="100" viewBox="0 0 60 9">
 											<defs>
 												<radialgradient id="grad1" cx="40%" cy="40%" r="50%" fx="20%" fy="20%">
@@ -560,7 +705,7 @@
 											</g>
 										</svg>
 									</li>
-									<li>Torus<br>
+									<li>Torus
 										<svg width="300" height="100" viewBox="0 0 60 9">
 											<defs>
 												<radialgradient id="gradtorus" cx="45%" cy="43%" r="53%" fx="32%" fy="35%">
@@ -587,163 +732,171 @@
 							<h1 id="linework">1.3 Line works </h1>
 							<h2 id="linetype">1.3.1 Line types</h2>
 							<ul>
-								<li>Thick continuous line<br>
-									<svg class="large-12" height="20">
+								<li>Thick continuous line
+									<svg class="full-width" height="20">
 										<path class="thick-line" d="M 10 15 L 980 15"></path>
 									</svg>
-									<ul class="nobullet">
-										<li class="large-6">
-											<img src="../../images/1/visibleout.png" alt="Visible outline & Edges" onload="lzld(this)"><br>- Visible outline &amp; edges</li><br>
-									</ul>
+									<div class="row">
+										<div class="col-xs-6">
+											<img alt="Visible outline & Edges" data-src="../../images/1/visibleout.png">
+											<p>- Visible outline &amp; edges</p>
+										</div>
+									</div>
 								</li>
-								<li>Thin continuous line<br>
-									<svg class="large-12" height="20">
+								<li>Thin continuous line
+									<svg class="full-width" height="20">
 										<path class="thin-line" d="M 10 15 L 980 15"></path>
 									</svg>
 									<div class="row">
-										<div class="col-md-6">
-											<ul class="nobullet">
-												<li>
-													<img src="../../images/1/dimension.png" alt="Dimension & Projection lines" onload="lzld(this)"><br>- Dimension &amp; Projection/extension lines</li><br>
-												<li>
-													<img src="../../images/1/leader.png" alt="Leader lines" onload="lzld(this)"><br>- Leader lines</li><br>
-											</ul>
+										<div class="col-xs-6">
+											<img alt="Dimension & Projection lines" data-src="../../images/1/dimension.png">
+											<p>- Dimension &amp; Projection/extension lines</p>
+											<img alt="Leader lines" data-src="../../images/1/leader.png">
+											<p>- Leader lines</p>
 										</div>
-										<div class="col-md-6">
-											<ul class="nobullet">
-												<li>
-													<img src="../../images/1/hatching.png" alt="Hatching/Sectioning" onload="lzld(this)"><br>- Hatching/Sectioning</li><br>
-												<li>
-													<img src="../../images/1/revolvesection.png" alt="Revolved Section" onload="lzld(this)"><br>- Outline of revolved section</li><br>
-											</ul>
+										<div class="col-xs-6">
+											<img alt="Hatching/Sectioning" data-src="../../images/1/hatching.png">
+											<p>- Hatching/Sectioning</p>
+											<img alt="Revolved Section" data-src="../../images/1/revolvesection.png">
+											<p>- Outline of revolved section</p>
 										</div>
 									</div>
 								</li>
 					
-								<li>Thin dashed line<br>
-									<svg class="large-12" height="20">
+								<li>Thin dashed line
+									<svg class="full-width" height="20">
 										<path class="thin-line dashed-line" d="M 10 15 L 980 15"/>
 									</svg>
-									<div class="large-6">
-									<ul class="nobullet">
-										<li>
-											<img src="../../images/1/hiddenoutline.png" alt="Hidden Outline & Edges" onload="lzld(this)"><br>- Hidden outline &amp; Edges</li><br>
-									</ul>
+									<div class="row">
+										<div class="col-xs-6">
+											<img alt="Hidden Outline & Edges" data-src="../../images/1/hiddenoutline.png">
+											<p>- Hidden outline &amp; Edges</p>
+										</div>
 									</div>
 								</li>
 								
-								<li>Thin chain line<br>
-									<svg class="large-12" height="20">
+								<li>Thin chain line
+									<svg class="full-width" height="20">
 										<path class="thin-line chain-line" d="M 10 15 L 980 15"/>
 									</svg>
-									<ul class="large-6 nobullet">
-										<li>
-											<img src="../../images/1/centreline.png" alt="Centre line" onload="lzld(this)"><br>- Centre line</li><br>
-									</ul>
+									<div class="row">
+										<div class="col-xs-6">
+											<img alt="Centre line" data-src="../../images/1/centreline.png">
+											<p>- Centre line</p>
+										</div>
+									</div>
 								</li>
 										 
-								<li>Thick chain line<br>
-									<svg class="large-12" height="20">
+								<li>Thick chain line
+									<svg class="full-width" height="20">
 										<path class="thin-line thickchain-line" stroke-width="5" d="M10 15L980 15"/>
 									</svg>
-									<ul class="large-6 nobullet">
-										<li>
-											<img src="../../images/1/treatment.png" alt="Surface requires Treatment" onload="lzld(this)"><br>- To indicate a surface that requires additional treatment</li><br>
-									</ul>
+									<div class="row">
+										<div class="col-xs-6">
+											<img alt="Surface requires Treatment" data-src="../../images/1/treatment.png">
+											<p>- To indicate a surface that requires additional treatment</p>
+										</div>
+									</div>
 								</li>
-								<li>Thin chain line + Thick short line at ends<br>
-									<svg class="large-12" height="25">
+								<li>Thin chain line + Thick short line at end
+									<svg class="full-width" height="25">
 										<path class="thin-line chain-line" d="M 5 10 L 1000 10"/>
-								<path class="thin-line half-thick-line" d="M5 2.5L5 17.5M12.5 2.5L12.5 17.5"/>
-								<svg width="100%" height="25" viewBox="0 0 25 25" preserveAspectRatio="xMaxYMin meet">
-								<path class="thin-line half-thick-line" d="M15 2.5L15 17.5M23 2.5L23 17.5"/>
-								</svg>
-									</svg>
-									<ul class="large-6 nobullet">
-										<li>
-											<img src="../../images/1/symmetryline.png" alt="Symmetry lines"><br>- Symmetry lines</li><br>
-									</ul>
-								</li>
-								
-								
-								<li>Thick freehand continuous line<br>
-									<svg class="large-12" height="25">
-										<path class="thick-line" d="M8 18c2 0 6 1 13 2c6 0 15 0 23 -1c10 -1 18 -3 26 -4c13 -1 24 -1 33 -1c10 0 17 -3 23 -2c7 1 10 2 16 4c5 1 10 3 13 4c5 1 10 0 11 0c5 0 8 -1 13 -2c5 -2 8 -3 15 -4c5 0 10 -2 13 -2c5 0 7 0 10 0c2 0 3 0 7 0c2 0 7 0 8 0c5 0 7 0 11 0c2 0 3 0 7 0c2 0 4 -1 7 0c3 1 3 2 7 3c2 0 3 0 7 1c2 0 3 0 7 0l2 0l2 0"/>
-								<path transform="translate(275,0)" class="thick-line" d="M8 18c2 0 6 1 13 2c6 0 15 0 23 -1c10 -1 18 -3 26 -4c13 -1 24 -1 33 -1c10 0 17 -3 23 -2c7 1 10 2 16 4c5 1 10 3 13 4c5 1 10 0 11 0c5 0 8 -1 13 -2c5 -2 8 -3 15 -4c5 0 10 -2 13 -2c5 0 7 0 10 0c2 0 3 0 7 0c2 0 7 0 8 0c5 0 7 0 11 0c2 0 3 0 7 0c2 0 4 -1 7 0c3 1 3 2 7 3c2 0 3 0 7 1c2 0 3 0 7 0l2 0l2 0"/>
-								<path transform="translate(550,0)" class="thick-line" d="M8 18c2 0 6 1 13 2c6 0 15 0 23 -1c10 -1 18 -3 26 -4c13 -1 24 -1 33 -1c10 0 17 -3 23 -2c7 1 10 2 16 4c5 1 10 3 13 4c5 1 10 0 11 0c5 0 8 -1 13 -2c5 -2 8 -3 15 -4c5 0 10 -2 13 -2c5 0 7 0 10 0c2 0 3 0 7 0c2 0 7 0 8 0c5 0 7 0 11 0c2 0 3 0 7 0c2 0 4 -1 7 0c3 1 3 2 7 3c2 0 3 0 7 1c2 0 3 0 7 0l2 0l2 0"/>
-								<path transform="translate(825,0)" class="thick-line" d="M8 18c2 0 6 1 13 2c6 0 15 0 23 -1c10 -1 18 -3 26 -4c13 -1 24 -1 33 -1c10 0 17 -3 23 -2c7 1 10 2 16 4c5 1 10 3 13 4c5 1 10 0 11 0c5 0 8 -1 13 -2c5 -2 8 -3 15 -4c5 0 10 -2 13 -2c5 0 7 0 10 0c2 0 3 0 7 0c2 0 7 0 8 0c5 0 7 0 11 0c2 0 3 0 7 0c2 0 4 -1 7 0c3 1 3 2 7 3c2 0 3 0 7 1c2 0 3 0 7 0l2 0l2 0"/>
-									</svg>       
-									<ul class="large-6">
-										<li class="nobullet">
-											<img src="../../images/1/shortbreak.png" alt="Short break lines"><br>- Short break lines</li><br>
-									</ul>
-								</li>
-					
-								<li>Thin chain line + Thick ends + Changes direction<br>
-									<svg class="large-12" height="25">
-										<path class="thin-line chain-line" d="M15 15L980 15"/>
-										<path class="thin-line half-thick-line" d="M1 15L11 15"/>
-										<svg width="100%" height="25" viewBox="0 0 12 25" preserveAspectRatio="xMaxYMin meet">
-										<path class="thin-line half-thick-line" d="M1 15L11 15"/>
+										<path class="thin-line half-thick-line" d="M5 2.5L5 17.5M12.5 2.5L12.5 17.5"/>
+										<svg class="full-width" height="25" viewBox="0 0 25 25" preserveAspectRatio="xMaxYMin meet">
+											<path class="thin-line half-thick-line" d="M15 2.5L15 17.5M23 2.5L23 17.5"/>
 										</svg>
 									</svg>
 									<div class="row">
-										<ul>
-											<li class="nobullet">
-												<div class="col-md-6">
-													<img src="../../images/1/cuttingplane.png" alt="Short break lines"></div><div class="col-md-6"><img src="../../images/1/cuttingplane2.png" alt="Short break lines"></div>
-													<div class="col-md-12">- Cutting planes</div></li><br>
-										</ul>
+										<div class="col-xs-6">
+											<img alt="Symmetry lines" data-src="../../images/1/symmetryline.png">
+											<p>- Symmetry lines</p>
+										</div>
 									</div>
 								</li>
-								<li>Thin double-dashed chain line<br>
-									<svg class="large-12" height="25">
+								
+								<li>Thick freehand continuous line
+									<svg class="full-width" height="25">
+										<path class="thick-line" d="M8 18c2 0 6 1 13 2c6 0 15 0 23 -1c10 -1 18 -3 26 -4c13 -1 24 -1 33 -1c10 0 17 -3 23 -2c7 1 10 2 16 4c5 1 10 3 13 4c5 1 10 0 11 0c5 0 8 -1 13 -2c5 -2 8 -3 15 -4c5 0 10 -2 13 -2c5 0 7 0 10 0c2 0 3 0 7 0c2 0 7 0 8 0c5 0 7 0 11 0c2 0 3 0 7 0c2 0 4 -1 7 0c3 1 3 2 7 3c2 0 3 0 7 1c2 0 3 0 7 0l2 0l2 0"/>
+										<path transform="translate(275,0)" class="thick-line" d="M8 18c2 0 6 1 13 2c6 0 15 0 23 -1c10 -1 18 -3 26 -4c13 -1 24 -1 33 -1c10 0 17 -3 23 -2c7 1 10 2 16 4c5 1 10 3 13 4c5 1 10 0 11 0c5 0 8 -1 13 -2c5 -2 8 -3 15 -4c5 0 10 -2 13 -2c5 0 7 0 10 0c2 0 3 0 7 0c2 0 7 0 8 0c5 0 7 0 11 0c2 0 3 0 7 0c2 0 4 -1 7 0c3 1 3 2 7 3c2 0 3 0 7 1c2 0 3 0 7 0l2 0l2 0"/>
+										<path transform="translate(550,0)" class="thick-line" d="M8 18c2 0 6 1 13 2c6 0 15 0 23 -1c10 -1 18 -3 26 -4c13 -1 24 -1 33 -1c10 0 17 -3 23 -2c7 1 10 2 16 4c5 1 10 3 13 4c5 1 10 0 11 0c5 0 8 -1 13 -2c5 -2 8 -3 15 -4c5 0 10 -2 13 -2c5 0 7 0 10 0c2 0 3 0 7 0c2 0 7 0 8 0c5 0 7 0 11 0c2 0 3 0 7 0c2 0 4 -1 7 0c3 1 3 2 7 3c2 0 3 0 7 1c2 0 3 0 7 0l2 0l2 0"/>
+										<path transform="translate(825,0)" class="thick-line" d="M8 18c2 0 6 1 13 2c6 0 15 0 23 -1c10 -1 18 -3 26 -4c13 -1 24 -1 33 -1c10 0 17 -3 23 -2c7 1 10 2 16 4c5 1 10 3 13 4c5 1 10 0 11 0c5 0 8 -1 13 -2c5 -2 8 -3 15 -4c5 0 10 -2 13 -2c5 0 7 0 10 0c2 0 3 0 7 0c2 0 7 0 8 0c5 0 7 0 11 0c2 0 3 0 7 0c2 0 4 -1 7 0c3 1 3 2 7 3c2 0 3 0 7 1c2 0 3 0 7 0l2 0l2 0"/>
+									</svg> 
+									<div class="row">
+										<div class="col-xs-6">
+											<img alt="Short break lines" data-src="../../images/1/shortbreak.png">
+											<p>- Short break lines</p>
+										</div>
+									</div>
+								</li>
+					
+								<li>Thin chain line + Thick ends + Changes direction
+									<svg class="full-width" height="25">
+										<path class="thin-line chain-line" d="M15 15L980 15"/>
+										<path class="thin-line half-thick-line" d="M1 15L11 15"/>
+										<svg class="full-width" height="25" viewBox="0 0 12 25" preserveAspectRatio="xMaxYMin meet">
+											<path class="thin-line half-thick-line" d="M1 15L11 15"/>
+										</svg>
+									</svg>
+									<div class="row">
+										<div class="col-xs-6">
+											<img alt="Short break lines" data-src="../../images/1/cuttingplane.png">
+										</div>
+										<div class="col-xs-6">	
+											<img alt="Short break lines" data-src="../../images/1/cuttingplane2.png">
+										</div>
+									</div>
+									<p>- Cutting planes</p>
+								</li>
+								<li>Thin double-dashed chain line
+									<svg class="full-width" height="25">
 										<path class="thin-line" d="M 0 15 L 980 15" stroke-width="0.3" stroke-dasharray="35,5,5,5,5,5"/>
 									</svg>
-									<ul class="large-6 nobullet">
-										<li>
-											<img src="../../images/1/phantomline.png" alt="Short break lines"><br>- Phantom lines</li><br>
-									</ul>
+									<div class="row">
+										<div class="col-xs-6">
+											<img alt="Short break lines" data-src="../../images/1/phantomline.png">
+											<p>- Phantom lines</p>
+										</div>
+									</div>
 								</li>
-								<li>Thin continuous line with zigzags<br>
-									<svg class="large-12" height="30">
-								<defs>
-									<pattern id="zigzag" x="0" y="0" width="250" height="30" patternUnits="userSpaceOnUse">
-									<g class="thin-line">
-									<line y2="15" x2="70" y1="15" x1="2"/>
-									<line transform="rotate(35 73,9)" y2="1" x2="73" y1="17" x1="73"/>
-									<line y2="15" x2="153" y1="15" x1="85"/>
-									<line transform="rotate(35 82,20) " y2="12" x2="82" y1="29" x1="82"/>
-									<line y2="29" x2="77" y1="1" x1="77"/>
-									<line transform="rotate(35 156,9) " y2="1" x2="156" y1="17" x1="156"/>
-									<line y2="14" x2="236" y1="14" x1="168"/>
-									<line transform="rotate(35 165,20) " y2="12" x2="165" y1="28" x1="165"/>
-									<line y2="28" x2="160" y1="1" x1="160"/>
-									<line transform="rotate(35 239,9) " y2="1" x2="239" y1="17" x1="239"/>
-									<line y2="14" x2="319" y1="14" x1="251"/>
-									<line transform="rotate(35 248,20) " y2="12" x2="248" y1="28" x1="248"/>
-									<line y2="28" x2="243" y1="1" x1="243"/>
-									</g>
-								</pattern>
-									</defs>
-								<rect fill="url(#zigzag)" x="0" y="0" width="100%" height="30"/>
+								<li>Thin continuous line with zigzags
+									<svg class="full-width" height="30">
+										<defs>
+											<pattern id="zigzag" x="0" y="0" width="250" height="30" patternUnits="userSpaceOnUse">
+												<g class="thin-line">
+												<line y2="15" x2="70" y1="15" x1="2"/>
+												<line transform="rotate(35 73,9)" y2="1" x2="73" y1="17" x1="73"/>
+												<line y2="15" x2="153" y1="15" x1="85"/>
+												<line transform="rotate(35 82,20) " y2="12" x2="82" y1="29" x1="82"/>
+												<line y2="29" x2="77" y1="1" x1="77"/>
+												<line transform="rotate(35 156,9) " y2="1" x2="156" y1="17" x1="156"/>
+												<line y2="14" x2="236" y1="14" x1="168"/>
+												<line transform="rotate(35 165,20) " y2="12" x2="165" y1="28" x1="165"/>
+												<line y2="28" x2="160" y1="1" x1="160"/>
+												<line transform="rotate(35 239,9) " y2="1" x2="239" y1="17" x1="239"/>
+												<line y2="14" x2="319" y1="14" x1="251"/>
+												<line transform="rotate(35 248,20) " y2="12" x2="248" y1="28" x1="248"/>
+												<line y2="28" x2="243" y1="1" x1="243"/>
+												</g>
+											</pattern>
+										</defs>
+										<rect fill="url(#zigzag)" x="0" y="0" class="full-width" height="30"/>
 									</svg>
-									<div class="large-6">
-									<ul class="nobullet">
-										<li>
-											<img src="../../images/1/longbreak.png" alt="Long break lines"><br>- Long break lines</li><br>
-									</ul>
+									<div class="row">
+										<div class="col-xs-6">
+											<img alt="Long break lines" data-src="../../images/1/longbreak.png">
+											<p>- Long break lines</p>
+										</div>
 									</div>
 								</li>
 							</ul>
 							<h2 id="hiddenline">1.3.2 Hidden line drawing</h2>
 							<ul>
-								<li>Begins with dash, not space<br>
+								<li>Begins with dash, not space
 									<div class="row">
-									<svg class="col-xs-4" viewBox="0 0 120 105">
+									<svg class="col-xs-5 col-md-4" viewBox="0 0 120 105">
 										<defs>
 											<mask id="maskhline">
-												<rect width="100%" height="100%" fill="#fff" fill-opacity="0.3"></rect>
+												<rect class="full-width" height="100%" fill="#fff" fill-opacity="0.3"></rect>
 												<circle cx="52.5" cy="24" r="19" fill="#fff"></circle>
 											</mask>
 										</defs>
@@ -755,7 +908,7 @@
 											<circle class="tick-circle" cx="52.5" cy="24" r="18"></circle>
 										</g>
 									</svg> 
-									<svg class="col-xs-4" viewBox="0 0 120 105">
+									<svg class="col-xs-5 col-md-4" viewBox="0 0 120 105">
 										<line class="tick-line cross-line" y2="89" x2="81" y1="60" x1="104"/>
 										<line class="tick-line cross-line" y2="84" x2="102" y1="63" x1="83"/>
 										<g mask="url(#maskhline)">
@@ -766,9 +919,9 @@
 									</svg>
 									</div>
 								</li>
-								<li>No space between intersection<br>
+								<li>No space between intersection
 								<div class="row">
-									<svg class="col-xs-4" viewBox="0 0 120 105">
+									<svg class="col-xs-5 col-md-4" viewBox="0 0 120 105">
 										<line class="tick-line" y2="62" x2="108" y1="90" x1="89"/>
 										<line class="tick-line" y2="77" x2="82" y1="90" x1="89"/>
 										<g mask="url(#maskhline)">
@@ -777,7 +930,7 @@
 											<circle class="tick-circle" cx="52.5" cy="24" r="18"/>
 										</g>
 									</svg>
-									<svg class="col-xs-4" viewBox="0 0 120 105">
+									<svg class="col-xs-5 col-md-4" viewBox="0 0 120 105">
 										<line class="tick-line cross-line" y2="89" x2="81" y1="60" x1="104"/>
 										<line class="tick-line cross-line" y2="84" x2="102" y1="63" x1="83"/>
 										<g mask="url(#maskhline)">
@@ -788,9 +941,9 @@
 									</svg>
 									</div>
 								</li>
-								<li>No space between intersection at corner<br>
+								<li>No space between intersection at corner
 								<div class="row">
-									<svg class="col-xs-4 " viewBox="0 0 120 105">
+									<svg class="col-xs-5 col-md-4 " viewBox="0 0 120 105">
 										<line class="tick-line" y2="62" x2="108" y1="90" x1="89"/>
 										<line class="tick-line" y2="77" x2="82" y1="90" x1="89"/>
 										<g mask="url(#maskhline)">
@@ -799,7 +952,7 @@
 											<circle class="tick-circle" cx="52.5" cy="23" r="18"/>
 										</g>
 									</svg>
-									<svg class="col-xs-4" viewBox="0 0 120 105">
+									<svg class="col-xs-5 col-md-4" viewBox="0 0 120 105">
 										<line class="tick-line cross-line" y2="89" x2="81" y1="60" x1="104"/>
 										<line class="tick-line cross-line" y2="84" x2="102" y1="63" x1="83"/>
 										<g mask="url(#maskhline)">
@@ -810,39 +963,39 @@
 									</svg>
 									</div>
 								</li>
-								<li>Three hidden lines meet at corner<br>
-								<div class="row"> 
-								<svg class="col-xs-4 " viewBox="0 0 120 105">
-										<defs>
-											<mask id="maskhline2">
-												<rect width="100%" height="100%" fill="#fff" fill-opacity="0.3"></rect>
-												<circle cx="52.5" cy="60" r="19" fill="#fff"></circle>
-											</mask>
-										</defs>
-										<line class="tick-line" y2="62" x2="108" y1="90" x1="89"/>
-										<line class="tick-line" y2="77" x2="82" y1="90" x1="89"/>
-										<g mask="url(#maskhline2)">
-											<path d="M 52.5 60 L 52.5 5" class="thin-line" stroke-dasharray="12,7"/>
-											<path d="M 52.5 60 L 5 80" stroke-dasharray="12,7" class="thin-line"/>
-											<path d="M 52.5 60 L 100 80" stroke-dasharray="12,7" class="thin-line"/>
-											<circle class="tick-circle" cx="52.5" cy="60" r="18"/>
-										</g>
-									</svg>
-									<svg class="col-xs-4" viewBox="0 0 120 105">
-										<line class="tick-line cross-line" y2="89" x2="81" y1="60" x1="104"/>
-										<line class="tick-line cross-line" y2="84" x2="102" y1="63" x1="83"/>
-										<g mask="url(#maskhline2)">
-											<path d="M 52.5 55 L 52.5 5" class="thin-line" stroke-dasharray="12,7"/>
-											<path d="M 48 62 L 5 80" stroke-dasharray="12,7" class="thin-line"/>
-											<path d="M 57 62 L 100 80" stroke-dasharray="12,7" class="thin-line"/>
-											<circle class="tick-circle" cx="52.5" cy="60" r="18"/>
-										</g>
-									</svg>
+								<li>Three hidden lines meet at corner
+									<div class="row"> 
+										<svg class="col-xs-5 col-md-4 " viewBox="0 0 120 105">
+											<defs>
+												<mask id="maskhline2">
+													<rect class="full-width" height="100%" fill="#fff" fill-opacity="0.3"></rect>
+													<circle cx="52.5" cy="60" r="19" fill="#fff"></circle>
+												</mask>
+											</defs>
+											<line class="tick-line" y2="62" x2="108" y1="90" x1="89"/>
+											<line class="tick-line" y2="77" x2="82" y1="90" x1="89"/>
+											<g mask="url(#maskhline2)">
+												<path d="M 52.5 60 L 52.5 5" class="thin-line" stroke-dasharray="12,7"/>
+												<path d="M 52.5 60 L 5 80" stroke-dasharray="12,7" class="thin-line"/>
+												<path d="M 52.5 60 L 100 80" stroke-dasharray="12,7" class="thin-line"/>
+												<circle class="tick-circle" cx="52.5" cy="60" r="18"/>
+											</g>
+										</svg>
+										<svg class="col-xs-5 col-md-4" viewBox="0 0 120 105">
+											<line class="tick-line cross-line" y2="89" x2="81" y1="60" x1="104"/>
+											<line class="tick-line cross-line" y2="84" x2="102" y1="63" x1="83"/>
+											<g mask="url(#maskhline2)">
+												<path d="M 52.5 55 L 52.5 5" class="thin-line" stroke-dasharray="12,7"/>
+												<path d="M 48 62 L 5 80" stroke-dasharray="12,7" class="thin-line"/>
+												<path d="M 57 62 L 100 80" stroke-dasharray="12,7" class="thin-line"/>
+												<circle class="tick-circle" cx="52.5" cy="60" r="18"/>
+											</g>
+										</svg>
 									</div>
 								</li>
-								<li>Hidden line continued from visible line begins with space<br>
+								<li>Hidden line continued from visible line begins with space
 								<div class="row">
-									<svg class="col-xs-4 " viewBox="0 0 120 105">
+									<svg class="col-xs-5 col-md-4" viewBox="0 0 120 105">
 										<line class="tick-line" y2="62" x2="108" y1="90" x1="89"/>
 										<line class="tick-line" y2="77" x2="82" y1="90" x1="89"/>
 										<g mask="url(#maskhline2)">
@@ -852,7 +1005,7 @@
 											<circle class="tick-circle" cx="52.5" cy="60" r="18"/>
 										</g>
 									</svg>
-									<svg class="col-xs-4" viewBox="0 0 120 105">
+									<svg class="col-xs-5 col-md-4" viewBox="0 0 120 105">
 										<line class="tick-line cross-line" y2="89" x2="81" y1="60" x1="104"/>
 										<line class="tick-line cross-line" y2="84" x2="102" y1="63" x1="83"/>
 										<g mask="url(#maskhline2)">
@@ -864,12 +1017,12 @@
 									</svg>
 									</div>
 								</li>
-								<li>Invisible arc starts with a dash<br>
+								<li>Invisible arc starts with a dash
 								<div class="row">
-									<svg class="col-xs-4 " viewBox="0 0 120 105">
-								<defs>
+									<svg class="col-xs-5 col-md-4" viewBox="0 0 120 105">
+										<defs>
 											<mask id="maskhline3">
-												<rect width="100%" height="100%" fill="#fff" fill-opacity="0.3"></rect>
+												<rect class="full-width" height="100%" fill="#fff" fill-opacity="0.3"></rect>
 												<circle cx="21" cy="79" r="21" fill="#fff"></circle>
 											</mask>
 										</defs>
@@ -882,7 +1035,7 @@
 											<circle class="tick-circle" cx="21" cy="79" r="20"/>
 										</g>
 									</svg>
-									<svg class="col-xs-4" viewBox="0 0 120 105">
+									<svg class="col-xs-5 col-md-4" viewBox="0 0 120 105">
 								<line class="tick-line cross-line" y2="89" x2="61" y1="60" x1="84"/>
 								<line class="tick-line cross-line" y2="84" x2="82" y1="63" x1="63"/>
 										<g mask="url(#maskhline3)">
@@ -894,100 +1047,100 @@
 									</svg>
 									</div>
 								</li>
-								<li>Tiny invisible arc may be made solid<br>
+								<li>Tiny invisible arc may be made solid
 								<div class="row">
-									<svg class="col-xs-4 " viewBox="0 0 120 105">
-								<defs>
+									<svg class="col-xs-5 col-md-4 " viewBox="0 0 120 105">
+										<defs>
 											<mask id="maskhline4">
-												<rect width="100%" height="100%" fill="#fff" fill-opacity="0.3"></rect>
+												<rect class="full-width" height="100%" fill="#fff" fill-opacity="0.3"></rect>
 												<circle cx="50" cy="79" r="21" fill="#fff"></circle>
 											</mask>
 										</defs>
 										<line class="tick-line" y2="62" x2="108" y1="90" x1="89"/>
 										<line class="tick-line" y2="77" x2="82" y1="90" x1="89"/>
 										<g mask="url(#maskhline4)">
-								<path d="M40 -22L40 105" class="thin-line chain-line"/>
-								<path d="M-2 70L95 70" class="thin-line chain-line"/>
-								<path class="thin-line" d="M40 90Q60 90 60 70"/>
-								<path class="thin-line dashed-line" d="M-10 90L40 90M60 70L60 0"/>
+											<path d="M40 -22L40 105" class="thin-line chain-line"/>
+											<path d="M-2 70L95 70" class="thin-line chain-line"/>
+											<path class="thin-line" d="M40 90Q60 90 60 70"/>
+											<path class="thin-line dashed-line" d="M-10 90L40 90M60 70L60 0"/>
 											<circle class="tick-circle" cx="50" cy="79" r="20"/>
 										</g>
 									</svg>
-									<svg class="col-xs-4" viewBox="0 0 120 105">
+									<svg class="col-xs-5 col-md-4" viewBox="0 0 120 105">
 										<line class="tick-line cross-line" y2="89" x2="81" y1="60" x1="104"/>
 										<line class="tick-line cross-line" y2="84" x2="102" y1="63" x1="83"/>
 										<g mask="url(#maskhline4)">
-								<path d="M40 -22L40 105" class="thin-line chain-line"/>
-								<path d="M-2 70L95 70" class="thin-line chain-line"/>
-								<path class="thin-line" stroke-dasharray="0,6,20,10" d="M40 90Q60 90 60 70"/>
-								<path class="thin-line dashed-line" d="M-10 90L40 90M60 70L60 0"/>
+											<path d="M40 -22L40 105" class="thin-line chain-line"/>
+											<path d="M-2 70L95 70" class="thin-line chain-line"/>
+											<path class="thin-line" stroke-dasharray="0,6,20,10" d="M40 90Q60 90 60 70"/>
+											<path class="thin-line dashed-line" d="M-10 90L40 90M60 70L60 0"/>
 											<circle class="tick-circle" cx="50" cy="79" r="20"/>
 										</g>
 									</svg>
 								</div>
 								</li>
-								<li>Hidden arc continued from visible line begins with space<br>
+								<li>Hidden arc continued from visible line begins with space
 								<div class="row">
-									<svg class="col-xs-4 " viewBox="0 0 130 105">
-								<defs>
+									<svg class="col-xs-5 col-md-4 " viewBox="0 0 130 105">
+										<defs>
 											<mask id="maskhline5">
-												<rect width="100%" height="100%" fill="#fff" fill-opacity="0.3"></rect>
+												<rect class="full-width" height="100%" fill="#fff" fill-opacity="0.3"></rect>
 												<circle cx="63" cy="60" r="21" fill="#fff"></circle>
 											</mask>
 										</defs>
-								<line class="tick-line" y2="67" x2="108" y1="95" x1="89"/>
-								<line class="tick-line" y2="82" x2="82" y1="95" x1="89"/>
+										<line class="tick-line" y2="67" x2="108" y1="95" x1="89"/>
+										<line class="tick-line" y2="82" x2="82" y1="95" x1="89"/>
 										<g mask="url(#maskhline5)">
-								<path d="M62.5 60A60 60 0 0 1 122.5 100" class="thin-line" stroke-dasharray="20,12" stroke-dashoffset="21"/>		  
-								<path d="M62.5 100L62.5 5" class="thick-line"/>
-								<path d="M62.5 60A60 60 0 0 0 2.5 100" class="thick-line"/>
-								<circle class="tick-circle" cx="62.5" cy="60" r="20"/>
+											<path d="M62.5 60A60 60 0 0 1 122.5 100" class="thin-line" stroke-dasharray="20,12" stroke-dashoffset="21"/>		  
+											<path d="M62.5 100L62.5 5" class="thick-line"/>
+											<path d="M62.5 60A60 60 0 0 0 2.5 100" class="thick-line"/>
+											<circle class="tick-circle" cx="62.5" cy="60" r="20"/>
 										</g>
 									</svg>
-									<svg class="col-xs-4" viewBox="0 0 130 105">
-								<line class="tick-line cross-line" y2="94" x2="86" y1="65" x1="109"/>
-								<line class="tick-line cross-line" y2="89" x2="107" y1="68" x1="88"/>
+									<svg class="col-xs-5 col-md-4" viewBox="0 0 130 105">
+										<line class="tick-line cross-line" y2="94" x2="86" y1="65" x1="109"/>
+										<line class="tick-line cross-line" y2="89" x2="107" y1="68" x1="88"/>
 										<g mask="url(#maskhline5)">
-								<path d="M62.5 60A60 60 0 0 1 122.5 100" class="thin-line" stroke-dasharray="20,12"/>		  
-								<path d="M62.5 100L62.5 5" class="thick-line"/>
-								<path d="M62.5 60A60 60 0 0 0 2.5 100" class="thick-line"/>
-								<circle class="tick-circle" cx="62.5" cy="60" r="20"/>
+											<path d="M62.5 60A60 60 0 0 1 122.5 100" class="thin-line" stroke-dasharray="20,12"/>		  
+											<path d="M62.5 100L62.5 5" class="thick-line"/>
+											<path d="M62.5 60A60 60 0 0 0 2.5 100" class="thick-line"/>
+											<circle class="tick-circle" cx="62.5" cy="60" r="20"/>
 										</g>
 									</svg>
 									</div>
 								</li>
-								<li>Two hidden arcs meet at point of tangency<br>
+								<li>Two hidden arcs meet at point of tangency
 								<div class="row">
-									<svg class="col-xs-4 " viewBox="0 0 130 105">
-								<defs>
+									<svg class="col-xs-5 col-md-4 " viewBox="0 0 130 105">
+										<defs>
 											<mask id="maskhline6">
-												<rect width="100%" height="100%" fill="#fff" fill-opacity="0.3"></rect>
-									<circle cx="68" cy="55" r="21" fill="#fff"/>
+												<rect class="full-width" height="100%" fill="#fff" fill-opacity="0.3"></rect>
+												<circle cx="68" cy="55" r="21" fill="#fff"/>
 											</mask>
 										</defs>
-								<line class="tick-line" y2="67" x2="108" y1="95" x1="89"/>
-								<line class="tick-line" y2="82" x2="82" y1="95" x1="89"/>
+											<line class="tick-line" y2="67" x2="108" y1="95" x1="89"/>
+											<line class="tick-line" y2="82" x2="82" y1="95" x1="89"/>
 										<g mask="url(#maskhline6)">
-								<path d="M75 0A50 50 0 0 1 65 58" class="thin-line" stroke-dasharray="10,6" stroke-dashoffset="15"/>		  
-								<path d="M20 5L20 90" class="thin-line chain-line"/>
-								<path d="M0 20 L120 20" class="thin-line chain-line"/>
-								<circle class="tick-circle" cx="67.5" cy="55" r="20"/>
-								<circle class="thin-line" stroke-dasharray="10,6" cx="100" cy="100" r="55"/>
-								<path d="M100 120L100 30" class="thin-line chain-line"/>
-								<path d="M110 100L30 100" class="thin-line chain-line"/>
+											<path d="M75 0A50 50 0 0 1 65 58" class="thin-line" stroke-dasharray="10,6" stroke-dashoffset="15"/>		  
+											<path d="M20 5L20 90" class="thin-line chain-line"/>
+											<path d="M0 20 L120 20" class="thin-line chain-line"/>
+											<circle class="tick-circle" cx="67.5" cy="55" r="20"/>
+											<circle class="thin-line" stroke-dasharray="10,6" cx="100" cy="100" r="55"/>
+											<path d="M100 120L100 30" class="thin-line chain-line"/>
+											<path d="M110 100L30 100" class="thin-line chain-line"/>
 										</g>
 									</svg>
-									<svg class="col-xs-4" viewBox="0 0 130 105">
-								<line class="tick-line cross-line" y2="94" x2="86" y1="65" x1="109"/>
-								<line class="tick-line cross-line" y2="89" x2="107" y1="68" x1="88"/>
+									<svg class="col-xs-5 col-md-4" viewBox="0 0 130 105">
+										<line class="tick-line cross-line" y2="94" x2="86" y1="65" x1="109"/>
+										<line class="tick-line cross-line" y2="89" x2="107" y1="68" x1="88"/>
 										<g mask="url(#maskhline6)">
-								<path d="M75 0A50 50 0 0 1 65 58" class="thin-line" stroke-dasharray="10,6" stroke-dashoffset="6"/>		  
-								<path d="M20 5L20 90" class="thin-line chain-line"/>
-								<path d="M0 20 L120 20" class="thin-line chain-line"/>
-								<circle class="tick-circle" cx="67.5" cy="55" r="20"/>
-								<circle class="thin-line" stroke-dasharray="10,6" cx="100" cy="100" r="55" stroke-dashoffset="6"/>
-								<path d="M100 120L100 30" class="thin-line chain-line"/>
-								<path d="M110 100L30 100" class="thin-line chain-line"/>
+											<path d="M75 0A50 50 0 0 1 65 58" class="thin-line" stroke-dasharray="10,6" stroke-dashoffset="6"/>		  
+											<path d="M20 5L20 90" class="thin-line chain-line"/>
+											<path d="M0 20 L120 20" class="thin-line chain-line"/>
+											<circle class="tick-circle" cx="67.5" cy="55" r="20"/>
+											<circle class="thin-line" stroke-dasharray="10,6" cx="100" cy="100" r="55" stroke-dashoffset="6"/>
+											<path d="M100 120L100 30" class="thin-line chain-line"/>
+											<path d="M110 100L30 100" class="thin-line chain-line"/>
 										</g>
 									</svg>
 									</div>
@@ -1005,18 +1158,25 @@
 							</ul>
 							</p>
 							<h2 id="scaleondwg">1.4.1 Scale on a drawing</h2>
-							<img class="large-6" src="../../images/1/scale.png" alt="Scale" onload="lzld(this)">
+							<div class="row">
+								<div class="col-md-6">
+									<img alt="Scale" data-src="../../images/1/scale.png">
+								</div>
+							</div>
 							<h2 id="scaleapplication">1.4.2 Application of scale</h2>
 							<p>Commonly used in maps for reduction.</p>
-							<div class="large-6"><figure><img src="../../images/1/scalemapzoom.jpg" alt="Scale in a Map" data-alt="../../images/1/scalemapzoom.gif" onload="lzld(this)"></figure>
-							<p><em>For scale 1:7500, 1cm on the map represent 75m on ground.</em></p>
+							<div class="row">
+								<div class="col-md-6">
+									<figure><img alt="Scale in a Map" data-src="../../images/1/scalemapzoom.jpg" data-alt="../../images/1/scalemapzoom.gif"></figure>
+								</div>
 							</div>
+							<p><em>For scale 1:7500, 1cm on the map represent 75m on ground.</em></p>
 						</div>
 						<div class="row">
 							<h1 id="drawings">1.5 Drawings </h1>
 							<h2 id="drawingpapers">1.5.1 Standard paper sizes</h2>
 							<p>International designation for drawing papers:
-							<ul style="font-size:inherit">
+							<ul>
 								<li>A0 - 1189 x 841 mm</li>
 								<li>A1 - 841 x 594 mm</li>
 								<li>A2 - 594 x 420 mm</li>
@@ -1024,27 +1184,38 @@
 								<li>A4 - 297 x 210 mm</li>
 							</ul>
 							</p>
-							<img class="large-6" src="../../images/1/a_size.png" alt="A_size" onload="lzld(this)">
+							<div class="row">
+								<div class="col-md-6">
+									<img alt="A_size" data-src="../../images/1/a_size.png">
+								</div>
+							</div>
 							<h2 id="drawingme2103">1.5.2 ME2103 drawing sheet</h2>
-							<div class="large-6"><figure><img src="../../images/1/me2103tb.jpg" alt="ME2103 Title Block" data-alt="../../images/1/me2103tb.gif" onload="lzld(this)"></figure>
+							<div class="row">
+								<div class="col-md-6"><figure><img alt="ME2103 Title Block" data-src="../../images/1/me2103tb.jpg" data-alt="../../images/1/me2103tb.gif"></figure></div>
 							</div>
 							<p>Default settings:</p>
-							<ul style="font-size:1em">
+							<ul>
 								<li>Third angle projection</li>
 								<li>A4 size</li>
 								<li>Landscape orientation</li>
 							</ul>
-								<h2 id="drawingexamples">1.5.3 Examples</h2>
-								<div class="row">
-									<div class="col-md-6">
-										<img src="../../images/1/egdrawings.png" alt="Example of Drawings" onload="lzld(this)"><p><em>Drawings</em></p></div>
-									<div class="col-md-6">
-										<img src="../../images/1/egassembly.png" alt="Example of Assembly" onload="lzld(this)"><p><em>Assembly</em></p></div>
+							<h2 id="drawingexamples">1.5.3 Examples</h2>
+							<div class="row">
+								<div class="col-md-6">
+									<img alt="Example of Drawings" data-src="../../images/1/egdrawings.png">
+									<p><em>Drawings</em></p>
 								</div>
-								<div class="row">
-									<div class="col-md-6">
-									<img src="../../images/1/egexplode.png" alt="Example of Exploded View" onload="lzld(this)"></div>
-									<div class="col-md-6"><img src="../../images/1/egexplodebill.png" alt="Bill of Materials" onload="lzld(this)">
+								<div class="col-md-6">
+									<img alt="Example of Assembly" data-src="../../images/1/egassembly.png">
+									<p><em>Assembly</em></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<img alt="Example of Exploded View" data-src="../../images/1/egexplode.png">
+								</div>
+								<div class="col-md-6">
+									<img alt="Bill of Materials" data-src="../../images/1/egexplodebill.png">
 								</div>
 							</div>
 							<p><em>Exploded View</em></p>
@@ -1052,7 +1223,7 @@
 						<div class="row">
 							<h1 id="titleblock">1.6 Title block</h1>
 							<p>Title block contains vital part and/or assembly information, such as:
-							<ol style="font-size:1em">
+							<ol>
 								<li>Name of company</li>
 								<li>Drawing number</li>
 								<li>Date</li>
@@ -1071,21 +1242,148 @@
 							</p>
 							<p>It is usually situated at the base of the drawing sheet with a border enclosing the drawing views.</p>
 							<p>Each organisation can have its own unique version of a title block, although there are different standards of title blocks such as:
-							<ol style="font-size:1em;">
-							<li>NUS ME2103<br><img class="large-6" src="../../images/1/dwgme2103.png" alt="ME2103 Drawing Sheet" onload="lzld(this)"></li>
-							<li>ANSI<br><img class="large-6" src="../../images/1/ansitb.png" alt="ANSI Title Block" onload="lzld(this)"></li>
-							<li>DIN<br><img class="large-6" src="../../images/1/dintb.png" alt="DIN Title Block" onload="lzld(this)"></li>
-							<li>ISO<br><img class="large-6" src="../../images/1/isotb.png" alt="ISO Title Block" onload="lzld(this)"></li>
-							<li>JIS<br><img class="large-6" src="../../images/1/jistb.png" alt="JIS Title Block" onload="lzld(this)"></li>
+							<ol>
+								<li>NUS ME2103
+									<div class="row">
+										<div class="col-md-6">
+											<img alt="ME2103 Drawing Sheet" data-src="../../images/1/dwgme2103.png">
+										</div>
+									</div>
+								</li>
+								<li>ANSI
+									<div class="row">
+										<div class="col-md-6">
+											<img alt="ANSI Title Block" data-src="../../images/1/ansitb.png">
+										</div>
+									</div>
+								</li>
+								<li>DIN
+									<div class="row">
+										<div class="col-md-6">
+											<img alt="DIN Title Block" data-src="../../images/1/dintb.png">
+										</div>
+									</div>
+								</li>
+								<li>ISO
+									<div class="row">
+										<div class="col-md-6">
+											<img alt="ISO Title Block" data-src="../../images/1/isotb.png">
+										</div>
+									</div>
+								</li>
+								<li>JIS
+									<div class="row">
+										<div class="col-md-6">
+											<img alt="JIS Title Block" data-src="../../images/1/jistb.png">
+										</div>
+									</div>
+								</li>
 							</ol>
 							</p>
+						</div>
+						<div class="row">
+							<h1 id="geometry">1.7 Geometrical construction</h1>
+							<h2 id="parallelpoint">1.7.1 Draw a parallel line through a point</h2>
+							<div class="row">
+								<div class="col-md-6"><figure><img alt="Parallel Line through a Point" data-src="../../images/1/parallelpoint.jpg" data-alt="../../images/1/parallelpoint.gif"></figure></div>
+							</div>
+							<h2 id="paralleldistance">1.7.2 Draw a parallel line at a given distance</h2>
+							<div class="row">
+								<div class="col-md-6"><figure><img alt="Parallel Line through a Point" data-src="../../images/1/paralleldist.jpg" data-alt="../../images/1/paralleldist.gif"></figure></div>
+							</div>
+							<h2 id="perpendicular">1.7.3 Draw a perpendicular line</h2>
+							<div class="row"><div class="col-md-6"><figure><img alt="Perpendicular Line" data-src="../../images/1/perpendicular.jpg" data-alt="../../images/1/perpendicular.gif"></figure></div></div>
+							<h2 id="bisectangle">1.7.4 Bisecting an angle</h2>
+							<div class="row"><div class="col-md-6"><figure><img alt="Bisecting an Angle" data-src="../../images/1/bisect.jpg" data-alt="../../images/1/bisect.gif"></figure></div></div>
+							<h2 id="pentagon">1.7.5 Pentagon</h2>
+							<div class="row"><div class="col-md-6"><figure><img alt="Pentagon" data-src="../../images/1/pentagon.jpg" data-alt="../../images/1/pentagon.gif"></figure></div></div>
+							<h2 id="hexagon">1.7.6 Hexagon</h2>
+							<div class="row"><div class="col-md-6"><figure><img alt="Hexagon" data-src="../../images/1/hexagon.jpg" data-alt="../../images/1/hexagon.gif"></figure></div></div>
+							<h2 id="ellipse">1.7.7 Ellipse</h2>
+							<div class="row"><div class="col-md-6"><figure><img alt="Ellipse" data-src="../../images/1/ellipse.jpg" data-alt="../../images/1/ellipse.gif"></figure></div></div>
+							<h2 id="isoellipse">1.7.8 Isometric ellipse</h2>
+							<div class="row"><div class="col-md-6"><figure><img alt="Isometric Ellipse" data-src="../../images/1/isoellipse.jpg" data-alt="../../images/1/isoellipse.gif"></figure></div></div>
+						</div>
+
+						<div class="row">
+							<h1 id="tangents">1.8 Tangents</h1>
+							<h2 id="tangents2">1.8.1 Tangents between two circles</h2>
+							<div class="row">
+								<div class="col-md-6">
+									<figure><img alt="Tangents between 2 Circles" data-src="../../images/1/tangents2.jpg" data-alt="../../images/1/tangents2.gif"></figure>
+									<p><em>Ruler method</em></p>
+								</div>
+								<div class="col-md-6">
+									<figure><img alt="Tangents between 2 Circles" data-src="../../images/1/tangents2g.jpg" data-alt="../../images/1/tangents2g.gif"></figure>
+									<p><em>Geometrical method</em></p>
+								</div>
+							</div>
+							<h2 id="ctangents2">1.8.2 Cross tangents between two circles</h2>
+							<div class="row"><div class="col-md-6"><figure><img alt="Cross Tangents between 2 Circles" data-src="../../images/1/ctangents2.jpg" data-alt="../../images/1/ctangents2.gif"></figure></div></div>
+							<p><em>Ruler method</em></p>
+							</div>
+
+						<div class="row">
+							<h1 id="tangentarcs">1.9 Tangent arcs</h1>
+							<h2 id="tangentarcra">1.9.1 Tangent arc in right angle</h2>
+							<div class="row"><div class="col-md-6"><figure><img alt="Tangent Arc in Right Angle" data-src="../../images/1/tangentarcra.jpg" data-alt="../../images/1/tangentarcra.gif"></figure></div></div>
+							<p><em>Geometrical method</em></p>
+							<h2 id="tangentarc2arcs">1.9.2 Tangent arc to 2 arcs</h2>
+							<div class="row">
+								<div class="col-md-6">
+									<figure>
+									<img alt="Tangent Arc to 2 Arcs Example 1" data-src="../../images/1/tangentarc2arcs.jpg" data-alt="../../images/1/tangentarc2arcs.gif"></figure>
+									<p><em>Example 1</em></p>
+								</div>
+								<div class="col-md-6" style="padding-right:12px">  
+									<figure><img alt="Tangent Arc to 2 Arcs Example 2" data-src="../../images/1/tangentarc2arcs2.jpg" data-alt="../../images/1/tangentarc2arcs2.gif"></figure>
+									<p><em>Example 2</em></p>  
+								</div>
+							</div>
+							<h2 id="tangentarceg">1.9.3 More examples</h2>
+							<div class="row">
+								<div class="col-md-6">
+									<figure><img alt="Tangent Arc Example 1" data-src="../../images/1/tangentarceg1_1.jpg" data-alt="../../images/1/tangentarceg1_1.gif"></figure>
+								</div>
+								<div class="col-md-6">
+									<figure><img alt="Tangent Arc Example 2" data-src="../../images/1/tangentarceg2_1.jpg" data-alt="../../images/1/tangentarceg2_1.gif"></figure>
+								</div>
+							</div> 
+							<div class="row">
+								<div class="col-md-6">
+									<figure><img alt="Tangent Arc Example 3" data-src="../../images/1/tangentarceg3_1.jpg" data-alt="../../images/1/tangentarceg3_1.gif"></figure>
+								</div> 
+								<div class="col-md-6">
+									<figure><img alt="Tangent Arc Example 4" data-src="../../images/1/tangentarceg4_1.jpg" data-alt="../../images/1/tangentarceg4_1.gif"></figure>
+								</div>        
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<figure><img alt="Tangent Arc Example 5" data-src="../../images/1/tangentarceg5_1.jpg" data-alt="../../images/1/tangentarceg5_1.gif"></figure>
+								</div> 
+								<div class="col-md-6">
+									<figure><img alt="Tangent Arc Example 6" data-src="../../images/1/tangentarceg6_1.jpg" data-alt="../../images/1/tangentarceg6_1.gif"></figure>
+								</div>        
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<figure><img alt="Tangent Arc Example 7" data-src="../../images/1/tangentarceg7_1.jpg" data-alt="../../images/1/tangentarceg7_1.gif"></figure>
+								</div> 
+								<div class="col-md-6">
+									<figure><img alt="Tangent Arc Example 8" data-src="../../images/1/tangentarceg8_1.jpg" data-alt="../../images/1/tangentarceg8_1.gif"></figure>
+								</div>        
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<figure><img alt="Tangent Arc Example 9" data-src="../../images/1/tangentarceg9_1.jpg" data-alt="../../images/1/tangentarceg9_1.gif"></figure></div>
+							</div>     
 						</div>
 					</div>
 				</div>
 				<footer class="footer">
 					<div class="container-fluid">
 						<div class="row">
-							<div class="footer-left">&copy; Chang Sin Fung 2015. All rights reserved.</div>
+							<div class="footer-left">&copy; 2015 Chang Sin Fung. All rights reserved.</div>
 							<div class="footer-right">
 								<a href="http://www.nus.edu.sg/" target="_blank" alt="National University of Singapore">
 									<img src="../../images/nuslogo.jpg" alt="NUS logo">				
@@ -1100,10 +1398,41 @@
 			</div>    
 		</div>
 		<a href="#" class="btn btn-primary pull-right btt" id="back-to-top"><span class="glyphicon glyphicon-chevron-up"></span><span class="sr-only">Back to Top</span></a>
-		<script src="../../js/bootstrap.min.js"></script>
-		<script src="../../js/bootstrap-anchor.min.js"></script>
-		<script src="../../js/jquery.wipetouch.js"></script>
-		<script src="../../js/bootstrap.mod.js"></script>
-		<script src="../../js/gif.min.js"></script>
+		<!-- Support for Internet Explorer 8 or less -->
+		<!--[if lt IE 9]>
+			<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+			<script src="../../js/bootstrap-3.3.6.min.js"></script>
+			<script src="../../js/bootstrap.mod.min.js"></script>
+			<script type="text/javascript">
+				$(document).ready(function(){
+						$('#ie8-modal').modal('show');
+				});
+			</script>
+		<![endif]-->
+		
+		<!-- For IE9+ or others -->
+		<!--[if gte IE 9]><!-->
+		<script src="../../js/fallback.min.js"></script>
+		<script>
+			fallback.load({
+				jQuery: [
+					'//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js',
+					'//code.jquery.com/jquery-2.1.4.min.js',
+					'../../js/jquery-2.1.4.min.js'
+				],
+				'jQuery.fn.modal': [ // bootstrap
+					'//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js',
+					'../../js/bootstrap-3.3.6.min.js'
+				],
+				mod_js: [ // global js
+					'../../js/bootstrap.mod.min.js'
+				]
+			}, {
+				shim: {
+					'jQuery.fn.modal': [ 'jQuery' ], // bootstrap
+					mod_js: [ 'jQuery','jQuery.fn.modal' ] // global js
+				}
+			});
+		</script><!--<![endif]-->
 	</body>
 </html>

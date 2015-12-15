@@ -235,4 +235,5 @@ _notes/
 .sass-cache/
 trash/
 *.pdf
-pdfjs/
+viewerJS/
+*.doc

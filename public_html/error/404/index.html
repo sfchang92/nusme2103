@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>404 Page Not Found | A/Prof Lee Kim Seng</title>
     <!-- Bootstrap -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap-3.3.6.min.css" rel="stylesheet">
     <link href="../../css/bootstrap.mod.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -18,8 +18,9 @@
     <![endif]-->
   </head>
   <body class="jerror">
+    <div id="modal-bg"></div>
     <!--Navigation Bar-->
-    <nav class="navbar navbar-default affix-top">
+    <nav class="navbar navbar-default">
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -29,7 +30,7 @@
             <span class="icon-bar middle-bar"></span>
             <span class="icon-bar bottom-bar"></span>
           </button>
-          <a class="navbar-brand">A/Prof Lee Kim Seng</a>
+          <div class="navbar-brand">A/Prof Lee Kim Seng</div>
         </div>
     
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -40,7 +41,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-education visible-xs-inline" aria-hidden="true"></span> Courses</a>
               <ul class="dropdown-menu dropdown-left multi-level">
                 <li class="dropdown-submenu">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Engineering Visualization & Modeling">ME 2103</a> 
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Engineering Visualization & Modelling">ME 2103</a> 
                   <ul class="dropdown-menu">
                     <li><a href="../../me2103/pptslide">Lecture Slides</a></li>
                     <li role="separator" class="divider"></li>
@@ -52,39 +53,23 @@
                   </ul>
                 </li>
                 <li class="dropdown-submenu">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">ME 3263</a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">ME 3263 / E</a>
                   <ul class="dropdown-menu">
-                    <li><a href="../../me3263/pptslide">Lecture Notes</a></li>
+                    <li><a href="../../me3263/pptslide">Lecture Slides</a></li>
                     <li><a href="../../me3263/ecourse">Course e-learning</a></li>
                   </ul>
                 </li>
                 <li class="dropdown-submenu">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">ME 3263 E</a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">ME 4262 / E</a>
                   <ul class="dropdown-menu">
-                    <li><a href="../../me3263e/pptslide">Lecture Notes</a></li>
-                    <li><a href="../../me3263e/ecourse">Course e-learning</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown-submenu">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">ME 4262</a>
-                  <ul class="dropdown-menu">
-                    <li><a href="../../me4262/pptslide">Lecture Notes</a></li>
+                    <li><a href="../../me4262/pptslide">Lecture Slides</a></li>
                     <li><a href="../../me4262/ecourse">Course e-learning</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown-submenu">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">ME 4262 E</a>
-                  <ul class="dropdown-menu">
-                    <li><a href="../../me4262e/pptslide">Lecture Notes</a></li>
-                    <li><a href="../../me4262e/ecourse">Course e-learning</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="../../me4262e/related">Related Links</a></li>
                   </ul>
                 </li>
                 <li class="dropdown-submenu">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">ME 5603</a>
                   <ul class="dropdown-menu">
-                    <li><a href="../../me5603/pptslide">Lecture Notes</a></li>
+                    <li><a href="../../me5603/pptslide">Lecture Slides</a></li>
                     <li><a href="../../me5603/ecourse">Course e-learning</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="../../me5603/related">Related Links</a></li>
@@ -107,7 +92,6 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-    
     <div class="jumbotron fullpage jerror">
       <div class="container fullpage">
         <h1><code>&lt;Oops! Page not found&gt;</code></h1>
@@ -124,7 +108,7 @@
       <div class="container-fluid">
         <div class="container">
           <div class="row">
-            <div class="footer-left">by chang sin fung 2015. all rights reserved.</div>
+            <div class="footer-left">&copy; 2015 Chang Sin Fung. All rights reserved.</div>
             <div class="footer-right">
               <a href="http://www.nus.edu.sg/" target="_blank" alt="National University of Singapore">
                 <img src="../../images/nuslogo.png" alt="NUS logo">
@@ -137,11 +121,37 @@
         </div>
       </div>
     </footer>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../js/bootstrap.mod.js"></script>
+		
+		<!-- Support for Internet Explorer 8 or less -->
+		<!--[if lt IE 9]>
+			<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+			<script src="../../js/bootstrap-3.3.6.min.js"></script>
+			<script src="../../js/bootstrap.mod.min.js"></script>
+		<![endif]-->
+		
+		<!-- For IE9+ or others -->
+		<!--[if gte IE 9]><!-->
+		<script src="../../js/fallback.min.js"></script>
+		<script>
+			fallback.load({
+				jQuery: [
+					'//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js',
+					'//code.jquery.com/jquery-2.1.4.min.js',
+					'../../js/jquery-2.1.4.min.js'
+				],
+				'jQuery.fn.modal': [ // bootstrap
+					'//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js',
+					'../../js/bootstrap-3.3.6.min.js'
+				],
+				mod_js: [ // global js
+					'../../js/bootstrap.mod.min.js'
+				]
+			}, {
+				shim: {
+					'jQuery.fn.modal': [ 'jQuery' ], // bootstrap
+					mod_js: [ 'jQuery','jQuery.fn.modal' ] // global js
+				}
+			});
+		</script><!--<![endif]-->
   </body>
 </html>
