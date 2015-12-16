@@ -200,6 +200,7 @@ body {
 
 .btn {
   border-radius: 2px;
+	@include transition(background-color 0.2s ease);
 }
 
 /*Back to top button*/
@@ -207,7 +208,7 @@ body {
 	position: fixed;
 	bottom: 0px;
 	right: 15px;
-	@include transition(opacity 0.2s ease, bottom 0.2s ease);
+	@include transition(opacity 0.2s ease, bottom 0.2s ease, background-color 0.2s ease);
 	z-index: 1;
 	@include opacity(0);
 	&.btt-show {
@@ -247,7 +248,20 @@ body {
 
 .prof-pic {
   width: 100%;
-  padding-top: 20px;
+	margin-top:20px;
+	@include minwidth(large) {
+		margin-top: 40px;
+	}
+	@include minwidth(tablet) {
+		@include maxwidth(tablet) {
+			margin-top:40px;
+		}
+	}
+	@include maxwidth(mobile) {
+		margin-bottom:40px;
+	}
+	@include box-shadow (0,10px,25px,#22324f);
+	border:3px solid white;
 }
 
 /*Navigation bar*/
@@ -324,7 +338,13 @@ body {
 				}
 			}
 		}
-		
+		//Fade in when menu pressed open
+		@include minwidth(tablet) {
+			.open > .dropdown-menu {
+				visibility:visible;
+				opacity:1;
+			}
+		}
 		//Opened dropdown menu item
 		@include maxwidth(mobile) {
 			.open .dropdown-menu {
@@ -353,6 +373,12 @@ body {
 		//Dropdown menu item
 		.dropdown-menu {
 			min-width: 170px;
+			@include minwidth(tablet) {
+				opacity:0;
+				display:block;
+				visibility:hidden;
+				@include transition(opacity 0.1s ease-out, visibility 0s 0.1s);
+			}
 			@include border-radius(0 0 3px 3px);
 			@include maxwidth(mobile) {
 				padding: 0px;
@@ -604,14 +630,18 @@ body {
 		}
 	}
 	
-	//Hover to open dropdown menu
+	//Hover to fade in dropdown menu
 	@include minwidth(tablet) {
 		.dropdown:hover > .dropdown-menu, .dropdown-submenu:hover > .dropdown-menu {
 			display: block;
+			opacity:1;
+			visibility:visible;
+			@include transition(opacity 0.1s ease-out);
 		}
 	}
 }
 
+/* Remnants of old formatting
 .nav .open > a {
   background-color: $dblue;
   color: white;
@@ -620,7 +650,7 @@ body {
     color: white;
   }
 }
-
+*/
 /*Mobile navigation bar toggle button */
 .navbar-toggle {
   margin-top: 0px;
@@ -716,7 +746,7 @@ body.jerror {
 			@include minwidth(tablet) {
 				padding-right:0;
 				padding-left:0;
-				padding-top:50px;
+				padding-top:60px;
 			}
 			h1, .h1 {
 				font-size: 36px;
@@ -726,10 +756,7 @@ body.jerror {
 				line-height:1.42857143;
 				margin-bottom:10px;
 			}
-			a {
-				color: $vlblue;
-			}
-		}
+		} 
 	}
 	&.jhide {
 		@include maxwidth(mobile) {
@@ -746,9 +773,54 @@ body.jerror {
 	}
 }
 
-.affix-top {
-	position: fixed;
-	top:0;
-	//bottom:auto;
-	background-color: $vdblue;
+.contactinfo {
+	padding-bottom:8px;
+	a.btn-primary {
+		background-color:inherit;
+		border-color:inherit;
+		&:hover{
+			background-color:$dblue;
+		}
+	}
+}
+.btn-title {
+	cursor:auto;
+	background-color:inherit;
+	padding-left:0;
+	border:none !important;
+	text-align:left;
+	outline:0;
+	font-weight:300;
+	@include user-select-all;
+	&:hover, &:focus, &:active, &:active:hover {
+		background-color:inherit;
+		border-color:inherit;
+		border:none !important;
+		outline:0;
+	}
+}
+.glyphicon {
+	@include user-select-none;
+}
+.btn-group-justified {
+	//table-layout:auto;
+	.btn-title {
+		width:2%;
+	}
+	.btn-title-small {
+		@include maxwidth(tablet) {
+			width:1%;
+		}
+	}
+}
+
+.btn-group-nested {
+	a{
+		width:50% !important;
+		padding-left:0;
+		padding-right:0;
+		&:last-child{
+			width:calc(50% + 1px) !important;
+		}
+	}
 }

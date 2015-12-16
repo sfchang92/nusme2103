@@ -12,7 +12,9 @@ body {
 	background-color:#f2f2f2;
 	padding-top: $navbarh;
 	&.toggled {
-		overflow-y:hidden;
+		@include maxwidth(mobile) {
+			overflow-y:hidden;
+		}
 	}
 }
 
@@ -82,6 +84,52 @@ h3 .gdt {
 	&.btt-end {
 		@include opacity (1);
 		bottom: 90px;
+	}
+}
+.contactinfo {
+	padding-bottom:5px;
+	a.btn-default {
+		border-color:inherit;
+	}
+}
+.btn-title {
+	cursor:auto;
+	background-color:inherit;
+	border:none;
+	text-align:left;
+	padding-left:0;
+	outline:0;
+	@include user-select-all;
+	&:hover, &:focus, &:active, &:active:hover {
+		background-color:inherit;
+		//border-color:inherit;
+		outline:0;
+		border:none;
+		@include box-shadow-none;
+	}
+}
+.glyphicon {
+	@include user-select-none;
+}
+.btn-group-justified {
+	//table-layout:auto;
+	.btn-title {
+		width:2%;
+	}
+	.btn-title-small {
+		@include maxwidth(mobile) {
+			width:1%;
+		}
+	}
+}
+.btn-group-nested {
+	a{
+		width:50% !important;
+		padding-left:0;
+		padding-right:0;
+		&:last-child{
+			width:calc(50% + 1px) !important;
+		}
 	}
 }
 /* Reset sidebar styles */
@@ -326,7 +374,9 @@ table{counter-reset:section;}
 	}
 	&.nav-show {
 		top:0;
-		right:$sidebarw;
+		@include maxwidth(mobile) {
+			right:$sidebarw;
+		}
 	}
 	.navbar-header {
 		width: 100% ;
@@ -475,6 +525,10 @@ table{counter-reset:section;}
 		display:inline-block;
 		vertical-align:top;
 		width:100%;
+		&.inline {
+			display:inline !important;
+			width:auto;
+		}
 	}
 	.btn-logo {
 		min-width:auto;
@@ -613,7 +667,6 @@ table{counter-reset:section;}
 		padding-right: 10px;
 	}
 }
-
 .sidebar-brand {
 	position:relative;
 	height:$navbarh;
