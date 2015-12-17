@@ -1,0 +1,48 @@
+//Mixin: Media query
+@mixin maxwidth($width) {
+  $maxwidth-mobile: "(max-width: 767px)";
+  $maxwidth-tablet: "(max-width: 991px)";
+  $maxwidth-medium: "(max-width: 1199px)";
+  @if $width == mobile {
+    @media #{$maxwidth-mobile} {
+      @content;
+    }
+  }
+  @else if $width == tablet {
+    @media #{$maxwidth-tablet} {
+      @content;
+    }
+  }
+  @else if $width == medium {
+    @media #{$maxwidth-medium} {
+      @content;
+    }
+  }
+}
+
+@mixin minwidth($width) {
+	$minwidth-tablet: "(min-width: 768px)";
+  $minwidth-medium: "(min-width: 992px)";
+  $minwidth-large: "(min-width: 1200px)";
+  @if $width == tablet {
+    @media #{$minwidth-tablet} {
+      @content;
+    }
+  }
+  @else if $width == medium {
+    @media #{$minwidth-medium} {
+      @content;
+    }
+  }
+  @else if $width == large {
+    @media #{$minwidth-large} {
+      @content;
+    }
+  }
+}
+
+@mixin hwaccel {
+	@include transform(translateZ(0));
+	@include backface-visibility(hidden);
+	@include perspective(1000);
+}

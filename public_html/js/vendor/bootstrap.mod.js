@@ -6,16 +6,24 @@ $(window).scroll(function() {
 	if($(this).scrollTop() < 100) {
 		$('.btt').removeClass('btt-show');
 		$('.btt').removeClass('btt-end');
+		$('.arrow').removeClass('arrow-hide');
 	}else if($(this).scrollTop() >= $(document).height() - $(this).height() - 60){
 		$('.btt').addClass('btt-end');
 	}else{
 		$('.btt').addClass('btt-show');
 		$('.btt').removeClass('btt-end');
+		$('.arrow').addClass('arrow-hide');
 	}
 });
 
+var mq = window.matchMedia( "(max-width: 767px)" );
+
 $(document).ready(function() {
 	"use strict";
+	//Jumbotron height issue
+	if (mq.matches) {
+		$(".jumbotron").css("min-height", 1*$(window).height());
+	}
 	//Panel scroll to active heading
 	$('.panel-group').on('shown.bs.collapse', function () {
 	

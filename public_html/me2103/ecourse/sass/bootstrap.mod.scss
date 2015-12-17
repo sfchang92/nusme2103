@@ -1,6 +1,5 @@
+@import 'compass';
 @import 'partials/base';
-@import 'partials/mixin-flexbox';
-@import 'partials/gdtfont'; //GDT font support
 $sidebarw: 260px;
 $blue: #337ab7;
 $dblue: #23527c;
@@ -70,7 +69,8 @@ h3 .gdt {
 .btt {
 	position: fixed;
 	bottom: 0px;
-	right: 15px;
+	right: 15px; 
+	@include hwaccel;
 	@include transition(opacity 0.5s ease, bottom 0.5s ease);
 	@include minwidth(tablet) {
 		right: 15px + $sidebarw;
@@ -99,17 +99,18 @@ h3 .gdt {
 	text-align:left;
 	padding-left:0;
 	outline:0;
-	@include user-select-all;
+	@include user-select(all);
+	@include user-select(element);
 	&:hover, &:focus, &:active, &:active:hover {
 		background-color:inherit;
 		//border-color:inherit;
 		outline:0;
 		border:none;
-		@include box-shadow-none;
+		@include box-shadow(none);
 	}
 }
 .glyphicon {
-	@include user-select-none;
+	@include user-select(none);
 }
 .btn-group-justified {
 	//table-layout:auto;
@@ -165,10 +166,10 @@ h3 .gdt {
 	
 	.carousel-control {
 		color:black;
-		opacity:0.3;
+		@include opacity(0.3);
 		@include transition(opacity 0.3s);
 		&:hover {
-			opacity:0.9;
+			@include opacity(0.9);
 		}
 		&.left {
 			background-image:-webkit-linear-gradient(left,rgba(0,0,0,.2) 0,rgba(0,0,0,.0001) 100%);
@@ -365,7 +366,8 @@ table{counter-reset:section;}
 	background-color:$blue;
 	border:none;
 	right:0;
-	@include box-shadow(0, 1px, 4px, rgba(0,0,0,0.3));
+	@include box-shadow(0 1px 4px rgba(0,0,0,0.3));
+	@include hwaccel;
 	@include transition(top 0.5s ease, right 0.5s ease);
 	&.nav-hide {
 		@include maxwidth(mobile) {
@@ -433,14 +435,14 @@ table{counter-reset:section;}
 		}
 		.top-bar {
 			@include transform(rotate(45deg));
-			@include transform-origin(10% 10%);
+			@include transform-origin(10%, 10%);
 		}
 		.middle-bar {
 			@include opacity(0);
 		}
 		.bottom-bar {
 			@include transform(rotate(-45deg));
-			@include transform-origin(10% 90%);
+			@include transform-origin(10%, 90%);
 		}
 	}
 }
@@ -477,7 +479,8 @@ table{counter-reset:section;}
 		}
 		#modal-bg {
 			visibility: visible;
-			opacity:1;
+			@include opacity(0.7);
+			@include hwaccel;
 			@include transition (opacity 0.5s ease);
 		}
 	}
@@ -488,12 +491,13 @@ table{counter-reset:section;}
 	position: fixed;
 	right: $sidebarw;
 	width: 0;
-	height: 100%;
 	margin-right: - $sidebarw;
 	overflow-y:hidden;
 	overflow-x: hidden;
 	top:0;
+	bottom:0;
 	background: #f2f2f2;
+	@include hwaccel;
 	@include transition(width 0.5s ease, margin-right 0.5s ease);
 	@include minwidth(tablet) {
 		width: $sidebarw;
@@ -506,6 +510,7 @@ table{counter-reset:section;}
 	width: 100%;
 	background-color:white;
 	position: absolute;
+	@include hwaccel;
 	@include transition(margin-left 0.5s ease); //Off-canvas body
 	@include minwidth(tablet) {
 		position: relative;
@@ -522,7 +527,7 @@ table{counter-reset:section;}
 		}
 	}
 	img {
-		display:inline-block;
+		@include inline-block;
 		vertical-align:top;
 		width:100%;
 		&.inline {
@@ -542,18 +547,20 @@ table{counter-reset:section;}
 #modal-bg {
 	display:block;
 	visibility:hidden;
-	opacity:0;
+	@include opacity(0);
+	@include hwaccel;
 	@include transition (opacity 0.5s ease, visibility 0s 0.5s);
 	@include minwidth(tablet) {
 		display:none;
 	}
 	position:fixed;
-	width:100%;
-	height:100%;
+	right:0;
+	bottom:0;
+	left:0;
 	top:0;
 	z-index:1000;
 	cursor:pointer;
-	background-color: rgba(0,0,0,0.7);
+	background-color: #000;
 }
 
 .sidebar-nav {
@@ -642,19 +649,14 @@ table{counter-reset:section;}
 }
 #gesture-left-modal {
 	cursor:pointer;
-}
-.modal.slideRight .modal-dialog {
-	@include transform(translate(-7%,0));
-}
-.modal.slideLeft .modal-dialog {
-	//@include transform(translate(7%,0));
-	.modal-content {
-		@include border-radius(4px);
-	}
-}
-.modal.slideLeft.in, .modal.slideRight.in {
 	.modal-dialog {
-		@include transform(translate(0,0));
+		margin:auto;
+		//width:300px;
+		//@include transform(translate(7%,0));
+		.modal-content {
+			border:none;
+			@include border-radius(1px);
+		}
 	}
 }
 .btn-profhome {
@@ -699,7 +701,7 @@ table{counter-reset:section;}
   > .container-fluid {
 		min-height: 100%;
 		height:80px; //Fix IE vertical centering
-		@include flexbox;
+		@include display-flex;
 		@include align-items(center);
 		background-color: #003D7C;
 		
@@ -719,7 +721,7 @@ table{counter-reset:section;}
 		color: white;
 		width: 100%;
 		height: 100%;
-		@include flexbox;
+		@include display-flex;
 		@include align-items(center);
 		@include justify-content(space-between);
 		
@@ -737,7 +739,7 @@ table{counter-reset:section;}
 	}
 
 	.footer-right {
-		@include flexbox;
+		@include display-flex;
 		@include flex(1 0.5 1);
 		min-width:0;
 		img {
@@ -776,19 +778,19 @@ figure {
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		opacity:0.5; 
+		@include opacity(0.5); 
 		background: url("../images/play.png") no-repeat 50% 50%;
 		content: ' ';
 		text-align: center;
 		@include transition(opacity 0.2s);
 	}
 	&:hover:before{
-		opacity:1;
+		@include opacity(1);
 	}
 	&:after {
 		position: absolute;
 		content: 'gif';
-		display: inline-block;
+		@include inline-block;
 		width: 30px;
 		text-align: center;
 		top: 20px;

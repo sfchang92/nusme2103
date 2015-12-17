@@ -1,5 +1,5 @@
+@import 'compass';
 @import 'partials/base';
-@import 'partials/mixin-flexbox';
 //$dblue: #005DBA;
 //$lblue: #003D7C;
 $dblue: #337ab7; //active
@@ -19,7 +19,7 @@ body {
   font-size: 16px;
   //background-color: #f2f2f2; //for gray bg and white body container
 	background-color: #f9f9f9;
-  padding-top: 50px;
+	padding-top: 50px;
   margin-bottom: 80px;
   > .container {
     padding-bottom: 40px;
@@ -117,7 +117,7 @@ body {
   > .container {
 		min-height: 100%;
 		height:80px; //Fix IE vertical centering
-		@include flexbox;
+		@include display-flex;
 		@include align-items(center);
 		background-color: rgba(18,27,42, 0.85);
 		
@@ -136,7 +136,7 @@ body {
   > .container-fluid {
 		min-height: 100%;
 		height:80px; //Fix IE vertical centering
-		@include flexbox;
+		@include display-flex;
 		@include align-items(center);
 		padding: 0px !important;
 		background-color: rgba(18,27,42, 0.5);
@@ -156,7 +156,7 @@ body {
     color: white;
     width: 100%;
     height: 100%;
-		@include flexbox;
+		@include display-flex;
 		@include align-items(center);
     @include justify-content(space-between);
 		
@@ -174,7 +174,7 @@ body {
 	}
 
 	.footer-right {
-		@include flexbox;
+		@include display-flex;
 		@include flex(1 0.5 1);
 		img {
 			padding-left: 8px;
@@ -208,10 +208,11 @@ body {
 	position: fixed;
 	bottom: 0px;
 	right: 15px;
+	@include hwaccel;
 	@include transition(opacity 0.2s ease, bottom 0.2s ease, background-color 0.2s ease);
 	z-index: 1;
 	@include opacity(0);
-	&.btt-show {
+	&.btt-show { 
 		@include opacity (0.8);
 		bottom: 10px;
 	}
@@ -225,22 +226,24 @@ body {
 #modal-bg {
 	display:block;
 	visibility:hidden;
-	opacity:0;
+	@include opacity(0);
+	@include hwaccel;
 	@include transition (opacity 0.2s ease-in, visibility 0s 0.2s);
 	@include minwidth(tablet) {
 		display:none;
 	}
 	position:fixed;
-	width:100%;
-	height:100%;
+	right:0;
+	bottom:0;
+	left:0;
 	top:0;
 	z-index:99;
 	cursor:pointer;
 	background-color: #000;
-	background-color: rgba(0,0,0,0.7);
 	&.bg-show {
 		visibility: visible;
-		opacity:1;
+		@include opacity(0.7);
+		@include hwaccel;
 		@include transition (opacity 0.2s ease);
 	}
 }
@@ -248,7 +251,7 @@ body {
 
 .prof-pic {
   width: 100%;
-	margin-top:20px;
+	margin-top:10px;
 	@include minwidth(large) {
 		margin-top: 40px;
 	}
@@ -258,9 +261,9 @@ body {
 		}
 	}
 	@include maxwidth(mobile) {
-		margin-bottom:40px;
+		margin-bottom:5px;
 	}
-	@include box-shadow (0,10px,25px,#22324f);
+	@include box-shadow(0 10px 25px #22324f);
 	border:3px solid white;
 }
 
@@ -278,7 +281,7 @@ body {
 
   border-style: none;
 	@include border-radius(0);
-  //@include box-shadow(0px, 3px, 3px, rgba(107, 107, 107, 0.65));
+  //@include box-shadow(0px 3px 3px rgba(107, 107, 107, 0.65));
 	
   //background-color: rgb(29, 141, 255);
 	
@@ -342,7 +345,7 @@ body {
 		@include minwidth(tablet) {
 			.open > .dropdown-menu {
 				visibility:visible;
-				opacity:1;
+				@include opacity(1);
 			}
 		}
 		//Opened dropdown menu item
@@ -374,7 +377,7 @@ body {
 		.dropdown-menu {
 			min-width: 170px;
 			@include minwidth(tablet) {
-				opacity:0;
+				@include opacity(0);
 				display:block;
 				visibility:hidden;
 				@include transition(opacity 0.1s ease-out, visibility 0s 0.1s);
@@ -557,8 +560,8 @@ body {
 			position:absolute;
 			//background-color:transparent;
 			@include transition(background-color 0.2s ease);
-			@include box-shadow-none;
-			
+			@include box-shadow(none);
+			 
 			.navbar-nav {
 				> li {
 					> a {
@@ -634,14 +637,13 @@ body {
 	@include minwidth(tablet) {
 		.dropdown:hover > .dropdown-menu, .dropdown-submenu:hover > .dropdown-menu {
 			display: block;
-			opacity:1;
+			@include opacity(1);
 			visibility:visible;
 			@include transition(opacity 0.1s ease-out);
 		}
 	}
 }
 
-/* Remnants of old formatting
 .nav .open > a {
   background-color: $dblue;
   color: white;
@@ -650,7 +652,6 @@ body {
     color: white;
   }
 }
-*/
 /*Mobile navigation bar toggle button */
 .navbar-toggle {
   margin-top: 0px;
@@ -668,19 +669,19 @@ body {
     @include transition(all 0.2s ease);
     background-color: white !important;
     + .icon-bar {
-      margin-top: 6px;
+      margin-top: 6px; 
     }
   }
   .top-bar {
     @include transform(rotate(45deg));
-    @include transform-origin(10% 10%);
+    @include transform-origin(10%, 10%);
   }
   .middle-bar {
     @include opacity(0);
   }
   .bottom-bar {
     @include transform(rotate(-45deg));
-    @include transform-origin(10% 90%);
+    @include transform-origin(10%, 90%);
   }
   &.collapsed {
     .top-bar {
@@ -739,10 +740,13 @@ body.jerror {
 		.jumbotron {
 			@include opacity(1);
 			@include transition(opacity 0.2s ease);
-			
+			padding-top:0;
 			background-color:transparent;
 			margin-bottom:0;
 			color: white;
+			@include maxwidth(mobile) {
+				min-height:100vh;
+			}
 			@include minwidth(tablet) {
 				padding-right:0;
 				padding-left:0;
@@ -758,6 +762,7 @@ body.jerror {
 			}
 		} 
 	}
+	/*
 	&.jhide {
 		@include maxwidth(mobile) {
 			.container-fluid.homepage {
@@ -767,7 +772,7 @@ body.jerror {
 				}
 			}
 		}
-	}
+	}*/
 	.white {
 		padding-top: 30px;
 	}
@@ -791,16 +796,18 @@ body.jerror {
 	text-align:left;
 	outline:0;
 	font-weight:300;
-	@include user-select-all;
+	@include user-select(all);
+	@include user-select(element);
 	&:hover, &:focus, &:active, &:active:hover {
 		background-color:inherit;
 		border-color:inherit;
 		border:none !important;
+		@include box-shadow(none);
 		outline:0;
 	}
 }
 .glyphicon {
-	@include user-select-none;
+	@include user-select(none);
 }
 .btn-group-justified {
 	//table-layout:auto;
@@ -821,6 +828,74 @@ body.jerror {
 		padding-right:0;
 		&:last-child{
 			width:calc(50% + 1px) !important;
+		}
+	}
+}
+
+@include keyframes(bounce) {
+	0%, 20%, 50%, 80%, 100% {
+    @include transform(translateY(0));
+  }
+	40% {
+    @include transform(translateY(-30px));
+  }
+	60% {
+    @include transform(translateY(-15px));
+  }
+}
+
+.arrow {
+	@include minwidth(tablet) {
+		display:none;
+	}
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  margin-left:-10px;
+  width: 20px;
+  height: 20px;
+	@include opacity(1);
+	@include transition(opacity 0.2s ease);
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yOTMuNzUxLDQ1NS44NjhjLTIwLjE4MSwyMC4xNzktNTMuMTY1LDE5LjkxMy03My42NzMtMC41OTVsMCwwYy0yMC41MDgtMjAuNTA4LTIwLjc3My01My40OTMtMC41OTQtNzMuNjcyICBsMTg5Ljk5OS0xOTBjMjAuMTc4LTIwLjE3OCw1My4xNjQtMTkuOTEzLDczLjY3MiwwLjU5NWwwLDBjMjAuNTA4LDIwLjUwOSwyMC43NzIsNTMuNDkyLDAuNTk1LDczLjY3MUwyOTMuNzUxLDQ1NS44Njh6Ii8+DQo8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjIwLjI0OSw0NTUuODY4YzIwLjE4LDIwLjE3OSw1My4xNjQsMTkuOTEzLDczLjY3Mi0wLjU5NWwwLDBjMjAuNTA5LTIwLjUwOCwyMC43NzQtNTMuNDkzLDAuNTk2LTczLjY3MiAgbC0xOTAtMTkwYy0yMC4xNzgtMjAuMTc4LTUzLjE2NC0xOS45MTMtNzMuNjcxLDAuNTk1bDAsMGMtMjAuNTA4LDIwLjUwOS0yMC43NzIsNTMuNDkyLTAuNTk1LDczLjY3MUwyMjAuMjQ5LDQ1NS44Njh6Ii8+DQo8L3N2Zz4=);
+  background-size: contain;
+	&.arrow-hide {
+		@include opacity(0);
+	}
+}
+
+.bounce {
+  @include animation(bounce 2s infinite);
+}
+
+.nav-tabs.nav-justified-mobile {
+	border-bottom:1px solid #ddd;
+	> li > a {
+		border-bottom:1px solid #ddd;
+	}
+	> .active > a {
+		margin-bottom:0;
+		border-bottom-color:white;
+		&:focus, &:hover {
+			border-bottom-color:white;
+		}
+	}
+	@include maxwidth(mobile) {
+		border-bottom:0;
+		> li {
+			display:table-cell;
+			width:1%;
+			float:none;
+			> a{
+				margin-right:0;
+				@include border-radius(4px 4px 0 0);
+			}
+		}
+	}
+	@include minwidth(tablet) {
+		> li {
+			display:block;
+			width:auto;
+			float:left;
 		}
 	}
 }

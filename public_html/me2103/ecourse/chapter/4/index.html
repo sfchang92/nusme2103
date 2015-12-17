@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>4 - Interpenetration | nus:me2013</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+    <!-- Bootstrap -->
+    <link href="../../css/bootstrap-3.3.6.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.mod.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+	<body data-spy="scroll" data-target="#sidebar-wrapper" data-offset="80">
+		<div>
+		<!--[if lt IE 9]>
+		<div id="ie8-modal" class="modal fade" tabindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Blimey! Still using Internet Explorer
+						<![if IE 8]> 8?<![endif]>
+						<![if IE 7]> 7?<![endif]>
+						<![if IE 6]> 6?<![endif]>
+						<![if lt IE 6]>?<![endif]>
+						</h4>
+					</div>
+					<div class="modal-body">
+						<p>It is time to</p>
+						<ul>
+							<li><p><a href="//browsehappy.com">Upgrade your browser today</a></p>
+								<div class="row text-center">
+									<div class="col-xs-3">
+										<a href="//opera.com/download/">
+											<img src="../../images/browserlogo/opera_256.png" alt="Opera">
+											<p>Opera</p>
+										</a>
+									</div>
+									<div class="col-xs-3">
+										<a href="//mozilla.org/firefox/new/">
+											<img src="../../images/browserlogo/firefox_256.png" alt="Firefox">
+											<p>Firefox</p>
+										</a>
+									</div>
+									<div class="col-xs-3">
+										<a href="//google.com/chrome/browser/">
+											<img src="../../images/browserlogo/chrome_256.png" alt="Chrome">
+											<p>Chrome</p>
+										</a>
+									</div>
+									<div class="col-xs-3">
+										<a href="//maxthon.com">
+											<img src="../../images/browserlogo/maxthon_256.png" alt="Maxthon">
+											<p>Maxthon</p>
+										</a>
+									</div>
+								</div>
+							</li>
+							<li><a href="//www.microsoft.com/download/internet-explorer-11-for-windows-7-details.aspx">Upgrade Internet Explorer (Windows 7)</a></li>
+							<li><a href="//www.microsoft.com/en-us/windows/windows-10-upgrade">Upgrade Windows</a></li>
+							<li>or continue using this website with limited functionality</li>
+						</ul>
+					</div>
+					<div class="modal-footer">
+						<a type="button" class="btn btn-default" href="../../">Back to Prof Homepage</a>
+						<button type="button" class="btn btn-primary" data-dismiss="modal" >Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<![endif]-->
+		</div>
+		<nav class="navbar navbar-default">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button role="button" href="#menu-toggle" id="menu-toggle" class="navbar-toggle">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar top-bar"></span>
+          <span class="icon-bar middle-bar"></span>
+          <span class="icon-bar bottom-bar"></span>
+        </button>
+        <div class="container container-navbar-brand"><a role="button" class="navbar-brand" href="#" id="back-to-top2">Interpenetration</a></div>
+      </div>
+		</nav>
+	<div id="wrapper" class="container">
+    	<div id="modal-bg"></div>
+			<div id="sidebar-wrapper">
+				<div class="sidebar-brand">
+					<a role="button" href="../../">nus:me2103</a>
+					<button role="button" href="#menu-toggle" id="menu-toggle2" class="navbar-toggle toggled">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar top-bar"></span>
+						<span class="icon-bar middle-bar"></span>
+						<span class="icon-bar bottom-bar"></span>
+					</button>
+				</div>
+				<ul class="nav sidebar-nav">
+					<li>
+						<a href="../../" role="button">Home</a>
+		      </li>
+					<li><a class="collapse-button" data-toggle="collapse" href="#collapseChapter" aria-expanded="true" aria-controls="collapseChapter">Chapters</a>
+						<ul class="collapse in" id="collapseChapter">
+							<li><a href="../1/">1 - Introduction</a></li>
+							<li><a href="../2/">2 - Principles of projection</a></li>
+							<li><a href="../3/">3 - Sectioning &amp; dimensioning</a></li>
+							<li><a class="collapse-button" data-toggle="collapse" href="#collapse1" aria-expanded="true" aria-controls="collapse1">4 - Interpenetration</a>
+								<ul class="collapse in" id="collapse1">
+									<li><a href="#intro">4.1 - Introduction</a></li>
+									<li><a href="#basicsect">4.2 - Basic sectioning</a>
+										<ul>
+											<li><a href="#bscone">4.2.1 - Basic sectioning of cone</a>
+												<ul>
+													<li><a href="#bsconecir">4.2.1.1 - Circle</a></li>
+													<li><a href="#bsconeell">4.2.1.2 - Ellipse</a></li>
+													<li><a href="#bsconehyperbola">4.2.1.3 - Hyperbola</a></li>
+													<li><a href="#bsconepar">4.2.1.4 - Parabola</a></li>
+													<li><a href="#bsconetri">4.2.1.5 - Triangle</a></li>
+												</ul>
+											</li>
+											<li><a href="#bscyl">4.2.2 - Basic sectioning of cylinder</a></li>
+											<li><a href="#bselb">4.2.3 - Basic sectioning of elbow</a></li>
+											<li><a href="#bssph">4.2.4 - Basic sectioning of sphere</a></li>
+											<li><a href="#bshmsph">4.2.5 - Basic sectioning of hemisphere</a></li>
+										</ul>
+									</li>
+									<li><a href="#intsolid">4.3 - Interpenetration of two solids</a>
+										<ul>
+											<li><a href="#intuneqpipe">4.3.1 - Two unequal diameter pipes</a></li>
+											<li><a href="#inteqpipe">4.3.2 - Two equal diameter pipes</a></li>
+											<li><a href="#intcylspe">4.3.3 - Special case for cylinders</a></li>
+											<li><a href="#inttwocones">4.3.4 - Two cones</a></li>
+											<li><a href="#intconehcyl">4.3.5 - Cone &amp; h cylinder</a></li>
+											<li><a href="#intconeshcyl">4.3.6 - Cone &amp; small h cylinder</a></li>
+											<li><a href="#intconehxg">4.3.7 - Cone &amp; hexagon</a></li>
+											<li><a href="#intconevcyl">4.3.8 - Cone &amp; v cylinder</a></li>
+											<li><a href="#intconevtprism">4.3.9 - Cone &amp; v triangular prism</a></li>
+											<li><a href="#intcuttower">4.3.10 - Cut tower</a></li>
+											<li><a href="#intcylsltcyl">4.3.11 - Cylinder &amp; slant cylinder</a></li>
+											<li><a href="#inthmsphelb">4.3.12 - Hemisphere &amp; elbow</a></li>
+											<li><a href="#intpyrtriprism">4.3.13 - Pyramid &amp; triangular prism</a></li>
+											<li><a href="#intsltcylsltcone">4.3.14 - Slant cylinder &amp; slant cone</a></li>
+											<li><a href="#intsqprislttripri">4.3.15 - Sq prism &amp; slant tri prism</a></li>
+											<li><a href="#intsqtriprism">4.3.16 - Sq prism &amp; triangular prism</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="../9/">9 - Limits, fits &amp; geometrical tolerances</a></li>
+						</ul>
+					</li>
+					<li><a href="../../misc/">Behind the scenes</a></li>
+				</ul>
+				<a role="button" class="btn btn-block btn-primary btn-lg btn-profhome" href="../../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Prof Homepage</a>
+			</div>
+			<div id="page-content-wrapper">
+      	<div id="page-content">
+          <div class="container-fluid">
+						<div class="row">
+							<h1 id="interp">4.1 Introduction</h1>
+							<p>Interpenetration occurs when two solids penetrate each other to form one solid. In other words, two different objects such as a regular square based prism and a regular triangular based prism join together to make one complete object. The lines created by this join are known as lines of interpenetration. These lines may be either straight or curved, depending on the nature or
+orientation of the objects involved.</p>
+							<div class="row row-border-between">
+								<div class="col-md-6">
+									<br>
+									<div class="row">
+										<div class="col-xs-8 col-xs-offset-2 col-md-12 col-md-offset-0 col-lg-10 col-lg-offset-1">
+											<img alt="Intersection between Plane Surfaces" src="../../images/4/intcs.jpg">
+										</div>
+										<div class="col-xs-12 col-lg-12">
+											<br><p>If <em>curved surfaces</em> intersect, or if <em>curved surfaces and plane surfaces</em> intersect, the figure of intersection will be composed of curves.</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="row">
+										<div class="col-xs-8 col-xs-offset-2 col-md-12 col-md-offset-0 col-lg-10 col-lg-offset-1">
+											<img alt="Intersection between Plane Surfaces" src="../../images/4/intps.jpg">
+										</div>
+										<div class="col-xs-12 col-lg-12">
+											<p>If two solids that are composed of <em>plane surfaces</em> intersect, the figure of intersection will be composed of straight lines.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<p>The main shapes associated with this topic are: 
+							<ul>
+								<li>Prisms (both regular and irregular)</li>
+								<li>Cylinders</li>
+								<li>Spheres</li>
+								<li>Cones</li>
+								<li>Pyramids (both regular and irregular)</li>
+							</ul>
+							</p>
+							<p><em><small>Note that some shapes may require an auxiliary view for completion of the question.</small></em></p>
+							<h1 id="basicsect">4.2 Basic sectioning</h1>
+							<h2 id="bscone">4.2.1 Basic sectioning of cone</h2>
+							<div class="row">
+								<div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+									<img src="../../images/4/bscone.jpg" alt="Basic Sectioning of Cone"/>
+								</div>
+							</div>
+							<div class="row row-border-between">
+								<div class="col-md-6">
+									<h3 id="bsconecir">4.2.1.1 Circle</h3>
+									<div class="row">
+										<div class="col-xs-7 col-md-8">
+											<img src="../../images/4/bsconecir.png" alt="Basic Sectioning of Cone: Circle"/>
+										</div>
+										<div class="col-xs-3 col-md-4 col-lg-3">
+											<img src="../../images/4/bsconecir2.jpg" alt="Basic Sectioning of Cone: Circle 2D"/>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<h3 id="bsconeell">4.2.1.2 Ellipse</h3>
+									<div class="row">
+										<div class="col-xs-7 col-md-8">
+											<img src="../../images/4/bsconeell.png" alt="Basic Sectioning of Cone: Hyperbola 2D"/>
+										</div>
+										<div class="col-xs-3 col-md-4 col-lg-3">
+											<img src="../../images/4/bsconeell2.jpg" alt="Basic Sectioning of Cone: Hyperbola 2D"/>
+										</div>
+									</div>
+								</div>
+							</div>
+							<hr class="visible-md visible-lg">
+							<div class="row row-border-between">
+								<div class="col-md-6">
+									<h3 id="bsconehyperbola">4.2.1.3 Hyperbola</h3>
+									<div class="row">
+										<div class="col-xs-6 col-md-8">
+											<img src="../../images/4/bsconehyp.png" alt="Basic Sectioning of Cone: Circle"/>
+										</div>
+										<div class="col-xs-6 col-md-8">
+											<img src="../../images/4/bsconehyp2.jpg" alt="Basic Sectioning of Cone: Circle 2D"/>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<h3 id="bsconepar">4.2.1.4 Parabola</h3>
+									<div class="row">
+										<div class="col-xs-6 col-md-8">
+											<img src="../../images/4/bsconepar.png" alt="Basic Sectioning of Cone: Parabola"/>
+										</div>
+										<div class="col-xs-6 col-md-8">
+											<img src="../../images/4/bsconepar2.jpg" alt="Basic Sectioning of Cone: Hyperbola 2D"/>
+										</div>
+									</div>
+								</div>
+							</div>
+							<hr class="visible-md visible-lg">
+							<div class="row">
+								<div class="col-md-6">
+									<h3 id="bsconetri">4.2.1.5 Triangle</h3>
+									<div class="row">
+										<div class="col-xs-6 col-md-8">
+											<img src="../../images/4/bsconetri.png" alt="Basic Sectioning of Cone: Triangle"/>
+										</div>
+										<div class="col-xs-6 col-md-8">
+											<img src="../../images/4/bsconetri2.jpg" alt="Basic Sectioning of Cone: Triangle 2D"/>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h2 id="bscyl">4.2.2 Basic sectioning of cylinder</h2>
+							<div class="row">
+								<div class="col-xs-11 col-md-5">
+									<img alt="Basic Sectioning of Cylinder 1" src="../../images/4/bscyl1.jpg">
+								</div>
+								<div class="col-xs-6 col-md-3">
+									<img alt="Basic Sectioning of Cylinder 2" src="../../images/4/bscyl2.jpg">
+								</div>
+								<div class="col-xs-9 col-md-4">
+									<img alt="Basic Sectioning of Cylinder 3" src="../../images/4/bscyl3.jpg">
+								</div>
+							</div>
+							<h2 id="bselb">4.2.3 Basic sectioning of elbow</h2>
+							<div class="row">
+								<div class="col-xs-8 col-xs-offset-2 col-md-5">
+									<img alt="Basic Sectioning of Elbow 1" src="../../images/4/bselb1.jpg">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-4">
+									<img alt="Basic Sectioning of Elbow 1" src="../../images/4/bselb2.jpg">
+								</div>
+								<div class="col-xs-4">
+									<img alt="Basic Sectioning of Elbow 2" src="../../images/4/bselb3.jpg">
+								</div>
+								<div class="col-xs-4">
+									<img alt="Basic Sectioning of Elbow 3" src="../../images/4/bselb4.jpg">
+								</div>
+							</div>
+							<h2 id="bssph">4.2.4 Basic sectioning of sphere</h2>
+							<div class="row">
+								<div class="col-xs-8 col-md-6">
+									<img alt="Basic Sectioning of Shpere" src="../../images/4/bssph.jpg">
+								</div>
+							</div>
+							<h2 id="bshmsph">4.2.5 Basic sectioning of hemisphere</h2>
+							<div class="row">
+								<div class="col-xs-8 col-md-6">
+									<img alt="Basic Sectioning of Hemisphere" src="../../images/4/bshmsph.jpg">
+								</div>
+							</div>
+							<h1 id="intsolid">4.3 Interpenetration of two solids</h1>
+							<h2 id="intuneqpipe">4.3.1 Two unequal diameter pipes</h2>
+							<div class="row">
+								<div class="col-xs-8 col-md-6">
+									<img alt="Interpenetration of Two Unequal Diameter Pipes" src="../../images/4/intuneqpipe.jpg">
+								</div>
+							</div>
+							<h2 id="inteqpipe">4.3.2 Two equal diameter pipes</h2>
+							<div class="row">
+								<div class="col-xs-8 col-md-6">
+									<img alt="Interpenetration of Two Equal Diameter Pipes" src="../../images/4/inteqpipe.jpg">
+								</div>
+							</div>
+							<h2 id="intcylspe">4.3.3 Special case for cylinders</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Special Case for Cylinders 1" src="../../images/4/intcylspe1.jpg">
+								</div>
+								<div class="col-xs-6 col-md-6">
+									<img alt="Special Case for Cylinders 2" src="../../images/4/intcylspe2.jpg">
+								</div>
+							</div>
+							<h2 id="inttwocones">4.3.4 Two cones</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Two Cones 1" src="../../images/4/inttwocones1.png">
+								</div>
+								<div class="col-xs-3 col-md-3">
+									<img alt="Interpenetration of Two Cones 2" src="../../images/4/inttwocones2.jpg">
+								</div>
+							</div>
+							<h2 id="intconehcyl">4.3.5 Cone with horizontal cylinder</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Cone with Horizontal Cylinder 1" src="../../images/4/intconhcyl1.png">
+								</div>
+								<div class="col-xs-5 col-md-5">
+									<img alt="Interpenetration of Cone with Horizontal Cylinder 2" src="../../images/4/intconhcyl2.jpg">
+								</div>
+							</div>
+							<h2 id="intconeshcyl">4.3.6 Cone with small horizontal cylinder</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Cone with Small Horizontal Cylinder 1" src="../../images/4/intconeshcyl1.png">
+								</div>
+								<div class="col-xs-5 col-md-5">
+									<img alt="Interpenetration of Cone with Small Horizontal Cylinder 2" src="../../images/4/intconeshcyl2.jpg">
+								</div>
+							</div>
+							<h2 id="intconehxg">4.3.7 Cone with hexagon</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Cone with Hexagon 1" src="../../images/4/intconehxg1.png">
+								</div>
+								<div class="col-xs-3 col-md-3">
+									<img alt="Interpenetration of Cone with Hexagon 2" src="../../images/4/intconehxg2.jpg">
+								</div>
+							</div>
+							<h2 id="intconevcyl">4.3.8 Cone with vertical cylinder</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Cone with Vertical Cylinder 1" src="../../images/4/intconevcyl1.png">
+								</div>
+								<div class="col-xs-3 col-md-3">
+									<img alt="Interpenetration of Cone with Vertical Cylinder 2" src="../../images/4/intconevcyl2.jpg">
+								</div>
+								<div class="col-xs-3 col-md-2">
+									<img alt="Interpenetration of Cone with Vertical Cylinder 3" src="../../images/4/intconevcyl3.jpg">
+								</div>
+							</div>
+							<h2 id="intconevtprism">4.3.9 Cone with vertical triangular prism</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Cone with Vertical Triangular Prism 1" src="../../images/4/intconevtprism1.png">
+								</div>
+								<div class="col-xs-3 col-md-2">
+									<img alt="Interpenetration of Cone with Vertical Triangular Prism 2" src="../../images/4/intconevtprism2.jpg">
+								</div>
+							</div>
+							<h2 id="intcuttower">4.3.10 Cut tower</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Cut Tower 1" src="../../images/4/intcuttower1.png">
+								</div>
+								<div class="col-xs-3 col-md-3">
+									<img alt="Interpenetration of Cut Tower 2" src="../../images/4/intcuttower2.jpg">
+								</div>
+							</div>
+							<h2 id="intcylsltcyl">4.3.11 Cylinder with slant cylinder</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Cylinder with Slant Cylinder 1" src="../../images/4/intcylsltcyl1.png">
+								</div>
+								<div class="col-xs-3 col-md-3">
+									<img alt="Interpenetration of Cylinder with Slant Cylinder 2" src="../../images/4/intcylsltcyl2.jpg">
+								</div>
+							</div>
+							<h2 id="inthmsphelb">4.3.12 Hemisphere with elbow</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Hemisphere with Elbow 1" src="../../images/4/inthmsphelb1.png">
+								</div>
+								<div class="col-xs-5 col-md-5">
+									<img alt="Interpenetration of Hemisphere with Elbow 2" src="../../images/4/inthmsphelb2.jpg">
+								</div>
+							</div>
+							<h2 id="intpyrtriprism">4.3.13 Pyramid with triangular prism</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Pyramid with Triangular Prism 1" src="../../images/4/intpyrtriprism1.png">
+								</div>
+								<div class="col-xs-3 col-md-3">
+									<img alt="Interpenetration of Pyramid with Triangular Prism 2" src="../../images/4/intpyrtriprism2.jpg">
+								</div>
+							</div>
+							<h2 id="intsltcylsltcone">4.3.14 Slant cylinder with slant cone</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Slant Cylinder with Slant Cone 1" src="../../images/4/intsltcylsltcone1.png">
+								</div>
+								<div class="col-xs-4 col-md-4">
+									<img alt="Interpenetration of Slant Cylinder with Slant Cone 2" src="../../images/4/intsltcylsltcone2.jpg">
+								</div>
+							</div>
+							<h2 id="intsqprislttripri">4.3.15 Square prism with slant triangular prism</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Square Prism with Slant Triangular Prism 1" src="../../images/4/intsqprislttripri1.png">
+								</div>
+								<div class="col-xs-5 col-md-5">
+									<img alt="Interpenetration of Square Prism with Slant Triangular Prism 2" src="../../images/4/intsqprislttripri2.jpg">
+								</div>
+							</div>
+							<h2 id="intsqtriprism">4.3.16 Square prism with triangular prism</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Square Prism with Triangular Prism 1" src="../../images/4/intsqtriprism1.png">
+								</div>
+								<div class="col-xs-5 col-md-5">
+									<img alt="Interpenetration of Square Prism with Triangular Prism 2" src="../../images/4/intsqtriprism2.jpg">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<footer class="footer">
+        	<div class="container-fluid">
+            <div class="row">
+              <div class="footer-left">&copy; 2015 Chang Sin Fung. All rights reserved.</div>
+              <div class="footer-right">
+                <a href="http://www.nus.edu.sg/" target="_blank" alt="National University of Singapore">
+                	<img src="../../images/nuslogo.jpg" alt="NUS logo">				
+								</a>
+                <a href="http://me.nus.edu.sg/" target="_blank" alt="Department of Mechanical Engineering, NUS">
+                	<img src="../../images/nusmelogo.png" alt="NUS ME logo">
+                </a>
+              </div>
+            </div>
+          </div>
+				</footer>
+			</div>    
+		</div>
+		<a href="#" class="btn btn-primary pull-right btt" id="back-to-top"><span class="glyphicon glyphicon-chevron-up"></span><span class="sr-only">Back to Top</span></a>
+		<!-- Support for Internet Explorer 8 or less -->
+		<!--[if lt IE 9]>
+			<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+			<script src="../../js/bootstrap-3.3.6.min.js"></script>
+			<script src="../../js/bootstrap.mod.min.js"></script>
+			<script type="text/javascript">
+				$(document).ready(function(){
+						$('#ie8-modal').modal('show');
+				});
+			</script>
+		<![endif]-->
+		
+		<!-- For IE9+ or others -->
+		<!--[if gte IE 9]><!-->
+		<script src="../../js/fallback.min.js"></script>
+		<script>
+			fallback.load({
+				jQuery: [
+					'//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js',
+					'//code.jquery.com/jquery-2.1.4.min.js',
+					'../../js/jquery-2.1.4.min.js'
+				],
+				'jQuery.fn.modal': [ // bootstrap
+					'//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js',
+					'../../js/bootstrap-3.3.6.min.js'
+				],
+				mod_js: [ // global js
+					'../../js/bootstrap.mod.min.js'
+				]
+			}, {
+				shim: {
+					'jQuery.fn.modal': [ 'jQuery' ], // bootstrap
+					mod_js: [ 'jQuery','jQuery.fn.modal' ] // global js
+				}
+			});
+		</script><!--<![endif]-->
+	</body>
+</html>
