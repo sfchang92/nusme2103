@@ -5,14 +5,24 @@ $blue: #337ab7;
 $dblue: #23527c;
 $navbarh: 48px;
 
+html {
+	min-height:100%;
+	position:relative;
+}
 body {
   font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
-	position:relative;
+	//position:relative;
 	background-color:#f2f2f2;
 	padding-top: $navbarh;
 	&.toggled {
 		@include maxwidth(mobile) {
 			overflow-y:hidden;
+			.footer {
+				right:$sidebarw;
+			}
+			.btt {
+				right:$sidebarw + 15px;
+			}
 		}
 	}
 }
@@ -61,21 +71,36 @@ h3 .gdt {
 }
 
 /* Button styles */
-.btn {
+.btn { 
 	@include border-radius(2px);
 	@include transition(background 0.5s ease);
 }
+.btn-group-lg>.btn, .btn-lg {
+	@include border-radius(2px);
+}
+
 /* Back to top button */
 .btt {
 	position: fixed;
 	bottom: 0px;
-	right: 15px; 
+	right: 15px;
+	padding-top:9px;
+	padding-bottom:9px;
+	text-indent:1px;
+	border:none !important;
+	font-size:20px; 
+	@include border-radius(50%); 
 	@include hwaccel;
-	@include transition(opacity 0.5s ease, bottom 0.5s ease);
+	@include transition(opacity 0.5s ease, background 0.5s ease, bottom 0.5s ease, box-shadow 0.5s ease, right 0.5s ease);
 	@include minwidth(tablet) {
 		right: 15px + $sidebarw;
 	}
 	z-index: 1;
+	&:active,&:focus,&.active,&:focus:active {
+		background-image: none;
+		outline: 0;
+		@include box-shadow(none);
+	}
 	@include opacity(0);
 	&.btt-show {
 		@include opacity (0.8);
@@ -83,7 +108,8 @@ h3 .gdt {
 	}
 	&.btt-end {
 		@include opacity (1);
-		bottom: 90px;
+		bottom: 60px;
+		@include box-shadow(0 0 0 2px white);
 	}
 }
 .contactinfo {
@@ -350,11 +376,14 @@ table{counter-reset:section;}
 		padding-right:1px;
 	}
 }
-
+.text-center .pagination {
+	padding-bottom:40px;
+}
 /* Navbar */
 .navbar {
 	border:none;
 	min-height:$navbarh;
+	margin-bottom:0;
 }
 .navbar-default {
 	z-index:999;
@@ -366,7 +395,7 @@ table{counter-reset:section;}
 	background-color:$blue;
 	border:none;
 	right:0;
-	@include box-shadow(0 1px 4px rgba(0,0,0,0.3));
+	@include box-shadow(0 1px 3px rgba(0,0,0,0.2));
 	@include hwaccel;
 	@include transition(top 0.5s ease, right 0.5s ease);
 	&.nav-hide {
@@ -374,8 +403,9 @@ table{counter-reset:section;}
 			top:- $navbarh;
 		}
 	}
+	
 	&.nav-show {
-		top:0;
+		//top:0;
 		@include maxwidth(mobile) {
 			right:$sidebarw;
 		}
@@ -469,7 +499,7 @@ table{counter-reset:section;}
 			overflow-y:auto;
 		}
 		#page-content-wrapper {
-			position: absolute;
+			//position: absolute;
 			margin-left: - $sidebarw; //Off-canvas body
 			overflow: hidden;
 			@include minwidth(tablet) {
@@ -495,7 +525,7 @@ table{counter-reset:section;}
 	overflow-y:hidden;
 	overflow-x: hidden;
 	top:0;
-	bottom:0;
+	height:100%; 
 	background: #f2f2f2;
 	@include hwaccel;
 	@include transition(width 0.5s ease, margin-right 0.5s ease);
@@ -509,11 +539,13 @@ table{counter-reset:section;}
 #page-content-wrapper {
 	width: 100%;
 	background-color:white;
-	position: absolute;
+	padding-bottom:80px;
+	//position: absolute;
+	position: relative;
 	@include hwaccel;
 	@include transition(margin-left 0.5s ease); //Off-canvas body
 	@include minwidth(tablet) {
-		position: relative;
+		//position: relative;
 	}
 }
 
@@ -555,9 +587,9 @@ table{counter-reset:section;}
 	}
 	position:fixed;
 	right:0;
-	bottom:0;
 	left:0;
 	top:0;
+	height:120%;
 	z-index:1000;
 	cursor:pointer;
 	background-color: #000;
@@ -649,6 +681,7 @@ table{counter-reset:section;}
 }
 #gesture-left-modal {
 	cursor:pointer;
+	padding-left:0 !important;
 	.modal-dialog {
 		margin:auto;
 		//width:300px;
@@ -690,15 +723,20 @@ table{counter-reset:section;}
 	}
 }
 .footer {
-	position: relative;
+	//position: relative;
+	position:absolute;
+	bottom:0;
 	width: 100%;
 	height: 80px;
-	margin-top:20px;
+	right:0;
+	@include hwaccel;
+	@include transition(right 0.5s ease);
 	@include maxwidth(mobile) {
 		font-size: 0.7em; 
 	}
 	//for footer with body container width
   > .container-fluid {
+		padding:0;
 		min-height: 100%;
 		height:80px; //Fix IE vertical centering
 		@include display-flex;
@@ -710,9 +748,13 @@ table{counter-reset:section;}
 			content: none;
 		}
 		
-		//Full width mobile footer
-		@include maxwidth(mobile) {
-			width: 100%;
+		> .container {
+			@include maxwidth(mobile) {
+				width: 100%;
+			}
+			@include minwidth(tablet) {
+				padding-right: $sidebarw + 15px;
+			}
 		}
 	}
 	

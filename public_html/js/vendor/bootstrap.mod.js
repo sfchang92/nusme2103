@@ -7,7 +7,7 @@ $(window).scroll(function() {
 		$('.btt').removeClass('btt-show');
 		$('.btt').removeClass('btt-end');
 		$('.arrow').removeClass('arrow-hide');
-	}else if($(this).scrollTop() >= $(document).height() - $(this).height() - 60){
+	}else if($(this).scrollTop() >= $(document).height() - $(this).height() - $('footer').height() ){
 		$('.btt').addClass('btt-end');
 	}else{
 		$('.btt').addClass('btt-show');

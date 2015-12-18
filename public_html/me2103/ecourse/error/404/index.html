@@ -4,12 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		
+		<!--Page title and icon-->
     <title>404 - Page Not Found | nus:me2103</title>
 		<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
-    <!-- Bootstrap -->
+		
+    <!-- Stylesheets -->
     <link href="/me2103/ecourse/css/bootstrap-3.3.6.min.css" rel="stylesheet">
     <link href="/me2103/ecourse/css/bootstrap.mod.css" rel="stylesheet">
+		
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -18,6 +21,69 @@
     <![endif]-->
   </head>
 	<body data-spy="scroll" data-target="#sidebar-wrapper" data-offset="80">
+		
+		<!-- Browser compatibility alert -->
+		<div>
+		<!--[if lt IE 9]>
+		<div id="ie8-modal" class="modal fade" tabindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Blimey! Still using Internet Explorer
+						<![if IE 8]> 8?<![endif]>
+						<![if IE 7]> 7?<![endif]>
+						<![if IE 6]> 6?<![endif]>
+						<![if lt IE 6]>?<![endif]>
+						</h4>
+					</div>
+					<div class="modal-body">
+						<p>It is time to</p>
+						<ul>
+							<li><p><a href="//browsehappy.com">Upgrade your browser today</a></p>
+								<div class="row text-center">
+									<div class="col-xs-3">
+										<a href="//opera.com/download/">
+											<img src="../../images/browserlogo/opera_256.png" alt="Opera">
+											<p>Opera</p>
+										</a>
+									</div>
+									<div class="col-xs-3">
+										<a href="//mozilla.org/firefox/new/">
+											<img src="../../images/browserlogo/firefox_256.png" alt="Firefox">
+											<p>Firefox</p>
+										</a>
+									</div>
+									<div class="col-xs-3">
+										<a href="//google.com/chrome/browser/">
+											<img src="../../images/browserlogo/chrome_256.png" alt="Chrome">
+											<p>Chrome</p>
+										</a>
+									</div>
+									<div class="col-xs-3">
+										<a href="//maxthon.com">
+											<img src="../../images/browserlogo/maxthon_256.png" alt="Maxthon">
+											<p>Maxthon</p>
+										</a>
+									</div>
+								</div>
+							</li>
+							<li><a href="//www.microsoft.com/download/internet-explorer-11-for-windows-7-details.aspx">Upgrade Internet Explorer (Windows 7)</a></li>
+							<li><a href="//www.microsoft.com/en-us/windows/windows-10-upgrade">Upgrade Windows</a></li>
+							<li>or continue using this website with limited functionality</li>
+						</ul>
+					</div>
+					<div class="modal-footer">
+						<a type="button" class="btn btn-default" href="../../">Back to Prof Homepage</a>
+						<button type="button" class="btn btn-primary" data-dismiss="modal" >Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<![endif]-->
+		</div>
+	
+		<!-- Top navigation bar -->
 		<nav class="navbar navbar-default">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -30,8 +96,12 @@
 				<div class="container container-navbar-brand"><a role="button" class="navbar-brand" href="#" id="back-to-top2">404 - Page not found</a></div>
       </div>
 		</nav>
+		
+		<!-- Content -->
 		<div id="wrapper" class="container">
 			<div id="modal-bg"></div>
+			
+			<!-- Sidebar menu -->
 			<div id="sidebar-wrapper">
 				<div class="sidebar-brand">
 					<a role="button" href="/me2103/ecourse/">nus:me2103</a>
@@ -43,19 +113,28 @@
 					</button>
 				</div>
 				<ul class="nav sidebar-nav">
-					<li><a href="/me2103/ecourse/">Home</a></li>
+					<li><a href="/me2103/ecourse/" id="prechp">Home</a></li>
 					<li><a role="button" class="collapse-button collapsed" data-toggle="collapse" data-parent="#sidebar-wrapper" href="#collapseChapter" aria-expanded="false" aria-controls="collapseChapter">Chapters</a>
 						<ul class="collapse" id="collapseChapter">
 							<li><a href="/me2103/ecourse/chapter/1/">1 - Introduction</a></li>
 							<li><a href="/me2103/ecourse/chapter/2/">2 - Principles of projection</a></li>
 							<li><a href="/me2103/ecourse/chapter/3/">3 - Sectioning &amp; dimensioning</a></li>
-							<li><a href="/me2103/ecourse/chapter/9/">4 - Limits, fits &amp; geometrical tolerances</a></li>
+							<li><a href="/me2103/ecourse/chapter/4/">4 - Interpenetration</a></li>
+							<li><a href="/me2103/ecourse/chapter/5/">5 - Development</a></li>
+							<li><a href="/me2103/ecourse/chapter/6/">6 - Conventions &amp; symmetry</a></li>
+							<li><a href="/me2103/ecourse/chapter/7/">7 - Screws &amp; nuts</a></li>
+							<li><a href="/me2103/ecourse/chapter/8/">8 - Keys, coupling &amp; locking devices</a></li>
+							<li><a href="/me2103/ecourse/chapter/9/">9 - Limits, fits &amp; geometrical tolerances</a></li>
+							<li><a href="/me2103/ecourse/chapter/9/">9 - Limits, fits &amp; geometrical tolerances</a></li>
+							<li><a href="/me2103/ecourse/chapter/10/">10 - Welding symbols representation</a></li>
 						</ul>
 					</li>
 					<li><a href="/me2103/ecourse/misc/">Behind the scenes</a></li>
 				</ul>
 				<a role="button" class="btn btn-block btn-primary btn-lg btn-profhome" href="../../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Prof Homepage</a>
 			</div>
+			
+			<!-- Content -->
 			<div id="page-content-wrapper">
       	<div id="page-content">
           <div class="container-fluid">
@@ -66,27 +145,38 @@
               <p>Seems like the page you are looking for cease to exist. <em>Would you kindly</em> inform <a href="mailto:changsinfung@u.nus.edu?subject=nus:me2103 - Missing page">me</a> what's wrong with it? Your help will be very much appreciated.</p>
 							<h2>What's next?</h2>
 							<p>Good question. Feel free to linger around if you found peace within a wall of texts. Or, perhaps you would like to explore the menu to go somewhere deeper.</p>
+							<div class="btn-group" role="group" aria-label="errorButtons">
+								<button type="button" class="btn btn-primary btn-lg" onClick="window.history.back()"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Back</button>
+								<button type="button" class="btn btn-primary btn-lg" onclick="document.getElementById('prechp').click()"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Go home</button>
+							</div>
 						</div>
 					</div>
         </div>
-				<footer class="footer">
+			</div>
+		</div>
+		
+		<!-- Footer -->
+		<footer class="footer">
 					<div class="container-fluid">
-						<div class="row">
-							<div class="footer-left">&copy; 2015 Chang Sin Fung. All rights reserved.</div>
-							<div class="footer-right">
-								<a href="http://www.nus.edu.sg/" target="_blank" alt="National University of Singapore">
-									<img src="/me2103/ecourse/images/nuslogo.jpg" alt="NUS logo">				
-								</a>
-								<a href="http://me.nus.edu.sg/" target="_blank" alt="Department of Mechanical Engineering, NUS">
-									<img src="/me2103/ecourse/images/nusmelogo.png" alt="NUS ME logo">
-								</a>
+						<div class="container">
+							<div class="row">
+								<div class="footer-left">&copy; 2015 Chang Sin Fung. All rights reserved.</div>
+								<div class="footer-right">
+									<a href="http://www.nus.edu.sg/" target="_blank" alt="National University of Singapore">
+										<img src="/me2103/ecourse/images/nuslogo.jpg" alt="NUS logo">				
+									</a>
+									<a href="http://me.nus.edu.sg/" target="_blank" alt="Department of Mechanical Engineering, NUS">
+										<img src="/me2103/ecourse/images/nusmelogo.png" alt="NUS ME logo">
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</footer>
-			</div>
-		</div>
+		
+		<!-- Back to top button -->
     <a href="#" class="btn btn-primary pull-right btt" id="back-to-top"><span class="glyphicon glyphicon-chevron-up"></span><span class="sr-only">Back to Top</span></a>
+		
 		<!-- Support for Internet Explorer 8 or less -->
 		<!--[if lt IE 9]>
 			<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>

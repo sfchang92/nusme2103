@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!--Page title and icon-->
+    <title>7 - Screw &amp; Nuts | nus:me2013</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+		
+    <!-- Stylesheets -->
+    <link href="../../css/bootstrap-3.3.6.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.mod.css" rel="stylesheet">
+		
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+	<body data-spy="scroll" data-target="#sidebar-wrapper" data-offset="80">
+		
+		<!-- Browser compatibility alert -->
+		<div>
+		<!--[if lt IE 9]>
+		<div id="ie8-modal" class="modal fade" tabindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Blimey! Still using Internet Explorer
+						<![if IE 8]> 8?<![endif]>
+						<![if IE 7]> 7?<![endif]>
+						<![if IE 6]> 6?<![endif]>
+						<![if lt IE 6]>?<![endif]>
+						</h4>
+					</div>
+					<div class="modal-body">
+						<p>It is time to</p>
+						<ul>
+							<li><p><a href="//browsehappy.com">Upgrade your browser today</a></p>
+								<div class="row text-center">
+									<div class="col-xs-3">
+										<a href="//opera.com/download/">
+											<img src="../../images/browserlogo/opera_256.png" alt="Opera">
+											<p>Opera</p>
+										</a>
+									</div>
+									<div class="col-xs-3">
+										<a href="//mozilla.org/firefox/new/">
+											<img src="../../images/browserlogo/firefox_256.png" alt="Firefox">
+											<p>Firefox</p>
+										</a>
+									</div>
+									<div class="col-xs-3">
+										<a href="//google.com/chrome/browser/">
+											<img src="../../images/browserlogo/chrome_256.png" alt="Chrome">
+											<p>Chrome</p>
+										</a>
+									</div>
+									<div class="col-xs-3">
+										<a href="//maxthon.com">
+											<img src="../../images/browserlogo/maxthon_256.png" alt="Maxthon">
+											<p>Maxthon</p>
+										</a>
+									</div>
+								</div>
+							</li>
+							<li><a href="//www.microsoft.com/download/internet-explorer-11-for-windows-7-details.aspx">Upgrade Internet Explorer (Windows 7)</a></li>
+							<li><a href="//www.microsoft.com/en-us/windows/windows-10-upgrade">Upgrade Windows</a></li>
+							<li>or continue using this website with limited functionality</li>
+						</ul>
+					</div>
+					<div class="modal-footer">
+						<a type="button" class="btn btn-default" href="../../">Back to Prof Homepage</a>
+						<button type="button" class="btn btn-primary" data-dismiss="modal" >Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<![endif]-->
+		</div>
+		
+		<!-- Top header bar -->
+		<nav class="navbar navbar-default">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button role="button" href="#menu-toggle" id="menu-toggle" class="navbar-toggle">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar top-bar"></span>
+          <span class="icon-bar middle-bar"></span>
+          <span class="icon-bar bottom-bar"></span>
+        </button>
+				<!-- Header -->
+        <div class="container container-navbar-brand"><span role="button" class="navbar-brand" id="back-to-top2">Conventions &amp; symmetry</span></div>
+      </div>
+		</nav>
+		
+		<div id="wrapper" class="container">
+    	<div id="modal-bg"></div>
+			
+			<!-- Sidebar menu -->
+			<div id="sidebar-wrapper">
+				<div class="sidebar-brand">
+					<a role="button" href="../../">nus:me2103</a>
+					<button role="button" href="#menu-toggle" id="menu-toggle2" class="navbar-toggle toggled">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar top-bar"></span>
+						<span class="icon-bar middle-bar"></span>
+						<span class="icon-bar bottom-bar"></span>
+					</button>
+				</div>
+				<ul class="nav sidebar-nav">
+					<li>
+						<a href="../../" role="button">Home</a>
+		      </li>
+					<li><a class="collapse-button" data-toggle="collapse" href="#collapseChapter" aria-expanded="true" aria-controls="collapseChapter">Chapters</a>
+						<ul class="collapse in" id="collapseChapter">
+							<li><a href="../1/">1 - Introduction</a></li>
+							<li><a href="../2/">2 - Principles of projection</a></li>
+							<li><a href="../3/">3 - Sectioning &amp; dimensioning</a></li>
+							<li><a href="../4/">4 - Interpenetration</a></li>
+							<li><a href="../5/">5 - Development</a></li>
+							<li><a href="../6/" id="prechp">6 - Conventions &amp; symmetry</a></li>
+							<li><a class="collapse-button" data-toggle="collapse" href="#collapse1" aria-expanded="true" aria-controls="collapse1">7 - Screws &amp; nuts</a>
+								<ul class="collapse in" id="collapse1">
+									<li><a href="#screwthread">7.1 - Screw thread</a>
+										<ul>
+											<li><a href="#symmeg">7.1.1 - Examples</a></li>
+										</ul>
+									</li>
+									<li><a href="#hexbolt">7.2 - Hexagonal bolts, screw &amp; stud</a>
+										<ul>
+											<li><a href="#enlarged">7.2.1 - Enlarged view part</a></li>
+											<li><a href="#repetitive">7.2.2 - Repetitive information</a></li>
+										</ul>
+									</li>
+									<li><a href="#convrep">7.3 - Conventional representation</a>
+										<ul>
+											<li><a href="#crknurling">7.3.1 - Knurling</a></li>
+											<li><a href="#interrview">7.3.2 - Interrupted view</a></li>
+											<li><a href="#sqendbearing">7.3.3 - Square end &amp; bearing</a></li>
+											<li><a href="#cylcompspring">7.3.4 - Cylindrical comp. bearing</a></li>
+											<li><a href="#gear">7.3.5 - Gear</a></li>
+											<li><a href="#rack">7.3.6 - Rack</a></li>
+										</ul>
+									</li>
+									<li><a href="#abbr">7.4 Abbreviation of engineering terms</a></li>
+								</ul>
+							</li>
+							<li><a href="../8/" id="nextchp">8 - Keys, coupling &amp; locking devices</a></li>
+							<li><a href="../9/">9 - Limits, fits &amp; geometrical tolerances</a></li>
+							<li><a href="../10/">10 - Welding symbols representation</a></li>
+						</ul>
+					</li>
+					<li><a href="../../misc/">Behind the scenes</a></li>
+				</ul>
+				<a role="button" class="btn btn-block btn-primary btn-lg btn-profhome" href="../../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Prof Homepage</a>
+			</div>
+			
+			<!-- Content -->
+			<div id="page-content-wrapper">
+      	<div id="page-content">
+          <div class="container-fluid">
+					
+						<!-- Section 1 -->
+						<div class="row">
+							<h1 id="screwthread">7.1 Screw thread</h1>
+							<p>Screw thread is a helical groove which is cut on a cylinder or in a cylindrical hole.</p>
+							<div class="row">
+								<div class="col-md-6">
+									<img alt="Symmetry Types 1" src="../../images/6/symmtype1.jpg">
+								</div>
+								<div class="col-md-6">
+									<img alt="Symmetry Types 2" src="../../images/6/symmtype2.jpg">
+								</div>
+							</div>
+							<h2 id="symmeg">6.1.1 Examples</h2>
+							<div class="row">
+								<div class="col-md-6">
+									<img alt="Symmetry Example 1" src="../../images/6/symmeg1.jpg">
+								</div>
+								<div class="col-md-6">
+									<img alt="Symmetry Example 2" src="../../images/6/symmeg2.jpg">
+								</div>
+							</div>
+						</div><!-- Section 1 ends -->
+						
+						<!-- Section 2 -->
+						<div class="row">
+							<h1 id="conventions">6.2 Conventions</h1>
+							<h2 id="enlarged">6.2.1 Enlarged part view</h2>
+							<p>On occasion, components carry features which, in the general scale of the drawing, are too small to be dimensioned clearly. </p>
+							<p>Such features may be enclosed in thin circle from which a leader is drawn to an enlarged part view.</p>
+							<div class="row">
+								<div class="col-md-6">
+									<img alt="Enlarged Part View" src="../../images/6/enlarged1.jpg">
+								</div>
+								<div class="col-xs-6 col-md-3">
+									<img alt="Enlarged Part View" src="../../images/6/enlarged2.jpg">
+								</div>
+							</div>
+							<h2 id="repetitive">6.2.2 Repetitive information</h2>
+							<p>If identical parts or features appear many times, repeated illustrations of them may be avoided by drawing one, and indicating the positions of the others by their centre lines.</p>
+							<div class="row">
+								<div class="col-md-6">
+									<img alt="Repetitive Information 1" src="../../images/6/repetitive1.jpg">
+								</div>
+								<div class="col-md-6">
+									<img alt="Repetitive Information 2" src="../../images/6/repetitive2.jpg">
+								</div>
+							</div>
+						</div><!-- Section 2 ends -->
+						
+						<!-- Section 3 -->
+						<div class="row">
+							<h1 id="convrep">6.3 Conventional representation</h1>
+							<h2 id="crknurling">6.3.1 Knurling</h2>
+							<p>Two types of knurling, straight and diamond knurling, are use and the conventional representation use thin lines. (straight knurling is often used on the heads of hexagon socket cap screw)</p>
+							<div class="row">
+								<div class="col-md-6">
+									<img alt="Knurling 1" src="../../images/6/knurling1.jpg">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6 col-md-3">
+									<img alt="Knurling 2" src="../../images/6/knurling2.jpg">
+								</div>
+								<div class="col-xs-4 col-xs-offset-1 col-md-2 col-md-offset-0">
+									<img alt="Knurling 3" src="../../images/6/knurling3.png">
+								</div>
+							</div>
+							<h2 id="interrview">6.3.2 Interrupted view</h2>
+							<p>Long parts of constant cross-section may be shown by interrupted views.</p>
+							<p>A piece from the centre of the part is imagined to be removed and the ends of the view are brought together.</p>
+							<div class="row">
+								<div class="col-md-6">
+									<img alt="Interrupted View" src="../../images/6/interrview.jpg">
+								</div>
+							</div>
+							<h2 id="sqendbearing">6.3.3 Square end &amp; bearing</h2>
+							<p>A square end on a shaft is represented by diagonal drawn on the flat face.</p> 
+							<p>A similar convention is used for ball and roller bearing.</p>
+							<div class="row">
+								<div class="col-md-6">
+									<img alt="Square End and Bearing" src="../../images/6/sqendbearing.jpg">
+								</div>
+							</div>
+							<h2 id="cylcompspring">6.3.4 Cylindrical compression bearing</h2>
+							<p>The helices on a cylindrical compression spring should not be projected but drawn as straight lines. The pitch need not be exact and 2 or 3 coils should be shown at each end.</p>
+							<p>For diagrams and schematic drawings the representation may be simplified to a single line.</p>
+							<div class="row">
+								<div class="col-md-7">
+									<img alt="Cylindrical Compression Bearing 2" src="../../images/6/cylcomspring2.jpg">
+								<div class="col-md-4">
+									<img alt="Cylindrical Compression Bearing 1" src="../../images/6/cylcomspring1.jpg">
+								</div>
+								</div>
+							</div>
+							<h2 id="gear">6.3.5 Gear</h2>
+							<p>Teeth on the circular view of a gear may be omitted. A thick circle representing the tip of the teeth, and a thin chain circle representing the pitch circle.</p>
+							<div class="row">
+								<div class="col-md-6">
+									<img alt="Bevel and Spur Gear Representation" src="../../images/6/gear1.jpg">
+								</div>
+								<div class="col-md-3">
+									<div class="row">
+										<div class="col-xs-6 col-md-12">
+											<img alt="Bevel Gear" src="../../images/6/gear2.jpg">
+										</div>
+										<div class="col-xs-6 col-md-12">
+											<img alt="Spur Gear" src="../../images/6/gear3.jpg">
+										</div>
+									</div>
+								</div>
+							</div>
+							<h2 id="rack">6.3.6 Rack</h2>
+							<p>For a rack, one or two teeth are drawn by a thick line representing the tips and a thin line representing roots. The pitch line is not shown.</p>
+							<div class="row">
+								<div class="col-md-6">
+									<img alt="Rack 1" src="../../images/6/rack2.jpg">
+								</div>
+								<div class="col-xs-5 col-md-3">
+									<img alt="Rack 2" src="../../images/6/rack1.jpg">
+								</div>
+							</div>
+						</div><!-- Section 3 ends -->
+						
+						<!-- Section 4 -->
+						<div class="row">
+							<h1 id="abbr">6.4 Abbreviation of general engineering terms</h1>
+							<div class="row">
+								<div class="col-md-6">
+									<!-- Table -->
+									<table class="table table-bordered">
+										<tbody>
+											<tr>
+												<td>A/F</td>
+												<td>Across Flat</td>
+											</tr>
+											<tr>
+												<td>A/C</td>
+												<td>Across Corner</td>
+											</tr>
+											<tr>
+												<td>Assy</td>
+												<td>Assembly</td>
+											</tr>
+											<tr>
+												<td>CRS</td>
+												<td>Centre</td>
+											</tr>
+											<tr>
+												<td>C<sub>L</sub> or CL</td>
+												<td>Centre line</td>
+											</tr>
+											<tr>
+												<td>CSK</td>
+												<td>Countersunk</td>
+											</tr>
+											<tr>
+												<td>C'BORE</td>
+												<td>Counterbore</td>
+											</tr>
+											<tr>
+												<td>&empty;</td>
+												<td>Diameter</td>
+											</tr>
+											<tr>
+												<td>DRG</td>
+												<td>Drawing</td>
+											</tr>
+											<tr>
+												<td>FIG.</td>
+												<td>Figure</td>
+											</tr>
+											<tr>
+												<td>HEX</td>
+												<td>Hexagon</td>
+											</tr>
+											<tr>
+												<td>MATL</td>
+												<td>Material</td>
+											</tr>
+											<tr>
+												<td>NO.</td>
+												<td>Number</td>
+											</tr>
+											<tr>
+												<td>PCD</td>
+												<td>Pitch circle diameter</td>
+											</tr>
+											<tr>
+												<td>R</td>
+												<td>Radius</td>
+											</tr>
+											<tr>
+												<td>REQD</td>
+												<td>Required</td>
+											</tr>
+											<tr>
+												<td>SPEC</td>
+												<td>Specification</td>
+											</tr>
+											<tr>
+												<td>SHPERE &empty;</td>
+												<td>Spherical diameter</td>
+											</tr>
+											<tr>
+												<td>&#9633;</td>
+												<td>Square</td>
+											</tr>
+											<tr>
+												<td>STD</td>
+												<td>Standard</td>
+											</tr>
+											<tr>
+												<td class="gdt">v</td>
+												<td>Taper, on diameter or width</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div><!-- Section 4 ends -->
+					</div>
+				</div>
+				
+				<!-- Chapter navigation buttons -->
+				<div class="text-center">
+					<ul class="pagination">
+						<div role="group" class="btn-group btn-group-lg" aria-label="Chapter Navigation">
+							<button type="button" class="btn btn-primary" onclick="document.getElementById('prechp').click()"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Chapter 3</button>
+							<button type="button" class="btn btn-primary" onclick="document.getElementById('nextchp').click()"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Chapter 5</button>
+						</div>
+					</ul>
+				</div>
+			</div>    
+		</div>
+		
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="container">
+					<div class="row">
+						<div class="footer-left">&copy; 2015 Chang Sin Fung. All rights reserved.</div>
+						<div class="footer-right">
+							<a href="http://www.nus.edu.sg/" target="_blank" alt="National University of Singapore">
+								<img src="../../images/nuslogo.jpg" alt="NUS logo">				
+							</a>
+							<a href="http://me.nus.edu.sg/" target="_blank" alt="Department of Mechanical Engineering, NUS">
+								<img src="../../images/nusmelogo.png" alt="NUS ME logo">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<!-- Back to top button -->
+		<button role="button" class="btn btn-primary pull-right btt" id="back-to-top"><span class="glyphicon glyphicon-chevron-up"></span><span class="sr-only">Back to Top</span></button>
+		
+		<!-- Support for Internet Explorer 8 or less -->
+		<!--[if lt IE 9]>
+			<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+			<script src="../../js/bootstrap-3.3.6.min.js"></script>
+			<script src="../../js/bootstrap.mod.min.js"></script>
+			<script type="text/javascript">
+				$(document).ready(function(){
+						$('#ie8-modal').modal('show');
+				});
+			</script>
+		<![endif]-->
+		
+		<!-- For IE9+ or others -->
+		<!--[if gte IE 9]><!-->
+		<script src="../../js/fallback.min.js"></script>
+		<script>
+			fallback.load({
+				jQuery: [
+					'//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js',
+					'//code.jquery.com/jquery-2.1.4.min.js',
+					'../../js/jquery-2.1.4.min.js'
+				],
+				'jQuery.fn.modal': [ // bootstrap
+					'//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js',
+					'../../js/bootstrap-3.3.6.min.js'
+				],
+				mod_js: [ // global js
+					'../../js/bootstrap.mod.min.js'
+				]
+			}, {
+				shim: {
+					'jQuery.fn.modal': [ 'jQuery' ], // bootstrap
+					mod_js: [ 'jQuery','jQuery.fn.modal' ] // global js
+				}
+			});
+		</script><!--<![endif]-->
+	</body>
+</html>

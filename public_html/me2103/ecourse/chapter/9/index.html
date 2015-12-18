@@ -4,10 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		
+		<!--Page title and icon-->
     <title>9 - Limits, Fits &amp; Geometrical Tolerances | nus:me2013</title>
 		<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
-    <!-- Bootstrap -->
+		
+    <!-- Stylesheets -->
     <link href="../../css/bootstrap-3.3.6.min.css" rel="stylesheet">
     <link href="../../css/bootstrap.mod.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -20,6 +22,7 @@
 
 	<body data-spy="scroll" data-target="#sidebar-wrapper" data-offset="80">
 	
+		<!-- Browser compatibility alert -->
 		<div>
 		<!--[if lt IE 9]>
 		<div id="ie8-modal" class="modal fade" tabindex="-1" role="dialog">
@@ -80,6 +83,7 @@
 		<![endif]-->
 		</div>
 		
+		<!-- Top header bar -->
 		<nav class="navbar navbar-default">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -89,11 +93,15 @@
           <span class="icon-bar middle-bar"></span>
           <span class="icon-bar bottom-bar"></span>
         </button>
-        <div class="container container-navbar-brand"><a role="button" id="back-to-top2" class="navbar-brand" href="#">Limits, fits &amp; geometrical tolerances</a></div>
+				<!-- Header -->
+        <div class="container container-navbar-brand"><span role="button" class="navbar-brand" id="back-to-top2">Limits, fits &amp; geometrical tolerances</span></div>
       </div>
 		</nav>
+		
 		<div id="wrapper" class="container">
     	<div id="modal-bg"></div>
+			
+			<!-- Sidebar menu -->
 			<div id="sidebar-wrapper">
 				<div class="sidebar-brand">
 					<a href="../../">nus:me2103</a>
@@ -114,6 +122,10 @@
 							<li><a href="../2/">2 - Principles of projection</a></li>
 							<li><a href="../3/">3 - Sectioning &amp; dimensioning</a></li>
 							<li><a href="../4/">4 - Interpenetration</a></li>
+							<li><a href="../5/">5 - Development</a></li>
+							<li><a href="../6/">6 - Conventions &amp; symmetry</a></li>
+							<li><a href="../7/">7 - Screws &amp; nuts</a></li>
+							<li><a href="../8/" id="prechp">8 - Keys, coupling &amp; locking devices</a></li>
 							<li><a class="collapse-button" data-toggle="collapse" href="#collapse1" aria-expanded="true" aria-controls="collapse1">9 - Limits, fits &amp; geometrical tolerances</a>
 								<ul class="collapse in" id="collapse1">
 									<li><a href="#limits">9.1 - Limit tolerances</a>
@@ -202,12 +214,15 @@
 									</li>
 								</ul>
 							</li>
+							<li><a href="../10/" id="nextchp">10 - Welding symbols representation</a></li>
 						</ul>
 					</li>
 					<li><a href="../../misc">Behind the scenes</a></li>
 				</ul>
 				<a role="button" class="btn btn-block btn-primary btn-lg btn-profhome" href="../../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Prof Homepage</a>
 			</div>
+			
+			<!-- Content -->
 			<div id="page-content-wrapper">
       	<div id="page-content">
           <div class="container-fluid">
@@ -286,6 +301,8 @@
 								</div>
 							</div>
 							<!-- Carousel end -->
+						</div>
+						<div class="row">
 							<h1 id="fits">9.2 Fits</h1>
 							<h2 id="fundev">9.2.1 Fundamental deviation</h2>
 							<p>Deviation closest to the basic size, designated by letter (e.g. H, g…)</p>
@@ -637,8 +654,10 @@
 								<div class="col-xs-6 col-md-4"><img alt="Interference Fit" src="../../images/9/fittype2.png"></div>
 								<div class="col-xs-6 col-md-4"><img alt="Interference Fit Range" src="../../images/9/interferencerange.png"><p>Tolerance - Hole basis</p></div>
 							</div>
-							<h2 id="limandfits">9.3 Limits and fits</h2>
-							<h3 id="holebasis">9.3.1 Hole basis</h3>
+						</div>
+						<div class="row">
+							<h1 id="limandfits">9.3 Limits and fits</h1>
+							<h2 id="holebasis">9.3.1 Hole basis</h2>
 							<div class="row">
 								<div class="col-sm-6 col-sm-push-6 col-md-5 col-md-push-6 col-lg-4 col-lg-push-5">
 									<ul>
@@ -657,7 +676,7 @@
 							<div class="row text-center">
 								<div class="col-md-10 col-lg-8"><img alt="Hole Basis Fit Table" src="../../images/9/holebasis3.png"></div>
 							</div>
-							<h3 id="shaftbasis">9.3.2 Shaft basis</h3>
+							<h2 id="shaftbasis">9.3.2 Shaft basis</h2>
 							<div class="row">
 								<div class="col-sm-6 col-sm-push-6 col-md-5 col-md-push-6 col-lg-4 col-lg-push-5">
 									<ul>
@@ -674,7 +693,7 @@
 							<div class="row text-center">
 								<div class="col-md-10 col-lg-8"><img alt="Shaft Basis Fit Table" src="../../images/9/shaftbasis2.png"></div>
 							</div>
-							<h3 id="preferredfits">9.3.3 Preferred fits</h3>
+							<h2 id="preferredfits">9.3.3 Preferred fits</h2>
 							<div class="row">
 								<div class="col-md-8">
 									<table class="table table-bordered table-text-center-full table-last-col-left">
@@ -747,8 +766,10 @@
 									</table>
 								</div>
 							</div>
-							<h2 id="mettol">9.4 Method of tolerancing</h2>
-							<h3 id="permdev">9.4.1 Permissible deviations for linear dimensions (ISO 2768-1)</h3>
+						</div>
+						<div class="row">
+							<h1 id="mettol">9.4 Method of tolerancing</h1>
+							<h2 id="permdev">9.4.1 Permissible deviations for linear dimensions (ISO 2768-1)</h2>
 							<div class="row">
 								<div class="col-md-8">
 									<table class="table table-text-center-full table-bordered table-condensed">
@@ -827,7 +848,7 @@
 									</table>
 								</div>
 							</div>
-							<h3 id="unitol">9.4.2 Unilateral tolerances</h3>
+							<h2 id="unitol">9.4.2 Unilateral tolerances</h2>
 							<p>Variation is permitted only in <em>one</em> direction from specified dimension.</p>
 							<div class="row">
 								<div class="col-xs-8 col-md-5 col-lg-4">
@@ -845,7 +866,7 @@
 									</table>
 								</div>
 							</div>
-							<h3 id="bitol">9.4.3 Bilateral tolerances</h3>
+							<h2 id="bitol">9.4.3 Bilateral tolerances</h2>
 							<p>Variation is permitted in <em>both</em> direction from specified dimension.</p>
 							<div class="row">
 								<div class="col-xs-8 col-md-5 col-lg-4">
@@ -863,7 +884,7 @@
 									</table>
 								</div>
 							</div>
-							<h3 id="cumtol">9.4.4 Cumulative tolerances</h3>
+							<h2 id="cumtol">9.4.4 Cumulative tolerances</h2>
 							<div class="row row-no-gutter text-center">
 								<div class="col-xs-6 col-md-5">
 									<img alt="Cumulative Tolerance" src="../../images/9/cumtol1.jpg">
@@ -874,7 +895,7 @@
 									<p>Ordinate dimensioning</p>
 								</div>
 							</div>
-							<h3 id="screw">9.4.5 Dimensioning screw threads</h3>
+							<h2 id="screw">9.4.5 Dimensioning screw threads</h2>
 							<p>Threads are shown conventionally on drawings, hence need to be designated by dimensions or notes.</p>
 							<p>Metric thread example:
 								<ul>
@@ -904,7 +925,9 @@
 											No indication of hand is required if thread is right-handed.</li>
 								</ol>
 							</p>
-							<h2 id="geotol">9.5 Geometrical tolerances</h2>
+						</div>
+						<div class="row">
+							<h1 id="geotol">9.5 Geometrical tolerances</h1>
 							<p>Very often, specifying the limit tolerances on the parts may not be sufficient, as they do not consider the tolerances due to the geometrical shape or form of the parts such as straightness and cylindricity etc.</p>
 							<p>In today’s industry where mass production and interchangeability of parts are a norm, the control of both limit tolerances and geometrical tolerances are essential.</p>
 							<div class="row">
@@ -912,13 +935,13 @@
 									<img alt="Geometrical Tolerances" src="../../images/9/geotol.png">
 								</div>
 							</div>
-							<h3 id="linear">9.5.1 Linear tolerances</h3>
+							<h2 id="linear">9.5.1 Linear tolerances</h2>
 							<div class="row">
 								<div class="col-md-6 col-lg-5">
 									<img alt="Linear Tolerances" src="../../images/9/lintol.jpg">
 								</div>
 							</div>
-							<h3 id="inspecttol">9.5.2 Inspecting tolerances</h3>
+							<h2 id="inspecttol">9.5.2 Inspecting tolerances</h2>
 							<div class="row">
 								<div class="col-md-6 col-lg-5">
 									<img alt="Inspecting Tolerances 1" src="../../images/9/inspecttol1.jpg">
@@ -930,7 +953,7 @@
 									<img alt="Inspecting Tolerances 3" src="../../images/9/inspecttol3.jpg">
 								</div>
 							</div>
-							<h3 id="spectol">9.5.3 Specifying tolerances</h3>
+							<h2 id="spectol">9.5.3 Specifying tolerances</h2>
 							<div class="row text-center">
 								<div class="col-md-6 col-lg-5">
 									<img alt="Specifying Tolerances 1" src="../../images/9/spectol1.jpg">
@@ -941,8 +964,11 @@
 									<p>Fabricated part</p>
 								</div>
 							</div>
-							<h2 id="gdt">9.6 Geometrical dimensioning &amp; tolerancing</h2>
-							<h3 id="gdteg1">9.6.1 Example 1</h3>
+						</div>
+						
+						<div class="row">
+							<h1 id="gdt">9.6 Geometrical dimensioning &amp; tolerancing</h1>
+							<h2 id="gdteg1">9.6.1 Example 1</h2>
 							<div class="row text-center">
 								<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 									<img alt="Eg 1: Geo Dimensioning and Tolerancing" src="../../images/9/drawtol3.png">
@@ -958,7 +984,7 @@
 									<p>Fabricated part</p>
 								</div>
 							</div>
-							<h3 id="gdteg2">9.6.2 Example 2</h3>
+							<h2 id="gdteg2">9.6.2 Example 2</h2>
 							<div class="row text-center">
 								<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 									<img alt="Eg 2: Geo Dimensioning and Tolerancing" src="../../images/9/drawtol4g.png">
@@ -974,7 +1000,7 @@
 									<p>Fabricated part</p>
 								</div>
 							</div>
-							<h3 id="gdtsym">9.6.3 GDT types</h3>
+							<h2 id="gdtsym">9.6.3 GDT types</h2>
 							<!-- GDT symbols table -->
 							<div class="row">
 								<div class="col-md-10">
@@ -1208,7 +1234,10 @@ mm, which is coaxial with datum axis B-C.</p>
 									<img alt="Total Runout" src="../../images/9/truntol2.png">
 								</div>
 							</div>
-							<h2 id="incdatum">9.7 Datum references</h2>
+						</div>
+						
+						<div class="row">
+							<h1 id="incdatum">9.7 Datum references</h1>
 							<div class="row text-center">
 								<div class="col-xs-4 col-md-3 col-md-offset-1">
 									<img alt="Datum on Extension Line" src="../../images/9/datextline.png">
@@ -1223,7 +1252,7 @@ mm, which is coaxial with datum axis B-C.</p>
 									<p>On centre line</p>
 								</div>
 							</div>
-							<h3 id="dateg1">9.7.1 Example 1</h3>
+							<h2 id="dateg1">9.7.1 Example 1</h2>
 							<div class="row text-center row-border-between">
 								<div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-0">
 									<img alt="Incorporating Datum References" src="../../images/9/dateg1.png">
@@ -1239,7 +1268,7 @@ mm, which is coaxial with datum axis B-C.</p>
 									</div>
 								</div>
 							</div>
-							<h3 id="dateg2">9.7.2 Example 2 (from <a href="#drawtoleg1">9.6.1</a>)</h3>
+							<h2 id="dateg2">9.7.2 Example 2 (from <a href="#drawtoleg1">9.6.1</a>)</h2>
 							<div class="row">
 								<div class="col-xs-10 col-xs-offset-1 col-md-5 col-md-offset-0">
 									<img alt="Incorporating Datum References 3D view" src="../../images/9/dateg2.png">
@@ -1248,175 +1277,195 @@ mm, which is coaxial with datum axis B-C.</p>
 									<img alt="Incorporating Datum References Multi-view" src="../../images/9/drawtol3.png">
 								</div>
 							</div>
-							<h3 id="datappdwg">9.7.3 Application in drawings</h3>
+							<h2 id="datappdwg">9.7.3 Application in drawings</h2>
 							<img alt="Application of datum in drawing 1" src="../../images/9/datdwg1.jpg">
 							<img alt="Application of datum in drawing 2" src="../../images/9/datdwg2.jpg">
 						</div>
-						<h2 id="surftext">9.8 Surface texture &amp; roughness</h2>
-						<div class="row text-center">
-							<div class="col-md-10">
-								<img alt="Surface Texture" src="../../images/9/surftext.png">
-								<p>Surface texture</p>
-							</div>
-						</div>
-						<h3 id="roughmt">9.8.1 Surface roughness measurement</h3>
-						<br>
+					
 						<div class="row">
-							<div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
-								<img alt="Roughness Equation" src="http://latex.codecogs.com/svg.latex?R_a=\frac{A_1+A_2+A_3+A_4+...+A_n}{L}" border="0"/>
+							<h1 id="surftext">9.8 Surface texture &amp; roughness</h1>
+							<div class="row text-center">
+								<div class="col-md-10">
+									<img alt="Surface Texture" src="../../images/9/surftext.png">
+									<p>Surface texture</p>
+								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
-								<img alt="Roughness Equation Definitions" src="../../images/9/roughmt1.png">
+							<h2 id="roughmt">9.8.1 Surface roughness measurement</h2>
+							<br>
+							<div class="row">
+								<div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
+									<img alt="Roughness Equation" src="http://latex.codecogs.com/svg.latex?R_a=\frac{A_1+A_2+A_3+A_4+...+A_n}{L}" border="0"/>
+								</div>
 							</div>
-						</div>
-						<p class="text-center">Typical Cut-off length, L: 0.25, 0.8 and 2.5 mm</p>
-						<p class="text-center">Instrument: Taylar-Hobson Talysurf</p>
-						<p class="text-center">Note that for a purely triangular profile, the surface roughness, R<sub>a</sub> = R<sub>t</sub> &divide; 4</p>
-						<h3 id="textsymint">9.8.2 Texture symbol and interpretation</h3>
-						<div class="row text-center">
-							<div class="col-md-8 col-lg-6">
-								<img alt="Surface Texture" src="../../images/9/surftextint.png">
-								<p>Surface texture</p>
+							<div class="row">
+								<div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
+									<img alt="Roughness Equation Definitions" src="../../images/9/roughmt1.png">
+								</div>
 							</div>
-						</div>
-						<h3 id="textsymapp">9.8.3 Application of surface texture symbol</h3>
-						<table class="table table-bordered table-text-center-full">
-							<thead>
-								<tr>
-									<th scope="col">Symbols</th>
-									<th scope="col">Application</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td><img class="inline" alt="Surface Texture Symbol 1" src="../../images/9/stsym1.png"></td>
-									<td>Indicates machining is necessary to obtain the desired surface texture</td>
-								</tr>
-								<tr>
-									<td><img class="inline" alt="Surface Texture Symbol 2" src="../../images/9/stsym2.png"></td>
-									<td>Indicates material removal is <em>NOT</em> permitted</td>
-								</tr>
-								<tr>
-									<td><img class="inline" alt="Surface Texture Symbol 3" src="../../images/9/stsym3.png"></td>
-									<td>Indicates a particular machining process (milling) and the roughness value</td>
-								</tr>
-								<tr>
-									<td><img class="inline" alt="Surface Texture Symbol 4" src="../../images/9/stsym4.png"></td>
-									<td>The maximum and minimum limits of surface roughness obtained by any machining process</td>
-								</tr>
-								<tr>
-									<td><img class="inline" alt="Surface Texture Symbol 5" src="../../images/9/stsym5.png"></td>
-									<td>The maximum and minimum limits of surface roughness obtained without machining</td>
-								</tr>
-							</tbody>
-						</table>
-						<h3 id="sroughvalue">9.8.4 Surface roughness value</h3>
-						<div class="row">
-							<div class="col-md-8 col-lg-6">
-								<table class="table table-bordered table-condensed table-text-center-full">
+							<p class="text-center">Typical Cut-off length, L: 0.25, 0.8 and 2.5 mm</p>
+							<p class="text-center">Instrument: Taylar-Hobson Talysurf</p>
+							<p class="text-center">Note that for a purely triangular profile, the surface roughness, R<sub>a</sub> = R<sub>t</sub> &divide; 4</p>
+							<h2 id="textsymint">9.8.2 Texture symbol and interpretation</h2>
+							<div class="row text-center">
+								<div class="col-md-8 col-lg-6">
+									<img alt="Surface Texture" src="../../images/9/surftextint.png">
+									<p>Surface texture</p>
+								</div>
+							</div>
+							<h2 id="textsymapp">9.8.3 Application of surface texture symbol</h2>
+							<table class="table table-bordered table-text-center-full">
 								<thead>
 									<tr>
-										<th scope="colgroup" colspan="2">Roughness value (R<sub>a</sub>)</th>
-										<th scope="col" rowspan="2">Roughness grade number (N series)</th>
-									</tr>
-									<tr>
-										<th scope="col">&micro;m</th>
-										<th scope="col">&micro;in</th>
+										<th scope="col">Symbols</th>
+										<th scope="col">Application</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td>0.025</td>
-										<td>1</td>
-										<td>N1</td>
+										<td><img class="inline" alt="Surface Texture Symbol 1" src="../../images/9/stsym1.png"></td>
+										<td>Indicates machining is necessary to obtain the desired surface texture</td>
 									</tr>
 									<tr>
-										<td>0.05</td>
-										<td>2</td>
-										<td>N2</td>
+										<td><img class="inline" alt="Surface Texture Symbol 2" src="../../images/9/stsym2.png"></td>
+										<td>Indicates material removal is <em>NOT</em> permitted</td>
 									</tr>
 									<tr>
-										<td>0.1</td>
-										<td>4</td>
-										<td>N3</td>
+										<td><img class="inline" alt="Surface Texture Symbol 3" src="../../images/9/stsym3.png"></td>
+										<td>Indicates a particular machining process (milling) and the roughness value</td>
 									</tr>
 									<tr>
-										<td>0.2</td>
-										<td>8</td>
-										<td>N4</td>
+										<td><img class="inline" alt="Surface Texture Symbol 4" src="../../images/9/stsym4.png"></td>
+										<td>The maximum and minimum limits of surface roughness obtained by any machining process</td>
 									</tr>
 									<tr>
-										<td>0.4</td>
-										<td>16</td>
-										<td>N5</td>
-									</tr>
-									<tr>
-										<td>0.8</td>
-										<td>32</td>
-										<td>N6</td>
-									</tr>
-									<tr>
-										<td>1.6</td>
-										<td>63</td>
-										<td>N7</td>
-									</tr>
-									<tr>
-										<td>3.2</td>
-										<td>125</td>
-										<td>N8</td>
-									</tr>
-									<tr>
-										<td>6.3</td>
-										<td>250</td>
-										<td>N9</td>
-									</tr>
-									<tr>
-										<td>12.5</td>
-										<td>500</td>
-										<td>N10</td>
-									</tr>
-									<tr>
-										<td>25</td>
-										<td>1000</td>
-										<td>N11</td>
-									</tr>
-									<tr>
-										<td>50</td>
-										<td>2000</td>
-										<td>N12</td>
+										<td><img class="inline" alt="Surface Texture Symbol 5" src="../../images/9/stsym5.png"></td>
+										<td>The maximum and minimum limits of surface roughness obtained without machining</td>
 									</tr>
 								</tbody>
 							</table>
+							<h2 id="sroughvalue">9.8.4 Surface roughness value</h2>
+							<div class="row">
+								<div class="col-md-8 col-lg-6">
+									<table class="table table-bordered table-condensed table-text-center-full">
+									<thead>
+										<tr>
+											<th scope="colgroup" colspan="2">Roughness value (R<sub>a</sub>)</th>
+											<th scope="col" rowspan="2">Roughness grade number (N series)</th>
+										</tr>
+										<tr>
+											<th scope="col">&micro;m</th>
+											<th scope="col">&micro;in</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>0.025</td>
+											<td>1</td>
+											<td>N1</td>
+										</tr>
+										<tr>
+											<td>0.05</td>
+											<td>2</td>
+											<td>N2</td>
+										</tr>
+										<tr>
+											<td>0.1</td>
+											<td>4</td>
+											<td>N3</td>
+										</tr>
+										<tr>
+											<td>0.2</td>
+											<td>8</td>
+											<td>N4</td>
+										</tr>
+										<tr>
+											<td>0.4</td>
+											<td>16</td>
+											<td>N5</td>
+										</tr>
+										<tr>
+											<td>0.8</td>
+											<td>32</td>
+											<td>N6</td>
+										</tr>
+										<tr>
+											<td>1.6</td>
+											<td>63</td>
+											<td>N7</td>
+										</tr>
+										<tr>
+											<td>3.2</td>
+											<td>125</td>
+											<td>N8</td>
+										</tr>
+										<tr>
+											<td>6.3</td>
+											<td>250</td>
+											<td>N9</td>
+										</tr>
+										<tr>
+											<td>12.5</td>
+											<td>500</td>
+											<td>N10</td>
+										</tr>
+										<tr>
+											<td>25</td>
+											<td>1000</td>
+											<td>N11</td>
+										</tr>
+										<tr>
+											<td>50</td>
+											<td>2000</td>
+											<td>N12</td>
+										</tr>
+									</tbody>
+								</table>
+								</div>
 							</div>
-						</div>
-						<h3 id="procrough">9.8.5 Process and roughness</h3>
-						<div class="row">
-							<div class="col-lg-10">
-								<img alt="Process and Roughness" src="../../images/9/processroughness.png">
+							<h2 id="procrough">9.8.5 Process and roughness</h2>
+							<div class="row">
+								<div class="col-lg-10">
+									<img alt="Process and Roughness" src="../../images/9/processroughness.png">
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<footer class="footer">
-        	<div class="container-fluid">
-            <div class="row">
-              <div class="footer-left">&copy; 2015 Chang Sin Fung. All rights reserved.</div>
-              <div class="footer-right">
-                <a href="http://www.nus.edu.sg/" target="_blank" alt="National University of Singapore">
-                	<img src="../../images/nuslogo.jpg" alt="NUS logo">				
-								</a>
-                <a href="http://me.nus.edu.sg/" target="_blank" alt="Department of Mechanical Engineering, NUS">
-                	<img src="../../images/nusmelogo.png" alt="NUS ME logo">
-                </a>
-              </div>
-            </div>
-          </div>
-				</footer>
+				
+				<!-- Chapter navigation buttons -->
+				<div class="text-center">
+					<ul class="pagination">
+						<div role="group" class="btn-group btn-group-lg" aria-label="Chapter Navigation">
+							<button type="button" class="btn btn-primary" onclick="document.getElementById('prechp').click()"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Chapter 8</button>
+							<button type="button" class="btn btn-primary" onclick="document.getElementById('nextchp').click()"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Chapter 10</button>
+						</div>
+					</ul>
+				</div><!-- Chapter navigation buttons ends-->
 			</div>    
 		</div>
-		<button href="#" class="btn btn-primary pull-right btt" id="back-to-top"><span class="glyphicon glyphicon-chevron-up"></span><span class="sr-only">Back to Top</span></button>
+		
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="container">
+					<div class="row">
+						<div class="footer-left">&copy; 2015 Chang Sin Fung. All rights reserved.</div>
+						<div class="footer-right">
+							<a href="http://www.nus.edu.sg/" target="_blank" alt="National University of Singapore">
+								<img src="../../images/nuslogo.jpg" alt="NUS logo">				
+							</a>
+							<a href="http://me.nus.edu.sg/" target="_blank" alt="Department of Mechanical Engineering, NUS">
+								<img src="../../images/nusmelogo.png" alt="NUS ME logo">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<!-- Back to top button -->
+		<button id="back-to-top" class="btn btn-primary pull-right btt"><span class="glyphicon glyphicon-chevron-up"></span><span class="sr-only">Back to Top</span></button>
+		
 		<!-- Support for Internet Explorer 8 or less -->
 		<!--[if lt IE 9]>
 			<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>

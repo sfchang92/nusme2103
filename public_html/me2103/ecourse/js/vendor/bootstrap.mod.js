@@ -9,7 +9,7 @@ $(window).scroll(function() {
 	
 	if($(this).scrollTop() < 100) {
 		$('.btt').removeClass('btt-show btt-end');
-	}else if($(this).scrollTop() >= $(document).height() - $(this).height() - $('footer').height()) {
+	}else if($(this).scrollTop() >= $(document).height() - $(this).height() - $('footer').height() ) {
 		$('.btt').addClass('btt-end');
 	}else{
 		$('.btt').addClass('btt-show');
@@ -77,7 +77,7 @@ $(document).ready(function() {
 		$(this).blur();
 		return false;
 	});
-
+	
 	$("#menu-toggle").on("click", function(e) {
 		e.preventDefault();
 		toggledOn();

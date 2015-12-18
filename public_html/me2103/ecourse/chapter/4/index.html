@@ -4,12 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		
+		<!--Page title and icon-->
     <title>4 - Interpenetration | nus:me2013</title>
 		<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
-    <!-- Bootstrap -->
+		
+    <!-- Stylesheets -->
     <link href="../../css/bootstrap-3.3.6.min.css" rel="stylesheet">
     <link href="../../css/bootstrap.mod.css" rel="stylesheet">
+		
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -19,6 +22,8 @@
   </head>
 
 	<body data-spy="scroll" data-target="#sidebar-wrapper" data-offset="80">
+		
+		<!-- Browser compatibility alert -->
 		<div>
 		<!--[if lt IE 9]>
 		<div id="ie8-modal" class="modal fade" tabindex="-1" role="dialog">
@@ -78,6 +83,8 @@
 		</div>
 		<![endif]-->
 		</div>
+		
+		<!-- Top header bar -->
 		<nav class="navbar navbar-default">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -87,11 +94,15 @@
           <span class="icon-bar middle-bar"></span>
           <span class="icon-bar bottom-bar"></span>
         </button>
-        <div class="container container-navbar-brand"><a role="button" class="navbar-brand" href="#" id="back-to-top2">Interpenetration</a></div>
+				<!-- Header -->
+        <div class="container container-navbar-brand"><span role="button" class="navbar-brand" id="back-to-top2">Interpenetration</a></span>
       </div>
 		</nav>
-	<div id="wrapper" class="container">
+		
+		<div id="wrapper" class="container">
     	<div id="modal-bg"></div>
+			
+			<!-- Sidebar menu -->
 			<div id="sidebar-wrapper">
 				<div class="sidebar-brand">
 					<a role="button" href="../../">nus:me2103</a>
@@ -110,7 +121,7 @@
 						<ul class="collapse in" id="collapseChapter">
 							<li><a href="../1/">1 - Introduction</a></li>
 							<li><a href="../2/">2 - Principles of projection</a></li>
-							<li><a href="../3/">3 - Sectioning &amp; dimensioning</a></li>
+							<li><a href="../3/" id="prechp">3 - Sectioning &amp; dimensioning</a></li>
 							<li><a class="collapse-button" data-toggle="collapse" href="#collapse1" aria-expanded="true" aria-controls="collapse1">4 - Interpenetration</a>
 								<ul class="collapse in" id="collapse1">
 									<li><a href="#intro">4.1 - Introduction</a></li>
@@ -153,7 +164,12 @@
 									</li>
 								</ul>
 							</li>
+							<li><a href="../5/" id="nextchp">5 - Development</a></li>
+							<li><a href="../6/">6 - Conventions &amp; symmetry</a></li>
+							<li><a href="../7/">7 - Screws &amp; nuts</a></li>
+							<li><a href="../8/">8 - Keys, coupling &amp; locking devices</a></li>
 							<li><a href="../9/">9 - Limits, fits &amp; geometrical tolerances</a></li>
+							<li><a href="../10/">10 - Welding symbols representation</a></li>
 						</ul>
 					</li>
 					<li><a href="../../misc/">Behind the scenes</a></li>
@@ -163,8 +179,9 @@
 			<div id="page-content-wrapper">
       	<div id="page-content">
           <div class="container-fluid">
+						<!-- Section 1 -->
 						<div class="row">
-							<h1 id="interp">4.1 Introduction</h1>
+							<h1 id="intro">4.1 Introduction</h1>
 							<p>Interpenetration occurs when two solids penetrate each other to form one solid. In other words, two different objects such as a regular square based prism and a regular triangular based prism join together to make one complete object. The lines created by this join are known as lines of interpenetration. These lines may be either straight or curved, depending on the nature or
 orientation of the objects involved.</p>
 							<div class="row row-border-between">
@@ -200,6 +217,10 @@ orientation of the objects involved.</p>
 							</ul>
 							</p>
 							<p><em><small>Note that some shapes may require an auxiliary view for completion of the question.</small></em></p>
+						</div><!-- Section 1 ends -->
+						
+						<!-- Section 2 -->
+						<div class="row">
 							<h1 id="basicsect">4.2 Basic sectioning</h1>
 							<h2 id="bscone">4.2.1 Basic sectioning of cone</h2>
 							<div class="row">
@@ -311,6 +332,10 @@ orientation of the objects involved.</p>
 									<img alt="Basic Sectioning of Hemisphere" src="../../images/4/bshmsph.jpg">
 								</div>
 							</div>
+						</div><!-- Section 2 ends -->
+						
+						<!-- Section 3 -->
+						<div class="row">
 							<h1 id="intsolid">4.3 Interpenetration of two solids</h1>
 							<h2 id="intuneqpipe">4.3.1 Two unequal diameter pipes</h2>
 							<div class="row">
@@ -453,27 +478,44 @@ orientation of the objects involved.</p>
 									<img alt="Interpenetration of Square Prism with Triangular Prism 2" src="../../images/4/intsqtriprism2.jpg">
 								</div>
 							</div>
+						</div><!-- Section 3 ends -->
+					</div>
+				</div>
+				
+				<!-- Chapter navigation buttons -->
+				<div class="text-center">
+					<ul class="pagination">
+						<div role="group" class="btn-group btn-group-lg" aria-label="Chapter Navigation">
+							<button type="button" class="btn btn-primary" onclick="document.getElementById('prechp').click()"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Chapter 3</button>
+							<button type="button" class="btn btn-primary" onclick="document.getElementById('nextchp').click()"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Chapter 5</button>
+						</div>
+					</ul>
+				</div>
+			</div>    
+		</div>
+		
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="container">
+					<div class="row">
+						<div class="footer-left">&copy; 2015 Chang Sin Fung. All rights reserved.</div>
+						<div class="footer-right">
+							<a href="http://www.nus.edu.sg/" target="_blank" alt="National University of Singapore">
+								<img src="../../images/nuslogo.jpg" alt="NUS logo">				
+							</a>
+							<a href="http://me.nus.edu.sg/" target="_blank" alt="Department of Mechanical Engineering, NUS">
+								<img src="../../images/nusmelogo.png" alt="NUS ME logo">
+							</a>
 						</div>
 					</div>
 				</div>
-				<footer class="footer">
-        	<div class="container-fluid">
-            <div class="row">
-              <div class="footer-left">&copy; 2015 Chang Sin Fung. All rights reserved.</div>
-              <div class="footer-right">
-                <a href="http://www.nus.edu.sg/" target="_blank" alt="National University of Singapore">
-                	<img src="../../images/nuslogo.jpg" alt="NUS logo">				
-								</a>
-                <a href="http://me.nus.edu.sg/" target="_blank" alt="Department of Mechanical Engineering, NUS">
-                	<img src="../../images/nusmelogo.png" alt="NUS ME logo">
-                </a>
-              </div>
-            </div>
-          </div>
-				</footer>
-			</div>    
-		</div>
-		<a href="#" class="btn btn-primary pull-right btt" id="back-to-top"><span class="glyphicon glyphicon-chevron-up"></span><span class="sr-only">Back to Top</span></a>
+			</div>
+		</footer>
+		
+		<!-- Back to top button -->
+		<button role="button" class="btn btn-primary pull-right btt" id="back-to-top"><span class="glyphicon glyphicon-chevron-up"></span><span class="sr-only">Back to Top</span></button>
+		
 		<!-- Support for Internet Explorer 8 or less -->
 		<!--[if lt IE 9]>
 			<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>

@@ -199,26 +199,31 @@ body {
 }
 
 .btn {
-  border-radius: 2px;
+	@include border-radius(2px);
 	@include transition(background-color 0.2s ease);
 }
-
 /*Back to top button*/
-.btt {
+.btt { 
 	position: fixed;
 	bottom: 0px;
 	right: 15px;
+	padding-top:9px;
+	padding-bottom:9px;
+	border:none;
+	background-color:rgb(18,27,42);
+	@include border-radius(50%); 
 	@include hwaccel;
-	@include transition(opacity 0.2s ease, bottom 0.2s ease, background-color 0.2s ease);
+	@include transition(opacity 0.5s ease, background 0.5s ease, bottom 0.5s ease, box-shadow 0.5s ease);
 	z-index: 1;
 	@include opacity(0);
 	&.btt-show { 
-		@include opacity (0.8);
+		@include opacity (0.6);
 		bottom: 10px;
 	}
 	&.btt-end {
 		@include opacity (1);
-		bottom: 90px;
+		bottom: 60px;
+		@include box-shadow(0 0 0 2px white);
 	}
 }
 /*Navbar open dim background */
@@ -833,13 +838,13 @@ body.jerror {
 }
 
 @include keyframes(bounce) {
-	0%, 20%, 50%, 80%, 100% {
+	0%, 8%, 20%, 32%, 40% {
     @include transform(translateY(0));
   }
-	40% {
+	16% {
     @include transform(translateY(-30px));
   }
-	60% {
+	24% {
     @include transform(translateY(-15px));
   }
 }
@@ -864,7 +869,7 @@ body.jerror {
 }
 
 .bounce {
-  @include animation(bounce 2s infinite);
+  @include animation(bounce 5s infinite);
 }
 
 .nav-tabs.nav-justified-mobile {
