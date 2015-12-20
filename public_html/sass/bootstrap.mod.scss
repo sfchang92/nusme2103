@@ -46,6 +46,9 @@ body {
 	margin-bottom:0;
 }
 //Panel
+.panel-group .panel {
+	@include border-radius(20px); 
+}
 .panel-default {
   a {
     &:focus,&:hover {
@@ -398,7 +401,7 @@ body {
 				visibility:hidden;
 				@include transition(opacity 0.1s ease-out, visibility 0s 0.1s);
 			}
-			@include border-radius(0 0 3px 3px);
+			//@include border-radius(0 0 10px 10px);
 			@include maxwidth(mobile) {
 				padding: 0px;
 				.divider {
@@ -646,6 +649,7 @@ body {
 	@include maxwidth(mobile) {
 		.navbar-collapse {
 			max-height: 80vh;
+			border-color:transparent;
 		}
 	}
 	

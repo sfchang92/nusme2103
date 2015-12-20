@@ -22,7 +22,7 @@ $(document).ready(function() {
 	"use strict";
 	//Jumbotron height issue
 	if (mq.matches) {
-		$(".jumbotron").css("min-height", 1*$(window).height());
+		$(".jumbotron#homepagejumbo").css("min-height", 1*$(window).height());
 	}
 	//Panel scroll to active heading
 	$('.panel-group').on('shown.bs.collapse', function () {
