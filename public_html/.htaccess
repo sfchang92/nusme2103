@@ -3,6 +3,10 @@ RewriteBase /
 
 ErrorDocument 404 /error/404/index.html
 
+<ifmodule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript text/javascript
+</ifmodule>
+
 <FilesMatch "\.(html)$">
 php_value auto_append_file none
 </FilesMatch>

@@ -71,27 +71,35 @@ h3 .gdt {
 }
 
 /* Button styles */
-.btn { 
+.btn {
 	@include border-radius(2px);
 	@include transition(background 0.5s ease);
+	outline:none;
+	&:hover, &:focus, &:active, &:active:focus {
+		outline:0;
+	}
 }
 .btn-group-lg>.btn, .btn-lg {
-	@include border-radius(2px);
-}
+	//@include border-radius(2px);
+	@include border-radius(24px);
+} 
 
 /* Back to top button */
 .btt {
 	position: fixed;
-	bottom: 0px;
+	bottom:0;
 	right: 15px;
 	padding-top:9px;
 	padding-bottom:9px;
 	text-indent:1px;
 	border:none !important;
 	font-size:20px; 
+	@include opacity(0);
 	@include border-radius(50%); 
+	
 	@include hwaccel;
-	@include transition(opacity 0.5s ease, background 0.5s ease, bottom 0.5s ease, box-shadow 0.5s ease, right 0.5s ease);
+	@include transition(all 0.5s ease);
+	@include transition-property(opacity, background, box-shadow, bottom, right);
 	@include minwidth(tablet) {
 		right: 15px + $sidebarw;
 	}
@@ -101,21 +109,35 @@ h3 .gdt {
 		outline: 0;
 		@include box-shadow(none);
 	}
-	@include opacity(0);
 	&.btt-show {
-		@include opacity (0.8);
-		bottom: 10px;
+		bottom:10px;
+		@include opacity(0.7);
 	}
 	&.btt-end {
-		@include opacity (1);
+		@include opacity(1);
 		bottom: 60px;
-		@include box-shadow(0 0 0 2px white);
+		@include box-shadow(0 0 0 3px white);
 	}
 }
 .contactinfo {
-	padding-bottom:5px;
+	padding-bottom:8px;
 	a.btn-default {
 		border-color:inherit;
+	}
+	> .btn-group {
+		> .btn:last-child{
+			@include border-radius(20px);
+		}
+		> .btn-group:last-child {
+			> .btn:first-child {
+				border-top-left-radius: 20px;
+				border-bottom-left-radius: 20px;
+			}
+			> .btn:last-child {
+				border-top-right-radius: 20px;
+				border-bottom-right-radius: 20px;
+			}
+		}
 	}
 }
 .btn-title {
@@ -158,6 +180,7 @@ h3 .gdt {
 			width:calc(50% + 1px) !important;
 		}
 	}
+	
 }
 /* Reset sidebar styles */
 .nav>li>a {
@@ -178,6 +201,13 @@ h3 .gdt {
 .carousel-dark {
 	.carousel-caption {
 		color:black;
+	}
+	.carousel-indicators {
+		@include opacity(0.5);
+		@include transition(opacity 0.3s ease);
+		&:hover {
+			@include opacity(1);
+		}
 	}
 	.carousel-indicators li {
 		background-color: #999;
@@ -376,9 +406,7 @@ table{counter-reset:section;}
 		padding-right:1px;
 	}
 }
-.text-center .pagination {
-	padding-bottom:40px;
-}
+
 /* Navbar */
 .navbar {
 	border:none;
@@ -405,7 +433,6 @@ table{counter-reset:section;}
 	}
 	
 	&.nav-show {
-		//top:0;
 		@include maxwidth(mobile) {
 			right:$sidebarw;
 		}
@@ -539,7 +566,7 @@ table{counter-reset:section;}
 #page-content-wrapper {
 	width: 100%;
 	background-color:white;
-	padding-bottom:80px;
+	padding-bottom:90px;
 	//position: absolute;
 	position: relative;
 	@include hwaccel;

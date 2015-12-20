@@ -4,16 +4,20 @@
 // @koala-prepend "jquery.wipetouch.js"
 
 //Back to top button animation
-$(window).scroll(function() {
+$(window).on("load resize scroll", function() {
   "use strict";
 	
+	var posFooter = ($(document).height() - $(this).outerHeight() - $('footer').height() + 30);
+
 	if($(this).scrollTop() < 100) {
 		$('.btt').removeClass('btt-show btt-end');
-	}else if($(this).scrollTop() >= $(document).height() - $(this).height() - $('footer').height() ) {
-		$('.btt').addClass('btt-end');
+	}else if( $(this).scrollTop() >= posFooter) {
+		$('.btt').addClass('btt-end'); 
+		$('.testvalue').html(posFooter);
 	}else{
 		$('.btt').addClass('btt-show');
 		$('.btt').removeClass('btt-end');
+		$('.testvalue').html(posFooter);
 	}
 });
 
@@ -59,7 +63,6 @@ $(document).ready(function() {
 	"use strict";
 	
 	var showLeft = true;
-	//var showRight = true;
 	function toggledOn() {
 		$("#wrapper,body").addClass("toggled");
 		$(".navbar-default").addClass("nav-show");
@@ -91,13 +94,6 @@ $(document).ready(function() {
 	$("#menu-toggle2,#modal-bg").on("click", function(e) {
 		e.preventDefault();
 		toggledOff();
-		/*
-		setTimeout(function(){
-			if(showRight) {
-				$("#gesture-right-modal").modal("show");
-			};
-			showRight = false;
-		}, 600);*/
 	});
 	
 	$(this).wipetouch({

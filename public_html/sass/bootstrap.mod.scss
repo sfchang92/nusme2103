@@ -202,13 +202,18 @@ body {
 	@include border-radius(2px);
 	@include transition(background-color 0.2s ease);
 }
+.btn-group-lg>.btn, .btn-lg {
+	//@include border-radius(2px);
+	@include border-radius(24px);
+} 
 /*Back to top button*/
 .btt { 
 	position: fixed;
 	bottom: 0px;
-	right: 15px;
-	padding-top:9px;
-	padding-bottom:9px;
+	right: 15px; 
+	padding-top:10px;
+	padding-bottom:10px;
+	text-indent:1px; 
 	border:none;
 	background-color:rgb(18,27,42);
 	@include border-radius(50%); 
@@ -216,6 +221,12 @@ body {
 	@include transition(opacity 0.5s ease, background 0.5s ease, bottom 0.5s ease, box-shadow 0.5s ease);
 	z-index: 1;
 	@include opacity(0);
+	&:focus {
+		background-color:#1A273D;
+	}
+	&:hover, &:active, &:focus:active {
+		background-color:#314973;
+	}
 	&.btt-show { 
 		@include opacity (0.6);
 		bottom: 10px;
@@ -790,6 +801,21 @@ body.jerror {
 		border-color:inherit;
 		&:hover{
 			background-color:$dblue;
+		}
+	}
+	> .btn-group {
+		> .btn:last-child{
+			@include border-radius(20px);
+		}
+		> .btn-group:last-child {
+			> .btn:first-child {
+				border-top-left-radius: 20px;
+				border-bottom-left-radius: 20px;
+			}
+			> .btn:last-child {
+				border-top-right-radius: 20px;
+				border-bottom-right-radius: 20px;
+			}
 		}
 	}
 }

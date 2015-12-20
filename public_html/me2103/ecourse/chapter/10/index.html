@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<!--Page title and icon-->
-    <title>7 - Screw &amp; Nuts | nus:me2013</title>
+    <title>10 - Welding Symbol Representation | nus:me2013</title>
 		<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
 		
     <!-- Stylesheets -->
@@ -82,7 +82,7 @@
 			</div>
 		</div>
 		<![endif]-->
-		</div>
+		</div> <!-- Browser compatibility alert ends -->
 		
 		<!-- Top header bar -->
 		<nav class="navbar navbar-default">
@@ -124,43 +124,36 @@
 							<li><a href="../3/">3 - Sectioning &amp; dimensioning</a></li>
 							<li><a href="../4/">4 - Interpenetration</a></li>
 							<li><a href="../5/">5 - Development</a></li>
-							<li><a href="../6/" id="prechp">6 - Conventions &amp; symmetry</a></li>
-							<li><a class="collapse-button" data-toggle="collapse" href="#collapse1" aria-expanded="true" aria-controls="collapse1">7 - Screws &amp; nuts</a>
+							<li><a href="../6/">6 - Conventions &amp; symmetry</a></li>
+							<li><a href="../7/">7 - Screws &amp; nuts</a></li>
+							<li><a href="../8/">8 - Keys, coupling &amp; locking devices</a></li>
+							<li><a href="../9/" id="prechp">9 - Limits, fits &amp; geometrical tolerances</a></li>
+							<li><a class="collapse-button" data-toggle="collapse" href="#collapse1" aria-expanded="true" aria-controls="collapse1">10 - Welding symbols representation</a>
 								<ul class="collapse in" id="collapse1">
-									<li><a href="#screwthread">7.1 - Screw threads</a>
+									<li><a href="#weld">10.1 - Introduction</a></li>
+									<li><a href="#type">10.2 - Basic types of weld</a>
 										<ul>
-											<li><a href="#convrepth">7.1.1 - Conventional representation</a>
+											<li><a href="#butt">10.2.1 - Butt weld</a></li>
+											<li><a href="#fillet">10.2.2 - Fillet weld</a></li>
+										</ul>
+									</li>
+									<li><a href="#methodrep">10.3 - Methods of representation</a></li>
+									<li><a href="#fitclass">10.4 - Welding symbols</a>
+										<ul>
+											<li><a href="#onsite">10.4.1 - On-site weld</a></li>
+											<li><a href="#symint">10.4.2 - Symbol &amp; interpretation</a></li>
+											<li><a href="#symrepspec">10.4.3 - Symbols for specific welds</a></li>
+											<li><a href="#supp">10.4.4 - Supplementary symbol</a>
 												<ul>
-													<li><a href="#extthread">7.1.1.1 - External threads</a></li>
-													<li><a href="#intthread">7.1.1.2 - Internal threads</a></li>
+													<li><a href="#usesupp">10.4.4.1 - Use of supp. symbol</a></li>
 												</ul>
 											</li>
-											<li><a href="sectassem">7.1.2 - Sectional thread assembly</a></li>
-											<li><a href="#terms">7.1.3 - Screw thread terms</a></li>
 										</ul>
 									</li>
-									<li><a href="#boltscrstud">7.2 - Hexagonal bolts, screws &amp; stud</a>
-										<ul>
-											<li><a href="#assembly">7.2.1 - Assemblies</a>
-												<ul>
-													<li><a href="#nbassem">7.2.1.1 - Nut and bolt assembly</a></li>
-													<li><a href="#sbassem">7.2.1.2 - Set bolt assembly</a></li>
-													<li><a href="#nsassem">7.2.1.3 - Nut and stud assembly</a></li>
-												</ul>
-											</li>
-											<li><a href="#dwghex">7.2.2 - Drawing hexagon nuts</a></li>
-										</ul>
-									</li>
-									<li><a href="#dimst">7.3 - Dimensioning of screw thread</a>
-										<ul>
-											<li><a href="#dimisost">7.3.1 - Dimension of ISO screw thread</a></li>
-										</ul>
-									</li>
+									<li><a href="#methodjoin">10.5 - Method of joining</a></li>
+									<li><a href="#castweld">10.6 - Difference btw casting &amp; welding</a></li>
 								</ul>
 							</li>
-							<li><a href="../8/" id="nextchp">8 - Keys, coupling &amp; locking devices</a></li>
-							<li><a href="../9/">9 - Limits, fits &amp; geometrical tolerances</a></li>
-							<li><a href="../10/">10 - Welding symbols representation</a></li>
 						</ul>
 					</li>
 					<li><a href="../../misc/">Behind the scenes</a></li>
@@ -175,82 +168,66 @@
 					
 						<!-- Section 1 -->
 						<div class="row">
-							<h1 id="screwthread">7.1 Screw threads</h1>
-							<p>Screw thread is a helical groove which is cut on a cylinder or in a cylindrical hole.</p>
-							<h2 id="convrepth">7.1.1 Conventional representation of threads</h2>
-							<h3 id="extthread">7.1.1.1 External threads</h3>
-							<p>The major diameter is shown by a pair of thick lines, and the minor diameter by a pair of thin lines</p>
-							<div class="row">
-								<div class="col-xs-6 col-md-3">
-									<img alt="Conventional Representation of External Thread 1" src="../../images/7/extthread1.jpg">
-								</div>
-								<div class="col-xs-6 col-md-4">
-									<img alt="Conventional Representation of External Thread 2" src="../../images/7/extthread2.jpg">
-								</div>
-							</div>
-							<h3 id="intthread">7.1.1.2 Internal threads</h3>
-							<p>The minor diameter is drawn in thick lines (the line representing the end of the full thread. The major diameter and thread run-out are shown by thin lines.</p>
-							<div class="row">
-								<div class="col-xs-6 col-md-4">
-									<img alt="Conventional Representation of Internal Thread 1" src="../../images/7/intthread1.jpg">
-								</div>
-								<div class="col-xs-6 col-md-3">
-									<img alt="Conventional Representation of Internal Thread 2" src="../../images/7/intthread2.jpg">
-								</div>
-							</div>
-							<h2 id="sectassem">7.1.2 Sectional thread assembly</h2>
-							<p>On a sectional thread assembly, the screw is shown as an outside view so its threads cover the threads in the tapping.</p>
-							<p>Below the screw, the hatching crosses the internal thread.</p>
-							<div class="row text-center">
-								<div class="col-xs-6 col-xs-offset-3 col-md-3 col-md-offset-0 ">
-									<img alt="Sectional Thread Assembly" src="../../images/7/secthread1.jpg">
-								</div>
-								<div class="col-md-6">
-									<img alt="Sectional Thread Assembly Example" src="../../images/7/screwnut.jpg">
-									<p>Example: Screw and Nuts</p>
-								</div>
-							</div>
-							<h2 id="terms">7.1.3 Screw thread terms</h2>
-							<div class="row">
-								<div class="col-md-6">
-									<img alt="Screw Thread Terms" src="../../images/7/scrthread.jpg">
-								</div>
-							</div>
+							<h1 id="weld">10.1 Introduction</h1>
+							<p>Welding provides a means of building up an assembly by joining together plates, bars, pipes and other standard sections.</p>
+							<p>The process is also useful in cases where castings, forgings and pre-machined parts have to be fabricated into a main assembly.</p>
+							<p>Welded fabrications are usually cheaper than castings for small batch or one-off jobs because the need for expensive patterns does not arise.</p>
 						</div><!-- Section 1 ends -->
 						
 						<!-- Section 2 -->
 						<div class="row">
-							<h1 id="boltscrstud">7.2 Hexagonal bolts, screws &amp; stud</h1>
+							<h1 id="type">10.2 Basic types of weld</h1>
+							<h2 id="butt">10.2.1 Butt weld</h2>
+							<p>The centerline of one workpiece passes through the weld before meeting the centerline of the other workpiece</p>
 							<div class="row">
-								<div class="col-md-6">
-									<img alt="Hexagon Bolts and Screws" src="../../images/7/hexboltscr.jpg">
+								<div class="col-xs-3 col-md-3">
+									<img alt="Butt Weld 2" src="../../images/10/buttweld2.jpg">
 								</div>
-								<div class="col-md-6">
-									<img alt="Studs" src="../../images/7/stud.jpg">
-								</div>
-							</div>
-							<h2 id="assembly">7.2.1 Assemblies</h2>
-							<h3 id="nbassem">7.2.1.1 Nut and bolt assembly</h3>
-							<div class="row">
-								<div class="col-md-6">
-									<img alt="Nut and Bolt Assembly" src="../../images/7/nutboltassem.jpg">
+								<div class="col-xs-9 col-md-4">
+									<img alt="Butt Weld 1" src="../../images/10/buttweld.jpg">
 								</div>
 							</div>
-							<h3 id="sbassem">7.2.1.2 Set bolt assembly</h3>
+							<h2 id="fillet">10.2.2 Fillet weld</h2>
+							<p>The centerline of one workpiece does not pass through the weld before meeting the centerline of the other workpiece</p>
 							<div class="row">
-								<div class="col-md-6">
-									<img alt="Set Bolt Assembly" src="../../images/7/setboltassem.jpg">
+								<div class="col-xs-3 col-md-3">
+									<img alt="Fillet Weld 2" src="../../images/10/filletweld2.jpg">
+								</div>
+								<div class="col-xs-9 col-md-4">
+									<img alt="Fillet Weld 1" src="../../images/10/filletweld.jpg">
 								</div>
 							</div>
-							<h3 id="nsassem">7.2.1.3 Nut and stud assembly</h3>
+						</div><!-- Section 2 ends -->
+						
+						<!-- Section 3 -->
+						<div class="row">
+							<h1 id="methodrep">10.3 Methods of representation</h1>
 							<div class="row">
 								<div class="col-md-6">
-									<img alt="Nut and Stud Assembly" src="../../images/7/nutstudassem.jpg">
+									<img alt="Methods of Representation" src="../../images/10/methodofrep.jpg">
 								</div>
 							</div>
-							<h2 id="dwghex">7.2.2 Drawing hexagon nuts</h2>
+						</div><!-- Section 3 ends -->
+						
+						<!-- Section 4 -->
+						<div class="row">
+							<h1 id="fitclass">10.4 Welding symbols</h1>
+							<h2 id="onsite">10.4.1 On-site weld</h2>
 							<div class="row">
-								<div class="col-md-6">
+								<div class="col-md-4">
+									<img alt="Symbol for On-site Weld" src="../../images/10/symonsiteweld.jpg">
+								</div>
+								<div class="col-md-4">
+									<blockquote>
+										<p>ISO 2553-1984</p>
+										<p>BS 499-1980</p>
+									</blockquote>
+								</div>
+							</div>
+							<h2 id="symint">10.4.2 Symbol and interpretation</h2>
+							<!-- Carousel -->
+							<div class="row">
+								<div class="col-md-8">
 									<!-- Carousel -->
 									<div id="carousel1" class="carousel carousel-dark" data-ride="carousel" data-interval="0">
 										<ol class="carousel-indicators">
@@ -259,35 +236,25 @@
 											<li data-target="#carousel1" data-slide-to="2"></li>
 											<li data-target="#carousel1" data-slide-to="3"></li>
 											<li data-target="#carousel1" data-slide-to="4"></li>
-											<li data-target="#carousel1" data-slide-to="5"></li>
-											<li data-target="#carousel1" data-slide-to="6"></li>
 										</ol>
 										<div class="carousel-inner" role="listbox">
-											<div class="item active"><img src="../../images/7/dwghex1.jpg" alt="First slide image" class="center-block">
+											<div class="item active"><img src="../../images/10/symrep1.jpg" alt="First slide image" class="center-block">
 												<div class="carousel-caption">
 												</div>
 											</div>
-											<div class="item"><img src="../../images/7/dwghex2.jpg" alt="Second slide image" class="center-block">
+											<div class="item"><img src="../../images/10/symrep2.jpg" alt="Second slide image" class="center-block">
 												<div class="carousel-caption">
 												</div>
 											</div>
-											<div class="item"><img src="../../images/7/dwghex3.jpg" alt="Third slide image" class="center-block">
+											<div class="item"><img src="../../images/10/symrep3.jpg" alt="Third slide image" class="center-block">
 												<div class="carousel-caption">
 												</div>
 											</div>
-											<div class="item"><img src="../../images/7/dwghex4.jpg" alt="Fourth slide image" class="center-block">
+											<div class="item"><img src="../../images/10/symrep4.jpg" alt="Fourth slide image" class="center-block">
 												<div class="carousel-caption">
 												</div>
 											</div>
-											<div class="item"><img src="../../images/7/dwghex5.jpg" alt="Fifth slide image" class="center-block">
-												<div class="carousel-caption">
-												</div>
-											</div>
-											<div class="item"><img src="../../images/7/dwghex6.jpg" alt="Sixth slide image" class="center-block">
-												<div class="carousel-caption">
-												</div>
-											</div>
-											<div class="item"><img src="../../images/7/dwghex7.jpg" alt="Seventh slide image" class="center-block">
+											<div class="item"><img src="../../images/10/symrep5.jpg" alt="Fifth slide image" class="center-block">
 												<div class="carousel-caption">
 												</div>
 											</div>
@@ -296,47 +263,97 @@
 									</div><!-- Carousel ends -->
 								</div>
 							</div>
-						</div><!-- Section 2 ends -->
-						
-						<!-- Section 3 -->
-						<div class="row">
-							<h1 id="dimst">7.3 Dimensioning of screw thread</h1>
+							<h2 id="symrepspec">10.4.3 Symbols for specific welds</h2>
 							<div class="row">
-								<div class="col-md-6">
-									<img alt="Dimensioning of Screw Thread 1" src="../../images/7/dimst1.jpg">
-								</div>
-								<div class="col-md-6">
-									<img alt="Dimensioning of Screw Thread 2" src="../../images/7/dimst2.jpg">
+								<div class="col-md-8">
+									<!-- Carousel -->
+									<div id="carousel2" class="carousel carousel-dark" data-ride="carousel" data-interval="0">
+										<ol class="carousel-indicators">
+											<li data-target="#carousel2" data-slide-to="0" class="active"></li>
+											<li data-target="#carousel2" data-slide-to="1"></li>
+											<li data-target="#carousel2" data-slide-to="2"></li>
+											<li data-target="#carousel2" data-slide-to="3"></li>
+										</ol>
+										<div class="carousel-inner" role="listbox">
+											<div class="item active"><img src="../../images/10/symrepspec1.jpg" alt="First slide image" class="center-block">
+												<div class="carousel-caption">
+												</div>
+											</div>
+											<div class="item"><img src="../../images/10/symrepspec2.jpg" alt="Second slide image" class="center-block">
+												<div class="carousel-caption">
+												</div>
+											</div>
+											<div class="item"><img src="../../images/10/symrepspec3.jpg" alt="Third slide image" class="center-block">
+												<div class="carousel-caption">
+												</div>
+											</div>
+											<div class="item"><img src="../../images/10/symrepspec4.jpg" alt="Fourth slide image" class="center-block">
+												<div class="carousel-caption">
+												</div>
+											</div>
+										</div>
+										<a class="left carousel-control" href="#carousel2" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#carousel2" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>
+									</div><!-- Carousel ends -->
 								</div>
 							</div>
-							<h2 id="dimisost">7.3.1 Dimension of ISO screw thread</h2>
-							<blockquote>
-								<p>M16 x 1.5 – 6H (internal thread)</p>
-								<p>M6 x 0.75 – 6g (external thread)</p>
-							</blockquote>
-							<ul>
-								<li>M – metric thread</li>
-								<li>16 &amp; 6 – Nominal diameter in mm</li>
-								<li>1.5 &amp; 0.75 – pitch in mm</li>
-								<li>6H (above nominal value)</li>
-								<li>6g (below nominal value)</li>
-							</ul>
-							<p>Close fit (5H/4h) is used when close accuracy of thread form and pitch is
-needed</p>
-							<p>Medium fit (6H/6g) is used for most general engineering purposes.</p>
-							<p>Free fit (7H/8g) is used in applications requiring quick and easy assembly.</p>
-							<p><em>Note – If the thread is left-handed, the abbreviation LH should be used.</em></p>
-
-						</div><!-- Section 3 ends -->
+							<h2 id="supp">10.4.4 Supplementary symbol for shape of weld support</h2>
+							<div class="row">
+								<div class="col-md-6">
+									<img alt="Supplementary Symbol" src="../../images/10/symsupp.jpg">
+								</div>
+							</div>
+							<h3 id="usesupp">10.4.4.1 Use of supplementary symbol</h3>
+							<div class="row">
+								<div class="col-md-6">
+									<img alt="Use of Supplementary Symbol" src="../../images/10/symsuppuse.jpg">
+								</div>
+							</div>
+							<h2 id="elem">10.4.5 Use of elementary symbols</h2>
+							<div class="row">
+								<div class="col-md-6">
+									<img alt="Use of Elementary Symbol 1" src="../../images/10/symelemuse1.jpg">
+								</div>
+								<div class="col-md-6">
+									<img alt="Use of Elementary Symbol 2" src="../../images/10/symelemuse2.jpg">
+								</div>
+							</div>
+						</div> <!-- Section 4 ends -->
+						
+						<!-- Section 5 -->
+						<div class="row">
+							<h1 id="methodjoin">10.5 Method of joining</h1>
+							<div class="row">
+								<div class="col-md-6">
+									<img alt="Method of Joining" src="../../images/10/methodjoin.jpg">
+								</div>
+								<div class="col-md-6">
+									<img alt="Quality of Weld Configuration" src="../../images/10/weldconfig.jpg">
+								</div>
+							</div>
+						</div><!-- Section 5 ends -->
+						
+						<!-- Section 6 -->
+						<div class="row">
+							<h1 id="castweld">10.6 Difference between casting &amp; welding</h1>
+							<div class="row">
+								<div class="col-md-6">
+									<img alt="Difference between Casting &amp; Welding 1" src="../../images/10/castweld1.jpg">
+								</div>
+								<div class="col-md-6">
+									<img alt="Difference between Casting &amp; Welding 2" src="../../images/10/castweld2.jpg">
+								</div>
+							</div>
+						</div><!-- Section 6 ends -->
 					</div>
 				</div>
 				
 				<!-- Chapter navigation buttons -->
+				<hr>
 				<div class="text-center">
 					<div class="pagination">
 						<div role="group" class="btn-group btn-group-lg" aria-label="Chapter Navigation">
-							<button type="button" class="btn btn-primary" onclick="document.getElementById('prechp').click()"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Chapter 6</button>
-							<button type="button" class="btn btn-primary" onclick="document.getElementById('nextchp').click()"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Chapter 8</button>
+							<button type="button" class="btn btn-primary" onclick="document.getElementById('prechp').click()"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Chapter 9</button>
+							<button type="button" class="btn btn-primary" disabled="disabled"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Thats it!</button>
 						</div>
 					</div>
 				</div>
@@ -365,7 +382,7 @@ needed</p>
 		<!-- Back to top button -->
 		<button role="button" class="btn btn-primary pull-right btt" id="back-to-top"><span class="glyphicon glyphicon-chevron-up"></span><span class="sr-only">Back to Top</span></button>
 		
-		<!-- Support for Internet Explorer 8 or less -->
+		<!-- Script support for Internet Explorer 8 or less -->
 		<!--[if lt IE 9]>
 			<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 			<script src="../../js/bootstrap-3.3.6.min.js"></script>
@@ -377,7 +394,7 @@ needed</p>
 			</script>
 		<![endif]-->
 		
-		<!-- For IE9+ or others -->
+		<!-- Scripts for IE9+ or others -->
 		<!--[if gte IE 9]><!-->
 		<script src="../../js/fallback.min.js"></script>
 		<script>
