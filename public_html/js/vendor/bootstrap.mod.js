@@ -16,14 +16,17 @@ $(window).scroll(function() {
 	}
 });
 
-var mq = window.matchMedia( "(max-width: 767px)" );
-
 $(document).ready(function() {
 	"use strict";
-	//Jumbotron height issue
+	var mq = window.matchMedia( "(max-width: 767px)" );
+	
+	/*Jumbotron height issue*/
 	if (mq.matches) {
 		$(".jumbotron#homepagejumbo").css("min-height", 1*$(window).height());
+	}else{
+		$(".jumbotron#homepagejumbo").css("min-height", 0);
 	}
+	
 	//Panel scroll to active heading
 	$('.panel-group').on('shown.bs.collapse', function () {
 	

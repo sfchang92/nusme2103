@@ -2,6 +2,7 @@
 // @koala-prepend "bootstrap-anchor.min.js"
 // @koala-prepend "gif.min.js"
 // @koala-prepend "jquery.wipetouch.js"
+// @koala-prepend "screenfull.min.js"
 
 //Back to top button animation
 $(window).on("load resize scroll", function() {
@@ -9,15 +10,16 @@ $(window).on("load resize scroll", function() {
 	
 	var posFooter = ($(document).height() - $(this).outerHeight() - $('footer').height() + 30);
 
-	if($(this).scrollTop() < 100) {
+	if($(this).scrollTop() < 200) {
 		$('.btt').removeClass('btt-show btt-end');
+		$('.fs-btn').removeClass('fs-btn-hide');
 	}else if( $(this).scrollTop() >= posFooter) {
 		$('.btt').addClass('btt-end'); 
-		$('.testvalue').html(posFooter);
+		$('.fs-btn').addClass('fs-btn-hide');
 	}else{
 		$('.btt').addClass('btt-show');
 		$('.btt').removeClass('btt-end');
-		$('.testvalue').html(posFooter);
+		$('.fs-btn').addClass('fs-btn-hide');
 	}
 });
 
@@ -61,6 +63,14 @@ function hasScrolled() {
 	
 $(document).ready(function() {
 	"use strict";
+	$('[data-toggle="tooltip"]').tooltip();
+	
+	$('#fullscreen-btn').tooltip('show');
+	
+	setTimeout( function() 
+  {
+    $('#fullscreen-btn').tooltip('destroy');
+  }, 1000);
 	
 	var showLeft = true;
 	function toggledOn() {
@@ -100,7 +110,18 @@ $(document).ready(function() {
 		wipeRight: function() { toggledOff() },
 		wipeLeft: function() { toggledOn()	},
 	});
-
+	
+	$(".fs-btn").on("click", function() {
+    if (screenfull.enabled) {
+			screenfull.toggle(); 
+			if (screenfull.isFullscreen) {
+				$('.fs-btn').addClass('fs-btn-small');
+			}else {
+				$('.fs-btn').removeClass('fs-btn-small');
+			}
+    }
+	});
+	
 	//AnchorJS initialisation
 	anchors.add();
 	

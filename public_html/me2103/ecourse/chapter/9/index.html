@@ -104,7 +104,7 @@
 			<!-- Sidebar menu -->
 			<div id="sidebar-wrapper">
 				<div class="sidebar-brand">
-					<a href="../../">nus:me2103</a>
+					<a role="button" href="../../">ME2103 eCourse</a>
 					<button role="button" href="#menu-toggle" id="menu-toggle2" class="navbar-toggle toggled">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar top-bar"></span>
@@ -217,7 +217,7 @@
 							<li><a href="../10/" id="nextchp">10 - Welding symbols representation</a></li>
 						</ul>
 					</li>
-					<li><a href="../../misc">Behind the scenes</a></li>
+					
 				</ul>
 				<a role="button" class="btn btn-block btn-primary btn-lg btn-profhome" href="../../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Prof Homepage</a>
 			</div>
@@ -227,7 +227,7 @@
       	<div id="page-content">
           <div class="container-fluid">
 						<div class="row">
-							<h1 id="limits">9.1 Limit tolerances</h1>
+							<div class="section-header"><h1 id="limits">9.1 Limit tolerances</h1></div>
 							<p>Limit tolerance is the permissible deviation on a dimension.</p>
 							<div class="row row-border-between text-center">
 								<div class="col-xs-6">
@@ -303,7 +303,7 @@
 							<!-- Carousel end -->
 						</div>
 						<div class="row">
-							<h1 id="fits">9.2 Fits</h1>
+							<div class="section-header"><h1 id="fits">9.2 Fits</h1></div>
 							<h2 id="fundev">9.2.1 Fundamental deviation</h2>
 							<p>Deviation closest to the basic size, designated by letter (e.g. H, g…)</p>
 							<ul>
@@ -325,7 +325,7 @@
 									</div>
 									<br/>
 									<div class="row"><div class="col-md-10">
-										<table class="table table-bordered table-condensed table-striped table-text-center">
+										<table id="itgrade" class="table table-bordered table-condensed table-striped table-text-center">
 											<thead>
 												<tr>
 													<th rowspan="2" scope="col" id="a"></th>
@@ -567,7 +567,7 @@
 							<h3 id="bs4500">9.2.1.1 BS 4500 'ISO Limits &amp; Fits'</h3>
 							<div class="row">
 								<div class="col-xs-10 col-md-8 col-lg-6">
-									<table class="table table-bordered table-text-center-full">
+									<table id="basicsize" class="table table-bordered table-text-center-full">
 								<thead>
 									<tr>
 										<th scope="col">For Hole</th>
@@ -633,12 +633,12 @@
 								</div>
 							</div>
 							<h2 id="typefits">9.2.2 Type of engineering fits</h2>
-							<h3 id="clearance">9.2.2.1 Clearence fit</h3>
+							<h3 id="clearance">9.2.2.1 Clearance fit</h3>
 							<p>Relation between assembled parts when clearance occurs under all tolerance conditions.</p>
 							<p>Applications: Disc couplings, elastomer couplings</p>
 							<div class="row text-center">
-								<div class="col-xs-6 col-md-4"><img alt="Clearence Fit" src="../../images/9/fittype1.png"></div>
-								<div class="col-xs-6 col-md-4"><img alt="Clearence Fit Range" src="../../images/9/clearancerange.png"><p>Tolerance - Hole basis</p></div>
+								<div class="col-xs-6 col-md-4"><img alt="Clearance Fit" src="../../images/9/fittype1.png"></div>
+								<div class="col-xs-6 col-md-4"><img alt="Clearance Fit Range" src="../../images/9/clearancerange.png"><p>Tolerance - Hole basis</p></div>
 							</div>
 							<h3 id="transition">9.2.2.2 Transition fit</h3>
 							<p>Relation between assembled parts when interference occurs under all tolerance conditions.</p>
@@ -656,7 +656,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<h1 id="limandfits">9.3 Limits and fits</h1>
+							<div class="section-header"><h1 id="limandfits">9.3 Limits and fits</h1></div>
 							<h2 id="holebasis">9.3.1 Hole basis</h2>
 							<div class="row">
 								<div class="col-sm-6 col-sm-push-6 col-md-5 col-md-push-6 col-lg-4 col-lg-push-5">
@@ -667,10 +667,10 @@
 										<li>Gives greater economy of production</li>
 									</ul>
 								</div>
-								<div class="col-xs-9 col-sm-6 col-sm-pull-6 col-md-6 col-md-pull-5 col-lg-5 col-lg-pull-4"><img alt="=Hole Basis Fits" src="../../images/9/holebasis.png"></div>
+								<div class="col-xs-9 col-sm-6 col-sm-pull-6 col-md-6 col-md-pull-5 col-lg-5 col-lg-pull-4"><img alt="Hole Basis Fits" src="../../images/9/holebasis.png"></div>
 							</div><br>
 							<div class="row text-center">
-								<div class="col-md-10 col-lg-8"><img alt="Hole Basis Fit Selections" src="../../images/9/holebasis1.png"></div>
+								<div class="col-md-10 col-lg-8"><img alt="Hole Basis Fit Selections 1" src="../../images/9/holebasis1.png"></div>
 								<div class="col-md-10 col-lg-8"><img alt="Hole Basis Fit Selections 2" src="../../images/9/holebasis2.png"><p>Selection of fits based on hole basis</p></div>
 							</div>
 							<div class="row text-center">
@@ -685,7 +685,7 @@
 										<li>Costly</li>
 									</ul>
 								</div>
-								<div class="col-xs-9 col-sm-6 col-sm-pull-6 col-md-6 col-md-pull-5 col-lg-5 col-lg-pull-4"><img alt="=Shaft Basis Fits" src="../../images/9/shaftbasis.png"></div><br>
+								<div class="col-xs-9 col-sm-6 col-sm-pull-6 col-md-6 col-md-pull-5 col-lg-5 col-lg-pull-4"><img alt="Shaft Basis Fits" src="../../images/9/shaftbasis.png"></div><br>
 							</div>
 							<div class="row text-center">
 								<div class="col-md-10 col-lg-8"><img alt="Shaft Basis Fit Selections" src="../../images/9/shaftbasis1.png"><p>Selection of fits based on shaft basis</p></div>
@@ -696,7 +696,7 @@
 							<h2 id="preferredfits">9.3.3 Preferred fits</h2>
 							<div class="row">
 								<div class="col-md-8">
-									<table class="table table-bordered table-text-center-full table-last-col-left">
+									<table id="preferredtable" class="table table-bordered table-text-center-full table-last-col-left">
 										<thead>
 											<tr>
 												<th rowspan="2" scope="col">Fit</th>
@@ -768,11 +768,11 @@
 							</div>
 						</div>
 						<div class="row">
-							<h1 id="mettol">9.4 Method of tolerancing</h1>
+							<div class="section-header"><h1 id="mettol">9.4 Method of tolerancing</h1></div>
 							<h2 id="permdev">9.4.1 Permissible deviations for linear dimensions (ISO 2768-1)</h2>
 							<div class="row">
 								<div class="col-md-8">
-									<table class="table table-text-center-full table-bordered table-condensed">
+									<table id="permdevtable" class="table table-text-center-full table-bordered table-condensed">
 										<thead>
 											<tr>
 												<th colspan="2">Permissible deviation for basic size range</th>
@@ -852,7 +852,7 @@
 							<p>Variation is permitted only in <em>one</em> direction from specified dimension.</p>
 							<div class="row">
 								<div class="col-xs-8 col-md-5 col-lg-4">
-									<table class="table table-bordered table-condensed table-text-center-full">
+									<table id="unitoltable" class="table table-bordered table-condensed table-text-center-full">
 										<tbody>
 											<tr>
 												<td><img alt="Unilateral Tolerance 1" src="../../images/9/unilateral1.jpg"></td>
@@ -870,14 +870,14 @@
 							<p>Variation is permitted in <em>both</em> direction from specified dimension.</p>
 							<div class="row">
 								<div class="col-xs-8 col-md-5 col-lg-4">
-									<table class="table table-bordered table-condensed table-text-center-full">
+									<table id="bitoltable" class="table table-bordered table-condensed table-text-center-full">
 										<tbody>
 											<tr>
-												<td><img alt="Unilateral Tolerance 1" src="../../images/9/bilateral1.jpg"></td>
+												<td><img alt="Bilateral Tolerance 1" src="../../images/9/bilateral1.jpg"></td>
 												<td class="text-nowrap">55.7 – 58.7</td>
 											</tr>
 											<tr>
-												<td><img alt="Unilateral Tolerance 2" src="../../images/9/bilateral2.jpg"></td>
+												<td><img alt="Bilateral Tolerance 2" src="../../images/9/bilateral2.jpg"></td>
 												<td class="text-nowrap">55.7 - 58.0</td>
 											</tr>
 										</tbody>
@@ -927,7 +927,7 @@
 							</p>
 						</div>
 						<div class="row">
-							<h1 id="geotol">9.5 Geometrical tolerances</h1>
+							<div class="section-header"><h1 id="geotol">9.5 Geometrical tolerances</h1></div>
 							<p>Very often, specifying the limit tolerances on the parts may not be sufficient, as they do not consider the tolerances due to the geometrical shape or form of the parts such as straightness and cylindricity etc.</p>
 							<p>In today’s industry where mass production and interchangeability of parts are a norm, the control of both limit tolerances and geometrical tolerances are essential.</p>
 							<div class="row">
@@ -967,7 +967,7 @@
 						</div>
 						
 						<div class="row">
-							<h1 id="gdt">9.6 Geometrical dimensioning &amp; tolerancing</h1>
+							<div class="section-header"><h1 id="gdt">9.6 Geometrical dimensioning &amp; tolerancing</h1></div>
 							<h2 id="gdteg1">9.6.1 Example 1</h2>
 							<div class="row text-center">
 								<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
@@ -1004,7 +1004,7 @@
 							<!-- GDT symbols table -->
 							<div class="row">
 								<div class="col-md-10">
-									<table class="table table-bordered table-condensed table-last-col-gdt">
+									<table id="gdtsymtable" class="table table-bordered table-condensed table-last-col-gdt">
 										<thead>
 											<tr>
 												<th scope="col">Feature</th>
@@ -1237,7 +1237,7 @@ mm, which is coaxial with datum axis B-C.</p>
 						</div>
 						
 						<div class="row">
-							<h1 id="incdatum">9.7 Datum references</h1>
+							<div class="section-header"><h1 id="incdatum">9.7 Datum references</h1></div>
 							<div class="row text-center">
 								<div class="col-xs-4 col-md-3 col-md-offset-1">
 									<img alt="Datum on Extension Line" src="../../images/9/datextline.png">
@@ -1278,12 +1278,12 @@ mm, which is coaxial with datum axis B-C.</p>
 								</div>
 							</div>
 							<h2 id="datappdwg">9.7.3 Application in drawings</h2>
-							<img alt="Application of datum in drawing 1" src="../../images/9/datdwg1.jpg">
-							<img alt="Application of datum in drawing 2" src="../../images/9/datdwg2.jpg">
+							<img alt="Application of Datum in Drawing 1" src="../../images/9/datdwg1.jpg">
+							<img alt="Application of Datum in Drawing 2" src="../../images/9/datdwg2.jpg">
 						</div>
 					
 						<div class="row">
-							<h1 id="surftext">9.8 Surface texture &amp; roughness</h1>
+							<div class="section-header"><h1 id="surftext">9.8 Surface texture &amp; roughness</h1></div>
 							<div class="row text-center">
 								<div class="col-md-10">
 									<img alt="Surface Texture" src="../../images/9/surftext.png">
@@ -1313,7 +1313,7 @@ mm, which is coaxial with datum axis B-C.</p>
 								</div>
 							</div>
 							<h2 id="textsymapp">9.8.3 Application of surface texture symbol</h2>
-							<table class="table table-bordered table-text-center-full">
+							<table id="textsymapptable" class="table table-bordered table-text-center-full">
 								<thead>
 									<tr>
 										<th scope="col">Symbols</th>
@@ -1346,7 +1346,7 @@ mm, which is coaxial with datum axis B-C.</p>
 							<h2 id="sroughvalue">9.8.4 Surface roughness value</h2>
 							<div class="row">
 								<div class="col-md-8 col-lg-6">
-									<table class="table table-bordered table-condensed table-text-center-full">
+									<table id="sroughvaluetable" class="table table-bordered table-condensed table-text-center-full">
 									<thead>
 										<tr>
 											<th scope="colgroup" colspan="2">Roughness value (R<sub>a</sub>)</th>
@@ -1434,7 +1434,7 @@ mm, which is coaxial with datum axis B-C.</p>
 				
 				<!-- Chapter navigation buttons -->
 				<hr>
-				<div class="text-center">
+				<div class="text-center chapter-nav">
 					<div class="pagination">
 						<div role="group" class="btn-group btn-group-lg" aria-label="Chapter Navigation">
 							<button type="button" class="btn btn-primary" onclick="document.getElementById('prechp').click()"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Chapter 8</button>
@@ -1450,7 +1450,7 @@ mm, which is coaxial with datum axis B-C.</p>
 			<div class="container-fluid">
 				<div class="container">
 					<div class="row">
-						<div class="footer-left">&copy; 2015 Chang Sin Fung. All rights reserved.</div>
+						<div class="footer-left"><a role="button" href="../../misc/">&copy; 2015 Chang Sin Fung. All rights reserved.</a></div>
 						<div class="footer-right">
 							<a href="http://www.nus.edu.sg/" target="_blank" alt="National University of Singapore">
 								<img src="../../images/nuslogo.jpg" alt="NUS logo">				
@@ -1465,7 +1465,14 @@ mm, which is coaxial with datum axis B-C.</p>
 		</footer>
 		
 		<!-- Back to top button -->
-		<button id="back-to-top" class="btn btn-primary pull-right btt"><span class="glyphicon glyphicon-chevron-up"></span><span class="sr-only">Back to Top</span></button>
+		<button role="button" class="btn btn-primary pull-right btt" id="back-to-top" title="Back to Top" data-toggle="tooltip" data-placement="left" data-trigger="hover focus" data-container="body"><span class="glyphicon glyphicon-chevron-up"></span><span class="sr-only">Back to Top</span></button>
+		
+		<!-- Fullscreen button -->
+    <button role="button" class="btn btn-primary pull-right fs-btn" id="fullscreen-btn">
+			<span class="glyphicon glyphicon-resize-full"></span>
+			<span class="glyphicon glyphicon-resize-small"></span>
+			<span class="sr-only">Back to Top</span>
+		</button>
 		
 		<!-- Scripts support for Internet Explorer 8 or less -->
 		<!--[if lt IE 9]>
@@ -1490,6 +1497,7 @@ mm, which is coaxial with datum axis B-C.</p>
 					'../../js/jquery-2.1.4.min.js'
 				],
 				'jQuery.fn.modal': [ // bootstrap
+					'//ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js',
 					'//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js',
 					'../../js/bootstrap-3.3.6.min.js'
 				],

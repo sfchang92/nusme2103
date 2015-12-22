@@ -29,11 +29,11 @@
 				<div class="modal-content">
 					<div class="modal-header" data-dismiss="modal">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<p class="h3">Did you know?</p>
+						<p class="h3">Tips</p>
 					</div>
 					<div class="modal-body" data-dismiss="modal">
 						<img alt="Gesture left" src="images/gestureleft1.png">
-						<p class="h4">Swiping left opens sidebar</p>
+						<p class="h4">Swipe left opens sidebar</p>
 					</div>
 				</div>
 			</div>
@@ -119,7 +119,7 @@
 			<div id="modal-bg"></div>
 			<div id="sidebar-wrapper">
 				<div class="sidebar-brand">
-					<a role="button" href="#">nus:me2103</a>
+					<a role="button" href="#">ME2103 eCourse</a>
 					<button role="button" href="#menu-toggle" id="menu-toggle2" class="navbar-toggle toggled">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar top-bar"></span>
@@ -151,7 +151,6 @@
 							<li><a href="chapter/10/">10 - Welding symbols representation</a></li>
 						</ul>
 					</li>
-					<li><a href="misc/">Behind the scenes</a></li>
 				</ul>
 				<a role="button" class="btn btn-primary btn-lg btn-block btn-profhome" href="../../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Prof Homepage</a>
 			</div>
@@ -226,7 +225,7 @@
 									<div class="contactinfo">
 										<div class="btn-group btn-group-justified" role="group" aria-label="Telephone">
 											<span class="btn btn-default btn-title"><span class="glyphicon glyphicon-earphone" aria-hidden="true">&nbsp;</span>(65) 6874 2574</span>
-											<a type="button" class="btn btn-default" href="tel:+6568742574">Call</a>
+											<a type="button" class="btn btn-default visible-xs-table-cell" href="tel:+6568742574">Call</a>
 										</div>
 									</div>
 									<div class="contactinfo">
@@ -237,7 +236,7 @@
 									</div>
 									<div class="contactinfo">
 										<div class="btn-group btn-group-justified" role="group" aria-label="Personal Homepage">
-											<span class="btn btn-default btn-title" data-toggle="tooltip" data-placement="bottom" data-html="true" data-container="body" title="courses.nus.edu.sg/course/<br>mpeleeks/personal/"><span class="glyphicon glyphicon-user" aria-hidden="true">&nbsp;</span>courses.nus.edu.sg/course/mpeleeks/personal/</span>
+											<span class="btn btn-default btn-title" data-toggle="tooltip" data-placement="bottom" data-html="true" data-container="body" data-trigger="click" title="courses.nus.edu.sg/course/<br>mpeleeks/personal/"><span class="glyphicon glyphicon-user" aria-hidden="true">&nbsp;</span>courses.nus.edu.sg/course/mpeleeks/personal/</span>
 											<a href="../../" class="btn btn-primary" title="Personal Homepage">Visit</a>
 										</div>
 									</div>
@@ -253,7 +252,7 @@
         </div>
 				<!-- Chapter navigation buttons -->
 				<hr>
-				<div class="text-center">
+				<div class="text-center chapter-nav">
 					<div class="pagination">
 						<button type="button" class="btn btn-primary btn-lg" onclick="document.getElementById('nextchp').click()"><span class="glyphicon glyphicon-play" aria-hidden="true"></span> Begin Chapter 1</button>
 					</div>
@@ -266,7 +265,7 @@
 			<div class="container-fluid">
 				<div class="container">
 					<div class="row">
-						<div class="footer-left">&copy; 2015 Chang Sin Fung. All rights reserved.</div>
+						<div class="footer-left"><a role="button" href="misc/">&copy; 2015 Chang Sin Fung. All rights reserved.</a></div>
 						<div class="footer-right">
 							<a href="http://www.nus.edu.sg/" target="_blank" alt="National University of Singapore">
 								<img src="images/nuslogo.jpg" alt="NUS logo">				
@@ -281,7 +280,14 @@
 		</footer>
 		
 		<!-- Back to top button -->
-    <button role="button" class="btn btn-primary pull-right btt" id="back-to-top"><span class="glyphicon glyphicon-chevron-up"></span><span class="sr-only">Back to Top</span></button>
+    <button role="button" class="btn btn-primary pull-right btt" id="back-to-top" title="Back to Top" data-toggle="tooltip" data-placement="left" data-trigger="hover focus" data-container="body"><span class="glyphicon glyphicon-chevron-up"></span><span class="sr-only">Back to Top</span></button>
+		
+		<!-- Fullscreen button -->
+    <button role="button" class="btn btn-primary pull-right fs-btn" id="fullscreen-btn" data-toggle="tooltip" data-placement="left" title="Go fullscreen" data-trigger="manual" data-container="body">
+			<span class="glyphicon glyphicon-resize-full"></span>
+			<span class="glyphicon glyphicon-resize-small"></span>
+			<span class="sr-only">Back to Top</span>
+		</button>
 		
 		<!-- Scripts support for Internet Explorer 8 or less -->
 		<!--[if lt IE 9]>
@@ -306,6 +312,7 @@
 					'js/jquery-2.1.4.min.js'
 				],
 				'jQuery.fn.modal': [ // bootstrap
+					'//ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js',
 					'//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js',
 					'js/bootstrap-3.3.6.min.js'
 				],
@@ -318,13 +325,6 @@
 					mod_js: [ 'jQuery','jQuery.fn.modal' ] // global js
 				}
 			});
-			fallback.ready(function() {
-				if (!window.matchMedia || (window.matchMedia("(max-width: 767px)").matches)) {
-					$(function () {
-						$('[data-toggle="tooltip"]').tooltip()
-					});
-				}
-    	});
 		</script><!--<![endif]-->
 	</body>
 </html>

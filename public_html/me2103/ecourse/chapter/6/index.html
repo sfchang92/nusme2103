@@ -105,7 +105,7 @@
 			<!-- Sidebar menu -->
 			<div id="sidebar-wrapper">
 				<div class="sidebar-brand">
-					<a role="button" href="../../">nus:me2103</a>
+					<a role="button" href="../../">ME2103 eCourse</a>
 					<button role="button" href="#menu-toggle" id="menu-toggle2" class="navbar-toggle toggled">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar top-bar"></span>
@@ -156,7 +156,7 @@
 							<li><a href="../10/">10 - Welding symbols representation</a></li>
 						</ul>
 					</li>
-					<li><a href="../../misc/">Behind the scenes</a></li>
+					
 				</ul>
 				<a role="button" class="btn btn-block btn-primary btn-lg btn-profhome" href="../../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Prof Homepage</a>
 			</div>
@@ -168,7 +168,7 @@
 					
 						<!-- Section 1 -->
 						<div class="row">
-							<h1 id="symm">6.1 Symmetry</h1>
+							<div class="section-header"><h1 id="symm">6.1 Symmetry</h1></div>
 							<p>Many engineering components are symmetrical about a centre line or axis, it can often be represented satisfactory by half a view.</p>
 							<p>To show that a half view has been drawn, two short, thick, parallel lines are drawn across the symmetry demarcation line at each end. (right angle to axis)</p>
 							<p>To emphasize further, the outlines of the part extend slightly beyond the line of symmetry.</p>
@@ -193,16 +193,16 @@
 						
 						<!-- Section 2 -->
 						<div class="row">
-							<h1 id="conventions">6.2 Conventions</h1>
+							<div class="section-header"><h1 id="conventions">6.2 Conventions</h1></div>
 							<h2 id="enlarged">6.2.1 Enlarged part view</h2>
 							<p>On occasion, components carry features which, in the general scale of the drawing, are too small to be dimensioned clearly. </p>
 							<p>Such features may be enclosed in thin circle from which a leader is drawn to an enlarged part view.</p>
 							<div class="row">
 								<div class="col-md-6">
-									<img alt="Enlarged Part View" src="../../images/6/enlarged1.jpg">
+									<img alt="Enlarged Part View 1" src="../../images/6/enlarged1.jpg">
 								</div>
 								<div class="col-xs-6 col-md-3">
-									<img alt="Enlarged Part View" src="../../images/6/enlarged2.jpg">
+									<img alt="Enlarged Part View 2" src="../../images/6/enlarged2.jpg">
 								</div>
 							</div>
 							<h2 id="repetitive">6.2.2 Repetitive information</h2>
@@ -219,7 +219,7 @@
 						
 						<!-- Section 3 -->
 						<div class="row">
-							<h1 id="convrep">6.3 Conventional representation</h1>
+							<div class="section-header"><h1 id="convrep">6.3 Conventional representation</h1></div>
 							<h2 id="crknurling">6.3.1 Knurling</h2>
 							<p>Two types of knurling, straight and diamond knurling, are use and the conventional representation use thin lines. (straight knurling is often used on the heads of hexagon socket cap screw)</p>
 							<div class="row">
@@ -256,9 +256,9 @@
 							<p>For diagrams and schematic drawings the representation may be simplified to a single line.</p>
 							<div class="row">
 								<div class="col-md-7">
-									<img alt="Cylindrical Compression Bearing 2" src="../../images/6/cylcomspring2.jpg">
+									<img alt="Cylindrical Compression Bearing 1" src="../../images/6/cylcomspring2.jpg">
 								<div class="col-md-4">
-									<img alt="Cylindrical Compression Bearing 1" src="../../images/6/cylcomspring1.jpg">
+									<img alt="Cylindrical Compression Bearing 2" src="../../images/6/cylcomspring1.jpg">
 								</div>
 								</div>
 							</div>
@@ -293,11 +293,11 @@
 						
 						<!-- Section 4 -->
 						<div class="row">
-							<h1 id="abbr">6.4 Abbreviation of general engineering terms</h1>
+							<div class="section-header"><h1 id="abbr">6.4 Abbreviation of general engineering terms</h1></div>
 							<div class="row">
 								<div class="col-md-6">
 									<!-- Table -->
-									<table class="table table-bordered">
+									<table id="engtermabbrtable" class="table table-bordered">
 										<tbody>
 											<tr>
 												<td>A/F</td>
@@ -393,7 +393,7 @@
 				
 				<!-- Chapter navigation buttons -->
 				<hr>
-				<div class="text-center">
+				<div class="text-center chapter-nav">
 					<div class="pagination">
 						<div role="group" class="btn-group btn-group-lg" aria-label="Chapter Navigation">
 							<button type="button" class="btn btn-primary" onclick="document.getElementById('prechp').click()"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Chapter 5</button>
@@ -409,7 +409,7 @@
 			<div class="container-fluid">
 				<div class="container">
 					<div class="row">
-						<div class="footer-left">&copy; 2015 Chang Sin Fung. All rights reserved.</div>
+						<div class="footer-left"><a role="button" href="../../misc/">&copy; 2015 Chang Sin Fung. All rights reserved.</a></div>
 						<div class="footer-right">
 							<a href="http://www.nus.edu.sg/" target="_blank" alt="National University of Singapore">
 								<img src="../../images/nuslogo.jpg" alt="NUS logo">				
@@ -424,7 +424,14 @@
 		</footer>
 		
 		<!-- Back to top button -->
-		<button role="button" class="btn btn-primary pull-right btt" id="back-to-top"><span class="glyphicon glyphicon-chevron-up"></span><span class="sr-only">Back to Top</span></button>
+		<button role="button" class="btn btn-primary pull-right btt" id="back-to-top" title="Back to Top" data-toggle="tooltip" data-placement="left" data-trigger="hover focus" data-container="body"><span class="glyphicon glyphicon-chevron-up"></span><span class="sr-only">Back to Top</span></button>
+		
+		<!-- Fullscreen button -->
+    <button role="button" class="btn btn-primary pull-right fs-btn" id="fullscreen-btn">
+			<span class="glyphicon glyphicon-resize-full"></span>
+			<span class="glyphicon glyphicon-resize-small"></span>
+			<span class="sr-only">Back to Top</span>
+		</button>
 		
 		<!-- Support for Internet Explorer 8 or less -->
 		<!--[if lt IE 9]>
@@ -449,6 +456,7 @@
 					'../../js/jquery-2.1.4.min.js'
 				],
 				'jQuery.fn.modal': [ // bootstrap
+					'//ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js',
 					'//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js',
 					'../../js/bootstrap-3.3.6.min.js'
 				],
