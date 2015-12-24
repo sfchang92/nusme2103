@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>ME2103 | A/Prof Lee Kim Seng</title>
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap-3.3.6.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.mod.css" rel="stylesheet">
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+		<!--[if lte IE 9]>
+		<div class="alert alert-danger alert-dismissible fade in" role="alert"> 
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> 
+			<h4>Oh snap! 
+				<![if gte IE 8]>Online preview is not supported in Internet Explorer
+					<![if IE 9]> 9.<![endif]>
+					<![if IE 8]> 8.<![endif]>
+				<![endif]>
+				<![if lte IE 7]><br>Your Internet Explorer
+					<![if IE 7]> 7<![endif]>
+					<![if IE 6]> 6<![endif]>
+					<![if lt IE 6]><![endif]>
+					is wayyyyyy too old. Everything is breaking down! Aahhhh~
+				<![endif]>
+			</h4>  
+			<p> 
+				<button type="button" id="gotoDownload" class="btn btn-danger" data-dismiss="alert">Go to download</button> 
+				<button type="button" class="btn btn-default" data-dismiss="alert">Close</button>
+			</p> 
+		</div><![endif]-->
+ 		<div id="modal-bg"></div>
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">A/Prof Lee Kim Seng</a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../"><span class="glyphicon glyphicon-home visible-xs-inline" aria-hidden="true"></span> Home</a></li>
+            <!-- Course list-->
+            <li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-education visible-xs-inline" aria-hidden="true"></span> Courses</a>
+              <ul class="dropdown-menu dropdown-left multi-level">
+                <li class="dropdown-submenu active">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">ME 2103<span class="sr-only"> (current)</span></a> 
+                  <ul class="dropdown-menu">
+                    <li><a href="ecourse/" target="_blank">Course e-learning</a></li>
+                    <li><a href="cadcourse/">CAD Tutorial e-learning</a></li>
+                    <li><a href="swcourse/">Solidworks e-learning</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#pptslide">Lecture Slides</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#related">Related Links</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown-submenu">
+                  <a href="../me3263" class="dropdown-toggle" data-toggle="dropdown">ME 3263 / E</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="../me3263/ecourse">Course e-learning</a></li>
+                    <li><a href="../me3263/#pptslide">Lecture Slides</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown-submenu">
+                  <a href="../me4262" class="dropdown-toggle" data-toggle="dropdown">ME 4262 / E</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="../me4262/ecourse">Course e-learning</a></li>
+                    <li><a href="../me4262/#pptslide">Lecture Slides</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown-submenu">
+                  <a href="../me5603" class="dropdown-toggle" data-toggle="dropdown">ME 5603</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="../me5603/ecourse">Course e-learning</a></li>
+                    <li><a href="../me5603/#pptslide">Lecture Slides</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="../me5603/#related">Related Links</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="../photos/"><span class="glyphicon glyphicon-picture visible-xs-inline" aria-hidden="true"></span> Photos</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-star visible-xs-inline" aria-hidden="true"></span> Personal</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Interests</a></li>
+                <li><a href="#">Photo Album</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+		
+    <!--Introduction-->
+    <div class="container white">
+			<div class="page-header">
+				<h1>ME2103 <br class="visible-xs"><small>Engineering Visualization &amp; Modelling</small></h1>
+			</div>
+			<p>The objective of this module is to enable students to learn the various standards and techniques of geometrical sketching, preparing engineering drawings and specifications, and learn how to interpret drawings. Students also got to learn and use the advanced commercial 3D CAD software to do 3D solid modeling. Above all, this module aims to expand the students' creative talent and to communicate their ideas in a meaningful manner.</p>
+			<p>Major topics covered include: Principles of projections, Isometric and Auxiliary views, Isometric & orthograhic sketching, 3D solid modeling, Sectioning and Dimensioning, Machine and Assembly drawings, Drawing standards, Limits Tolerances and GD&amp;T.</p>		
+		</div>
+		
+		<!-- e-Learning-->
+    <div class="container white">
+			<div class="section-header">
+				<h2 id="elearning">e-Learning</h2>
+			</div>
+			<ol>
+				<li class="h4"><a href="ecourse/">Course e-Learning</a></li>
+				<li class="h4"><a href="cadcourse/">CAD Tutorial e-Learning</a></li>
+				<li class="h4"><a href="swcourse/">Solidworks e-Learning</a></li>
+			</ol>
+		</div>
+		
+		<!-- Lecture Slides -->
+    <div class="container white">
+			<div>
+			<h2 id="pptslide">Lecture slides</h2>
+			</div>
+			<div>
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs nav-justified nav-justified-mobile" role="tablist">
+					<!--[if lte IE 9]>
+						<li role="presentation" class="disabled"><a aria-controls="preview" role="tab"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Preview Online</a></li>
+						<li role="presentation" class="active"><a href="#download" id="downloadTab" aria-controls="download" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download</a></li>
+						<![endif]-->
+					<!--[if gt IE 9]><!-->
+					<li role="presentation" class="active"><a href="#preview" aria-controls="preview" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Preview Online</a></li>
+					<li role="presentation"><a href="#download" id="downloadTab" aria-controls="download" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download</a></li>
+					<!--<![endif]-->
+				</ul>
+			
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<!--[if lte IE 9]>
+					<div role="tabpanel" class="tab-pane fade" id="preview"> <![endif]-->
+					<!--[if gt IE 9]><!-->
+					<div role="tabpanel" class="tab-pane fade in active" id="preview"> <!--<![endif]-->
+					
+						<ol>
+							<li class="h4"><a href="../../viewerJS/#../me2103/pdf/ME2103_01_Introduction.pdf" title="Preview Online">Introduction</a></li>
+							<li class="h4"><a href="../../viewerJS/#../me2103/pdf/ME2103_02_Projection.pdf" title="Preview Online">Principles of Projection</a></li>
+							<li class="h4"><a href="../../viewerJS/#../me2103/pdf/ME2103_03_Section_Dimension.pdf" title="Preview Online">Sectioning &amp; Dimensioning</a></li>
+							<li class="h4"><a href="../../viewerJS/#../me2103/pdf/ME2103_04_Interpenetration_abridged.pdf" title="Preview Online">Interpenetration of Solids</a></li>
+							<li class="h4"><a href="../../viewerJS/#../me2103/pdf/ME2103_05_Development.pdf" title="Preview Online">Development</a></li>
+							<li class="h4"><a href="../../viewerJS/#../me2103/pdf/ME2103_06_Convention_Symmetry.pdf" title="Preview Online">Convention &amp; Symmetry</a></li>
+							<li class="h4"><a href="../../viewerJS/#../me2103/pdf/ME2103_07_ScrewNut.pdf" title="Preview Online">Screws &amp; Nuts Representation</a></li>
+							<li class="h4"><a href="../../viewerJS/#../me2103/pdf/ME2103_08_Keys_Coupling_Lock.pdf" title="Preview Online">Keys, Couplings &amp; Locking Devices</a></li>
+							<li class="h4"><a href="../../viewerJS/#../me2103/pdf/ME2103_09_Limits_Tolerances.pdf" title="Preview Online">Limits &amp; Tolerances</a></li>
+							<li class="h4"><a href="../../viewerJS/#../me2103/pdf/ME2103_10_Weld.pdf" title="Preview Online">Welding Symbols &amp; Representations</a></li>
+						</ol>
+					</div>
+					<!--[if lte IE 9]>
+					<div role="tabpanel" class="tab-pane fade in active" id="download"> <![endif]-->
+					<!--[if gt IE 9]><!-->
+					<div role="tabpanel" class="tab-pane fade" id="download"> <!--<![endif]-->
+						<ol>
+							<li class="h4"><a href="pdf/ME2103_01_Introduction.pdf" title="Download PDF">Introduction</a></li>
+							<li class="h4"><a href="pdf/ME2103_02_Projection.pdf" title="Download PDF">Principles of Projection</a></li>
+							<li class="h4"><a href="pdf/ME2103_03_Section_Dimension.pdf" title="Download PDF">Sectioning &amp; Dimensioning</a></li>
+							<li class="h4"><a href="pdf/ME2103_04_Interpenetration_abridged.pdf" title="Download PDF">Interpenetration of Solids</a></li>
+							<li class="h4"><a href="pdf/ME2103_05_Development.pdf" title="Download PDF">Development</a></li>
+							<li class="h4"><a href="pdf/ME2103_06_Convention_Symmetry.pdf" title="Download PDF">Convention &amp; Symmetry</a></li>
+							<li class="h4"><a href="pdf/ME2103_07_ScrewNut.pdf" title="Download PDF">Screws &amp; Nuts Representation</a></li>
+							<li class="h4"><a href="pdf/ME2103_08_Keys_Coupling_Lock.pdf" title="Download PDF">Keys, Couplings &amp; Locking Devices</a></li>
+							<li class="h4"><a href="pdf/ME2103_09_Limits_Tolerances.pdf" title="Download PDF">Limits &amp; Tolerances</a></li>
+							<li class="h4"><a href="pdf/ME2103_10_Weld.pdf" title="Download PDF">Welding Symbols &amp; Representations</a></li>
+						</ol>
+						<br><a class="btn btn-primary btn-lg" href="pdf/ME2103_EVM.zip" title="Download ZIP Archive"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Related Links -->
+    <div class="container white">
+			<div class="section-header">
+				<h2 id="related">Related links</h2>
+			</div>
+			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingOne">
+						<div class="panel-title h4">
+							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								Technical drawing
+							</a>
+						</div>
+					</div>
+					<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+						<ul class="list-group">
+							<li class="list-group-item"><a href="http://www.prenhall.com/divisions/ESM/app/giesecke/html/animation.html">Some Animations from Prentice Hall</a></li>
+							<li class="list-group-item"><a href="http://www.tech.purdue.edu/cg/courses/tg217/">Drawing Systems Module by Purdue University</a></li>
+							<li class="list-group-item"><a href="http://www.staffs.ac.uk/schools/engineering_and_technology/des/aids/graphics/ppt/mecha3.ppt">Lecture Slides(I) from Staffordshire University</a></li>
+							<li class="list-group-item"><a href="http://www.staffs.ac.uk/schools/engineering_and_technology/des/aids/graphics/typedraw.htm">Lecture Slides(II) from Staffordshire University</a></li>
+							<li class="list-group-item"><a href="http://www.tpub.com/engbas/5.htm">Understanding Projection &amp; Sketching</a></li>
+							<li class="list-group-item"><a href="http://www.tpub.com/engbas/4.htm">Understanding Geometric Construction</a></li>
+							<li class="list-group-item"><a href="http://www.tpub.com/engbas/2.htm">Understanding Drafting Equipment</a></li>
+							<li class="list-group-item"><a href="http://www.tpub.com/engbas/3.htm">Understanding Drafting Techniques</a></li>
+							<li class="list-group-item"><a href="http://www.practicalsubjects.com/subjects/tg/pages/ellipseconicsection.html">PracticalSubjects - Ellipse</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingTwo">
+						<div class="panel-title h4">
+							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								Isometric Projection
+							</a>
+						</div>
+					</div>
+					<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+						<ul class="list-group">
+							<li class="list-group-item"><a href="http://www.staffs.ac.uk/schools/engineering_and_technology/des/aids/graphics/ppt/mecha2.ppt">Lecture 
+								Slides(I) from Staffordshire University</a></li>
+							<li class="list-group-item"><a href="http://www.cae.wisc.edu/%7Eme231/chapter6/text.html">Isometric 
+								Projection Notes</a></li>
+							<li class="list-group-item"><a href="http://www.staffs.ac.uk/schools/engineering_and_technology/des/aids/graphics/isosketc.htm">Isometric 
+								Sketching Notes by Staffordshire University</a> 
+								</li>
+							<li class="list-group-item"><a href="http://www4.district125.k12.il.us/Faculty/djohanns/TechEdHomePage/SG3.html">Technology 
+								Education Department</a></li>
+							<li class="list-group-item"><a href="http://www4.district125.k12.il.us/Faculty/djohanns/TechEdHomePage/SGAuxViews.html">Study 
+								Guide - Auxiliary Views</a></li>
+							<li class="list-group-item"><a href="http://www.compuphase.com/axometr.htm">Extras 
+								on Axonometric Projections</a></li>
+							<li class="list-group-item"><a href="http://www2.mtroyal.ab.ca/%7Ecjefferi/engr1313/multiview/multi_index.htm">Interactive 
+								Practice for Multiview Drawings</a></li>
+							<li class="list-group-item"><a href="http://www.ul.ie/%7Erynnet/keanea/isometri.htm">Isometric 
+								Projection - Another Explanation</a></li>
+							<li class="list-group-item"><a href="http://www2.ncsu.edu:8010/unity/lockers/project/scivishome/lessons/projprinc/projprinc.html">Perspective 
+								Projection </a></li>
+							<li class="list-group-item"><a href="http://www.cae.wisc.edu/%7Eme231/chapter6/text.html">Sketching 
+								Isometric Views</a></li>
+							<li class="list-group-item"><a href="http://www.practicalsubjects.com/subjects/tg/pages/projection.html">PracticalSubjects - Projections</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingThree">
+						<div class="panel-title h4">
+							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+								Interpenetration
+							</a>
+						</div>
+					</div>
+					<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+						<ul class="list-group">
+							<li class="list-group-item"><a href="http://www.c3.hu/perspektiva/adatbazis/abrae.php3?MUID=86&amp;LN=1">Example 
+            1 </a></li>
+          <li class="list-group-item"><a href="http://www.c3.hu/perspektiva/adatbazis/abrae.php3?MUID=47&amp;LN=0">Example 
+            2</a></li>
+          <li class="list-group-item"><a href="http://www.practicalsubjects.com/subjects/td/pages/interpenetration.html">PracticalSubjects 
+            - Interpenetration of Solids</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingFour">
+						<div class="panel-title h4">
+							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+								Sectioning 
+            &amp; Dimensioning
+							</a>
+						</div>
+					</div>
+					<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+						<ul class="list-group">
+							<li class="list-group-item"><a href="http://www4.district125.k12.il.us/Faculty/djohanns/TechEdHomePage/SGSectViews.html">Study 
+								Guide - Sectional Views</a></li>
+							<li class="list-group-item"><a href="http://www.staffs.ac.uk/schools/engineering_and_technology/des/aids/graphics/dimensio.htm">Lecture 
+								Slides from Staffordshire University</a></li>
+							<li class="list-group-item"><a href="http://www.ider.herts.ac.uk/school/courseware/graphics/engineering_drawing/types_of_sectioning.html">Blueprint 
+								Design Technology Website</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingFive">
+						<div class="panel-title h4">
+							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+								Development
+							</a>
+						</div>
+					</div>
+					<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+						<ul class="list-group">
+							<li class="list-group-item"><a href="http://www.plate-n-sheet.com/index.html">Plate 
+								'n' Sheet Development Software (for Sheet Metals)</a></li>
+							<li class="list-group-item"><a href="http://www.plate-n-sheet.com/html/pro_develop.html">Development 
+								Example by Plate 'n' Sheet</a></li>
+							<li class="list-group-item"><a href="http://www.thepiers.net/pn/">The 
+								Sheet Metal Shop</a></li>
+							<li class="list-group-item"><a href="http://www.design2fab.com/trial/XY%20Layout%20Method.pdf">XY 
+								Layout Method</a></li>
+							<li class="list-group-item"><a href="http://www.design2fab.com/Products/samples.html">Samples 
+								of Design2FAB Software</a></li>
+							<li class="list-group-item"><a href="http://www.olympus.net/personal/mortenson/preview/definitionsf/flatpattern.html">Definitions 
+								of Flat Pattern</a></li>
+							<li class="list-group-item"><a href="http://search.sheetmetalworld.com/tutorials.cfm">Sheet 
+								Metal World</a></li>
+							<li class="list-group-item"><a href="http://www.tpub.com/blueprintreading/43.htm">Understanding 
+								Sheet Metal Development</a></li>
+							<li class="list-group-item"><a href="http://www.tpub.com/steelworker2/20.htm">Parallel 
+								Line Development</a></li>
+							<li class="list-group-item"><a href="http://www.tpub.com/steelworker2/21.htm">Triangular 
+								Development</a></li>
+							<li class="list-group-item"><a href="http://www.tpub.com/utilities/127.htm">Duct 
+								Construction </a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingSix">
+						<div class="panel-title h4">
+							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+								Convention 
+            &amp; Symmetry
+							</a>
+						</div>
+					</div>
+					<div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+						<ul class="list-group">
+							<li class="list-group-item"><a href="http://www.dayonmfg.com/index.html">Springs</a></li>
+							<li class="list-group-item"><a href="http://www.perrygear.com/products.html">Gears</a></li>
+							<li class="list-group-item"><a href="http://www.tpub.com/blueprintreading/18.htm">Understanding 
+								Symbols</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingSeven">
+						<div class="panel-title h4">
+							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+								Screws 
+            &amp; Nuts Representation
+							</a>
+						</div>
+					</div>
+					<div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+						<ul class="list-group">
+							<li class="list-group-item"><a href="http://www.tpub.com/blueprintreading/16.htm">Understanding 
+            Screws</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingEight">
+						<div class="panel-title h4">
+							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+								Keys, 
+            Coupling &amp; Locking Devices
+							</a>
+						</div>
+					</div>
+					<div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+						<ul class="list-group">
+							<li class="list-group-item"><a href="http://www.perrygear.com/products.html">Splines, 
+								Keyseating Services, Couplings</a></li>
+							<li class="list-group-item"><a href="http://www.practicalsubjects.com/subjects/eng/pages/gears.html">PracticalSubjects 
+								- Gears</a></li>
+							<li class="list-group-item"><a href="http://www.practicalsubjects.com/subjects/eng/pages/cams1.html">PracticalSubjects 
+								- Cams</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingNine">
+						<div class="panel-title h4">
+							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+								Limits 
+            &amp; Tolerances
+							</a>
+						</div>
+					</div>
+					<div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
+						<ul class="list-group">
+							<li class="list-group-item"><a href="http://www.engineersedge.com/gd&amp;t.htm">GD 
+								&amp; T Definitions</a></li>
+							<li class="list-group-item"><a href="http://www.staffs.ac.uk/schools/engineering_and_technology/des/aids/graphics/ppt/mecha6.ppt">Lecture 
+								Slides from Staffordshire University</a></li>
+							<li class="list-group-item"><a href="http://www.staffs.ac.uk/schools/engineering_and_technology/des/aids/graphics/geomtole.htm">Lecture 
+								Slides(II) from Staffordshire University</a></li>
+							<li class="list-group-item"><a href="http://www.staffs.ac.uk/schools/engineering_and_technology/des/aids/graphics/ppt/mecha5.ppt">Lecture 
+								Slides(III) from Staffordshire University</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingTen">
+						<div class="panel-title h4">
+							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+								Welding 
+            Symbols
+							</a>
+						</div>
+					</div>
+					<div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
+						<ul class="list-group">
+							<li class="list-group-item"><a href="http://www.aws.org/">American Welding Society</a></li>
+							<li class="list-group-item"><a href="http://www.tpub.com/steelworker1/13.htm">Understanding Welding</a></li>
+							<li class="list-group-item"><a href="http://www.tpub.com/steelworker1/29.htm">Understanding Welding Symbols</a></li>
+							<li class="list-group-item"><a href="http://www.tpub.com/steelworker1/28.htm">Reading Welding Drawings</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+    </div>
+    
+    <!-- Back to top -->
+    <a href="#" class="btn btn-primary pull-right btt" id="back-to-top"><span class="glyphicon glyphicon-chevron-up"></span><span class="sr-only">Back to Top</span></a>
+    
+    <footer class="footer">
+    <div class="container-fluid whitebg">
+      <div class="container">
+        <div class="row">
+          <div class="footer-left">&copy; 2015 Chang Sin Fung. All rights reserved.</div>
+          <div class="footer-right">
+            <a href="//www.nus.edu.sg/" target="_blank" alt="National University of Singapore">
+              <img src="../images/nuslogo.png" alt="NUS logo">
+            </a>
+            <a href="//me.nus.edu.sg/" target="_blank" alt="Department of Mechanical Engineering, NUS">
+              <img src="../images/nusmelogo.png" alt="NUS logo">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </footer>
+		
+		<!-- Support for Internet Explorer 8 or less -->
+		<!--[if lt IE 9]>
+			<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+			<script src="../../js/bootstrap-3.3.6.min.js"></script>
+			<script src="../../js/bootstrap.mod.min.js"></script>
+		<![endif]-->
+		
+		<!-- For IE9+ or others -->
+		<!--[if gte IE 9]><!-->
+		<script src="../js/fallback.min.js"></script>
+		<script>
+			fallback.load({
+				jQuery: [
+					'//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js',
+					'//code.jquery.com/jquery-2.1.4.min.js',
+					'../js/jquery-2.1.4.min.js'
+				],
+				'jQuery.fn.modal': [ // bootstrap
+					'//ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js',
+					'//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js',
+					'../js/bootstrap-3.3.6.min.js'
+				],
+				mod_js: [ // global js
+					'../js/bootstrap.mod.min.js'
+				]
+			}, {
+				shim: {
+					'jQuery.fn.modal': [ 'jQuery' ], // bootstrap
+					mod_js: [ 'jQuery','jQuery.fn.modal' ] // global js
+				}
+			});
+		</script><!--<![endif]-->
+  </body>
+</html>

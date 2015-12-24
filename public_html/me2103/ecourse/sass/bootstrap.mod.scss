@@ -4,6 +4,8 @@ $sidebarw: 260px;
 $blue: #337ab7;
 $dblue: #23527c;
 $navbarh: 48px;
+$lgrey:#f5f5f5;
+$dgrey:#f2f2f2;
 
 html {
 	min-height:100%;
@@ -86,9 +88,14 @@ h3 .gdt {
 	//@include border-radius(2px);
 	@include border-radius(24px); 
 }
+
+.btn-block+.btn-block{
+	margin-top:0;
+}
 /* Chapter navigation buttons */ 
-.chapter-nav .pagination {
-	margin-bottom:40px;
+.chapter-nav .pager {
+	padding-bottom:30px;
+	margin-bottom:0;
 }
 
 .visible-xs-table-cell {
@@ -128,12 +135,15 @@ h3 .gdt {
 		bottom:10px;
 		visibility:visible;
 		@include opacity(0.5);
+		&:hover {
+			@include opacity(1);
+		}
 	}
 	&.btt-end {
 		@include opacity(1);
 		bottom: 60px;
 		visibility:visible;
-		@include box-shadow(0 0 0 3px white);
+		@include box-shadow(0 0 0 3px #f2f2f2);
 	}
 }
 .fs-btn {
@@ -163,6 +173,9 @@ h3 .gdt {
 	}
 	@include minwidth(tablet) {
 		right: 15px + $sidebarw;
+	}
+	&:hover {
+		@include opacity(1);
 	}
 	&:active,&:focus,&.active,&:focus:active {
 		background-image: none;
@@ -267,7 +280,7 @@ h3 .gdt {
 /* Section header style */
 .section-header {
 	padding-bottom: 2px;
-	margin: 10px 0 10px;
+	margin: 20px 0 10px;
 	border-bottom: 1px solid #ccc;
 }
 
@@ -628,19 +641,19 @@ table{counter-reset:section;}
 	overflow-x: hidden;
 	top:0;
 	height:100%; 
-	background: #f2f2f2;
+	background: white;
 	@include hwaccel;
 	@include transition(width 0.5s ease, margin-right 0.5s ease);
 	@include minwidth(tablet) {
 		width: $sidebarw;
-		border-left: 1px solid white;
+		//border-left: 1px solid white;
 		overflow-y:auto;
 	}
 }
 
 #page-content-wrapper {
 	width: 100%;
-	background-color:white;
+	//background-color:white;
 	//position: absolute;
 	position: relative; 
 	@include hwaccel;
@@ -652,7 +665,7 @@ table{counter-reset:section;}
 
 #page-content {
 	position:relative;
-	padding:0 15px 15px 15px;
+	//padding:0 15px 15px 15px;
 	ul {
 		&.list-inside {
 			list-style-position: inside;
@@ -674,6 +687,16 @@ table{counter-reset:section;}
 		background-image:none;
 		height:20px;
 		width:auto;
+	}
+	> div > .row {
+		background-color:white;
+		padding-left:15px;
+		padding-right:15px;
+		padding-bottom:15px;
+		margin-bottom:10px;
+		@include box-shadow(0 2px 2px 0px rgba(0,0,0,0.2));
+		border:1px solid #ddd;
+		@include border-radius(3px);
 	}
 }
 
@@ -714,12 +737,14 @@ table{counter-reset:section;}
 			&:hover {
 				text-decoration: none;
 				color: #444;
-				background: #e4e4e4;
+				background: $lgrey;
 			}
 			&:active, &:focus {
 				text-decoration: none;
 				color: #444;
-				background: #e4e4e4;
+			}
+			&:active{
+				background: $lgrey;
 			}
 			// Caret up down
 			&.collapse-button {
@@ -745,7 +770,8 @@ table{counter-reset:section;}
 		}
 		&.active > a {
 			color: #000;
-			background: #e4e4e4;
+			//background: $lgrey;
+			font-weight:600;
 		}
 		
 		> ul {
@@ -757,25 +783,34 @@ table{counter-reset:section;}
 	> li {
 		font-size: 16px;
 		&:not(:first-of-type) {
-			border-top:2px solid white;
+			border-top:2px solid $lgrey;
 			&.active {
 				border-top:2px solid $blue;
 			}
 		}
+		&:last-of-type {
+			border-bottom:2px solid #eee;
+		}
 		> a {
-			&:hover {
-				background: #e4e4e4;
+			&:hover, &:hover:focus{
+				background: $lgrey;
+			}
+			&:focus {
+				background:none;
 			}
 		}
 		&.active {
 			> a {
-				background: #dbdbdb;
+				background: $dgrey;
 			}
 		}
 		> ul {
 			padding-left:0;
 			> li {
 				font-size:12px;
+				> ul>li:last-child {
+					border-bottom:1px solid #eee;
+				}
 			}
 		}
 	}
@@ -795,9 +830,10 @@ table{counter-reset:section;}
 }
 .btn-profhome {
 	text-align:left;
-	font-size:16px;
+	font-size:14px;
 	padding-left:15px;
-	margin-top:15px;
+	//margin-top:15px;
+	border:none;
 	@include border-radius(0);
 	.glyphicon {
 		padding-right: 10px;

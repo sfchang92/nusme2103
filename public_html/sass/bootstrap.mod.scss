@@ -21,21 +21,32 @@ body {
 	background-color: #f9f9f9;
 	padding-top: 50px;
   margin-bottom: 80px;
-  > .container {
-    padding-bottom: 40px;
-		&.white {
-			background-color:white;
+  > .container.white {
+		background-color:white;
+		margin-bottom:10px;
+		padding-bottom:20px;
+		@include box-shadow(0 2px 2px 0px rgba(0,0,0,0.2));
+		border:1px solid #ddd;
+		@include border-radius(3px);
+		&:last-of-type {
+			margin-bottom:110px;
 		}
   }
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, h1 small {
+.h1, .h2, .h3, h1, h2, h3, h1 small {
   font-weight: 300;
 }
+.h4, h4 {
+	font-weight:400;
+}
 
+.breadcrumb {
+	margin-top:20px;
+}
 .page-header{
-	border-bottom:none;
-	padding-bottom:0;
+	//border-bottom:none;
+	//padding-bottom:0;
 }
 .section-header {
 	padding-bottom: 5px;
@@ -50,7 +61,7 @@ body {
 	@include border-radius(20px); 
 }
 .panel-default {
-  a {
+  .panel-title a {
     &:focus,&:hover {
       text-decoration: none;
     }
@@ -95,6 +106,11 @@ body {
 			}
 		}
 	}
+}
+
+.list-group-item {
+	background-color:transparent;
+	padding-left:35px;
 }
 
 //Table count
@@ -321,41 +337,55 @@ body {
 		@include maxwidth(mobile) {
 			margin: 0px -15px;
 			padding-bottom:5px;
+			background-color:white;
 		}
     > li {
+			&:not(:last-child){
+				@include maxwidth(mobile) {border-bottom:1px solid #ccc;}
+			}
 			> a {
-				color: white;
-				@include minwidth(tablet)	{color: $whitet;}
-				text-transform: uppercase;
+				//color: white;
+				@include minwidth(tablet)	{
+					color: $whitet;
+					text-transform: uppercase;
+				};
+				@include maxwidth(mobile) {line-height:28px;};
 				@include transition(background-color 0.2s ease, color 0.2s ease, padding 0.2s ease);
 				&:hover, &:focus {
-					color: white;
-					@include maxwidth(mobile) {background-color: $lblue;}
+					@include minwidth(tablet)	{color: white;};
+					@include maxwidth(mobile) {background-color: #eee;};
 					@include transition(background-color 0.2s ease, color 0.2s ease, padding 0.2s ease);
+				}
+				.glyphicon {
+					margin-right:10px;
 				}
 			}
 			//Navbar item with menu open
 			&.open > a {
-				color: white;
+				//color: white;
 				background-color: transparent;
-				@include maxwidth(mobile) {background-color: $lblue;}
+				//@include maxwidth(mobile) {background-color: $lblue;}
 				@include transition(color 0.2s ease);
 				&:focus, &:hover {
-					color: white;
+					//color: white;
 					background-color: transparent;
-					@include maxwidth(mobile) {background-color: $lblue;}
+					@include maxwidth(mobile) {background-color: #eee;}
 				}
 			}
 			//Navbar item active
 			&.active > a {
-				color: white;
+				//color: white;
+				color:$vdblue;
+				@include minwidth(tablet) {color:white};
 				background-color:transparent;
-				@include maxwidth(mobile) {background-color: $dblue;}
+				//@include maxwidth(mobile) {background-color: $dblue;}
 				@include transition(background-color 0.2s ease,color 0.2s ease, padding 0.2s ease);
 				&:hover, &:focus {
-					color: white;
+					color:$vdblue;
+					@include minwidth(tablet) {color:white};
 					background-color:transparent;
-					@include maxwidth(mobile) {background-color: $dblue;}
+					@include maxwidth(mobile) {background-color:#eee;}
+					//@include maxwidth(mobile) {background-color: $dblue;}
 					@include transition(background-color 0.2s,color 0.2s, padding 0.2s);
 				}
 			}
@@ -372,20 +402,20 @@ body {
 			.open .dropdown-menu {
 				> li{
 					> a {
-						color: white;
+						//color: white;
 						line-height: 25px;
-						padding-left: 35px;
+						padding-left: 45px;
 						&:focus, &:hover {
-							color: white;
-							background-color: $lblue;
+							//color: white;
+							//background-color: $lblue;
 						}
 					}
 					&.active > a {
-						color: white;
-						background-color: $lblue;
+						color: $vdblue;
+						background-color: #fff;
 						&:focus, &:hover {
-							color: white;
-							background-color: $lblue;
+							//color: white;
+							background-color: #fff;
 						}
 					}
 				}
@@ -405,7 +435,8 @@ body {
 			@include maxwidth(mobile) {
 				padding: 0px;
 				.divider {
-					margin: 0 0 0 30px;
+					//margin: 0 0 0 30px;
+					display:none;
 				}
 			}
 			&:before {
@@ -471,16 +502,17 @@ body {
 				border-color: transparent;
 				border-style: solid;
 				border-width: 5px 5px 0 5px;
-				border-top-color: white;
+				border-top-color: #777;
 				@include minwidth(tablet) {border-top-color: $whitet;};
 				margin-left: 6px;
 				margin-top: 9px;
+				@include maxwidth(mobile) {margin-top:13px};
 				@include transition(border-color 0.3s ease);
 			}
 			&.open > a:after {
 				border-width: 0 5px 5px 5px;
 				border-top-color: transparent;
-				border-bottom-color:white;
+				border-bottom-color:#555;
 				@include transition(border-color 0.3s ease);
 			}
 			&:hover > a:after {
@@ -497,6 +529,9 @@ body {
 		.dropdown-submenu {
 			position: relative;
 			> .dropdown-menu {
+				@include maxwidth(mobile) {
+					display:none;
+				}
 				top: 0;
 				left: 100%;
 				@include minwidth(tablet) {
@@ -521,9 +556,9 @@ body {
 				@include maxwidth(mobile) {
 					margin-left: 6px;
 					margin-bottom: 3px;
-					display: inline-block;
+					display: none;
 					border-width: 4px 4px 0 4px;
-					border-top-color: white;
+					border-top-color: #777;
 					border-left-color: transparent;
 					float: none;
 					@include transition(border-color 0.3s ease);
@@ -533,7 +568,7 @@ body {
 				@include maxwidth(mobile) {
 					border-width: 0 4px 4px 4px;
 					border-top-color: transparent;
-					border-bottom-color: white;
+					border-bottom-color: #777;
 					@include transition(border-color 0.3s ease);
 				}
 			}
@@ -555,13 +590,13 @@ body {
 			}
 			@include maxwidth(mobile) {
 				ul li > a {
-					padding-left: 50px !important;
+					//padding-left: 50px !important;
 				}
 				&.active > .dropdown-menu {
-					display: block;
+					//display: block;
 				}
 				.divider {
-					margin: 0 0 0 45px;
+					//margin: 0 0 0 45px;
 				}
 			}
 		} //.dropdown-submenu
@@ -642,13 +677,17 @@ body {
 		&.jhide {
 			background-color: $vdblue;
 			@include transition(background-color 0.2s ease);
+			.navbar-brand{
+				@include opacity(1);
+				padding-top:15px;
+			}
 		}
 	}
 	
 	//Max mobile dropdown menu height
 	@include maxwidth(mobile) {
 		.navbar-collapse {
-			max-height: 80vh;
+			max-height: calc(100vh - 50px);
 			border-color:transparent;
 		}
 	}
@@ -664,14 +703,16 @@ body {
 	}
 }
 
+/* When menu item switching focus*/
 .nav .open > a {
-  background-color: $dblue;
-  color: white;
+  //background-color: $dblue;
+  //color: white;
   &:focus, &:hover {
-    background-color: $dblue;
-    color: white;
+    //background-color: $dblue;
+    //color: white;
   }
 }
+
 /*Mobile navigation bar toggle button */
 .navbar-toggle {
   margin-top: 0px;
@@ -794,11 +835,7 @@ body.jerror {
 			}
 		}
 	}*/
-	.white {
-		padding-top: 30px;
-	}
 }
-
 .contactinfo {
 	padding-bottom:8px;
 	a.btn-primary {
@@ -929,6 +966,9 @@ body.jerror {
 			display:table-cell;
 			width:1%;
 			float:none;
+			&:first-child{
+				width:1.5%;
+			}
 			> a{
 				margin-right:0;
 				@include border-radius(4px 4px 0 0);

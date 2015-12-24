@@ -65,13 +65,6 @@ $(document).ready(function() {
 	"use strict";
 	$('[data-toggle="tooltip"]').tooltip();
 	
-	$('#fullscreen-btn').tooltip('show');
-	
-	setTimeout( function() 
-  {
-    $('#fullscreen-btn').tooltip('destroy');
-  }, 1000);
-	
 	var showLeft = true;
 	function toggledOn() {
 		$("#wrapper,body").addClass("toggled");

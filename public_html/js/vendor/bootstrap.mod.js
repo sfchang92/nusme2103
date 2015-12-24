@@ -1,23 +1,23 @@
-//Back to top button animation
-$(window).scroll(function() {
-  "use strict";
-  
-	/*Btt button position*/
-	if($(this).scrollTop() < 100) {
-		$('.btt').removeClass('btt-show');
-		$('.btt').removeClass('btt-end');
-		$('.arrow').removeClass('arrow-hide');
-	}else if($(this).scrollTop() >= $(document).height() - $(this).height() - $('footer').height() ){
-		$('.btt').addClass('btt-end');
-	}else{
-		$('.btt').addClass('btt-show');
-		$('.btt').removeClass('btt-end');
-		$('.arrow').addClass('arrow-hide');
-	}
-});
+// @koala-prepend "anchor.min.js"
+// @koala-prepend "bootstrap-anchor.min.js"
 
 $(document).ready(function() {
 	"use strict";
+	
+	//AnchorJS initialisation
+	anchors.add();
+	anchors.remove('.no-anchor, .panel-title');
+	
+	//Bootstrap Anchor initialisation
+	$(this).anchor();
+	
+	/* Go to download tab in Lecture Slides page */
+	$('#gotoDownload').on('click',function () {
+		$('html,body').animate({
+			scrollTop: $('#downloadTab').offset().top - $('div.alert').outerHeight(),
+	  }, 300)
+	});
+	
 	var mq = window.matchMedia( "(max-width: 767px)" );
 	
 	/*Jumbotron height issue*/
@@ -26,6 +26,24 @@ $(document).ready(function() {
 	}else{
 		$(".jumbotron#homepagejumbo").css("min-height", 0);
 	}
+	
+	//Back to top button animation
+	$(window).on("load scroll", function() {
+		"use strict";
+		
+		/*Btt button position*/
+		if($(this).scrollTop() < 100) {
+			$('.btt').removeClass('btt-show');
+			$('.btt').removeClass('btt-end');
+			$('.arrow').removeClass('arrow-hide');
+		}else if($(this).scrollTop() >= $(document).height() - $(this).height() - $('footer').height() ){
+			$('.btt').addClass('btt-end');
+		}else{
+			$('.btt').addClass('btt-show');
+			$('.btt').removeClass('btt-end');
+			$('.arrow').addClass('arrow-hide');
+		}
+	});
 	
 	//Panel scroll to active heading
 	$('.panel-group').on('shown.bs.collapse', function () {
@@ -50,13 +68,6 @@ $(document).ready(function() {
 		$('#bs-example-navbar-collapse-1').collapse('hide')
 	});
 	
-	/* Go to download tab in Lecture Slides page */
-	$('#gotoDownload').on('click',function () {
-		$('html,body').animate({
-			scrollTop: $('#downloadTab').offset().top - $('div.alert').outerHeight(),
-	  }, 300)
-	});
-	
 	/*Back to top*/
 	$('#back-to-top').on('click',function () {
 		$('body,html').animate({
@@ -67,8 +78,8 @@ $(document).ready(function() {
 	});
 
 	$('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
-		// Avoid following the href location when clicking
-		event.preventDefault(); 
+		/*// Avoid following the href location when clicking
+		event.preventDefault(); */
 		// Avoid having the menu to close when clicking
 		event.stopPropagation(); 
 		// If a menu is already open we close it
