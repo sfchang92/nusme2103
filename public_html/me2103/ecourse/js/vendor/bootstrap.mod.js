@@ -86,16 +86,16 @@ $(document).ready(function() {
 	$('[data-toggle="tooltip"]').tooltip();
 	
 	if(!(getCookie("fs-btn-shown"))){
-		$("#fullscreen-btn-modal").modal("show");
-		$(".fs-btn").addClass("fs-btn-show");
+		$("#fs-btn-btt-modal").modal("show");
+		$(".fs-btn").addClass("fs-btn-show-tip");
 		$(".btt").addClass("btt-show-tip");
 		
 		$('#back-to-top,#fullscreen-btn').one('click', function () {
 			$("#fullscreen-btn-modal").modal("hide");
 		});
 		
-		$('#fullscreen-btn-modal').on('hide.bs.modal', function () {
-			$(".fs-btn").removeClass("fs-btn-show");
+		$('#fs-btn-btt-modal').on('hide.bs.modal', function () {
+			$(".fs-btn").removeClass("fs-btn-show-tip");
 			$(".btt").removeClass("btt-show-tip");
 			setCookie("fs-btn-shown", 1, 5);
 		});

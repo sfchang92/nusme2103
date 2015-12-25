@@ -207,7 +207,7 @@ h3 .gdt {
 			display:inline-block;
 		}
 	}
-	&.fs-btn-show {
+	&.fs-btn-show-tip {
 		@include opacity(1);
 		z-index: 1051;
 		visibility:visible;
@@ -849,7 +849,7 @@ table{counter-reset:section;}
 		}
 	}
 }
-#fullscreen-btn-modal {
+#fs-btn-btt-modal {
 	cursor:pointer;
 	padding-left:0 !important;
 	overflow-y:hidden;
