@@ -87,7 +87,7 @@
 		<nav class="navbar navbar-default">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <button role="button" id="menu-toggle" class="navbar-toggle">
+        <button type="button" class="navbar-toggle" id="menu-toggle">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar top-bar"></span>
           <span class="icon-bar middle-bar"></span>
@@ -105,7 +105,7 @@
 			<div id="sidebar-wrapper">
 				<div class="sidebar-brand">
 					<a role="button" href="../../">ME2103 e-Learning</a>
-					<button role="button" id="menu-toggle2" class="navbar-toggle toggled">
+					<button type="button" class="navbar-toggle toggled" id="menu-toggle2">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar top-bar"></span>
 						<span class="icon-bar middle-bar"></span>
@@ -897,34 +897,31 @@
 							</div>
 							<h2 id="screw">9.4.5 Dimensioning screw threads</h2>
 							<p>Threads are shown conventionally on drawings, hence need to be designated by dimensions or notes.</p>
-							<p>Metric thread example:
-								<ul>
-									<li>M16 x 1.5 – 6H (internal thread)</li>
-									<li>M6 x 0.75 – 6g (external thread)</li>
-								</ul>
-							</p>
-							<p>Representation: 
-								<ul>
-									<li>M – Thread system symbol for metric thread</li>
-									<li>16, 6 – Nominal diameter in mm</li>
-									<li>1.5 &amp; 0.75 – Pitch in mm</li>
-									<li>6H, 6g – Thread tolerance class symbol</li>
-								</ul>
-							</p>
-							<p>Note:
-								<ol>
-									<li>If no pitch is shown in dimension, coarse thread is implied. (fine threads are used mainly in special applications, not common)</li>
-									<li>Thread tolerance provide 3 classes of fit:
-										<ol type="a">
-											<li>Free – (7H/8g) for application requiring quick &amp; easy assembly</li>
-											<li>Medium – (6H/6g) suitable for most general applications</li>
-											<li>Close – (5H/4h) commonly used</li>
-										</ol>
-									</li>
-									<li>If thread is left hand, abbreviation LH should be used.<br>
-											No indication of hand is required if thread is right-handed.</li>
-								</ol>
-							</p>
+							<p>Metric thread example:</p>
+							<ul>
+								<li>M16 x 1.5 – 6H (internal thread)</li>
+								<li>M6 x 0.75 – 6g (external thread)</li>
+							</ul>
+							<p>Representation:</p>
+							<ul>
+								<li>M – Thread system symbol for metric thread</li>
+								<li>16, 6 – Nominal diameter in mm</li>
+								<li>1.5 &amp; 0.75 – Pitch in mm</li>
+								<li>6H, 6g – Thread tolerance class symbol</li>
+							</ul>
+							<p>Note:</p>
+							<ol>
+								<li>If no pitch is shown in dimension, coarse thread is implied. (fine threads are used mainly in special applications, not common)</li>
+								<li>Thread tolerance provide 3 classes of fit:
+									<ol type="a">
+										<li>Free – (7H/8g) for application requiring quick &amp; easy assembly</li>
+										<li>Medium – (6H/6g) suitable for most general applications</li>
+										<li>Close – (5H/4h) commonly used</li>
+									</ol>
+								</li>
+								<li>If thread is left hand, abbreviation LH should be used.<br>
+										No indication of hand is required if thread is right-handed.</li>
+							</ol>
 						</div>
 						<div class="row">
 							<div class="section-header"><h1 id="geotol">9.5 Geometrical tolerances</h1></div>
@@ -1464,10 +1461,10 @@ mm, which is coaxial with datum axis B-C.</p>
 		</footer>
 		
 		<!-- Back to top button -->
-		<button role="button" class="btn btn-primary pull-right btt" id="back-to-top" title="Back to Top" data-toggle="tooltip" data-placement="left" data-trigger="hover" data-container="body"><span class="glyphicon glyphicon-chevron-up"></span><span class="sr-only">Back to Top</span></button>
+		<button type="button" class="btn btn-primary pull-right btt" id="back-to-top" title="Back to Top" data-toggle="tooltip" data-placement="left" data-trigger="hover" data-container="body"><span class="glyphicon glyphicon-chevron-up"></span><span class="sr-only">Back to Top</span></button>
 		
 		<!-- Fullscreen button -->
-    <button role="button" class="btn btn-primary pull-right fs-btn" id="fullscreen-btn" data-toggle="tooltip" data-placement="left" title="Go fullscreen" data-trigger="hover" data-container="body">
+    <button type="button" class="btn btn-primary pull-right fs-btn" id="fullscreen-btn" title="Go fullscreen" data-toggle="tooltip" data-placement="left" data-trigger="hover" data-container="body">
 			<span class="glyphicon glyphicon-resize-full"></span>
 			<span class="glyphicon glyphicon-resize-small"></span>
 			<span class="sr-only">Back to Top</span>
