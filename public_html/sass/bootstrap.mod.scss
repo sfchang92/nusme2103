@@ -224,7 +224,19 @@ body {
 .btn-group-lg>.btn, .btn-lg {
 	//@include border-radius(2px);
 	@include border-radius(24px);
-} 
+}
+.tab-pane .btn-group {
+	@include border-radius(18px);
+	margin-bottom:10px;
+	> .btn:first-child {
+		@include border-top-left-radius(18px);
+		@include border-bottom-left-radius(18px);
+	}
+	> .btn:last-child {
+		@include border-top-right-radius(18px);
+		@include border-bottom-right-radius(18px);
+	}
+}
 /*Back to top button*/
 .btt { 
 	position: fixed;
