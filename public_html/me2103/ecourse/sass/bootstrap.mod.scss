@@ -164,7 +164,7 @@ h3 .gdt {
 	@include hwaccel;
 	@include transition(all 0.5s ease);
 	@include transition-property(opacity, background, box-shadow, bottom, right);
-	z-index: 2;
+	z-index: 1051;
 	.glyphicon-resize-full {
 		display:inline-block;
 	}
@@ -183,10 +183,6 @@ h3 .gdt {
 		@include box-shadow(none);
 	}
 	/*
-	&.fs-btn-show {
-		bottom:10px;
-		@include opacity(0.5);
-	}
 	&.fs-btn-end {
 		@include opacity(1);
 		bottom: 60px;
@@ -197,6 +193,9 @@ h3 .gdt {
 		@include opacity(0);
 		visibility:hidden;
 	}
+	&.fs-btn-show {
+		@include opacity(1);
+	}
 	&.fs-btn-small {
 		span.glyphicon-resize-full {
 			display:none;
@@ -205,6 +204,9 @@ h3 .gdt {
 			display:inline-block;
 		}
 	}
+}
+.close-left {
+	float:left;
 }
 .contactinfo {
 	padding-bottom:8px;
@@ -732,16 +734,16 @@ table{counter-reset:section;}
 		a {
 			display: block;
 			text-decoration: none;
-			color: #444;
+			color: #666;
 			@include transition(background 0.5s ease);
 			&:hover {
 				text-decoration: none;
-				color: #444;
+				color: #666;
 				background: $lgrey;
 			}
 			&:active, &:focus {
 				text-decoration: none;
-				color: #444;
+				color: #666;
 			}
 			&:active{
 				background: $lgrey;
@@ -783,13 +785,13 @@ table{counter-reset:section;}
 	> li {
 		font-size: 16px;
 		&:not(:first-of-type) {
-			border-top:2px solid $lgrey;
+			border-top:1px solid #ddd;
 			&.active {
-				border-top:2px solid $blue;
+				border-top:1px solid $blue;
 			}
 		}
 		&:last-of-type {
-			border-bottom:2px solid #eee;
+			border-bottom:1px solid #ddd;
 		}
 		> a {
 			&:hover, &:hover:focus{
@@ -808,8 +810,19 @@ table{counter-reset:section;}
 			padding-left:0;
 			> li {
 				font-size:12px;
+				&.active {
+					> a:not(:only-child) { 
+						background-color:$lgrey;
+						&+ul {
+							background-color:$lgrey;
+							>li:first-child {
+								border-top:1px solid #ddd;
+							}
+						}
+					}
+				}
 				> ul>li:last-child {
-					border-bottom:1px solid #eee;
+					border-bottom:1px solid #ddd;
 				}
 			}
 		}
@@ -828,6 +841,38 @@ table{counter-reset:section;}
 		}
 	}
 }
+#fullscreen-btn-modal {
+	cursor:pointer;
+	padding-left:0 !important;
+	overflow-y:hidden;
+	&.fade .modal-dialog {
+		@include transform(translate(0,14%));
+	}
+	&.in .modal-dialog {
+		@include transform(translate(0,0));
+	}
+	.modal-dialog {
+		margin:auto;
+		position:absolute;
+		bottom:0;
+		right:0;
+		@include maxwidth(mobile) {
+			left:0;
+		}
+		@include minwidth(tablet) {
+			margin-right:$sidebarw;
+			width:400px;
+		}
+		.modal-content {
+			border:none;
+			@include border-radius(1px);
+			.modal-body p {
+				text-align:right;
+				margin-right:60px;
+			}
+		}
+	}
+}
 .btn-profhome {
 	text-align:left;
 	font-size:14px;
@@ -835,6 +880,9 @@ table{counter-reset:section;}
 	//margin-top:15px;
 	border:none;
 	@include border-radius(0);
+	&.btn-default {
+		color:#666;
+	}
 	.glyphicon {
 		padding-right: 10px;
 	}
@@ -846,6 +894,8 @@ table{counter-reset:section;}
 	background-color:$blue;
 	line-height: $navbarh;
 	text-indent: 15px;
+	z-index:1;
+	@include box-shadow(0 1px 3px rgba(0,0,0,0.2));
 	//@include transition(background 0.5s ease);	
 	&:hover, &:focus {
 		//background-color:$dblue;

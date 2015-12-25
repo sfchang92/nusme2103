@@ -63,9 +63,41 @@ function hasScrolled() {
 	
 $(document).ready(function() {
 	"use strict";
+	
+	//Cookie functions
+	function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+	
+	}
+	function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+    return "";
+	}
+
 	$('[data-toggle="tooltip"]').tooltip();
 	
-	var showLeft = true;
+	if(!(getCookie("fs-btn-shown"))){
+		$("#fullscreen-btn-modal").modal("show");
+		
+		$('#fullscreen-btn-modal').on('shown.bs.modal', function () {
+			$(".fs-btn").addClass("fs-btn-show");
+		});
+		
+		$('#fullscreen-btn-modal').on('hide.bs.modal', function () {
+			$(".fs-btn").removeClass("fs-btn-show");
+			setCookie("fs-btn-shown", 1, 5);
+		});
+	}
+	
 	function toggledOn() {
 		$("#wrapper,body").addClass("toggled");
 		$(".navbar-default").addClass("nav-show");
@@ -88,10 +120,10 @@ $(document).ready(function() {
 		e.preventDefault();
 		toggledOn();
 		setTimeout(function(){
-			if(showLeft) {
+			if(!(getCookie("gesture-left-shown"))) {
 				$("#gesture-left-modal").modal("show");
 			};
-			showLeft = false;
+			setCookie("gesture-left-shown", 1, 5);
 		}, 600);
 	});
 	$("#menu-toggle2,#modal-bg").on("click", function(e) {
