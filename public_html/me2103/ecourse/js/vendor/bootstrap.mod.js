@@ -87,13 +87,16 @@ $(document).ready(function() {
 	
 	if(!(getCookie("fs-btn-shown"))){
 		$("#fullscreen-btn-modal").modal("show");
+		$(".fs-btn").addClass("fs-btn-show");
+		$(".btt").addClass("btt-show-tip");
 		
-		$('#fullscreen-btn-modal').on('shown.bs.modal', function () {
-			$(".fs-btn").addClass("fs-btn-show");
+		$('#back-to-top,#fullscreen-btn').one('click', function () {
+			$("#fullscreen-btn-modal").modal("hide");
 		});
 		
 		$('#fullscreen-btn-modal').on('hide.bs.modal', function () {
 			$(".fs-btn").removeClass("fs-btn-show");
+			$(".btt").removeClass("btt-show-tip");
 			setCookie("fs-btn-shown", 1, 5);
 		});
 	}

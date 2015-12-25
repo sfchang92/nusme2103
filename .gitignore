@@ -235,6 +235,5 @@ _notes/
 .sass-cache/
 trash/
 *.pdf
-viewerJS/
 *.doc
 *.xlsx
