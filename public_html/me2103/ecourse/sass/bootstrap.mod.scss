@@ -200,7 +200,7 @@ h3 .gdt {
 		visibility:hidden;
 	}
 	&.fs-btn-small {
-		span.glyphicon-resize-full {
+		span.glyphicon-fullscreen {
 			display:none;
 		}
 		span.glyphicon-resize-small {
@@ -520,7 +520,7 @@ table{counter-reset:section;}
 	background-color:$blue;
 	border:none;
 	right:0;
-	@include box-shadow(0 1px 3px rgba(0,0,0,0.2));
+	@include box-shadow(0 2px 3px rgba(0,0,0,0.3));
 	@include hwaccel;
 	@include transition(top 0.5s ease, right 0.5s ease);
 	&.nav-hide {

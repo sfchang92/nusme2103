@@ -4,8 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+		
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Home | A/Prof Lee Kim Seng</title>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+		
     <!-- Bootstrap -->
     <link href="css/bootstrap-3.3.6.min.css" rel="stylesheet">
     <link href="css/bootstrap.mod.css" rel="stylesheet">
@@ -65,14 +68,16 @@
                 <li class="dropdown-submenu">
                   <a href="me4262/" class="dropdown-toggle" data-toggle="dropdown">ME 4262 / E</a>
                   <ul class="dropdown-menu">
-                    <li><a href="me4262/ecourse">Course e-learning</a></li>
+                    <li><a href="me4262/ecourse/ME4262_Main.swf">Course e-learning</a></li>
                     <li><a href="me4262/#pptslide">Lecture Slides</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="me4262/#related">Related Links</a></li>
                   </ul>
                 </li>
                 <li class="dropdown-submenu">
                   <a href="me5603/" class="dropdown-toggle" data-toggle="dropdown">ME 5603</a>
                   <ul class="dropdown-menu">
-                    <li><a href="me5603/ecourse">Course e-learning</a></li>
+                    <li><a href="me5603/ecourse/interface.swf">Course e-learning</a></li>
                     <li><a href="me5603/#pptslide">Lecture Slides</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="me5603/#related">Related Links</a></li>
@@ -188,7 +193,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading" role="tab" id="headingOne">
 						<div class="panel-title h4">
-							<a role="button" data-toggle="collapse" data-parent="#accordion,#accordion2" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
+							<a role="button" data-toggle="collapse" data-parent="#accordion,#accordion2" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 								Journal articles - International
 							</a>
 						</div>
@@ -339,6 +344,11 @@
 					</div>
 				</div>			
 			</div>
+			<!-- Interfering with preexisting bootstrap interaction
+			<div role="group" class="btn-group panel-ctrl-btn pull-right" aria-label="Open/Close panels">
+				<button type="button" class="btn btn-default" id="pubexpandall"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span> Expand all</button>
+				<button type="button" class="btn btn-default" id="pubcollapseall"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> Collapse all</button>
+			</div>-->
 		</div>
      
     <!-- Research Students -->
@@ -397,6 +407,11 @@
 					</div>
 				</div>
 			</div>
+			<!-- Interfering with preexisting bootstrap interaction
+			<div role="group" class="btn-group panel-ctrl-btn pull-right" aria-label="Open/Close panels">
+				<button type="button" class="btn btn-default" id="studexpandall"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span> Expand all</button>
+				<button type="button" class="btn btn-default" id="studcollapseall"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> Collapse all</button>
+			</div>-->
     </div><!-- Body container-->
     
     <!-- Footer -->
@@ -443,6 +458,38 @@
 					} else {
 						$('.navbar-default').addClass('clear');
 					}
+				});
+				
+				$(document).ready(function() {
+					$.get("research/publication/1journalint.html", function (data) {
+						$( "#journalint" ).append(data);
+					});
+					$.get("research/publication/2journalloc.html", function (data) {
+						$( "#journalloc" ).append(data);
+					});
+					$.get("research/publication/3confpaper.html", function (data) {
+						$( "#confpaper" ).append(data);
+					});
+					$.get("research/publication/4chapterbook.html", function (data) {
+						$( "#chapterbook" ).append(data);
+					});
+					$.get("research/publication/5journalnonref.html", function (data) {
+						$( "#journalnonref" ).append(data);
+					});
+					$.get("research/publication/6papersptl.html", function (data) {
+						$( "#papersptl" ).append(data);
+					});
+					$.get("research/publication/7pubrep.html", function (data) {
+						$( "#pubrep" ).append(data);
+					});
+					$.get("research/graduate/phdgrad.html", function (data) {
+						$( "#phdgrad" ).append(data);
+					});
+					$.get("research/graduate/megrad.html", function (data) {
+						$( "#megrad" ).append(data);
+					});
+					
+					$(document).anchor({anchorOffset:60});
 				});
 			</script>
 		<![endif]-->
@@ -517,6 +564,9 @@
 				$.get("research/graduate/megrad.html", function (data) {
 					$( "#megrad" ).append(data);
 				});
+			});
+			fallback.ready(function() {
+				$(document).anchor({anchorOffset:65});
 			});
 		</script>
 		<!--<![endif]-->
