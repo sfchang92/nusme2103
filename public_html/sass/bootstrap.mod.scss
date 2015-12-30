@@ -65,11 +65,15 @@ body {
 }
 .panel-default {
   .panel-title a {
+		@include border-top-radius(20px);
+		@include transition(color 0.4s ease);
     &:focus,&:hover {
       text-decoration: none;
     }
 		&:not(.collapsed) {
 			font-weight:700;
+			//background:$vdblue;
+			//color:white
 		}
 		//Caret expanded
     &:before {
@@ -81,7 +85,7 @@ body {
       border-color: transparent;
       border-style: solid;
       border-width: 5px 5px 0;
-      border-top-color: #333;
+      border-top-color: #333; 
       margin-top: 6px;
       margin-right: 10px;
 			@include transition(transform 0.4s ease);
@@ -89,6 +93,7 @@ body {
 		//Caret collapsed
     &.collapsed:before {
 			@include transform(rotate(-90deg));
+			//border-top-color: #333;
 		/*
       border-width: 5px 5px 0 5px;
       border-bottom-color: transparent;
@@ -273,14 +278,17 @@ body {
 	background-color:rgb(18,27,42);
 	@include border-radius(50%); 
 	@include hwaccel;
-	@include transition(opacity 0.5s ease, background 0.5s ease, bottom 0.5s ease, box-shadow 0.5s ease);
+	@include transition(all 0.5s ease);
+	@include transition-property(background, bottom, box-shadow, color, opacity);
 	z-index: 1;
 	@include opacity(0);
 	&:focus {
 		background-color:#1A273D;
 	}
 	&:hover, &:active, &:focus:active {
-		background-color:#314973;
+		background-color:white;
+		color:rgb(18,27,42);
+		@include box-shadow(0 0 8px rgb(18,27,42));
 	}
 	&.btt-show { 
 		@include opacity (0.6);
@@ -536,9 +544,9 @@ body {
 				height: 0;
 				border-color: transparent;
 				border-style: solid;
-				border-width: 0 5px 5px;
-				border-bottom-color: #777;
-				@include minwidth(tablet) {border-bottom-color: $whitet;};
+				border-width: 5px 5px 0;
+				border-top-color: #777;
+				@include minwidth(tablet) {border-top-color: $whitet;};
 				margin-left: 6px;
 				margin-top: 9px;
 				@include maxwidth(mobile) {margin-top:13px};
@@ -556,7 +564,7 @@ body {
 			&:hover > a:after {
 				@include minwidth(tablet) {
 					@include transform(rotate(180deg));
-					border-bottom-color:white;
+					border-top-color:white;
 				/*
 					border-width: 0 5px 5px;
 					border-top-color: transparent;
@@ -566,7 +574,7 @@ body {
 			}
 			&.active > a:after {
 				@include minwidth(tablet) {
-					border-bottom-color:white;
+					border-top-color:white;
 				}
 			}
 		}
@@ -696,20 +704,6 @@ body {
 							color: white;
 							background-color: transparent;
 							@include transition(color 0.2s ease);
-						}
-					}
-				}
-				
-				.dropdown {
-					> a:after {
-						border-top-color: $whitet;
-					}
-					&.open > a:after {
-						border-bottom-color: white;
-					}
-					&:hover > a:after {
-						@include minwidth(tablet) {
-							border-bottom-color: white;
 						}
 					}
 				}

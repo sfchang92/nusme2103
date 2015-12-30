@@ -121,7 +121,7 @@ h3 .gdt {
 	
 	@include hwaccel;
 	@include transition(all 0.5s ease);
-	@include transition-property(opacity, background, box-shadow, bottom, right);
+	@include transition-property(opacity, background, box-shadow, bottom, right, color);
 	@include minwidth(tablet) {
 		right: 15px + $sidebarw;
 	}
@@ -151,15 +151,19 @@ h3 .gdt {
 		@include opacity(1);
 		z-index: 1051;
 	}
+	&:hover,&:focus:hover {
+		@include opacity(1);
+		background:white;
+		color:#286090;
+		@include box-shadow(0 0 10px #286090);
+	}
 }
 .fs-btn {
 	position: fixed;
 	bottom:10px;
 	@include opacity(0.5);
 	right: 15px;
-	padding-top:9px;
-	padding-bottom:9px;
-	text-indent:1px;
+	padding:10px 13px 8px;
 	border:none !important;
 	font-size:20px;
 	visibility:visible;
@@ -170,7 +174,7 @@ h3 .gdt {
 	
 	@include hwaccel;
 	@include transition(all 0.5s ease);
-	@include transition-property(opacity, background, box-shadow, bottom, right);
+	@include transition-property(opacity, background, box-shadow, bottom, right, color);
 	.glyphicon-resize-full {
 		display:inline-block;
 	}
@@ -180,13 +184,16 @@ h3 .gdt {
 	@include minwidth(tablet) {
 		right: 15px + $sidebarw;
 	}
-	&:hover {
-		@include opacity(1);
-	}
 	&:active,&:focus,&.active,&:focus:active {
 		background-image: none;
 		outline: 0;
 		@include box-shadow(none);
+	}
+	&:hover,&:focus:hover {
+		@include opacity(1);
+		background:white;
+		color:#286090;
+		@include box-shadow(0 0 10px #286090);
 	}
 	/*
 	&.fs-btn-end {
