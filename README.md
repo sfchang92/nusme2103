@@ -1,8 +1,8 @@
-# [nus:me2103](http://nusme2103.tk "nus:me2103") website
+# [nus:me2103](http://me2103.tk "nus:me2103") website
 
 Welcome!  __nus:me2103__ is an online teaching aid webpage for NUS Mechanical Engineering module ME2103 Engineering Visualization & Modeling, designed to achieve fully responsive and mobile friendly design. 
 
-Temporary development site on http://nusme2103.tk.
+Temporary development site on http://me2103.tk.
 
 ###credits to:<br>
 * sidr by artberri - https://github.com/artberri/sidr/
