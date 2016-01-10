@@ -141,13 +141,13 @@ $(document).ready(function() {
 	
 	$(".fs-btn").on("click", function() {
     if (screenfull.enabled) {
-			screenfull.toggle(); 
-			if (screenfull.isFullscreen) {
-				$('.fs-btn').addClass('fs-btn-small');
-			}else {
-				$('.fs-btn').removeClass('fs-btn-small');
-			}
+			screenfull.toggle();
     }
+		if (screenfull.isFullscreen) {
+			$('.fs-btn').addClass('fs-btn-small');
+		}else {
+			$('.fs-btn').removeClass('fs-btn-small');
+		}
 	});
 	
 	//AnchorJS initialisation

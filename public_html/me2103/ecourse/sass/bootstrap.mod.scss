@@ -850,9 +850,20 @@ table{counter-reset:section;}
 		margin:auto;
 		//width:300px;
 		//@include transform(translate(7%,0));
+		.modal-header {
+			background-color:$blue;
+			color:white;
+			.close {
+				@include opacity(0.5);
+				color:white;
+			}
+		}
 		.modal-content {
 			border:none;
 			@include border-radius(1px);
+		}
+		.modal-body p{
+			font-weight:400;
 		}
 	}
 }
@@ -877,6 +888,15 @@ table{counter-reset:section;}
 		@include minwidth(tablet) {
 			margin-right:$sidebarw;
 			//width:400px;
+		}
+		.modal-header {
+			background-color:$blue;
+			color:white;
+			text-align:center;
+			.close {
+				@include opacity(0.5);
+				color:white;
+			}
 		}
 		.modal-content {
 			border:none;
