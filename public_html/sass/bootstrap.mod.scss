@@ -58,13 +58,25 @@ body {
 }
 .alert {
 	margin-bottom:0;
+	padding-left:0;
+	padding-right:0;
+	@include border-radius(0);
+	p {
+		margin-bottom:0;
+	}
+	.close {
+		//padding-right:20px;
+		right:0;
+	}
 }
+
 //Panel
 .panel-group .panel {
 	@include border-radius(20px); 
 }
 .panel-default {
   .panel-title a {
+		outline:none;
 		@include border-top-radius(20px);
 		@include transition(color 0.4s ease);
     &:focus,&:hover {
@@ -405,14 +417,14 @@ body {
 			}
 			//Navbar item with menu open
 			&.open > a {
-				//color: white;
+				color: white;
 				background-color: transparent;
-				//@include maxwidth(mobile) {background-color: $lblue;}
+				@include maxwidth(mobile) {color:black};
 				@include transition(color 0.2s ease);
 				&:focus, &:hover {
-					//color: white;
+					color: white;
 					background-color: transparent;
-					@include maxwidth(mobile) {background-color: #eee;}
+					@include maxwidth(mobile) {background-color: #eee;color:black}
 				}
 			}
 			//Navbar item active
@@ -548,12 +560,13 @@ body {
 				border-top-color: #777;
 				@include minwidth(tablet) {border-top-color: $whitet;};
 				margin-left: 6px;
-				margin-top: 9px;
+				margin-top: 8px;
 				@include maxwidth(mobile) {margin-top:13px};
 				@include transition(transform 0.3s ease, border-color 0.3s ease);
 			}
 			&.open > a:after {
 				@include transform(rotate(180deg));
+				@include maxwidth(mobile) {border-top-color:black;};
 			/*
 				border-width: 0 5px 5px;
 				border-top-color: transparent;
@@ -717,7 +730,7 @@ body {
 		//@include transition(background-color 0.2s);
 		&.jhide {
 			background-color: $vdblue;
-			@include transition(background-color 0.2s ease);
+			@include background-image(linear-gradient(30deg,#111c2e,$vdblue));
 			.navbar-brand{
 				@include opacity(1);
 				padding-top:15px;
@@ -1027,4 +1040,112 @@ body.jerror {
 	padding-bottom:10px;
 	height:calc(95vh - 85px);
 	border:none;
+}
+.carousel {
+	background: black;
+	height:500px;
+	img {
+		width: auto;
+		max-height: 500px;
+		height: 100%;
+		&[role=fullscreen] {
+			cursor:-webkit-zoom-in;
+			cursor:zoom-in;
+		}
+	}
+	&.fullscreen {
+		width:100vw;
+		height:100vh;
+		img{
+			max-height:100vh;
+			&[role=fullscreen] {
+				cursor:-webkit-zoom-out;
+				cursor:zoom-out;
+			}
+		}
+	}
+	@include maxwidth(mobile) {
+		height:300px;
+		.carousel-inner {
+			height:300px;
+		}
+		&.fullscreen {
+			.carousel-inner {
+				height:100vh;
+			}
+		}
+		.carousel-inner>.active{
+			position: relative;
+			top: 50%;
+			transform: translate3d(0, -50%, 0);
+		}
+		.carousel-inner>.next,
+		.carousel-inner>.prev{
+			top: 50%;
+			transform: translate3d(0, -50%, 0);
+		}
+		img {
+			max-height: 300px;
+		}
+	}
+	
+	.carousel-caption {
+		right:0;
+		left:0;
+		bottom:0;
+		padding-bottom:10px; 
+		padding-top:5px;
+		background-color:rgba(0,0,0,0.4);
+	}
+	
+	.carousel-indicators {
+		bottom:inherit;
+		top:10px;
+		right:20px;
+		left:auto;
+		width:auto; 
+		margin-left:auto;
+		text-align:right;
+	}
+}
+
+.carousel-fade {
+	.carousel-inner {
+		.item {
+			transition-property: opacity;
+		}
+		
+		.item,
+		.active.left,
+		.active.right {
+			@include opacity(0);
+		}
+
+		.active,
+		.next.left,
+		.prev.right {
+			@include opacity(1);
+			transform: translate3d(0, 0, 0);
+			@include maxwidth(mobile) {
+				top: 50%;
+				transform: translate3d(0, -50%, 0);
+			}
+		}
+
+		.next,
+		.prev,
+		.active.left,
+		.active.right {
+			left: 0;
+			transform: translate3d(0, 0, 0);
+			@include maxwidth(mobile) {
+				top: 50%;
+				transform: translate3d(0, -50%, 0);
+			}
+		}
+	}
+
+	.carousel-control {
+		z-index: 2;
+	}
 }

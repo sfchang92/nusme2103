@@ -24,24 +24,25 @@
   <body>
 		<div>
 		<!--[if lte IE 9]>
-		<div class="alert alert-danger alert-dismissible fade in" role="alert"> 
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> 
-			<h4>Oh snap! 
-				<![if gte IE 8]>Online preview is not supported in Internet Explorer
-					<![if IE 9]> 9.<![endif]>
-					<![if IE 8]> 8.<![endif]>
-				<![endif]>
-				<![if lte IE 7]><br>Your Internet Explorer
-					<![if IE 7]> 7<![endif]>
-					<![if IE 6]> 6<![endif]>
-					<![if lt IE 6]><![endif]>
-					is wayyyyyy too old. Everything is breaking down! Aahhhh~
-				<![endif]>
-			</h4>  
-			<p> 
-				<button type="button" id="gotoDownload" class="btn btn-danger" data-dismiss="alert">Go to download</button> 
-				<button type="button" class="btn btn-default" data-dismiss="alert">Close</button>
-			</p> 
+		<div class="alert alert-danger alert-dismissible fade in" role="alert" data-dismiss="alert"> 
+			<div class="container">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> 
+				<h4><strong>Oh snap!</strong> 
+					<![if gte IE 8]>Online preview is not supported in Internet Explorer
+						<![if IE 9]> 9.<![endif]>
+						<![if IE 8]> 8.<![endif]>
+					<![endif]>
+					<![if lte IE 7]><br>Your Internet Explorer
+						<![if IE 7]> 7<![endif]>
+						<![if IE 6]> 6<![endif]>
+						<![if lt IE 6]><![endif]>
+						is wayyyyyy too old. Everything is breaking down! Aahhhh~
+					<![endif]>
+				</h4>  
+				<p> 
+					<button type="button" id="gotoDownload" class="btn btn-danger" data-dismiss="alert">Go to download</button>
+				</p> 
+			</div>
 		</div><![endif]-->
 		</div>
  		<div id="modal-bg"></div>
@@ -164,29 +165,13 @@
 					<div role="tabpanel" class="tab-pane fade" id="preview"> <![endif]-->
 					<!--[if gt IE 9]><!-->
 					<div role="tabpanel" class="tab-pane fade in active" id="preview"> <!--<![endif]-->
-						<ol>
-							<li class="h4"><a href="../viewerJS/#../me5603/pdf/ME5603_01_MFT_Stress_Yield_Criteria.pdf" title="Preview Online">Yield Criteria, Stress &amp; Strain</a></li>
-							<li class="h4"><a href="../viewerJS/#../me5603/pdf/ME5603_02_MFT_Uni_Bi_axial_tension.pdf" title="Preview Online">Uniaxial &amp; Biaxial Tension</a></li>
-							<li class="h4"><a href="../viewerJS/#../me5603/pdf/ME5603_03_MFT_Deep_Drawing.pdf" title="Preview Online">Deep Drawing</a></li>
-							<li class="h4"><a href="../viewerJS/#../me5603/pdf/ME5603_04_MFT_Extrusion.pdf" title="Preview Online">Extrusion</a></li>
-							<li class="h4"><a href="../viewerJS/#../me5603/pdf/ME5603_05_MFT_Explosive.pdf" title="Preview Online">Explosive Metalworking</a></li>
-							<li class="h4"><a href="../viewerJS/#../me5603/pdf/ME5603_06_MFT_Spin_FlowTurn_FlowForm.pdf" title="Preview Online">Metal Spinning, Flow Turning &amp; Flow Forming</a></li>
-							<li class="h4"><a href="../viewerJS/#../me5603/pdf/ME5603_07_MFT_Wire_Drawing.pdf" title="Preview Online">Wire Drawing</a></li>
-						</ol>
+						<ol></ol>
 					</div>
 					<!--[if lte IE 9]>
 					<div role="tabpanel" class="tab-pane fade in active" id="download"> <![endif]-->
 					<!--[if gt IE 9]><!-->
 					<div role="tabpanel" class="tab-pane fade" id="download"> <!--<![endif]-->
-						<ol>
-							<li class="h4"><a href="pdf/ME5603_01_MFT_Stress_Yield_Criteria.pdf" title="Download PDF">Yield Criteria, Stress &amp; Strain</a></li>
-							<li class="h4"><a href="pdf/ME5603_02_MFT_Uni_Bi_axial_tension.pdf" title="Download PDF">Uniaxial &amp; Biaxial Tension</a></li>
-							<li class="h4"><a href="pdf/ME5603_03_MFT_Deep_Drawing.pdf" title="Download PDF">Deep Drawing</a></li>
-							<li class="h4"><a href="pdf/ME5603_04_MFT_Extrusion.pdf" title="Download PDF">Extrusion</a></li>
-							<li class="h4"><a href="pdf/ME5603_05_MFT_Explosive.pdf" title="Download PDF">Explosive Metalworking</a></li>
-							<li class="h4"><a href="pdf/ME5603_06_MFT_Spin_FlowTurn_FlowForm.pdf" title="Download PDF">Metal Spinning, Flow Turning &amp; Flow Forming</a></li>
-							<li class="h4"><a href="pdf/ME5603_07_MFT_Wire_Drawing.pdf" title="Download PDF">Wire Drawing</a></li>
-						</ol>
+						<ol></ol>
 						<br>
 						<div role="group" class="btn-group" aria-label="Download Buttons">
 							<a href="pdf/ME5603_MFT.zip" title="Download ZIP Archive" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all</a>
@@ -202,73 +187,7 @@
 			<div class="section-header">
 				<h2 id="related">Related links</h2>
 			</div>
-			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-				<div class="panel panel-default">
-					<div class="panel-heading" role="tab" id="headingOne">
-						<div class="panel-title h4">
-							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-								Extrusion
-							</a>
-						</div>
-					</div>
-					<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-						<ul class="list-group" id="extru">
-						</ul>
-					</div>
-				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading" role="tab" id="headingTwo">
-						<div class="panel-title h4">
-							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-								Deep Drawing
-							</a>
-						</div>
-					</div>
-					<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-						<ul class="list-group" id="deepdwg">
-						</ul>
-					</div>
-				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading" role="tab" id="headingThree">
-						<div class="panel-title h4">
-							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-								Metal Spinning, Flow Forming &amp; Flow Turning
-							</a>
-						</div>
-					</div>
-					<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-						<ul class="list-group" id="metalspin">
-						</ul>
-					</div>
-				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading" role="tab" id="headingFour">
-						<div class="panel-title h4">
-							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-								Wire Drawing
-							</a>
-						</div>
-					</div>
-					<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-						<ul class="list-group" id="wiredwg">
-						</ul>
-					</div>
-				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading" role="tab" id="headingFive">
-						<div class="panel-title h4">
-							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-								Explosive Forming
-							</a>
-						</div>
-					</div>
-					<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-						<ul class="list-group" id="exploform">
-						</ul>
-					</div>
-				</div>
-			</div>
+			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"></div>
     </div>
 		
     <!-- Back to top -->
@@ -297,25 +216,7 @@
 			<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 			<script src="../js/bootstrap-3.3.6.min.js"></script>
 			<script src="../js/bootstrap.mod.min.js"></script>
-			<script>
-				$(document).ready(function() {
-					$.get("related/1extru.html", function (data) {
-						$( "#extru" ).append(data);
-					});
-					$.get("related/2deepdwg.html", function (data) {
-						$( "#deepdwg" ).append(data);
-					});
-					$.get("related/3metalspin.html", function (data) {
-						$( "#metalspin" ).append(data);
-					});
-					$.get("related/4wiredwg.html", function (data) {
-						$( "#wiredwg" ).append(data);
-					});
-					$.get("related/5exploform.html", function (data) {
-						$( "#exploform" ).append(data);
-					});
-				});
-			</script>
+			<script> var fallback = $(document); </script>
 		<![endif]-->
 		
 		<!-- For IE9+ or others -->
@@ -342,23 +243,53 @@
 					mod_js: [ 'jQuery','jQuery.fn.modal' ] // global js
 				}
 			});
-			fallback.ready(['jQuery', 'jQuery.fn.modal'], function() {
-				$.get("related/1extru.html", function (data) {
-					$( "#extru" ).append(data);
-				});
-				$.get("related/2deepdwg.html", function (data) {
-					$( "#deepdwg" ).append(data);
-				});
-				$.get("related/3metalspin.html", function (data) {
-					$( "#metalspin" ).append(data);
-				});
-				$.get("related/4wiredwg.html", function (data) {
-					$( "#wiredwg" ).append(data);
-				});
-				$.get("related/5exploform.html", function (data) {
-					$( "#exploform" ).append(data);
-				});
-			});
 		</script><!--<![endif]-->
+		
+		<script>
+			fallback.ready(function() {				
+				var dir = "related/";
+				var data = [
+					{ 
+						categoryid : "accordion",
+						categorydir : "",
+						parent : "#accordion",
+						itemtype : "list",
+						items : [
+							{
+								title : "Extrusion",
+								id: "1extru",
+								expanded: 1
+							},
+							{
+								title : "Deep Drawing",
+								id: "2deepdwg"
+							},
+							{
+								title : "Metal Spinning, Flow Forming &amp; Flow Turning",
+								id: "3metalspin"
+							},
+							{
+								title : "Wire Drawing",
+								id: "4wiredwg"
+							},
+							{							
+								title : "Explosive Forming",
+								id: "5exploform"
+							}
+						]
+					}
+				];
+				
+				insertPanel(data, dir);
+				
+				/*Append preview and download links */
+				var pdfdir = "pdf/";
+				var vjsdir = "../../viewerJS/";
+				var vjspdfdir = "../me5603/";
+				
+				insertDownload("download", pdfdir);
+				insertPreview("preview", pdfdir, vjsdir, vjspdfdir);
+			});
+		</script>
   </body>
 </html>

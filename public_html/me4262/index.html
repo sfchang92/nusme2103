@@ -22,24 +22,25 @@
   </head>
   <body>
 		<!--[if lte IE 9]>
-		<div class="alert alert-danger alert-dismissible fade in" role="alert"> 
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> 
-			<h4>Oh snap! 
-				<![if gte IE 8]>Online preview is not supported in Internet Explorer
-					<![if IE 9]> 9.<![endif]>
-					<![if IE 8]> 8.<![endif]>
-				<![endif]>
-				<![if lte IE 7]><br>Your Internet Explorer
-					<![if IE 7]> 7<![endif]>
-					<![if IE 6]> 6<![endif]>
-					<![if lt IE 6]><![endif]>
-					is wayyyyyy too old. Everything is breaking down! Aahhhh~
-				<![endif]>
-			</h4> 
-			<p> 
-				<button type="button" id="gotoDownload" class="btn btn-danger" data-dismiss="alert">Go to download</button> 
-				<button type="button" class="btn btn-default" data-dismiss="alert">Close</button>
-			</p> 
+		<div class="alert alert-danger alert-dismissible fade in" role="alert" data-dismiss="alert"> 
+			<div class="container">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> 
+				<h4><strong>Oh snap!</strong> 
+					<![if gte IE 8]>Online preview is not supported in Internet Explorer
+						<![if IE 9]> 9.<![endif]>
+						<![if IE 8]> 8.<![endif]>
+					<![endif]>
+					<![if lte IE 7]><br>Your Internet Explorer
+						<![if IE 7]> 7<![endif]>
+						<![if IE 6]> 6<![endif]>
+						<![if lt IE 6]><![endif]>
+						is wayyyyyy too old. Everything is breaking down! Aahhhh~
+					<![endif]>
+				</h4> 
+				<p> 
+					<button type="button" id="gotoDownload" class="btn btn-danger" data-dismiss="alert">Go to download</button> 
+				</p> 
+			</div>
 		</div><![endif]-->
  		<div id="modal-bg"></div>
     <!--Navigation Bar-->
@@ -161,37 +162,13 @@
 					<div role="tabpanel" class="tab-pane fade" id="preview"> <![endif]-->
 					<!--[if gt IE 9]><!-->
 					<div role="tabpanel" class="tab-pane fade in active" id="preview"> <!--<![endif]-->
-						<ol>
-							<li class="h4"><a href="../viewerJS/#../me4262/pdf/ME4262_1_AIM_Ref_and_Topics_2002.pdf" title="Preview Online">Topics &amp; References</a></li>
-							<li class="h4"><a href="../viewerJS/#../me4262/pdf/ME4262_2_AIM_Econ_Justification.pdf" title="Preview Online">Introduction to Automation &amp; Economic Justification</a></li>
-							<li class="h4"><a href="../viewerJS/#../me4262/pdf/ME4262_3_AIM_Fix_and_Transfer_Auto.pdf" title="Preview Online">Fixed &amp; Transferred Automation</a></li>
-							<li class="h4"><a href="../viewerJS/#../me4262/pdf/ME4262_4_AIM_Matl_Handling.pdf" title="Preview Online">Automated Material Handling</a></li>
-							<li class="h4"><a href="../viewerJS/#../me4262/pdf/ME4262_5_AIM_ASRS.pdf" title="Preview Online">Auto Storage &amp; Retrieval System</a></li>
-							<li class="h4"><a href="../viewerJS/#../me4262/pdf/ME4262_6_AIM_FMS.pdf" title="Preview Online">Flexible Manufacturing System</a></li>
-							<li class="h4"><a href="../viewerJS/#../me4262/pdf/ME4262_7_AIM_Automated_Factory.pdf" title="Preview Online">Automated Factory</a></li>
-							<li class="h4"><a href="../ViewerJS/#../me4262/pdf/ME4262_8_Internet_in_E-Manufacturing.pdf" title="Preview Online">Emergence of Internet in E-Manufacturing</a></li>
-						</ol>
-						<ul>
-							<li class="h4"><a href="https://view.officeapps.live.com/op/view.aspx?src=http%3A%2F%2Fme2103.tk%2Fme4262%2Fpdf%2FME4262_Compound_Table.docx" title="Preview Online">Compound Interest Table</a></li>
-						</ul>
+						<ol></ol>
 					</div>
 					<!--[if lte IE 9]>
 					<div role="tabpanel" class="tab-pane fade in active" id="download"> <![endif]-->
 					<!--[if gt IE 9]><!-->
 					<div role="tabpanel" class="tab-pane fade" id="download"> <!--<![endif]-->
-						<ol>
-							<li class="h4"><a href="pdf/ME4262_1_AIM_Ref_and_Topics_2002.pdf" title="Preview Online">Topics &amp; References</a></li>
-							<li class="h4"><a href="pdf/ME4262_2_AIM_Econ_Justification.pdf" title="Preview Online">Introduction to Automation &amp; Economic Justification</a></li>
-							<li class="h4"><a href="pdf/ME4262_3_AIM_Fix_and_Transfer_Auto.pdf" title="Preview Online">Fixed &amp; Transferred Automation</a></li>
-							<li class="h4"><a href="pdf/ME4262_4_AIM_Matl_Handling.pdf" title="Preview Online">Automated Material Handling</a></li>
-							<li class="h4"><a href="pdf/ME4262_5_AIM_ASRS.pdf" title="Preview Online">Auto Storage &amp; Retrieval System</a></li>
-							<li class="h4"><a href="pdf/ME4262_6_AIM_FMS.pdf" title="Preview Online">Flexible Manufacturing System</a></li>
-							<li class="h4"><a href="pdf/ME4262_7_AIM_Automated_Factory.pdf" title="Preview Online">Automated Factory</a></li>
-							<li class="h4"><a href="pdf/ME4262_8_Internet_in_E-Manufacturing.pdf" title="Preview Online">Emergence of Internet in E-Manufacturing</a></li>
-						</ol>
-						<ul>
-							<li class="h4"><a href="pdf/ME4262_Compound_Table.docx" title="Download">Compound Interest Table</a></li>
-						</ul>
+						<ol></ol>
 						<br>
 						<div role="group" class="btn-group" aria-label="Download Buttons">
 							<a href="pdf/ME4262_AIM.zip" title="Download ZIP Archive" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all</a>
@@ -207,47 +184,8 @@
 			<div class="section-header">
 				<h2 id="related">Related links</h2>
 			</div>
-			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-				<div class="panel panel-default">
-					<div class="panel-heading" role="tab" id="headingOne">
-						<div class="panel-title h4">
-							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-								Automation / Fixed &amp; Transferred Automation
-							</a>
-						</div>
-					</div>
-					<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-						<ul class="list-group" id="autotrans">
-						</ul>
-					</div>
-				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading" role="tab" id="headingTwo">
-						<div class="panel-title h4">
-							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-								Automated Material Handling / Auto Storage &amp; Retrieval System
-							</a>
-						</div>
-					</div>
-					<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-						<ul class="list-group" id="automat">
-						</ul>
-					</div>
-				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading" role="tab" id="headingThree">
-						<div class="panel-title h4">
-							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-								Flexible Manufacturing System / Automated Factory
-							</a>
-						</div>
-					</div>
-					<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-						<ul class="list-group" id="flexmanf">
-						</ul>
-					</div>
-				</div>
-			</div>
+			<!-- Panel Group -->
+			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"></div>
 		</div>
 				
     <!-- Back to top -->
@@ -276,19 +214,7 @@
 			<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 			<script src="../js/bootstrap-3.3.6.min.js"></script>
 			<script src="../js/bootstrap.mod.min.js"></script>
-			<script>
-				$(document).ready(function() {
-					$.get("related/1autotrans.html", function (data) {
-						$( "#autotrans" ).append(data);
-					});
-					$.get("related/2automat.html", function (data) {
-						$( "#automat" ).append(data);
-					});
-					$.get("related/3flexmanf.html", function (data) {
-						$( "#flexmanf" ).append(data);
-					});
-				});
-			</script>
+			<script> var fallback = $(document); </script>
 		<![endif]-->
 		
 		<!-- For IE9+ or others -->
@@ -315,17 +241,45 @@
 					mod_js: [ 'jQuery','jQuery.fn.modal' ] // global js
 				}
 			});
-			fallback.ready(['jQuery', 'jQuery.fn.modal'], function() {
-				$.get("related/1autotrans.html", function (data) {
-					$( "#autotrans" ).append(data);
-				});
-				$.get("related/2automat.html", function (data) {
-					$( "#automat" ).append(data);
-				});
-				$.get("related/3flexmanf.html", function (data) {
-					$( "#flexmanf" ).append(data);
-				});
-			});
 		</script><!--<![endif]-->
+		
+		<script>
+			fallback.ready(function() {			
+				var dir = "related/";
+				var data = [
+					{ 
+						categoryid : "accordion",
+						categorydir : "",
+						parent : "#accordion",
+						itemtype : "list",
+						items : [
+							{
+								title : "Automation / Fixed &amp; Transferred Automation",
+								id: "1autotrans",
+								expanded: 1
+							},
+							{
+								title : "Automated Material Handling / Auto Storage &amp; Retrieval System",
+								id: "2automat"
+							},
+							{
+								title : "Flexible Manufacturing System / Automated Factory",
+								id: "3flexmanf"
+							}
+						]
+					}
+				];
+				
+				insertPanel(data, dir);
+				
+				/*Append preview and download links */
+				var pdfdir = "pdf/";
+				var vjsdir = "../../viewerJS/";
+				var vjspdfdir = "../me4262/";
+				
+				insertDownload("download", pdfdir);
+				insertPreview("preview", pdfdir, vjsdir, vjspdfdir);
+			});
+		</script>
   </body>
 </html>

@@ -22,24 +22,25 @@
   </head>
   <body>
 		<!--[if lte IE 9]>
-		<div class="alert alert-danger alert-dismissible fade in" role="alert"> 
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> 
-			<h4>Oh snap! 
-				<![if gte IE 8]>Online preview is not supported in Internet Explorer
-					<![if IE 9]> 9.<![endif]>
-					<![if IE 8]> 8.<![endif]>
-				<![endif]>
-				<![if lte IE 7]><br>Your Internet Explorer
-					<![if IE 7]> 7<![endif]>
-					<![if IE 6]> 6<![endif]>
-					<![if lt IE 6]><![endif]>
-					is wayyyyyy too old. Everything is breaking down! Aahhhh~
-				<![endif]>
-			</h4>  
-			<p> 
-				<button type="button" id="gotoDownload" class="btn btn-danger" data-dismiss="alert">Go to download</button> 
-				<button type="button" class="btn btn-default" data-dismiss="alert">Close</button>
-			</p> 
+		<div class="alert alert-danger alert-dismissible fade in" role="alert" data-dismiss="alert">
+			<div class="container">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> 
+				<h4><strong>Oh snap!</strong> 
+					<![if gte IE 8]>Online preview is not supported in Internet Explorer
+						<![if IE 9]> 9.<![endif]>
+						<![if IE 8]> 8.<![endif]>
+					<![endif]>
+					<![if lte IE 7]><br>Your Internet Explorer
+						<![if IE 7]> 7<![endif]>
+						<![if IE 6]> 6<![endif]>
+						<![if lt IE 6]><![endif]>
+						is wayyyyyy too old. Everything is breaking down! Aahhhh~
+					<![endif]>
+				</h4>  
+				<p> 
+					<button type="button" id="gotoDownload" class="btn btn-danger" data-dismiss="alert">Go to download</button> 
+				</p> 
+			</div>
 		</div><![endif]-->
  		<div id="modal-bg"></div>
     <!--Navigation Bar-->
@@ -162,27 +163,13 @@
 					<div role="tabpanel" class="tab-pane fade" id="preview"> <![endif]-->
 					<!--[if gt IE 9]><!-->
 					<div role="tabpanel" class="tab-pane fade in active" id="preview"> <!--<![endif]-->
-						<ol>
-							<li class="h4"><a href="../viewerJS/#../me3263/pdf/ME3263_1_Injection_Moulding.pdf" title="Preview Online">Injection Moulding Process</a></li>
-							<li class="h4"><a href="../viewerJS/#../me3263/pdf/ME3263_2_Injection_Moulding.pdf" title="Preview Online">Injection Moulding Analysis</a></li>
-							<li class="h4"><a href="../viewerJS/#../me3263/pdf/ME3263_3_Injection_Moulding.pdf" title="Preview Online">Design for Injection Moulding</a></li>
-						</ol>
-						<ul>
-							<li class="h4"><a href="../viewerJS/#../me3263/pdf/ME3263_Mold_cost_example.pdf" title="Preview Online">Mold Cost Example</a></li>
-						</ul>
+						<ol></ol>
 					</div>
 					<!--[if lte IE 9]>
 					<div role="tabpanel" class="tab-pane fade in active" id="download"> <![endif]-->
 					<!--[if gt IE 9]><!-->
 					<div role="tabpanel" class="tab-pane fade" id="download"> <!--<![endif]-->
-						<ol>
-							<li class="h4"><a href="pdf/ME3263_1_Injection_Moulding.pdf" title="Download PDF">Injection Moulding Process</a></li>
-							<li class="h4"><a href="pdf/ME3263_2_Injection_Moulding.pdf" title="Download PDF">Injection Moulding Analysis</a></li>
-							<li class="h4"><a href="pdf/ME3263_3_Injection_Moulding.pdf" title="Download PDF">Design for Injection Moulding</a></li>
-						</ol>
-						<ul>
-							<li class="h4"><a href="pdf/ME3263_Mold_cost_example.pdf" title="Download PDF">Mold Cost Example</a></li>
-						</ul>
+						<ol></ol>
 						<br>
 						<div role="group" class="btn-group" aria-label="Download Buttons">
 							<a href="pdf/ME3263_DMA.zip" title="Download ZIP Archive" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all</a>
@@ -219,6 +206,7 @@
 			<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 			<script src="../js/bootstrap-3.3.6.min.js"></script>
 			<script src="../js/bootstrap.mod.min.js"></script>
+			<script> var fallback = $(document); </script>
 		<![endif]-->
 		
 		<!-- For IE9+ or others -->
@@ -245,7 +233,18 @@
 					mod_js: [ 'jQuery','jQuery.fn.modal' ] // global js
 				}
 			});
+		</script>	<!--<![endif]-->
+		
+		<script>
+			fallback.ready(function() {	
+				/*Append preview and download links */
+				var pdfdir = "pdf/";
+				var vjsdir = "../../viewerJS/";
+				var vjspdfdir = "../me3263/";
+				
+				insertDownload("download", pdfdir);
+				insertPreview("preview", pdfdir, vjsdir, vjspdfdir);
+			});
 		</script>
-		<!--<![endif]-->
   </body>
 </html>
