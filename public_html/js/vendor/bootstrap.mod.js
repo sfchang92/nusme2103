@@ -4,6 +4,7 @@
 
 function insertPanel(data, dir) {
 	"use strict";
+	
 	var count = 0;
 	var expandedSwitch = [
 		{
@@ -17,40 +18,68 @@ function insertPanel(data, dir) {
 			collapseClass : ""
 		}
 	];
+	var regexp = new RegExp("\.html");
 	
 	$.each(data, function(i, panelData) {
-		$.each(panelData.items, function(j, itemData) {
-			var isExpanded = itemData.expanded ? expandedSwitch[0] : expandedSwitch[1];
-			var bodySkeleton = "";
-			switch(panelData.itemtype) {
-				case "table" :
-					bodySkeleton = "<table class='table'><thead><tr></tr></thead><tbody id='" + itemData.id + "'></tbody></table>";
-					break;
-				case "list" :
-					bodySkeleton = "<ul class='list-group' id=" + itemData.id + "></ul>";
-					break;
+		$.ajax({
+			url: dir + panelData.categorydir,
+			success: function (data) {
+				//List all pdf in the page
+				var first = panelData.expandfirstitem ? 1:0;
+				
+				$(data).find("a").filter(function () {return regexp.test(this.href);}).each(function () {
+					var filename = this.href.substr(this.href.lastIndexOf('/') + 1);
+					var name = filename.replace(regexp, "").replace(/%20/g, " ").replace(/&frasl/g, "/").split('_');
+					
+					var isExpanded = first ? expandedSwitch[0] : expandedSwitch[1];
+					
+					var bodySkeleton;
+					switch(panelData.itemtype) {
+						case "table" :
+							bodySkeleton = "<table class='table'><thead><tr></tr></thead><tbody id='" + name[0] + "'></tbody></table>";
+							break;
+						case "list" :
+							bodySkeleton = "<ul class='list-group' id=" + name[0] + "></ul>";
+							break;
+						default :
+							bodySkeleton = "";
+					}
+					
+					$("#" + panelData.categoryid).append(
+						"<div class='panel panel-default'>
+							<div class='panel-heading' role='tab' id='heading" + count + "'>
+								<div class='panel-title h4'>
+									<a role='button' data-toggle='collapse' data-parent='" + panelData.parent + "' href='#collapse" + count + "' aria-expanded='" + isExpanded.ariaExpanded + "' aria-controls='collapse" + count + "' class='" + isExpanded.titleClass + "' onclick='panelScroll()'>
+										" + name[1] + "
+									</a>
+								</div>
+							</div>
+							<div id='collapse" + count + "' class='panel-collapse collapse" + isExpanded.collapseClass + "' role='tabpanel' aria-labelledby='heading" + count + "'>
+								"+ bodySkeleton +"
+							</div>
+						</div>"
+					);
+					if (panelData.itemtype === "table") {
+						addThead(panelData.th, "collapse" + count);
+					}
+					appendToId(dir + panelData.categorydir, filename, name[0]);
+					count++;
+					first = 0;
+				});
 			}
-			
-			$("#" + panelData.categoryid).append(
-				"<div class='panel panel-default'>
-					<div class='panel-heading' role='tab' id='heading" + count + "'>
-						<div class='panel-title h4'>
-							<a role='button' data-toggle='collapse' data-parent='" + panelData.parent + "' href='#collapse" + count + "' aria-expanded='" + isExpanded.ariaExpanded + "' aria-controls='collapse" + count + "' class='" + isExpanded.titleClass + "'>
-								" + itemData.title + "
-							</a>
-						</div>
-					</div>
-					<div id='collapse" + count + "' class='panel-collapse collapse" + isExpanded.collapseClass + "' role='tabpanel' aria-labelledby='heading" + count + "'>
-						"+ bodySkeleton +"
-					</div>
-				</div>"
-			);
-			if (panelData.itemtype === "table") {
-				addThead(panelData.th, "collapse" + count);
-			}
-			appendToId(dir + panelData.categorydir, itemData.id + ".html", itemData.id);
-			count++;
 		});
+	});
+}
+
+/* Scroll to active panel */
+function panelScroll() {
+	"use strict";
+	$('.panel-group').one('shown.bs.collapse', function () {
+		var panelExpanded = $(this).find('.in');
+		
+		$('html, body').animate({
+			scrollTop: panelExpanded.offset().top - 92
+		}, 400);
 	});
 }
 
@@ -145,8 +174,7 @@ function goFullscreen(target) {
 		}
 	}
 }
-
-
+	
 $(document).ready(function() {
 	"use strict";
 	
@@ -179,18 +207,6 @@ $(document).ready(function() {
 			$('.btt').removeClass('btt-end');
 			$('.arrow').addClass('arrow-hide');
 		}
-	});
-	
-	//Panel scroll to active heading
-	$('.panel-group .panel-title a').on("click", function() {
-		$('.panel-group').one('shown.bs.collapse', function () {
-		
-			var panel = $(this).find('.in');
-		
-			$('html, body').animate({
-				scrollTop: panel.offset().top - 92
-			}, 400);
-		});
 	});
 	
 	/*Blur when open menu*/

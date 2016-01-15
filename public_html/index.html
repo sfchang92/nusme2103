@@ -188,7 +188,6 @@
 			<div class="section-header">
 				<h2>Research publications</h2>
 			</div>
-			<!-- Panel Group 1 -->
 			<div class="panel-group" id="publication" role="tablist" aria-multiselectable="true"></div>
 		</div>
      
@@ -197,7 +196,6 @@
 			<div class="section-header">
 				<h2>Research students</h2>
 			</div>
-			<!-- Panel Group 1 -->
 			<div class="panel-group" id="graduate" role="tablist" aria-multiselectable="true"></div>
     </div><!-- Body container-->
     
@@ -293,54 +291,14 @@
 						parent : "#publication, #graduate", //panel parent, only one panel can expand at a time in a parent
 						th : thead.publication, //table headings
 						itemtype : "table", //list or table
-						items : [
-							{
-								title : "Journal articles - International",
-								id: "1journalint",
-								expanded: 1
-							},
-							{
-								title : "Journal articles - Local/Regional",
-								id: "2journalloc"
-							},
-							{
-								title : "Conference Papers",
-								id: "3confpaper"
-							},
-							{
-								title : "Chapter in Books",
-								id: "4chapterbook"
-							},
-							{							
-								title : "Journal articles - Non-refereed",
-								id: "5journalnonref"
-							},
-							{
-								title : "Papers for Seminar, Public Talk and Lecture",
-								id: "6papersptl"
-							},
-							{
-								title : "Published reports",
-								id: "7pubrep"
-							}
-						]
+						expandfirstitem : 1
 					},
 					{
-						categoryid : "graduate", //panel group id
-						categorydir : "graduate/", //panel group subdirectory
-						parent : "#publication, #graduate", //panel parent, only one panel can expand at a time in a parent
-						th : thead.graduate, //table headings
-						itemtype : "table", //list or table
-						items : [
-							{
-								title : "Ph.D. graduates",
-								id: "1phdgrad"
-							},
-							{
-								title : "M Eng graduates",
-								id: "2megrad"
-							}
-						]
+						categoryid : "graduate",
+						categorydir : "graduate/",
+						parent : "#publication, #graduate",
+						th : thead.graduate,
+						itemtype : "table"
 					}
 				];
 				insertPanel(data, dir);
