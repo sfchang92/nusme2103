@@ -18,7 +18,7 @@ function insertPanel(data, dir) {
 			collapseClass : ""
 		}
 	];
-	var regexp = new RegExp("\.html");
+	var regexp = new RegExp(".html$", "i");
 	
 	$.each(data, function(i, panelData) {
 		$.ajax({
@@ -28,11 +28,10 @@ function insertPanel(data, dir) {
 				var first = panelData.expandfirstitem ? 1:0;
 				
 				$(data).find("a").filter(function () {return regexp.test(this.href);}).each(function () {
-					var filename = this.href.substr(this.href.lastIndexOf('/') + 1);
-					var name = filename.replace(regexp, "").replace(/%20/g, " ").replace(/&frasl/g, "/").split('_');
-					
+					var name = this.href.substr(this.href.lastIndexOf('/') + 1).replace(regexp, "").replace(/%20/g, " ").replace(/&frasl%3b/g, "/").split('_');
 					var isExpanded = first ? expandedSwitch[0] : expandedSwitch[1];
 					
+					//console.log("this.href: "+this.href);
 					var bodySkeleton;
 					switch(panelData.itemtype) {
 						case "table" :
@@ -46,23 +45,24 @@ function insertPanel(data, dir) {
 					}
 					
 					$("#" + panelData.categoryid).append(
-						"<div class='panel panel-default'>
-							<div class='panel-heading' role='tab' id='heading" + count + "'>
-								<div class='panel-title h4'>
-									<a role='button' data-toggle='collapse' data-parent='" + panelData.parent + "' href='#collapse" + count + "' aria-expanded='" + isExpanded.ariaExpanded + "' aria-controls='collapse" + count + "' class='" + isExpanded.titleClass + "' onclick='panelScroll()'>
-										" + name[1] + "
-									</a>
-								</div>
-							</div>
-							<div id='collapse" + count + "' class='panel-collapse collapse" + isExpanded.collapseClass + "' role='tabpanel' aria-labelledby='heading" + count + "'>
-								"+ bodySkeleton +"
-							</div>
-						</div>"
+						"<div class='panel panel-default'>" +
+							"<div class='panel-heading' role='tab' id='heading" + count + "'>" +
+								"<div class='panel-title h4'>" +
+									"<a role='button' data-toggle='collapse' data-parent='" + panelData.parent + "' href='#collapse" + count + "' aria-expanded='" + isExpanded.ariaExpanded + "' aria-controls='collapse" + count + "' class='" + isExpanded.titleClass + "' onclick='panelScroll()'>" +
+										name[1] +
+									"</a>" +
+								"</div>" +
+							"</div>" +
+							"<div id='collapse" + count + "' class='panel-collapse collapse" + isExpanded.collapseClass + "' role='tabpanel' aria-labelledby='heading" + count + "'>" +
+								bodySkeleton +
+							"</div>" +
+						"</div>"
 					);
 					if (panelData.itemtype === "table") {
 						addThead(panelData.th, "collapse" + count);
 					}
-					appendToId(dir + panelData.categorydir, filename, name[0]);
+					//console.log(location.href.slice(0,location.href.lastIndexOf('/') + 1) + dir + panelData.categorydir + this.getAttribute('href'));
+					appendToId(location.href.slice(0,location.href.lastIndexOf('/') + 1) + dir + panelData.categorydir + this.getAttribute('href'), name[0]);
 					count++;
 					first = 0;
 				});
@@ -78,7 +78,7 @@ function panelScroll() {
 		var panelExpanded = $(this).find('.in');
 		
 		$('html, body').animate({
-			scrollTop: panelExpanded.offset().top - 92
+			scrollTop: panelExpanded.offset().top - 105
 		}, 400);
 	});
 }
@@ -92,25 +92,24 @@ function addThead(th, id) {
 }
 
 /*Append data to id*/
-function appendToId(dir, filename, id) {
+function appendToId(path, id) {
 	"use strict";
-	$.get(dir + filename, function(data) {
+	$.get(path, function(data) {
 		$( "#" + id ).append(data);
 	});
 }
 
 function insertDownload(id, filedir) {
 	"use strict";
-	var regexp = new RegExp("\.pdf");
+	var regexp = new RegExp(".pdf$", "i");
 	$.ajax({
 		url: filedir,
 		success: function (data) {
 			//List all pdf in the page
-			$(data).find("a").filter(function () {return regexp.test(this.href)}).each(function () {
-				var filename = this.href.substr(this.href.lastIndexOf('/') + 1);
-				var name = filename.substr(filename.lastIndexOf('_') + 1).replace(regexp, "").replace(/%20/g, " ");
+			$(data).find("a").filter(function () {return regexp.test(this.href);}).each(function () {
+				var name = this.href.substr(this.href.lastIndexOf('_') + 1).replace(regexp, "").replace(/%20/g, " ");
 				
-				$("#" + id + " ol").append("<li class='h4'><a href='"+ filedir + filename +"' title='Preview Online'>"+ name +"</a></li>");
+				$("#" + id + " ol").append("<li class='h4'><a href='"+ filedir + this.getAttribute('href') +"' title='Preview Online'>"+ name +"</a></li>");
 			});
 		}
 	});
@@ -118,27 +117,89 @@ function insertDownload(id, filedir) {
 
 function insertPreview(id, filedir, vjsdir, vjspdfdir) {
 	"use strict";
-	var regexp = new RegExp("\.pdf");
+	var regexp = new RegExp(".pdf$", "i");
 	$.ajax({
 		url: filedir,
 		success: function (data) {
 			//List all images in the page
 			$(data).find("a").filter(function () {return regexp.test(this.href);}).each(function () {
-				var filename = this.href.substr(this.href.lastIndexOf('/') + 1);
-				var name = filename.substr(filename.lastIndexOf('_') + 1).replace(regexp, "").replace(/%20/g, " ");
+				var name = this.href.substr(this.href.lastIndexOf('_') + 1).replace(regexp, "").replace(/%20/g, " ");
 				
-				$("#" + id + " ol").append("<li class='h4'><a href='"+ vjsdir + "#" + vjspdfdir + filedir + filename + "' title='Download PDF'>"+ name +"</a></li>");
+				$("#" + id + " ol").append("<li class='h4'><a href='"+ vjsdir + "#" + vjspdfdir + "/" + filedir + this.getAttribute('href') + "' title='Download PDF'>"+ name +"</a></li>");
 			});
 		}
 	});
 }
 
-/*Carousel image add to page*/
+function insertCarousel(root) {
+	"use strict";
+	var regexp = new RegExp("^[^/]+/$", "i");
+	$.ajax({
+		url: root,
+		success: function (data) {
+			$(data).find("a").filter(function () {return regexp.test(this.href.replace(location.href.slice(0,location.href.lastIndexOf('/') + 1),""));}).each(function () {
+				var dirname = this.href.replace(location.href.slice(0,location.href.lastIndexOf('/')+1),"").replace("/","");
+				var id = dirname.replace(/%20/g,"");
+				
+				$("#carousel-insert").before("<div class='container container-carousel'>"+
+					"<div class='row'>"+
+						"<div id='"+ id +"' class='carousel slide carousel-fade' data-ride='carousel' data-interval='15000'>"+
+							"<h2 class='carousel-title'>"+dirname.replace(/%20/g," ")+"</h2>"+
+							"<ol class='carousel-indicators'></ol>" + 
+							"<div class='carousel-inner' role='listbox'></div>" + 
+							"<a class='left carousel-control' href='#" + id + "' role='button' data-slide='prev'><span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span><span class='sr-only'>Previous</span></a>" +
+							"<a class='right carousel-control' href='#" + id + "' role='button' data-slide='next'><span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span><span class='sr-only'>Next</span></a>"+
+						"</div>"+
+					"</div>"+
+				"</div>"
+				);
+				insertCarouselImage(root, dirname, id);
+			});
+		}
+	});
+	if (screenfull.enabled) {
+		document.addEventListener(screenfull.raw.fullscreenchange, function () {
+			if(!screenfull.isFullscreen) {
+				$(".carousel").removeClass("fullscreen");
+			}
+		});
+	}
+}
+
+function insertCarouselImage(root, dirname, id){
+	"use strict";
+	var regexp = new RegExp(".(png|jpe?g|gif)$", "i");
+	$.ajax({
+		//This will retrieve the contents of the folder if the folder is configured as 'browsable'
+		url: root + dirname,
+		success: function (data) {
+			var count = 0;
+			//List all images in the page
+			$(data).find("a").filter(function () {return regexp.test(this.href);}).each(function () {
+				var name = this.href.substr(this.href.lastIndexOf('_') + 1).replace(regexp, "").replace(/%20/g, " ");
+				var isFirst = (!count ? "active":"");
+
+				$("#" + id + " .carousel-indicators").append("<li data-target='#" + id + "' data-slide-to='"+ count + "' class='" + isFirst + "'></li>");
+				
+				count++;
+				
+				$("#" + id + " .carousel-inner").append("<div class='item " + isFirst + "'><img src='" + root + dirname + "/" + this.getAttribute('href') + "' alt='" + name + "' onclick='goFullscreen(" + id + ")' role='fullscreen' class='center-block'><div class='carousel-caption'><h4 class='no-anchor'>" + name + "</h4></div></div>");
+			}); 
+		}
+	});
+}
+
+/*Carousel image add to page
 function carouselImage(root, id) {
 	"use strict";
-	var regexp = new RegExp("\.png|\.jpg|\.gif");				
+	var regexp = new RegExp(".(png|jpe?g|gif)", "i");
 	$.each(id, function(i, dir) {
-		$("#" + dir).append("<ol class='carousel-indicators'></ol> <div class='carousel-inner' role='listbox'></div> <a class='left carousel-control' href='#" + dir + "' role='button' data-slide='prev'><span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span><span class='sr-only'>Previous</span></a><a class='right carousel-control' href='#" + dir + "' role='button' data-slide='next'><span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span><span class='sr-only'>Next</span></a>");
+		$("#" + dir).append(
+			"<ol class='carousel-indicators'></ol>" + 
+			"<div class='carousel-inner' role='listbox'></div>" + 
+			"<a class='left carousel-control' href='#" + dir + "' role='button' data-slide='prev'><span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span><span class='sr-only'>Previous</span></a>" +
+			"<a class='right carousel-control' href='#" + dir + "' role='button' data-slide='next'><span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span><span class='sr-only'>Next</span></a>"
+		);
 		$.ajax({
 			//This will retrieve the contents of the folder if the folder is configured as 'browsable'
 			url: root + dir,
@@ -146,35 +207,43 @@ function carouselImage(root, id) {
 				var count = 0;
 				//List all images in the page
 				$(data).find("a").filter(function () {return regexp.test(this.href);}).each(function () {
-					var filename = this.href.substr(this.href.lastIndexOf('/') + 1);
-					var name = filename.substr(filename.lastIndexOf('_') + 1).replace(regexp, "").replace(/%20/g, " ");
+					var name = this.href.substr(this.href.lastIndexOf('_') + 1).replace(regexp, "").replace(/%20/g, " ");
 					var isFirst = (!count ? "active":"");
 
 					$("#" + dir + " .carousel-indicators").append("<li data-target='#" + dir + "' data-slide-to='"+ count + "' class='" + isFirst + "'></li>");
 					
 					count++;
 					
-					$("#" + dir + " .carousel-inner").append("<div class='item " + isFirst + "'><img src='" + root + dir + "/" + filename + "' alt='" + name + "' onclick='goFullscreen(" + dir + ")' role='fullscreen' class='center-block'><div class='carousel-caption'><h4 class='no-anchor'>" + name + "</h4></div></div>");
+					$("#" + dir + " .carousel-inner").append("<div class='item " + isFirst + "'><img src='" + root + dir + "/" + this.getAttribute('href') + "' alt='" + name + "' onclick='goFullscreen(" + dir + ")' role='fullscreen' class='center-block'><div class='carousel-caption'><h4 class='no-anchor'>" + name + "</h4></div></div>");
 				}); 
 			}
 		});
-	});	
-}
+	});
 
+	if (screenfull.enabled) {
+    document.addEventListener(screenfull.raw.fullscreenchange, function () {
+			if(!screenfull.isFullscreen) {
+				$(".carousel").removeClass("fullscreen");
+			}
+    });
+	}	
+}
+*/
 /*Carousel image click to fullscreen*/
 function goFullscreen(target) {
 	"use strict";
 	if (screenfull.enabled) {
 		if(screenfull.isFullscreen) {
 			screenfull.exit(target);
-			$(target).removeClass("fullscreen");
+			//$(target).removeClass("fullscreen");
 		}else{
 			screenfull.request(target);
 			$(target).addClass("fullscreen");
 		}
 	}
 }
-	
+
+
 $(document).ready(function() {
 	"use strict";
 	
@@ -254,5 +323,4 @@ $(document).ready(function() {
 			$("#homepagejumbo .container").css("min-height", 0);
 		}
 	});
-
 });

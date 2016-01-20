@@ -47,8 +47,8 @@
                   <a href="../me2103" class="dropdown-toggle" data-toggle="dropdown" title="Engineering Visualization & Modelling">ME 2103</a> 
                   <ul class="dropdown-menu">
                     <li><a href="../me2103/ecourse">Course e-learning</a></li>
-                    <li><a href="../me2103/cadcourse">CAD Tutorial e-learning</a></li>
-                    <li><a href="../me2103/swcourse">Solidworks e-learning</a></li>
+                    <li><a href="../me2103/cadcourse">CAD modeling guide</a></li>
+                    <li><a href="../me2103/swcourse">Intro to SolidWorks</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="../me2103/#pptslide">Lecture Slides</a></li>
                     <li role="separator" class="divider"></li>
@@ -105,35 +105,7 @@
 			<p>Press image to view in <strong>fullscreen</strong> (or exit fullscreen).</p>
 		</div>
 		
-		<div class="container white">
-			<h2>Section 1</h2>
-			<div class="row">
-				<div class="col-lg-12">
-					<!-- Carousel 1 -->
-					<div id="section1" class="carousel slide carousel-fade" data-ride="carousel"></div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="container white">			
-			<h2>Section 2</h2>
-			<div class="row">
-				<div class="col-lg-12">
-					<!-- Carousel 2 -->
-					<div id="section2" class="carousel slide carousel-fade" data-ride="carousel"></div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="container white">			
-			<h2>Section 3</h2>
-			<div class="row">
-				<div class="col-lg-12">
-					<!-- Carousel 2 -->
-					<div id="section3" class="carousel slide carousel-fade" data-ride="carousel"></div>
-				</div>
-			</div>
-    </div>
+		<br id="carousel-insert">
     
     <footer class="footer">
       <div class="container-fluid whitebg">
@@ -190,9 +162,8 @@
 		<script>
 			fallback.ready(function() {
 				var rootdir = "../images/photos/";
-				var location = ["section1",	"section2", "section3"];
 				
-				carouselImage(rootdir, location);
+				insertCarousel(rootdir);
 			});
 		</script>
   </body>

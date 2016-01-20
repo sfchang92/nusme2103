@@ -225,6 +225,7 @@ pip-log.txt
 *.psd
 *.svg
 *.jpg
+*.bmp
 
 ########################
 ## NUSME2103 specific
@@ -232,6 +233,7 @@ pip-log.txt
 _notes/
 *.zip
 *.wmv
+*.mp4
 .sass-cache/
 trash/
 *.pdf
@@ -239,3 +241,5 @@ trash/
 *.xlsx
 *.swf
 *.docx
+*.SLDPRT
+*.exe
