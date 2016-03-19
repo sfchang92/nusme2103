@@ -4,10 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Chrome, Firefox OS and Opera -->
+		<meta name="theme-color" content="#337ab7">
+		<!-- Windows Phone -->
+		<meta name="msapplication-navbutton-color" content="#337ab7">
 		
 		<!--Page title and icon-->
-    <title>10 - Welding Symbol Representation | ME2103 e-Learning</title>
+    <title>10 - Interpenetration | ME2103 e-Learning</title>
 		<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+		<link rel="icon" sizes="192x192" href="../../favicon-highres.png">
 		
     <!-- Stylesheets -->
     <link href="../../css/bootstrap-3.3.6.min.css" rel="stylesheet">
@@ -82,7 +87,7 @@
 			</div>
 		</div>
 		<![endif]-->
-		</div> <!-- Browser compatibility alert ends -->
+		</div>
 		
 		<!-- Top header bar -->
 		<nav class="navbar navbar-default">
@@ -95,7 +100,7 @@
           <span class="icon-bar bottom-bar"></span>
         </button>
 				<!-- Header -->
-        <div class="container container-navbar-brand"><span role="button" class="navbar-brand" id="back-to-top2">Conventions &amp; symmetry</span></div>
+        <div class="container container-navbar-brand"><a tabindex="0" role="button" class="navbar-brand" id="back-to-top2" data-toggle="popover" data-trigger="hover click" data-placement="auto bottom" data-content="<img src='qrcode.png' alt='QR Code' height='128' width='128'/>">Interpenetration</a></div>
       </div>
 		</nav>
 		
@@ -103,10 +108,10 @@
     	<div id="modal-bg"></div>
 			
 			<!-- Sidebar menu -->
-			<div id="sidebar-wrapper">
+			<div id="sidebar-wrapper"><div style="direction:ltr;">
 				<div class="sidebar-brand">
 					<a role="button" href="../../">ME2103 e-Learning</a>
-					<button type="button" class="navbar-toggle toggled" id="menu-toggle2">
+					<button type="button" class="navbar-toggle" id="menu-toggle2">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar top-bar"></span>
 						<span class="icon-bar middle-bar"></span>
@@ -117,49 +122,69 @@
 					<li>
 						<a href="../../" role="button">Home</a>
 		      </li>
-					<li><a class="collapse-button" data-toggle="collapse" href="#collapseChapter" aria-expanded="true" aria-controls="collapseChapter">Chapters</a>
-						<ul class="collapse in" id="collapseChapter">
+					<li><a class="collapse-button collapsed" data-toggle="collapse" href="#collapseChapter" aria-expanded="false" aria-controls="collapseChapter">Chapters</a>
+						<ul class="collapse" id="collapseChapter">
 							<li><a href="../1/">1 - Introduction</a></li>
 							<li><a href="../2/">2 - Principles of projection</a></li>
 							<li><a href="../3/">3 - Sectioning &amp; dimensioning</a></li>
-							<li><a href="../4/">4 - Interpenetration</a></li>
-							<li><a href="../5/">5 - Development</a></li>
+							<li><a href="../4/">4 - Isometric &amp; orthographic sketching</a></li>
+							<li><a href="../5/">5 - Limits, fits &amp; geometrical tolerances</a></li>
 							<li><a href="../6/">6 - Conventions &amp; symmetry</a></li>
 							<li><a href="../7/">7 - Screws &amp; nuts</a></li>
 							<li><a href="../8/">8 - Keys, coupling &amp; locking devices</a></li>
-							<li><a href="../9/" id="prechp">9 - Limits, fits &amp; geometrical tolerances</a></li>
-							<li><a class="collapse-button" data-toggle="collapse" href="#collapse1" aria-expanded="true" aria-controls="collapse1">10 - Welding symbols representation</a>
-								<ul class="collapse in" id="collapse1">
-									<li><a href="#weld">10.1 - Introduction</a></li>
-									<li><a href="#type">10.2 - Basic types of weld</a>
-										<ul>
-											<li><a href="#butt">10.2.1 - Butt weld</a></li>
-											<li><a href="#fillet">10.2.2 - Fillet weld</a></li>
-										</ul>
-									</li>
-									<li><a href="#methodrep">10.3 - Methods of representation</a></li>
-									<li><a href="#weldsym">10.4 - Welding symbols</a>
-										<ul>
-											<li><a href="#onsite">10.4.1 - On-site weld</a></li>
-											<li><a href="#symint">10.4.2 - Symbol &amp; interpretation</a></li>
-											<li><a href="#symrepspec">10.4.3 - Symbols for specific welds</a></li>
-											<li><a href="#supp">10.4.4 - Supplementary symbol</a>
-												<ul>
-													<li><a href="#usesupp">10.4.4.1 - Use of supp. symbol</a></li>
-												</ul>
-											</li>
-										</ul>
-									</li>
-									<li><a href="#methodjoin">10.5 - Method of joining</a></li>
-									<li><a href="#castweld">10.6 - Difference btw casting &amp; welding</a></li>
-								</ul>
-							</li>
+							<li><a href="../9/" id="prechp">9 - Welding symbols representation</a></li>
 						</ul>
 					</li>
-					
+					<li><a class="collapse-button" data-toggle="collapse" href="#collapseExtra" aria-expanded="true" aria-controls="collapseExtra">Extra chapters</a>
+						<ul class="collapse in" id="collapseExtra">
+							<li><a class="collapse-button" data-toggle="collapse" href="#collapse1" aria-expanded="true" aria-controls="collapse1">10 - Interpenetration</a>
+								<ul class="collapse in" id="collapse1">
+									<li><a href="#intro">10.1 - Introduction</a></li>
+									<li><a href="#basicsect">10.2 - Basic sectioning</a>
+										<ul>
+											<li><a href="#bscone">10.2.1 - Basic sectioning of cone</a>
+												<ul>
+													<li><a href="#bsconecir">10.2.1.1 - Circle</a></li>
+													<li><a href="#bsconeell">10.2.1.2 - Ellipse</a></li>
+													<li><a href="#bsconehyperbola">10.2.1.3 - Hyperbola</a></li>
+													<li><a href="#bsconepar">10.2.1.4 - Parabola</a></li>
+													<li><a href="#bsconetri">10.2.1.5 - Triangle</a></li>
+												</ul>
+											</li>
+											<li><a href="#bscyl">10.2.2 - Basic sectioning of cylinder</a></li>
+											<li><a href="#bselb">10.2.3 - Basic sectioning of elbow</a></li>
+											<li><a href="#bssph">10.2.4 - Basic sectioning of sphere</a></li>
+											<li><a href="#bshmsph">10.2.5 - Basic sectioning of hemisphere</a></li>
+										</ul>
+									</li>
+									<li><a href="#intsolid">10.3 - Interpenetration of two solids</a>
+										<ul>
+											<li><a href="#intuneqpipe">10.3.1 - Two unequal diameter pipes</a></li>
+											<li><a href="#inteqpipe">10.3.2 - Two equal diameter pipes</a></li>
+											<li><a href="#intcylspe">10.3.3 - Special case for cylinders</a></li>
+											<li><a href="#inttwocones">10.3.4 - Two cones</a></li>
+											<li><a href="#intconehcyl">10.3.5 - Cone &amp; h cylinder</a></li>
+											<li><a href="#intconeshcyl">10.3.6 - Cone &amp; small h cylinder</a></li>
+											<li><a href="#intconehxg">10.3.7 - Cone &amp; hexagon</a></li>
+											<li><a href="#intconevcyl">10.3.8 - Cone &amp; v cylinder</a></li>
+											<li><a href="#intconevtprism">10.3.9 - Cone &amp; v triangular prism</a></li>
+											<li><a href="#intcuttower">10.3.10 - Cut tower</a></li>
+											<li><a href="#intcylsltcyl">10.3.11 - Cylinder &amp; slant cylinder</a></li>
+											<li><a href="#inthmsphelb">10.3.12 - Hemisphere &amp; elbow</a></li>
+											<li><a href="#intpyrtriprism">10.3.13 - Pyramid &amp; triangular prism</a></li>
+											<li><a href="#intsltcylsltcone">10.3.14 - Slant cylinder &amp; slant cone</a></li>
+											<li><a href="#intsqprislttripri">10.3.15 - Sq prism &amp; slant tri prism</a></li>
+											<li><a href="#intsqtriprism">10.3.16 - Sq prism &amp; triangular prism</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="../11/" id="nextchp">11 - Development</a></li>
+						</ul>
+					</li>
 				</ul>
 				<a role="button" class="btn btn-block btn-primary btn-lg btn-profhome" href="../../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Prof Homepage</a>
-			</div>
+			</div></div>
 			
 			<!-- Content -->
 			<div id="page-content-wrapper">
@@ -168,182 +193,302 @@
 					
 						<!-- Section 1 -->
 						<div class="row">
-							<div class="section-header"><h1 id="weld">10.1 Introduction</h1></div>
-							<p>Welding provides a means of building up an assembly by joining together plates, bars, pipes and other standard sections.</p>
-							<p>The process is also useful in cases where castings, forgings and pre-machined parts have to be fabricated into a main assembly.</p>
-							<p>Welded fabrications are usually cheaper than castings for small batch or one-off jobs because the need for expensive patterns does not arise.</p>
+							<div class="section-header"><h1 id="intro">10.1 Introduction</h1></div>
+							<p>Interpenetration occurs when two solids penetrate each other to form one solid. In other words, two different objects such as a regular square based prism and a regular triangular based prism join together to make one complete object. The lines created by this join are known as lines of interpenetration. These lines may be either straight or curved, depending on the nature or orientation of the objects involved.</p>
+							<div class="row row-border-between">
+								<div class="col-md-6">
+									<br>
+									<div class="row">
+										<div class="col-xs-8 col-xs-offset-2 col-md-12 col-md-offset-0 col-lg-10 col-lg-offset-1">
+											<img alt="Intersection between Curved Surfaces" src="../../images/10/intcs.jpg">
+										</div>
+										<div class="col-xs-12 col-lg-12">
+											<br><p>If <em>curved surfaces</em> intersect, or if <em>curved surfaces and plane surfaces</em> intersect, the figure of intersection will be composed of curves.</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="row">
+										<div class="col-xs-8 col-xs-offset-2 col-md-12 col-md-offset-0 col-lg-10 col-lg-offset-1">
+											<img alt="Intersection between Plane Surfaces" src="../../images/10/intps.jpg">
+										</div>
+										<div class="col-xs-12 col-lg-12">
+											<p>If two solids that are composed of <em>plane surfaces</em> intersect, the figure of intersection will be composed of straight lines.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<p>The main shapes associated with this topic are:</p> 
+							<ul>
+								<li>Prisms (both regular and irregular)</li>
+								<li>Cylinders</li>
+								<li>Spheres</li>
+								<li>Cones</li>
+								<li>Pyramids (both regular and irregular)</li>
+							</ul>
+							<p><small>Note that some shapes may require an <em>auxiliary view</em> for completion of the question.</small></p>
 						</div><!-- Section 1 ends -->
 						
 						<!-- Section 2 -->
 						<div class="row">
-							<div class="section-header"><h1 id="type">10.2 Basic types of weld</h1></div>
-							<h2 id="butt">10.2.1 Butt weld</h2>
-							<p>The centerline of one workpiece passes through the weld before meeting the centerline of the other workpiece</p>
+							<div class="section-header"><h1 id="basicsect">10.2 Basic sectioning</h1></div>
+							<h2 id="bscone">10.2.1 Basic sectioning of cone</h2>
 							<div class="row">
-								<div class="col-xs-3 col-md-3">
-									<img alt="Butt Weld 1" src="../../images/10/buttweld2.jpg">
-								</div>
-								<div class="col-xs-9 col-md-4">
-									<img alt="Butt Weld 2" src="../../images/10/buttweld.jpg">
+								<div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+									<img src="../../images/10/bscone.jpg" alt="Basic Sectioning of Cone"/>
 								</div>
 							</div>
-							<h2 id="fillet">10.2.2 Fillet weld</h2>
-							<p>The centerline of one workpiece does not pass through the weld before meeting the centerline of the other workpiece</p>
+							<div class="row row-border-between">
+								<div class="col-md-6">
+									<h3 id="bsconecir">10.2.1.1 Circle</h3>
+									<div class="row">
+										<div class="col-xs-7 col-md-8">
+											<img src="../../images/10/bsconecir.png" alt="Basic Sectioning of Cone: Circle"/>
+										</div>
+										<div class="col-xs-3 col-md-4 col-lg-3">
+											<img src="../../images/10/bsconecir2.jpg" alt="Basic Sectioning of Cone: Circle 2D"/>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<h3 id="bsconeell">10.2.1.2 Ellipse</h3>
+									<div class="row">
+										<div class="col-xs-7 col-md-8">
+											<img src="../../images/10/bsconeell.png" alt="Basic Sectioning of Cone: Ellipse"/>
+										</div>
+										<div class="col-xs-3 col-md-4 col-lg-3">
+											<img src="../../images/10/bsconeell2.jpg" alt="Basic Sectioning of Cone: Ellipse 2D"/>
+										</div>
+									</div>
+								</div>
+							</div>
+							<hr class="visible-md visible-lg">
+							<div class="row row-border-between">
+								<div class="col-md-6">
+									<h3 id="bsconehyperbola">10.2.1.3 Hyperbola</h3>
+									<div class="row">
+										<div class="col-xs-6 col-md-8">
+											<img src="../../images/10/bsconehyp.png" alt="Basic Sectioning of Cone: Hyperbola"/>
+										</div>
+										<div class="col-xs-6 col-md-8">
+											<img src="../../images/10/bsconehyp2.jpg" alt="Basic Sectioning of Cone: Hyperbola 2D"/>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<h3 id="bsconepar">10.2.1.4 Parabola</h3>
+									<div class="row">
+										<div class="col-xs-6 col-md-8">
+											<img src="../../images/10/bsconepar.png" alt="Basic Sectioning of Cone: Parabola"/>
+										</div>
+										<div class="col-xs-6 col-md-8">
+											<img src="../../images/10/bsconepar2.jpg" alt="Basic Sectioning of Cone: Parabola 2D"/>
+										</div>
+									</div>
+								</div>
+							</div>
+							<hr class="visible-md visible-lg">
 							<div class="row">
-								<div class="col-xs-3 col-md-3">
-									<img alt="Fillet Weld 1" src="../../images/10/filletweld2.jpg">
+								<div class="col-md-6">
+									<h3 id="bsconetri">10.2.1.5 Triangle</h3>
+									<div class="row">
+										<div class="col-xs-6 col-md-8">
+											<img src="../../images/10/bsconetri.png" alt="Basic Sectioning of Cone: Triangle"/>
+										</div>
+										<div class="col-xs-6 col-md-8">
+											<img src="../../images/10/bsconetri2.jpg" alt="Basic Sectioning of Cone: Triangle 2D"/>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h2 id="bscyl">10.2.2 Basic sectioning of cylinder</h2>
+							<div class="row">
+								<div class="col-xs-11 col-md-5">
+									<img alt="Basic Sectioning of Cylinder 1" src="../../images/10/bscyl1.jpg">
+								</div>
+								<div class="col-xs-6 col-md-3">
+									<img alt="Basic Sectioning of Cylinder 2" src="../../images/10/bscyl2.jpg">
 								</div>
 								<div class="col-xs-9 col-md-4">
-									<img alt="Fillet Weld 2" src="../../images/10/filletweld.jpg">
+									<img alt="Basic Sectioning of Cylinder 3" src="../../images/10/bscyl3.jpg">
+								</div>
+							</div>
+							<h2 id="bselb">10.2.3 Basic sectioning of elbow</h2>
+							<div class="row">
+								<div class="col-xs-8 col-xs-offset-2 col-md-5">
+									<img alt="Basic Sectioning of Elbow 1" src="../../images/10/bselb1.jpg">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-4">
+									<img alt="Basic Sectioning of Elbow 2" src="../../images/10/bselb2.jpg">
+								</div>
+								<div class="col-xs-4">
+									<img alt="Basic Sectioning of Elbow 3" src="../../images/10/bselb3.jpg">
+								</div>
+								<div class="col-xs-4">
+									<img alt="Basic Sectioning of Elbow 4" src="../../images/10/bselb4.jpg">
+								</div>
+							</div>
+							<h2 id="bssph">10.2.4 Basic sectioning of sphere</h2>
+							<div class="row">
+								<div class="col-xs-8 col-md-6">
+									<img alt="Basic Sectioning of Shpere" src="../../images/10/bssph.jpg">
+								</div>
+							</div>
+							<h2 id="bshmsph">10.2.5 Basic sectioning of hemisphere</h2>
+							<div class="row">
+								<div class="col-xs-8 col-md-6">
+									<img alt="Basic Sectioning of Hemisphere" src="../../images/10/bshmsph.jpg">
 								</div>
 							</div>
 						</div><!-- Section 2 ends -->
 						
 						<!-- Section 3 -->
 						<div class="row">
-							<div class="section-header"><h1 id="methodrep">10.3 Methods of representation</h1></div>
+							<div class="section-header"><h1 id="intsolid">10.3 Interpenetration of two solids</h1></div>
+							<h2 id="intuneqpipe">10.3.1 Two unequal diameter pipes</h2>
 							<div class="row">
-								<div class="col-md-6">
-									<img alt="Methods of Representation" src="../../images/10/methodofrep.jpg">
+								<div class="col-xs-8 col-md-6">
+									<img alt="Interpenetration of Two Unequal Diameter Pipes" src="../../images/10/intuneqpipe.jpg">
+								</div>
+							</div>
+							<h2 id="inteqpipe">10.3.2 Two equal diameter pipes</h2>
+							<div class="row">
+								<div class="col-xs-8 col-md-6">
+									<img alt="Interpenetration of Two Equal Diameter Pipes" src="../../images/10/inteqpipe.jpg">
+								</div>
+							</div>
+							<h2 id="intcylspe">10.3.3 Special case for cylinders</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Special Case for Cylinders 1" src="../../images/10/intcylspe1.jpg">
+								</div>
+								<div class="col-xs-6 col-md-6">
+									<img alt="Special Case for Cylinders 2" src="../../images/10/intcylspe2.jpg">
+								</div>
+							</div>
+							<h2 id="inttwocones">10.3.4 Two cones</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Two Cones 1" src="../../images/10/inttwocones1.png">
+								</div>
+								<div class="col-xs-3 col-md-3">
+									<img alt="Interpenetration of Two Cones 2" src="../../images/10/inttwocones2.jpg">
+								</div>
+							</div>
+							<h2 id="intconehcyl">10.3.5 Cone with horizontal cylinder</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Cone with Horizontal Cylinder 1" src="../../images/10/intconhcyl1.png">
+								</div>
+								<div class="col-xs-5 col-md-5">
+									<img alt="Interpenetration of Cone with Horizontal Cylinder 2" src="../../images/10/intconhcyl2.jpg">
+								</div>
+							</div>
+							<h2 id="intconeshcyl">10.3.6 Cone with small horizontal cylinder</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Cone with Small Horizontal Cylinder 1" src="../../images/10/intconeshcyl1.png">
+								</div>
+								<div class="col-xs-5 col-md-5">
+									<img alt="Interpenetration of Cone with Small Horizontal Cylinder 2" src="../../images/10/intconeshcyl2.jpg">
+								</div>
+							</div>
+							<h2 id="intconehxg">10.3.7 Cone with hexagon</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Cone with Hexagon 1" src="../../images/10/intconehxg1.png">
+								</div>
+								<div class="col-xs-3 col-md-3">
+									<img alt="Interpenetration of Cone with Hexagon 2" src="../../images/10/intconehxg2.jpg">
+								</div>
+							</div>
+							<h2 id="intconevcyl">10.3.8 Cone with vertical cylinder</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Cone with Vertical Cylinder 1" src="../../images/10/intconevcyl1.png">
+								</div>
+								<div class="col-xs-3 col-md-3">
+									<img alt="Interpenetration of Cone with Vertical Cylinder 2" src="../../images/10/intconevcyl2.jpg">
+								</div>
+								<div class="col-xs-3 col-md-2">
+									<img alt="Interpenetration of Cone with Vertical Cylinder 3" src="../../images/10/intconevcyl3.jpg">
+								</div>
+							</div>
+							<h2 id="intconevtprism">10.3.9 Cone with vertical triangular prism</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Cone with Vertical Triangular Prism 1" src="../../images/10/intconevtprism1.png">
+								</div>
+								<div class="col-xs-3 col-md-2">
+									<img alt="Interpenetration of Cone with Vertical Triangular Prism 2" src="../../images/10/intconevtprism2.jpg">
+								</div>
+							</div>
+							<h2 id="intcuttower">10.3.10 Cut tower</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Cut Tower 1" src="../../images/10/intcuttower1.png">
+								</div>
+								<div class="col-xs-3 col-md-3">
+									<img alt="Interpenetration of Cut Tower 2" src="../../images/10/intcuttower2.jpg">
+								</div>
+							</div>
+							<h2 id="intcylsltcyl">10.3.11 Cylinder with slant cylinder</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Cylinder with Slant Cylinder 1" src="../../images/10/intcylsltcyl1.png">
+								</div>
+								<div class="col-xs-3 col-md-3">
+									<img alt="Interpenetration of Cylinder with Slant Cylinder 2" src="../../images/10/intcylsltcyl2.jpg">
+								</div>
+							</div>
+							<h2 id="inthmsphelb">10.3.12 Hemisphere with elbow</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Hemisphere with Elbow 1" src="../../images/10/inthmsphelb1.png">
+								</div>
+								<div class="col-xs-5 col-md-5">
+									<img alt="Interpenetration of Hemisphere with Elbow 2" src="../../images/10/inthmsphelb2.jpg">
+								</div>
+							</div>
+							<h2 id="intpyrtriprism">10.3.13 Pyramid with triangular prism</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Pyramid with Triangular Prism 1" src="../../images/10/intpyrtriprism1.png">
+								</div>
+								<div class="col-xs-3 col-md-3">
+									<img alt="Interpenetration of Pyramid with Triangular Prism 2" src="../../images/10/intpyrtriprism2.jpg">
+								</div>
+							</div>
+							<h2 id="intsltcylsltcone">10.3.14 Slant cylinder with slant cone</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Slant Cylinder with Slant Cone 1" src="../../images/10/intsltcylsltcone1.png">
+								</div>
+								<div class="col-xs-4 col-md-4">
+									<img alt="Interpenetration of Slant Cylinder with Slant Cone 2" src="../../images/10/intsltcylsltcone2.jpg">
+								</div>
+							</div>
+							<h2 id="intsqprislttripri">10.3.15 Square prism with slant triangular prism</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Square Prism with Slant Triangular Prism 1" src="../../images/10/intsqprislttripri1.png">
+								</div>
+								<div class="col-xs-5 col-md-5">
+									<img alt="Interpenetration of Square Prism with Slant Triangular Prism 2" src="../../images/10/intsqprislttripri2.jpg">
+								</div>
+							</div>
+							<h2 id="intsqtriprism">10.3.16 Square prism with triangular prism</h2>
+							<div class="row">
+								<div class="col-xs-6 col-md-6">
+									<img alt="Interpenetration of Square Prism with Triangular Prism 1" src="../../images/10/intsqtriprism1.png">
+								</div>
+								<div class="col-xs-5 col-md-5">
+									<img alt="Interpenetration of Square Prism with Triangular Prism 2" src="../../images/10/intsqtriprism2.jpg">
 								</div>
 							</div>
 						</div><!-- Section 3 ends -->
-						
-						<!-- Section 4 -->
-						<div class="row">
-							<div class="section-header"><h1 id="weldsym">10.4 Welding symbols</h1></div>
-							<h2 id="onsite">10.4.1 On-site weld</h2>
-							<div class="row">
-								<div class="col-md-4">
-									<img alt="Symbol for On-site Weld" src="../../images/10/symonsiteweld.jpg">
-								</div>
-								<div class="col-md-4">
-									<blockquote>
-										<p>ISO 2553-1984</p>
-										<p>BS 499-1980</p>
-									</blockquote>
-								</div>
-							</div>
-							<h2 id="symint">10.4.2 Symbol and interpretation</h2>
-							<!-- Carousel -->
-							<div class="row">
-								<div class="col-md-8">
-									<!-- Carousel -->
-									<div id="carousel1" class="carousel carousel-dark" data-ride="carousel" data-interval="0">
-										<ol class="carousel-indicators">
-											<li data-target="#carousel1" data-slide-to="0" class="active"></li>
-											<li data-target="#carousel1" data-slide-to="1"></li>
-											<li data-target="#carousel1" data-slide-to="2"></li>
-											<li data-target="#carousel1" data-slide-to="3"></li>
-											<li data-target="#carousel1" data-slide-to="4"></li>
-										</ol>
-										<div class="carousel-inner" role="listbox">
-											<div class="item active"><img src="../../images/10/symrep1.jpg" alt="First slide image" class="center-block">
-												<div class="carousel-caption">
-												</div>
-											</div>
-											<div class="item"><img src="../../images/10/symrep2.jpg" alt="Second slide image" class="center-block">
-												<div class="carousel-caption">
-												</div>
-											</div>
-											<div class="item"><img src="../../images/10/symrep3.jpg" alt="Third slide image" class="center-block">
-												<div class="carousel-caption">
-												</div>
-											</div>
-											<div class="item"><img src="../../images/10/symrep4.jpg" alt="Fourth slide image" class="center-block">
-												<div class="carousel-caption">
-												</div>
-											</div>
-											<div class="item"><img src="../../images/10/symrep5.jpg" alt="Fifth slide image" class="center-block">
-												<div class="carousel-caption">
-												</div>
-											</div>
-										</div>
-										<a class="left carousel-control" href="#carousel1" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#carousel1" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>
-									</div><!-- Carousel ends -->
-								</div>
-							</div>
-							<h2 id="symrepspec">10.4.3 Symbols for specific welds</h2>
-							<div class="row">
-								<div class="col-md-8">
-									<!-- Carousel -->
-									<div id="carousel2" class="carousel carousel-dark" data-ride="carousel" data-interval="0">
-										<ol class="carousel-indicators">
-											<li data-target="#carousel2" data-slide-to="0" class="active"></li>
-											<li data-target="#carousel2" data-slide-to="1"></li>
-											<li data-target="#carousel2" data-slide-to="2"></li>
-											<li data-target="#carousel2" data-slide-to="3"></li>
-										</ol>
-										<div class="carousel-inner" role="listbox">
-											<div class="item active"><img src="../../images/10/symrepspec1.jpg" alt="First slide image" class="center-block">
-												<div class="carousel-caption">
-												</div>
-											</div>
-											<div class="item"><img src="../../images/10/symrepspec2.jpg" alt="Second slide image" class="center-block">
-												<div class="carousel-caption">
-												</div>
-											</div>
-											<div class="item"><img src="../../images/10/symrepspec3.jpg" alt="Third slide image" class="center-block">
-												<div class="carousel-caption">
-												</div>
-											</div>
-											<div class="item"><img src="../../images/10/symrepspec4.jpg" alt="Fourth slide image" class="center-block">
-												<div class="carousel-caption">
-												</div>
-											</div>
-										</div>
-										<a class="left carousel-control" href="#carousel2" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#carousel2" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>
-									</div><!-- Carousel ends -->
-								</div>
-							</div>
-							<h2 id="supp">10.4.4 Supplementary symbol for shape of weld support</h2>
-							<div class="row">
-								<div class="col-md-6">
-									<img alt="Supplementary Symbol" src="../../images/10/symsupp.jpg">
-								</div>
-							</div>
-							<h3 id="usesupp">10.4.4.1 Use of supplementary symbol</h3>
-							<div class="row">
-								<div class="col-md-6">
-									<img alt="Use of Supplementary Symbol" src="../../images/10/symsuppuse.jpg">
-								</div>
-							</div>
-							<h2 id="elem">10.4.5 Use of elementary symbols</h2>
-							<div class="row">
-								<div class="col-md-6">
-									<img alt="Use of Elementary Symbol 1" src="../../images/10/symelemuse1.jpg">
-								</div>
-								<div class="col-md-6">
-									<img alt="Use of Elementary Symbol 2" src="../../images/10/symelemuse2.jpg">
-								</div>
-							</div>
-						</div> <!-- Section 4 ends -->
-						
-						<!-- Section 5 -->
-						<div class="row">
-							<div class="section-header"><h1 id="methodjoin">10.5 Method of joining</h1></div>
-							<div class="row">
-								<div class="col-md-6">
-									<img alt="Method of Joining" src="../../images/10/methodjoin.jpg">
-								</div>
-								<div class="col-md-6">
-									<img alt="Quality of Weld Configuration" src="../../images/10/weldconfig.jpg">
-								</div>
-							</div>
-						</div><!-- Section 5 ends -->
-						
-						<!-- Section 6 -->
-						<div class="row">
-							<div class="section-header"><h1 id="castweld">10.6 Difference between casting &amp; welding</h1></div>
-							<div class="row">
-								<div class="col-md-6">
-									<img alt="Difference between Casting &amp; Welding 1" src="../../images/10/castweld1.jpg">
-								</div>
-								<div class="col-md-6">
-									<img alt="Difference between Casting &amp; Welding 2" src="../../images/10/castweld2.jpg">
-								</div>
-							</div>
-						</div><!-- Section 6 ends -->
 					</div>
 				</div>
 				
@@ -352,7 +497,7 @@
 					<div class="pager">
 						<div role="group" class="btn-group btn-group-lg" aria-label="Chapter Navigation">
 							<button type="button" class="btn btn-primary" onclick="document.getElementById('prechp').click()"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Chapter 9</button>
-							<button type="button" class="btn btn-primary" disabled="disabled"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Thats it!</button>
+							<button type="button" class="btn btn-primary" onclick="document.getElementById('nextchp').click()"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Chapter 11</button>
 						</div>
 					</div>
 				</div>
@@ -364,7 +509,7 @@
 			<div class="container-fluid">
 				<div class="container">
 					<div class="row">
-						<div class="footer-left"><a role="button" href="../../misc/">&copy; 2015-2016 Chang Sin Fung. All rights reserved.</a></div>
+						<div class="footer-left"><a role="button" href="../../misc/">Designed by Chang Sin Fung 2016</a></div>
 						<div class="footer-right">
 							<a href="//www.nus.edu.sg/" title="National University of Singapore" target="_blank">
 								<img src="../../images/nuslogo.jpg" alt="NUS logo">				
@@ -385,10 +530,10 @@
     <button type="button" class="btn btn-primary pull-right fs-btn" id="fullscreen-btn" title="Go fullscreen">
 			<span class="glyphicon glyphicon-fullscreen"></span>
 			<span class="glyphicon glyphicon-resize-small"></span>
-			<span class="sr-only">Back to Top</span>
+			<span class="sr-only">Fullscreen</span>
 		</button>
 		
-		<!-- Script support for Internet Explorer 8 or less -->
+		<!-- Support for Internet Explorer 8 or less -->
 		<!--[if lt IE 9]>
 			<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 			<script src="../../js/bootstrap-3.3.6.min.js"></script>
@@ -400,9 +545,17 @@
 			</script>
 		<![endif]-->
 		
-		<!-- Scripts for IE9+ or others -->
+		<!-- For IE9+ or others -->
 		<!--[if gte IE 9]><!-->
-		<script src="../../js/fallback.min.js"></script>
+		<script>
+			(function(l,k){var b={g:[],w:{},A:0,head:k.getElementsByTagName("head")[0],a:{},p:0,f:[],e:{},m:0,d:{},c:{},r:0,t:function(){for(var a in b.k)b.k[a]&&b.v(b.k[a])},k:["Array","Function","Object","String"],v:function(a){b["is_"+a.toLowerCase()]=function(f){return"undefined"!==typeof f&&Object.prototype.toString.call(f)=="[object "+a+"]"}},i:function(a){this.is_function(a)||(a=function(){});return a},n:function(a,f){for(var c in a)if(a[c]===f)return c;return-1},is_defined:function(a){try{if(eval("window."+
+			a))return!0}catch(f){}return!1},importer:function(a,f){var c,b,d,g,h,k,l,m={};for(d in a)if(g=a[d])this.is_string(g)&&(g=[g]),this.is_array(g)&&(c=[],this.is_array(this.a[d])&&(c=this.a[d]),m[d]=g,this.a[d]=c.concat(g));g={};if(this.is_object(f)&&(this.is_object(f.shim)||(this.is_object(f.deps)?f.shim=f.deps:this.is_object(f.dependencies)&&(f.shim=f.dependencies)),this.is_object(f.shim)))for(h in k=f.shim,k)if(c=k[h],this.a[h]&&c&&(this.is_string(c)&&(c=[c]),this.is_array(c))){l=[];for(b in c)d=c[b],
+			this.a[d]&&d!==h&&l.push(d);c=[];this.is_array(this.d[h])&&(c=this.d[h]);g[h]=l;this.d[h]=c.concat(l)}return{a:m,d:g}},css:{}};b.css.l=function(a){if(!k.styleSheets)return!1;var f,c,e;for(f in k.styleSheets)if(c=k.styleSheets[f],0!==c)try{if(c.rules&&(e=b.css.q(c.rules,a))||c.cssRules&&(e=b.css.q(c.cssRules,a)))return e}catch(d){}return!1};b.css.q=function(a,b){var c,e;for(c in a)if(e=a[c],e.selectorText===b)return!0;return!1};b.load=function(a,b,c){var e,d;if(!this.is_object(a))return!1;this.is_function(b)&&
+			(c=b,b={});this.is_object(b)||(b={});a=this.importer(a,b);for(e in a.a)d=a.a[e],this.d[e]||this.b(e,d);this.is_function(b.callback)&&this.ready([],b.callback);this.is_function(c)&&this.ready([],c)};b.ready=function(a,b){var c,e;if(this.is_function(a))b=a,a=[];else{if(!this.is_array(a)||this.is_string(a))a=[a];for(c in a)e=a[c],this.a[e]&&!this.d[e]&&this.b(e,this.a[e])}this.g.push({i:this.i(b),a:a});return this.j()};b.j=function(){var a,b,c,e,d,g=[],h=[];for(a in this.g)if(d=this.g[a],this.is_object(d)&&
+			this.is_array(d.a)&&this.is_function(d.i)){e=!1;if(0<d.a.length){b=0;for(c in this.c)0<=this.n(d.a,c)&&b++;b===d.a.length&&(e=!0)}else this.p===this.r+this.m&&(e=!0);e?h.push(d.i):g.push(this.g[a])}this.g=g;for(a in h)h[a](this.c,this.e)};b.u=function(){var a,b,c,e;for(c in this.d)if((e=this.d[c])&&!this.c[c]){a=0;for(b in e)this.c[e[b]]&&a++;a===e.length&&(this.b(c,this.a[c]),delete this.d[c])}};b.b=function(a,b){if(-1!==this.n(this.f,a))return!1;this.p++;this.f.push(a);return this.b.o(a,b)};b.b.o=
+			function(a,f){var c,e="js",d={loaded:!1,h:a,f:!0,url:f.shift(),s:f};if(-1<d.url.indexOf(".css")){e="css";if(b.css.l(a))return d.f=!1,b.b.c(d);c=k.createElement("link");c.B=!0;c.rel="stylesheet";c.href=d.url}else{if(b.is_defined(a))return d.f=!1,b.b.c(d);c=k.createElement("script");c.src=d.url}c.onload=function(){return"js"===e&&!b.is_defined(a)||"js"!==e&&!b.css.l(a)&&Object.hasOwnProperty.call(l,"ActiveXObject")&&!l.ActiveXObject?b.b.e(d):b.b.c(d)};c.onreadystatechange=function(){if(!this.readyState||
+			"loaded"===this.readyState||"complete"===this.readyState)return this.onreadystatechange=null,"js"!==e||b.is_defined(a)?b.b.c(d):b.b.e(d)};c.onerror=function(){return b.b.e(d)};return b.head.appendChild(c)};b.b.e=function(a){a.f=!1;b.e[a.h]||(b.e[a.h]=[]);b.e[a.h].push(a.url);return a.s.length?b.b.o(a.h,a.s):(b.m++,b.j())};b.b.c=function(a){a.loaded||(a.loaded=!0,b.c[a.h]=a.url,b.r++);b.u();return b.j()};b.t();l.fallback=l.fbk=b})(window,document);		
+		</script>
 		<script>
 			fallback.load({
 				jQuery: [

@@ -4,10 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Chrome, Firefox OS and Opera -->
+		<meta name="theme-color" content="#337ab7">
+		<!-- Windows Phone -->
+		<meta name="msapplication-navbutton-color" content="#337ab7">
 		
 		<!--Page title and icon-->
-    <title>4 - Interpenetration | ME2103 e-Learning</title>
+    <title>4 - Isometric &amp; Orthographic Sketching | ME2103 e-Learning</title>
 		<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+		<link rel="icon" sizes="192x192" href="../../favicon-highres.png">
 		
     <!-- Stylesheets -->
     <link href="../../css/bootstrap-3.3.6.min.css" rel="stylesheet">
@@ -84,6 +89,33 @@
 		<![endif]-->
 		</div>
 		
+		<!-- Quiz False Modal -->
+		<div class="modal fade" id="quizFalseModal" tabindex="-1" role="dialog" aria-labelledby="quizFalseModalLabel">
+		  <div class="vertical-alignment-helper">
+				<div class="modal-dialog vertical-align-center" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h3 class="modal-title no-anchor text-center" data-dismiss="modal" id="quizFalseModalLabel">Incorrect. Try again.</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Quiz Wrong Modal -->
+		<div class="modal fade" id="quizTrueModal" tabindex="-1" role="dialog" aria-labelledby="quizTrueModalLabel">
+		  <div class="vertical-alignment-helper">
+				<div class="modal-dialog vertical-align-center" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h3 class="modal-title no-anchor text-center" data-dismiss="modal" id="quizTrueModalLabel">Correct!</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 		<!-- Top header bar -->
 		<nav class="navbar navbar-default">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -95,7 +127,7 @@
           <span class="icon-bar bottom-bar"></span>
         </button>
 				<!-- Header -->
-        <div class="container container-navbar-brand"><span role="button" class="navbar-brand" id="back-to-top2">Interpenetration</span></div>
+        <div class="container container-navbar-brand"><a tabindex="0" role="button" class="navbar-brand" id="back-to-top2" data-toggle="popover" data-trigger="hover click" data-placement="auto bottom" data-content="<img src='qrcode.png' alt='QR Code' height='128' width='128'/>">Isometric &amp; orthographic sketching</a></div>
       </div>
 		</nav>
 		
@@ -103,10 +135,10 @@
     	<div id="modal-bg"></div>
 			
 			<!-- Sidebar menu -->
-			<div id="sidebar-wrapper">
+			<div id="sidebar-wrapper"><div style="direction:ltr;">
 				<div class="sidebar-brand">
 					<a role="button" href="../../">ME2103 e-Learning</a>
-					<button type="button" class="navbar-toggle toggled" id="menu-toggle2">
+					<button type="button" class="navbar-toggle" id="menu-toggle2">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar top-bar"></span>
 						<span class="icon-bar middle-bar"></span>
@@ -122,364 +154,804 @@
 							<li><a href="../1/">1 - Introduction</a></li>
 							<li><a href="../2/">2 - Principles of projection</a></li>
 							<li><a href="../3/" id="prechp">3 - Sectioning &amp; dimensioning</a></li>
-							<li><a class="collapse-button" data-toggle="collapse" href="#collapse1" aria-expanded="true" aria-controls="collapse1">4 - Interpenetration</a>
+							<li><a class="collapse-button" data-toggle="collapse" href="#collapse1" aria-expanded="true" aria-controls="collapse1">4 - Isometric &amp; orthographic sketching</a>
 								<ul class="collapse in" id="collapse1">
-									<li><a href="#intro">4.1 - Introduction</a></li>
-									<li><a href="#basicsect">4.2 - Basic sectioning</a>
-										<ul>
-											<li><a href="#bscone">4.2.1 - Basic sectioning of cone</a>
-												<ul>
-													<li><a href="#bsconecir">4.2.1.1 - Circle</a></li>
-													<li><a href="#bsconeell">4.2.1.2 - Ellipse</a></li>
-													<li><a href="#bsconehyperbola">4.2.1.3 - Hyperbola</a></li>
-													<li><a href="#bsconepar">4.2.1.4 - Parabola</a></li>
-													<li><a href="#bsconetri">4.2.1.5 - Triangle</a></li>
-												</ul>
-											</li>
-											<li><a href="#bscyl">4.2.2 - Basic sectioning of cylinder</a></li>
-											<li><a href="#bselb">4.2.3 - Basic sectioning of elbow</a></li>
-											<li><a href="#bssph">4.2.4 - Basic sectioning of sphere</a></li>
-											<li><a href="#bshmsph">4.2.5 - Basic sectioning of hemisphere</a></li>
-										</ul>
-									</li>
-									<li><a href="#intsolid">4.3 - Interpenetration of two solids</a>
-										<ul>
-											<li><a href="#intuneqpipe">4.3.1 - Two unequal diameter pipes</a></li>
-											<li><a href="#inteqpipe">4.3.2 - Two equal diameter pipes</a></li>
-											<li><a href="#intcylspe">4.3.3 - Special case for cylinders</a></li>
-											<li><a href="#inttwocones">4.3.4 - Two cones</a></li>
-											<li><a href="#intconehcyl">4.3.5 - Cone &amp; h cylinder</a></li>
-											<li><a href="#intconeshcyl">4.3.6 - Cone &amp; small h cylinder</a></li>
-											<li><a href="#intconehxg">4.3.7 - Cone &amp; hexagon</a></li>
-											<li><a href="#intconevcyl">4.3.8 - Cone &amp; v cylinder</a></li>
-											<li><a href="#intconevtprism">4.3.9 - Cone &amp; v triangular prism</a></li>
-											<li><a href="#intcuttower">4.3.10 - Cut tower</a></li>
-											<li><a href="#intcylsltcyl">4.3.11 - Cylinder &amp; slant cylinder</a></li>
-											<li><a href="#inthmsphelb">4.3.12 - Hemisphere &amp; elbow</a></li>
-											<li><a href="#intpyrtriprism">4.3.13 - Pyramid &amp; triangular prism</a></li>
-											<li><a href="#intsltcylsltcone">4.3.14 - Slant cylinder &amp; slant cone</a></li>
-											<li><a href="#intsqprislttripri">4.3.15 - Sq prism &amp; slant tri prism</a></li>
-											<li><a href="#intsqtriprism">4.3.16 - Sq prism &amp; triangular prism</a></li>
-										</ul>
-									</li>
+									<li><a href="#paper">4.1 - Sketch paper type</a></li>
+									<li><a href="#isosketching">4.2 - Isometric sketching steps</a></li>
+									<li><a href="#orthosketching">4.3 - Orthographic sketching eg.</a></li>
+									<li><a href="#quiz">4.4 - Flash quiz</a></li>
 								</ul>
 							</li>
-							<li><a href="../5/" id="nextchp">5 - Development</a></li>
+							<li><a href="../5/" id="nextchp">5 - Limits, fits &amp; geometrical tolerances</a></li>
 							<li><a href="../6/">6 - Conventions &amp; symmetry</a></li>
 							<li><a href="../7/">7 - Screws &amp; nuts</a></li>
 							<li><a href="../8/">8 - Keys, coupling &amp; locking devices</a></li>
-							<li><a href="../9/">9 - Limits, fits &amp; geometrical tolerances</a></li>
-							<li><a href="../10/">10 - Welding symbols representation</a></li>
+							<li><a href="../9/">9 - Welding symbols representatio</a></li>
+						</ul>
+					</li>
+					<li><a role="button" class="collapse-button collapsed" data-toggle="collapse" data-parent="#sidebar-wrapper" href="#collapseExtra" aria-expanded="false" aria-controls="collapseExtra">Extra chapters</a>
+						<ul class="collapse" id="collapseExtra">
+							<li><a href="../10/">10 - Interpenetration</a></li>
+							<li><a href="../11/">11 - Development</a></li>
 						</ul>
 					</li>
 					
 				</ul>
 				<a role="button" class="btn btn-block btn-primary btn-lg btn-profhome" href="../../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Prof Homepage</a>
-			</div>
+			</div></div>
 			
 			<!-- Content -->
 			<div id="page-content-wrapper">
       	<div id="page-content">
           <div class="container-fluid">
-					
-						<!-- Section 1 -->
-						<div class="row">
-							<div class="section-header"><h1 id="intro">4.1 Introduction</h1></div>
-							<p>Interpenetration occurs when two solids penetrate each other to form one solid. In other words, two different objects such as a regular square based prism and a regular triangular based prism join together to make one complete object. The lines created by this join are known as lines of interpenetration. These lines may be either straight or curved, depending on the nature or orientation of the objects involved.</p>
-							<div class="row row-border-between">
-								<div class="col-md-6">
-									<br>
-									<div class="row">
-										<div class="col-xs-8 col-xs-offset-2 col-md-12 col-md-offset-0 col-lg-10 col-lg-offset-1">
-											<img alt="Intersection between Curved Surfaces" src="../../images/4/intcs.jpg">
-										</div>
-										<div class="col-xs-12 col-lg-12">
-											<br><p>If <em>curved surfaces</em> intersect, or if <em>curved surfaces and plane surfaces</em> intersect, the figure of intersection will be composed of curves.</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="row">
-										<div class="col-xs-8 col-xs-offset-2 col-md-12 col-md-offset-0 col-lg-10 col-lg-offset-1">
-											<img alt="Intersection between Plane Surfaces" src="../../images/4/intps.jpg">
-										</div>
-										<div class="col-xs-12 col-lg-12">
-											<p>If two solids that are composed of <em>plane surfaces</em> intersect, the figure of intersection will be composed of straight lines.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<p>The main shapes associated with this topic are:</p> 
-							<ul>
-								<li>Prisms (both regular and irregular)</li>
-								<li>Cylinders</li>
-								<li>Spheres</li>
-								<li>Cones</li>
-								<li>Pyramids (both regular and irregular)</li>
-							</ul>
-							<p><small>Note that some shapes may require an <em>auxiliary view</em> for completion of the question.</small></p>
-						</div><!-- Section 1 ends -->
 						
-						<!-- Section 2 -->
+						<!--Section 1-->
 						<div class="row">
-							<div class="section-header"><h1 id="basicsect">4.2 Basic sectioning</h1></div>
-							<h2 id="bscone">4.2.1 Basic sectioning of cone</h2>
+							<div class="section-header"><h1 id="paper">4.1 Sketch paper type</h1></div>
 							<div class="row">
-								<div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-									<img src="../../images/4/bscone.jpg" alt="Basic Sectioning of Cone"/>
+								<div class="col-xs-6 col-lg-5">
+									<img alt="Square Paper" src="../../images/4/sqpaper.png">
+									<p class="caption">Square paper</p>
+								</div>
+								<div class="col-xs-6 col-lg-5">
+									<img alt="Isometric Paper" src="../../images/4/isopaper.png">
+									<p class="caption">Isometric paper</p>
 								</div>
 							</div>
-							<div class="row row-border-between">
-								<div class="col-md-6">
-									<h3 id="bsconecir">4.2.1.1 Circle</h3>
-									<div class="row">
-										<div class="col-xs-7 col-md-8">
-											<img src="../../images/4/bsconecir.png" alt="Basic Sectioning of Cone: Circle"/>
-										</div>
-										<div class="col-xs-3 col-md-4 col-lg-3">
-											<img src="../../images/4/bsconecir2.jpg" alt="Basic Sectioning of Cone: Circle 2D"/>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<h3 id="bsconeell">4.2.1.2 Ellipse</h3>
-									<div class="row">
-										<div class="col-xs-7 col-md-8">
-											<img src="../../images/4/bsconeell.png" alt="Basic Sectioning of Cone: Ellipse"/>
-										</div>
-										<div class="col-xs-3 col-md-4 col-lg-3">
-											<img src="../../images/4/bsconeell2.jpg" alt="Basic Sectioning of Cone: Ellipse 2D"/>
-										</div>
-									</div>
-								</div>
-							</div>
-							<hr class="visible-md visible-lg">
-							<div class="row row-border-between">
-								<div class="col-md-6">
-									<h3 id="bsconehyperbola">4.2.1.3 Hyperbola</h3>
-									<div class="row">
-										<div class="col-xs-6 col-md-8">
-											<img src="../../images/4/bsconehyp.png" alt="Basic Sectioning of Cone: Hyperbola"/>
-										</div>
-										<div class="col-xs-6 col-md-8">
-											<img src="../../images/4/bsconehyp2.jpg" alt="Basic Sectioning of Cone: Hyperbola 2D"/>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<h3 id="bsconepar">4.2.1.4 Parabola</h3>
-									<div class="row">
-										<div class="col-xs-6 col-md-8">
-											<img src="../../images/4/bsconepar.png" alt="Basic Sectioning of Cone: Parabola"/>
-										</div>
-										<div class="col-xs-6 col-md-8">
-											<img src="../../images/4/bsconepar2.jpg" alt="Basic Sectioning of Cone: Parabola 2D"/>
-										</div>
-									</div>
-								</div>
-							</div>
-							<hr class="visible-md visible-lg">
-							<div class="row">
-								<div class="col-md-6">
-									<h3 id="bsconetri">4.2.1.5 Triangle</h3>
-									<div class="row">
-										<div class="col-xs-6 col-md-8">
-											<img src="../../images/4/bsconetri.png" alt="Basic Sectioning of Cone: Triangle"/>
-										</div>
-										<div class="col-xs-6 col-md-8">
-											<img src="../../images/4/bsconetri2.jpg" alt="Basic Sectioning of Cone: Triangle 2D"/>
-										</div>
-									</div>
-								</div>
-							</div>
-							<h2 id="bscyl">4.2.2 Basic sectioning of cylinder</h2>
-							<div class="row">
-								<div class="col-xs-11 col-md-5">
-									<img alt="Basic Sectioning of Cylinder 1" src="../../images/4/bscyl1.jpg">
-								</div>
-								<div class="col-xs-6 col-md-3">
-									<img alt="Basic Sectioning of Cylinder 2" src="../../images/4/bscyl2.jpg">
-								</div>
-								<div class="col-xs-9 col-md-4">
-									<img alt="Basic Sectioning of Cylinder 3" src="../../images/4/bscyl3.jpg">
-								</div>
-							</div>
-							<h2 id="bselb">4.2.3 Basic sectioning of elbow</h2>
-							<div class="row">
-								<div class="col-xs-8 col-xs-offset-2 col-md-5">
-									<img alt="Basic Sectioning of Elbow 1" src="../../images/4/bselb1.jpg">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-4">
-									<img alt="Basic Sectioning of Elbow 2" src="../../images/4/bselb2.jpg">
-								</div>
-								<div class="col-xs-4">
-									<img alt="Basic Sectioning of Elbow 3" src="../../images/4/bselb3.jpg">
-								</div>
-								<div class="col-xs-4">
-									<img alt="Basic Sectioning of Elbow 4" src="../../images/4/bselb4.jpg">
-								</div>
-							</div>
-							<h2 id="bssph">4.2.4 Basic sectioning of sphere</h2>
-							<div class="row">
-								<div class="col-xs-8 col-md-6">
-									<img alt="Basic Sectioning of Shpere" src="../../images/4/bssph.jpg">
-								</div>
-							</div>
-							<h2 id="bshmsph">4.2.5 Basic sectioning of hemisphere</h2>
-							<div class="row">
-								<div class="col-xs-8 col-md-6">
-									<img alt="Basic Sectioning of Hemisphere" src="../../images/4/bshmsph.jpg">
-								</div>
-							</div>
-						</div><!-- Section 2 ends -->
+						</div><!--Section 1 ends-->
 						
-						<!-- Section 3 -->
+						<!--Section 2-->
 						<div class="row">
-							<div class="section-header"><h1 id="intsolid">4.3 Interpenetration of two solids</h1></div>
-							<h2 id="intuneqpipe">4.3.1 Two unequal diameter pipes</h2>
+							<div class="section-header"><h1 id="isosketching">4.2 Isometric sketching steps</h1></div>
+							<h2>Example 1</h2>
 							<div class="row">
-								<div class="col-xs-8 col-md-6">
-									<img alt="Interpenetration of Two Unequal Diameter Pipes" src="../../images/4/intuneqpipe.jpg">
+								<div class="col-xs-5 col-md-4">
+									<img alt="Isometric Sketching Example 1 Multiview" src="../../images/4/isosketchstepsmv.jpg"></div>
+								<div class="col-xs-7 col-md-6">
+									<figure id="isosketchstepsgif"><img alt="Isometric Sketching Example 1" src="../../images/4/isosketchsteps.jpg" data-alt="../../images/4/isosketchsteps.gif"></figure></div>
+							</div>
+							<h2>Example 2</h2>
+							<div class="row">
+								<div class="col-xs-5 col-md-4">
+									<img alt="Isometric Sketching Example 2 Multiview" src="../../images/4/isosketchstepsmv2.jpg"></div>
+								<div class="col-xs-6 col-md-5">
+									<figure id="isosketchsteps2gif"><img alt="Isometric Sketching Example 2" src="../../images/4/isosketchsteps2.jpg" data-alt="../../images/4/isosketchsteps2.gif"></figure></div>
+							</div>
+						</div><!--Section 2 ends-->
+						
+						<!--Section 3-->
+						<div class="row">
+							<div class="section-header"><h1 id="orthosketching">4.3 Orthographic sketching examples</h1></div>
+							<!-- Carousel -->
+							<div id="carousel4_3" class="carousel carousel-dark slide col-xs-9 col-sm-8 col-lg-6" data-ride="carousel" data-interval="0">
+								<ol class="carousel-indicators">
+									<li data-target="#carousel4_3" data-slide-to="0" class="active"></li>
+									<li data-target="#carousel4_3" data-slide-to="1"></li>
+									<li data-target="#carousel4_3" data-slide-to="2"></li>
+									<li data-target="#carousel4_3" data-slide-to="3"></li>
+								</ol>
+								<div class="carousel-inner" role="listbox">
+									<div class="item active"><img alt="Orthographic Sketching Example 1" class="center-block" src="../../images/4/orthosketch1.png">
+										<div class="carousel-caption">
+										</div>
+									</div>
+									<div class="item"><img alt="Orthographic Sketching Example 2" class="center-block" src="../../images/4/orthosketch2.png">
+										<div class="carousel-caption">
+										</div>
+									</div>
+									<div class="item"><img alt="Orthographic Sketching Example 3" class="center-block" src="../../images/4/orthosketch3.png">
+										<div class="carousel-caption">
+										</div>
+									</div>
+									<div class="item"><img alt="Orthographic Sketching Example 4" class="center-block" src="../../images/4/orthosketch4.png">
+										<div class="carousel-caption">
+										</div>
+									</div>
+								</div>
+								<a class="left carousel-control" href="#carousel4_3" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#carousel4_3" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>
+							</div>
+						</div><!--Section 3 ends-->
+						
+						<!--Section 4-->
+						<div class="row">
+							<div class="section-header"><h1 id="quiz">4.4 Flash quiz</h1></div>
+							<h2>Part 1</h2>
+							<!-- Carousel -->
+							<div class="row">
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 1 A1" class="center-block" src="../../images/4/quiz1_1.jpg">
+									<p class="text-center">A</p>
+								</div>
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 1 A2" class="center-block" src="../../images/4/quiz1_2.jpg">
+									<p class="text-center">B</p>
+								</div>
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 1 A3" class="center-block" src="../../images/4/quiz1_3.jpg">
+									<p class="text-center">C</p>
+								</div>
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 1 A4" class="center-block" src="../../images/4/quiz1_4.jpg">
+									<p class="text-center">D</p>
+								</div>
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 1 A5" class="center-block" src="../../images/4/quiz1_5.jpg">
+									<p class="text-center">E</p>
+								</div>
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 1 A6" class="center-block" src="../../images/4/quiz1_6.jpg">
+									<p class="text-center">F</p>
 								</div>
 							</div>
-							<h2 id="inteqpipe">4.3.2 Two equal diameter pipes</h2>
-							<div class="row">
-								<div class="col-xs-8 col-md-6">
-									<img alt="Interpenetration of Two Equal Diameter Pipes" src="../../images/4/inteqpipe.jpg">
+							<div class="well">
+								<div id="carousel4_4_1" class="carousel carousel-dark carousel-quiz slide carousel-fade" data-ride="carousel" data-interval="0">
+									<div class="carousel-inner" role="listbox">
+										<div class="item active">
+											<p class="text-right">1/6</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 1 Q1" class="center-block" src="../../images/4/quiz1_ans_1.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">F</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+													<p class="text-right">2/6</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 1 Q2" class="center-block" src="../../images/4/quiz1_ans_2.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">F</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+													<p class="text-right">3/6</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 1 Q3" class="center-block" src="../../images/4/quiz1_ans_3.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">F</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+													<p class="text-right">4/6</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 1 Q4" class="center-block" src="../../images/4/quiz1_ans_4.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">F</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+													<p class="text-right">5/6</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 1 Q5" class="center-block" src="../../images/4/quiz1_ans_5.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">F</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+													<p class="text-right">6/6</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 1 Q6" class="center-block" src="../../images/4/quiz1_ans_6.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">F</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="text-right">
+										<div role="group" class="btn-group btn-group-round" aria-label="Quiz Navigation">
+											<a href="#carousel4_4_1" class="btn btn-default" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="visible-md-inline visible-lg-inline"> Previous</span></a>
+											<a href="#carousel4_4_1" class="btn btn-default" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="visible-md-inline visible-lg-inline"> Next</span></a>
+										</div>
+									</div>
 								</div>
 							</div>
-							<h2 id="intcylspe">4.3.3 Special case for cylinders</h2>
+							<h2>Part 2</h2>
+							<!-- Carousel -->
 							<div class="row">
-								<div class="col-xs-6 col-md-6">
-									<img alt="Special Case for Cylinders 1" src="../../images/4/intcylspe1.jpg">
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 2 A1" class="center-block" src="../../images/4/quiz2_1.jpg">
+									<p class="text-center">A</p>
 								</div>
-								<div class="col-xs-6 col-md-6">
-									<img alt="Special Case for Cylinders 2" src="../../images/4/intcylspe2.jpg">
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 2 A2" class="center-block" src="../../images/4/quiz2_2.jpg">
+									<p class="text-center">B</p>
+								</div>
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 2 A3" class="center-block" src="../../images/4/quiz2_3.jpg">
+									<p class="text-center">C</p>
+								</div>
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 2 A4" class="center-block" src="../../images/4/quiz2_4.jpg">
+									<p class="text-center">D</p>
+								</div>
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 2 A5" class="center-block" src="../../images/4/quiz2_5.jpg">
+									<p class="text-center">E</p>
+								</div>
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 2 A6" class="center-block" src="../../images/4/quiz2_6.jpg">
+									<p class="text-center">F</p>
 								</div>
 							</div>
-							<h2 id="inttwocones">4.3.4 Two cones</h2>
-							<div class="row">
-								<div class="col-xs-6 col-md-6">
-									<img alt="Interpenetration of Two Cones 1" src="../../images/4/inttwocones1.png">
-								</div>
-								<div class="col-xs-3 col-md-3">
-									<img alt="Interpenetration of Two Cones 2" src="../../images/4/inttwocones2.jpg">
+							<div class="well">
+								<div id="carousel4_4_2" class="carousel carousel-dark carousel-quiz slide carousel-fade" data-ride="carousel" data-interval="0">
+									<div class="carousel-inner" role="listbox">
+										<div class="item active">
+											<p class="text-right">1/6</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 2 Q1" class="center-block" src="../../images/4/quiz2_ans_1.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">F</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+											<p class="text-right">2/6</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 2 Q2" class="center-block" src="../../images/4/quiz2_ans_2.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">F</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+											<p class="text-right">3/6</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 2 Q3" class="center-block" src="../../images/4/quiz2_ans_3.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">F</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+											<p class="text-right">4/6</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 2 Q4" class="center-block" src="../../images/4/quiz2_ans_4.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">F</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+											<p class="text-right">5/6</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 2 Q5" class="center-block" src="../../images/4/quiz2_ans_5.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">F</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+											<p class="text-right">6/6</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 2 Q6" class="center-block" src="../../images/4/quiz2_ans_6.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">F</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="text-right">
+										<div role="group" class="btn-group btn-group-round" aria-label="Quiz Navigation">
+											<a href="#carousel4_4_2" class="btn btn-default" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="visible-md-inline visible-lg-inline"> Previous</span></a>
+											<a href="#carousel4_4_2" class="btn btn-default" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="visible-md-inline visible-lg-inline"> Next</span></a>
+										</div>
+									</div>
 								</div>
 							</div>
-							<h2 id="intconehcyl">4.3.5 Cone with horizontal cylinder</h2>
+							<h2>Part 3</h2>
+							<!-- Carousel -->
 							<div class="row">
-								<div class="col-xs-6 col-md-6">
-									<img alt="Interpenetration of Cone with Horizontal Cylinder 1" src="../../images/4/intconhcyl1.png">
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 3 A1" class="center-block" src="../../images/4/quiz3_01.jpg">
+									<p class="text-center">A</p>
 								</div>
-								<div class="col-xs-5 col-md-5">
-									<img alt="Interpenetration of Cone with Horizontal Cylinder 2" src="../../images/4/intconhcyl2.jpg">
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 3 A2" class="center-block" src="../../images/4/quiz3_02.jpg">
+									<p class="text-center">B</p>
+								</div>
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 3 A3" class="center-block" src="../../images/4/quiz3_03.jpg">
+									<p class="text-center">C</p>
+								</div>
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 3 A4" class="center-block" src="../../images/4/quiz3_04.jpg">
+									<p class="text-center">D</p>
+								</div>
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 3 A5" class="center-block" src="../../images/4/quiz3_05.jpg">
+									<p class="text-center">E</p>
+								</div>
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 3 A6" class="center-block" src="../../images/4/quiz3_06.jpg">
+									<p class="text-center">F</p>
+								</div>
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 3 A7" class="center-block" src="../../images/4/quiz3_07.jpg">
+									<p class="text-center">G</p>
+								</div>
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 3 A8" class="center-block" src="../../images/4/quiz3_08.jpg">
+									<p class="text-center">H</p>
+								</div>
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 3 A9" class="center-block" src="../../images/4/quiz3_09.jpg">
+									<p class="text-center">I</p>
+								</div>
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 3 A10" class="center-block" src="../../images/4/quiz3_10.jpg">
+									<p class="text-center">J</p>
+								</div>
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 3 A11" class="center-block" src="../../images/4/quiz3_11.jpg">
+									<p class="text-center">K</p>
+								</div>
+								<div class="col-xs-4 col-md-3 col-lg-2">
+									<img alt="Quiz 3 A12" class="center-block" src="../../images/4/quiz3_12.jpg">
+									<p class="text-center">L</p>
 								</div>
 							</div>
-							<h2 id="intconeshcyl">4.3.6 Cone with small horizontal cylinder</h2>
-							<div class="row">
-								<div class="col-xs-6 col-md-6">
-									<img alt="Interpenetration of Cone with Small Horizontal Cylinder 1" src="../../images/4/intconeshcyl1.png">
-								</div>
-								<div class="col-xs-5 col-md-5">
-									<img alt="Interpenetration of Cone with Small Horizontal Cylinder 2" src="../../images/4/intconeshcyl2.jpg">
+							<div class="well">
+								<div id="carousel4_4_3" class="carousel carousel-dark carousel-quiz slide carousel-fade" data-ride="carousel" data-interval="0">
+									<div class="carousel-inner" role="listbox">
+										<div class="item active">
+													<p class="text-right">1/12</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 3 Q1" class="center-block" src="../../images/4/quiz3_ans_01.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">F</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">G</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">H</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">I</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">J</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">K</button>
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">L</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+													<p class="text-right">2/12</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 3 Q2" class="center-block" src="../../images/4/quiz3_ans_02.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">F</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">G</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">H</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">I</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">J</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">K</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">L</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+													<p class="text-right">3/12</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 3 Q3" class="center-block" src="../../images/4/quiz3_ans_03.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">F</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">G</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">H</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">I</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">J</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">K</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">L</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+													<p class="text-right">4/12</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 3 Q4" class="center-block" src="../../images/4/quiz3_ans_04.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">F</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">G</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">H</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">I</button>
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">J</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">K</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">L</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+													<p class="text-right">5/12</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 3 Q5" class="center-block" src="../../images/4/quiz3_ans_05.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">F</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">G</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">H</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">I</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">J</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">K</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">L</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+													<p class="text-right">6/12</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 3 Q6" class="center-block" src="../../images/4/quiz3_ans_06.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">F</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">G</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">H</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">I</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">J</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">K</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">L</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+													<p class="text-right">7/12</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 3 Q7" class="center-block" src="../../images/4/quiz3_ans_07.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">F</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">G</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">H</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">I</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">J</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">K</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">L</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+													<p class="text-right">8/12</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 3 Q8" class="center-block" src="../../images/4/quiz3_ans_08.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">F</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">G</button>
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">H</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">I</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">J</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">K</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">L</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+													<p class="text-right">9/12</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 3 Q9" class="center-block" src="../../images/4/quiz3_ans_09.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">F</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">G</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">H</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">I</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">J</button>
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">K</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">L</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+													<p class="text-right">10/12</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 3 Q10" class="center-block" src="../../images/4/quiz3_ans_10.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">F</button>
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">G</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">H</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">I</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">J</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">K</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">L</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+													<p class="text-right">11/12</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 3 Q11" class="center-block" src="../../images/4/quiz3_ans_11.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">F</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">G</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">H</button>
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">I</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">J</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">K</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">L</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+													<p class="text-right">12/12</p>
+											<div class="row">
+												<div class="col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+													<img alt="Quiz 3 Q12" class="center-block" src="../../images/4/quiz3_ans_12.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="text-center">
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">A</button>
+														<button type="button" class="btn btn-default" onclick="quizTrue(this)">B</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">C</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">D</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">E</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">F</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">G</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">H</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">I</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">J</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">K</button>
+														<button type="button" class="btn btn-default" onclick="quizFalse(this)">L</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="text-right">
+										<div role="group" class="btn-group btn-group-round" aria-label="Quiz Navigation">
+											<a href="#carousel4_4_3" class="btn btn-default" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="visible-md-inline visible-lg-inline"> Previous</span></a>
+											<a href="#carousel4_4_3" class="btn btn-default" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="visible-md-inline visible-lg-inline"> Next</span></a>
+										</div>
+									</div>
 								</div>
 							</div>
-							<h2 id="intconehxg">4.3.7 Cone with hexagon</h2>
-							<div class="row">
-								<div class="col-xs-6 col-md-6">
-									<img alt="Interpenetration of Cone with Hexagon 1" src="../../images/4/intconehxg1.png">
-								</div>
-								<div class="col-xs-3 col-md-3">
-									<img alt="Interpenetration of Cone with Hexagon 2" src="../../images/4/intconehxg2.jpg">
-								</div>
-							</div>
-							<h2 id="intconevcyl">4.3.8 Cone with vertical cylinder</h2>
-							<div class="row">
-								<div class="col-xs-6 col-md-6">
-									<img alt="Interpenetration of Cone with Vertical Cylinder 1" src="../../images/4/intconevcyl1.png">
-								</div>
-								<div class="col-xs-3 col-md-3">
-									<img alt="Interpenetration of Cone with Vertical Cylinder 2" src="../../images/4/intconevcyl2.jpg">
-								</div>
-								<div class="col-xs-3 col-md-2">
-									<img alt="Interpenetration of Cone with Vertical Cylinder 3" src="../../images/4/intconevcyl3.jpg">
-								</div>
-							</div>
-							<h2 id="intconevtprism">4.3.9 Cone with vertical triangular prism</h2>
-							<div class="row">
-								<div class="col-xs-6 col-md-6">
-									<img alt="Interpenetration of Cone with Vertical Triangular Prism 1" src="../../images/4/intconevtprism1.png">
-								</div>
-								<div class="col-xs-3 col-md-2">
-									<img alt="Interpenetration of Cone with Vertical Triangular Prism 2" src="../../images/4/intconevtprism2.jpg">
-								</div>
-							</div>
-							<h2 id="intcuttower">4.3.10 Cut tower</h2>
-							<div class="row">
-								<div class="col-xs-6 col-md-6">
-									<img alt="Interpenetration of Cut Tower 1" src="../../images/4/intcuttower1.png">
-								</div>
-								<div class="col-xs-3 col-md-3">
-									<img alt="Interpenetration of Cut Tower 2" src="../../images/4/intcuttower2.jpg">
-								</div>
-							</div>
-							<h2 id="intcylsltcyl">4.3.11 Cylinder with slant cylinder</h2>
-							<div class="row">
-								<div class="col-xs-6 col-md-6">
-									<img alt="Interpenetration of Cylinder with Slant Cylinder 1" src="../../images/4/intcylsltcyl1.png">
-								</div>
-								<div class="col-xs-3 col-md-3">
-									<img alt="Interpenetration of Cylinder with Slant Cylinder 2" src="../../images/4/intcylsltcyl2.jpg">
-								</div>
-							</div>
-							<h2 id="inthmsphelb">4.3.12 Hemisphere with elbow</h2>
-							<div class="row">
-								<div class="col-xs-6 col-md-6">
-									<img alt="Interpenetration of Hemisphere with Elbow 1" src="../../images/4/inthmsphelb1.png">
-								</div>
-								<div class="col-xs-5 col-md-5">
-									<img alt="Interpenetration of Hemisphere with Elbow 2" src="../../images/4/inthmsphelb2.jpg">
-								</div>
-							</div>
-							<h2 id="intpyrtriprism">4.3.13 Pyramid with triangular prism</h2>
-							<div class="row">
-								<div class="col-xs-6 col-md-6">
-									<img alt="Interpenetration of Pyramid with Triangular Prism 1" src="../../images/4/intpyrtriprism1.png">
-								</div>
-								<div class="col-xs-3 col-md-3">
-									<img alt="Interpenetration of Pyramid with Triangular Prism 2" src="../../images/4/intpyrtriprism2.jpg">
-								</div>
-							</div>
-							<h2 id="intsltcylsltcone">4.3.14 Slant cylinder with slant cone</h2>
-							<div class="row">
-								<div class="col-xs-6 col-md-6">
-									<img alt="Interpenetration of Slant Cylinder with Slant Cone 1" src="../../images/4/intsltcylsltcone1.png">
-								</div>
-								<div class="col-xs-4 col-md-4">
-									<img alt="Interpenetration of Slant Cylinder with Slant Cone 2" src="../../images/4/intsltcylsltcone2.jpg">
-								</div>
-							</div>
-							<h2 id="intsqprislttripri">4.3.15 Square prism with slant triangular prism</h2>
-							<div class="row">
-								<div class="col-xs-6 col-md-6">
-									<img alt="Interpenetration of Square Prism with Slant Triangular Prism 1" src="../../images/4/intsqprislttripri1.png">
-								</div>
-								<div class="col-xs-5 col-md-5">
-									<img alt="Interpenetration of Square Prism with Slant Triangular Prism 2" src="../../images/4/intsqprislttripri2.jpg">
-								</div>
-							</div>
-							<h2 id="intsqtriprism">4.3.16 Square prism with triangular prism</h2>
-							<div class="row">
-								<div class="col-xs-6 col-md-6">
-									<img alt="Interpenetration of Square Prism with Triangular Prism 1" src="../../images/4/intsqtriprism1.png">
-								</div>
-								<div class="col-xs-5 col-md-5">
-									<img alt="Interpenetration of Square Prism with Triangular Prism 2" src="../../images/4/intsqtriprism2.jpg">
-								</div>
-							</div>
-						</div><!-- Section 3 ends -->
+						</div><!--Section 4 ends-->
 					</div>
 				</div>
 				
@@ -500,7 +972,7 @@
 			<div class="container-fluid">
 				<div class="container">
 					<div class="row">
-						<div class="footer-left"><a role="button" href="../../misc/">&copy; 2015-2016 Chang Sin Fung. All rights reserved.</a></div>
+						<div class="footer-left"><a role="button" href="../../misc/">Designed by Chang Sin Fung 2016</a></div>
 						<div class="footer-right">
 							<a href="//www.nus.edu.sg/" title="National University of Singapore" target="_blank">
 								<img src="../../images/nuslogo.jpg" alt="NUS logo">				
@@ -538,7 +1010,15 @@
 		
 		<!-- For IE9+ or others -->
 		<!--[if gte IE 9]><!-->
-		<script src="../../js/fallback.min.js"></script>
+		<script>
+			(function(l,k){var b={g:[],w:{},A:0,head:k.getElementsByTagName("head")[0],a:{},p:0,f:[],e:{},m:0,d:{},c:{},r:0,t:function(){for(var a in b.k)b.k[a]&&b.v(b.k[a])},k:["Array","Function","Object","String"],v:function(a){b["is_"+a.toLowerCase()]=function(f){return"undefined"!==typeof f&&Object.prototype.toString.call(f)=="[object "+a+"]"}},i:function(a){this.is_function(a)||(a=function(){});return a},n:function(a,f){for(var c in a)if(a[c]===f)return c;return-1},is_defined:function(a){try{if(eval("window."+
+			a))return!0}catch(f){}return!1},importer:function(a,f){var c,b,d,g,h,k,l,m={};for(d in a)if(g=a[d])this.is_string(g)&&(g=[g]),this.is_array(g)&&(c=[],this.is_array(this.a[d])&&(c=this.a[d]),m[d]=g,this.a[d]=c.concat(g));g={};if(this.is_object(f)&&(this.is_object(f.shim)||(this.is_object(f.deps)?f.shim=f.deps:this.is_object(f.dependencies)&&(f.shim=f.dependencies)),this.is_object(f.shim)))for(h in k=f.shim,k)if(c=k[h],this.a[h]&&c&&(this.is_string(c)&&(c=[c]),this.is_array(c))){l=[];for(b in c)d=c[b],
+			this.a[d]&&d!==h&&l.push(d);c=[];this.is_array(this.d[h])&&(c=this.d[h]);g[h]=l;this.d[h]=c.concat(l)}return{a:m,d:g}},css:{}};b.css.l=function(a){if(!k.styleSheets)return!1;var f,c,e;for(f in k.styleSheets)if(c=k.styleSheets[f],0!==c)try{if(c.rules&&(e=b.css.q(c.rules,a))||c.cssRules&&(e=b.css.q(c.cssRules,a)))return e}catch(d){}return!1};b.css.q=function(a,b){var c,e;for(c in a)if(e=a[c],e.selectorText===b)return!0;return!1};b.load=function(a,b,c){var e,d;if(!this.is_object(a))return!1;this.is_function(b)&&
+			(c=b,b={});this.is_object(b)||(b={});a=this.importer(a,b);for(e in a.a)d=a.a[e],this.d[e]||this.b(e,d);this.is_function(b.callback)&&this.ready([],b.callback);this.is_function(c)&&this.ready([],c)};b.ready=function(a,b){var c,e;if(this.is_function(a))b=a,a=[];else{if(!this.is_array(a)||this.is_string(a))a=[a];for(c in a)e=a[c],this.a[e]&&!this.d[e]&&this.b(e,this.a[e])}this.g.push({i:this.i(b),a:a});return this.j()};b.j=function(){var a,b,c,e,d,g=[],h=[];for(a in this.g)if(d=this.g[a],this.is_object(d)&&
+			this.is_array(d.a)&&this.is_function(d.i)){e=!1;if(0<d.a.length){b=0;for(c in this.c)0<=this.n(d.a,c)&&b++;b===d.a.length&&(e=!0)}else this.p===this.r+this.m&&(e=!0);e?h.push(d.i):g.push(this.g[a])}this.g=g;for(a in h)h[a](this.c,this.e)};b.u=function(){var a,b,c,e;for(c in this.d)if((e=this.d[c])&&!this.c[c]){a=0;for(b in e)this.c[e[b]]&&a++;a===e.length&&(this.b(c,this.a[c]),delete this.d[c])}};b.b=function(a,b){if(-1!==this.n(this.f,a))return!1;this.p++;this.f.push(a);return this.b.o(a,b)};b.b.o=
+			function(a,f){var c,e="js",d={loaded:!1,h:a,f:!0,url:f.shift(),s:f};if(-1<d.url.indexOf(".css")){e="css";if(b.css.l(a))return d.f=!1,b.b.c(d);c=k.createElement("link");c.B=!0;c.rel="stylesheet";c.href=d.url}else{if(b.is_defined(a))return d.f=!1,b.b.c(d);c=k.createElement("script");c.src=d.url}c.onload=function(){return"js"===e&&!b.is_defined(a)||"js"!==e&&!b.css.l(a)&&Object.hasOwnProperty.call(l,"ActiveXObject")&&!l.ActiveXObject?b.b.e(d):b.b.c(d)};c.onreadystatechange=function(){if(!this.readyState||
+			"loaded"===this.readyState||"complete"===this.readyState)return this.onreadystatechange=null,"js"!==e||b.is_defined(a)?b.b.c(d):b.b.e(d)};c.onerror=function(){return b.b.e(d)};return b.head.appendChild(c)};b.b.e=function(a){a.f=!1;b.e[a.h]||(b.e[a.h]=[]);b.e[a.h].push(a.url);return a.s.length?b.b.o(a.h,a.s):(b.m++,b.j())};b.b.c=function(a){a.loaded||(a.loaded=!0,b.c[a.h]=a.url,b.r++);b.u();return b.j()};b.t();l.fallback=l.fbk=b})(window,document);		
+		</script>
 		<script>
 			fallback.load({
 				jQuery: [

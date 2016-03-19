@@ -4,12 +4,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Chrome, Firefox OS and Opera -->
+		<meta name="theme-color" content="#337ab7">
+		<!-- Windows Phone -->
+		<meta name="msapplication-navbutton-color" content="#337ab7">
 		
-		<!-- Page title -->
+		<!--Page title and icon-->
     <title>2 - Principles of Projection | ME2103 e-Learning</title>
 		<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+		<link rel="icon" sizes="192x192" href="../../favicon-highres.png">
 		
-    <!-- Stylesheet embedding -->
+    <!-- Stylesheets -->
     <link href="../../css/bootstrap-3.3.6.min.css" rel="stylesheet">
     <link href="../../css/bootstrap.mod.css" rel="stylesheet">
 		
@@ -95,17 +100,17 @@
           <span class="icon-bar bottom-bar"></span>
         </button>
 				<!-- Header -->
-        <div class="container container-navbar-brand"><span role="button" class="navbar-brand" id="back-to-top2">Principles of projections</span></div>
+        <div class="container container-navbar-brand"><a tabindex="0" role="button" class="navbar-brand" id="back-to-top2" data-toggle="popover" data-trigger="hover click" data-placement="auto bottom" data-content="<img src='qrcode.png' alt='QR Code' height='128' width='128'/>">Principles of projections</a></div>
       </div>
 		</nav>
 		<div id="wrapper" class="container">
     	<div id="modal-bg"></div>
 			
 			<!-- Sidebar menu -->
-			<div id="sidebar-wrapper">
+			<div id="sidebar-wrapper"><div style="direction:ltr;">
 				<div class="sidebar-brand">
 					<a role="button" href="../../">ME2103 e-Learning</a>
-					<button type="button" class="navbar-toggle toggled" id="menu-toggle2">
+					<button type="button" class="navbar-toggle" id="menu-toggle2">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar top-bar"></span>
 						<span class="icon-bar middle-bar"></span>
@@ -134,51 +139,48 @@
 											<li><a href="#projviewnum">2.2.2 - Number of views</a></li>
 										</ul>
 									</li>
-									<li><a href="#sketching">2.3 - Sketching</a>
+									<li><a href="#multiview">2.3 - Multi-view projection</a>
 										<ul>
-											<li><a href="#paper">2.3.1 - Sketch paper type</a></li>
-											<li><a href="#isosketching">2.3.2 - Isometric sketching steps</a></li>
-											<li><a href="#orthosketching">2.3.3 - Orthographic sketching</a></li>
-										</ul>
-									</li>
-									<li><a href="#multiview">2.4 - Multi-view projection</a>
-										<ul>
-											<li><a href="#mvanalysis">2.4.1 - Multi-view analysis</a></li>
-											<li><a href="#mvchoice">2.4.2 - Choices of multi-view</a></li>
+											<li><a href="#mvanalysis">2.3.1 - Multi-view analysis</a></li>
+											<li><a href="#mvchoice">2.3.2 - Choices of multi-view</a></li>
 											<li><a href="#mveg">2.3.3 - Multi-view examples</a></li>
 										</ul>
 									</li>
-									<li><a href="#auxproj">2.5 - Auxiliary projection</a>
+									<li><a href="#auxproj">2.4 - Auxiliary projection</a>
 										<ul>
-											<li><a href="#auxpur">2.5.1 - Auxiliary purpose</a></li>
-											<li><a href="#auxdiff">2.5.2 - Difference of aux projection</a></li>
-											<li><a href="#auxprojd">2.5.3 - Drawing aux projection</a></li>
-											<li><a href="#auxprojeg">2.5.4 - Aux projection examples</a></li>
+											<li><a href="#auxpur">2.4.1 - Auxiliary purpose</a></li>
+											<li><a href="#auxdiff">2.4.2 - Difference of aux projection</a></li>
+											<li><a href="#auxprojd">2.4.3 - Drawing aux projection</a></li>
+											<li><a href="#auxprojeg">2.4.4 - Aux projection examples</a></li>
 										</ul>
 									</li>
-									<li><a href="#truelength">2.6 - True length</a>
+									<li><a href="#truelength">2.5 - True length</a>
 										<ul>
-											<li><a href="#truelengthproj">2.6.1 - TL projection</a></li>
-											<li><a href="#truelengthsurfproj">2.6.2 - TL and surf projection</a></li>
-											<li><a href="#truelengtheg">2.6.3 - True length examples</a></li>
+											<li><a href="#truelengthproj">2.5.1 - TL projection</a></li>
+											<li><a href="#truelengthsurfproj">2.5.2 - TL and surf projection</a></li>
+											<li><a href="#truelengtheg">2.5.3 - True length examples</a></li>
 										</ul>
 									</li>
 								</ul>
 							</li>
 							<li><a href="../3/" id="nextchp">3 - Sectioning &amp; dimensioning</a></li>
-							<li><a href="../4/">4 - Interpenetration</a></li>
-							<li><a href="../5/">5 - Development</a></li>
+							<li><a href="../4/">4 - Isometric &amp; orthographic sketching</a></li>
+							<li><a href="../5/">5 - Limits, fits &amp; geometrical tolerances</a></li>
 							<li><a href="../6/">6 - Conventions &amp; symmetry</a></li>
 							<li><a href="../7/">7 - Screws &amp; nuts</a></li>
 							<li><a href="../8/">8 - Keys, coupling &amp; locking devices</a></li>
-							<li><a href="../9/">9 - Limits, fits &amp; geometrical tolerances</a></li>
-							<li><a href="../10/">10 - Welding symbols representation</a></li>
+							<li><a href="../9/">9 - Welding symbols representation</a></li>
 						</ul>
 					</li>
-					
+					<li><a role="button" class="collapse-button collapsed" data-toggle="collapse" data-parent="#sidebar-wrapper" href="#collapseExtra" aria-expanded="false" aria-controls="collapseExtra">Extra chapters</a>
+						<ul class="collapse" id="collapseExtra">
+							<li><a href="../10/">10 - Interpenetration</a></li>
+							<li><a href="../11/">11 - Development</a></li>
+						</ul>
+					</li>
 				</ul>
 				<a role="button" class="btn btn-block btn-primary btn-lg btn-profhome" href="../../../../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Prof Homepage</a>
-			</div>
+			</div></div>
 			<div id="page-content-wrapper">
       	<div id="page-content">
           <div class="container-fluid">
@@ -310,74 +312,16 @@
 								</div>
 							</div>
 						</div><!--Section 2 ends-->
+						
 						<!--Section 3-->
 						<div class="row">
-							<div class="section-header"><h1 id="sketching">2.3 Sketching</h1></div>
-							<h2 id="paper">2.3.1 Sketch paper type</h2>
-							<div class="row">
-								<div class="col-xs-6 col-lg-4">
-									<img alt="Square Paper" src="../../images/2/sqpaper.png">
-									<p class="caption">Square paper</p>
-								</div>
-								<div class="col-xs-6 col-lg-4">
-									<img alt="Isometric Paper" src="../../images/2/isopaper.png">
-									<p class="caption">Isometric paper</p>
-								</div>
-							</div>
-							<h2 id="isosketching">2.3.2 Isometric sketching steps</h2>
-							<h3>Example 1</h3>
-							<div class="row">
-								<div class="col-xs-5 col-md-4">
-									<img alt="Isometric Sketching Example 1 Multiview" src="../../images/2/isosketchstepsmv.jpg"></div>
-								<div class="col-xs-7 col-md-6">
-									<figure id="isosketchstepsgif"><img alt="Isometric Sketching Example 1" src="../../images/2/isosketchsteps.jpg" data-alt="../../images/2/isosketchsteps.gif"></figure></div>
-							</div>
-							<h3>Example 2</h3>
-							<div class="row">
-								<div class="col-xs-5 col-md-4">
-									<img alt="Isometric Sketching Example 2 Multiview" src="../../images/2/isosketchstepsmv2.jpg"></div>
-								<div class="col-xs-6 col-md-5">
-									<figure id="isosketchsteps2gif"><img alt="Isometric Sketching Example 2" src="../../images/2/isosketchsteps2.jpg" data-alt="../../images/2/isosketchsteps2.gif"></figure></div>
-							</div>
-							<h2 id="orthosketching">2.3.3 Orthographic sketching</h2>
-							<!-- Carousel -->
-							<div id="carousel2_3_3" class="carousel carousel-dark slide col-xs-9 col-sm-8 col-lg-6" data-ride="carousel" data-interval="0">
-								<ol class="carousel-indicators">
-									<li data-target="#carousel2_3_3" data-slide-to="0" class="active"></li>
-									<li data-target="#carousel2_3_3" data-slide-to="1"></li>
-									<li data-target="#carousel2_3_3" data-slide-to="2"></li>
-									<li data-target="#carousel2_3_3" data-slide-to="3"></li>
-								</ol>
-								<div class="carousel-inner" role="listbox">
-									<div class="item active"><img alt="Orthographic Sketching Example 1" class="center-block" src="../../images/2/orthosketch1.png">
-										<div class="carousel-caption">
-										</div>
-									</div>
-									<div class="item"><img alt="Orthographic Sketching Example 2" class="center-block" src="../../images/2/orthosketch2.png">
-										<div class="carousel-caption">
-										</div>
-									</div>
-									<div class="item"><img alt="Orthographic Sketching Example 3" class="center-block" src="../../images/2/orthosketch3.png">
-										<div class="carousel-caption">
-										</div>
-									</div>
-									<div class="item"><img alt="Orthographic Sketching Example 4" class="center-block" src="../../images/2/orthosketch4.png">
-										<div class="carousel-caption">
-										</div>
-									</div>
-								</div>
-								<a class="left carousel-control" href="#carousel2_3_3" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#carousel2_3_3" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>
-							</div>
-						</div><!--Section 3 ends-->
-						<!--Section 4-->
-						<div class="row">
-							<div class="section-header"><h1 id="multiview">2.4 Multi-view projection</h1></div>
-							<h2 id="mvanalysis">2.4.1 Analysis of surfaces, lines, and points</h2>
+							<div class="section-header"><h1 id="multiview">2.3 Multi-view projection</h1></div>
+							<h2 id="mvanalysis">2.3.1 Analysis of surfaces, lines, and points</h2>
 							<div class="row">
 								<div class="col-xs-7 col-sm-6 col-md-4"><img alt="Analysed Object" src="../../images/2/surfanalysisobj.png"></div>
 								<div class="col-xs-7 col-sm-6 col-md-4"><img alt="Analysis" src="../../images/2/surfanalysis.png"></div>
 							</div>
-							<h2 id="mvchoice">2.4.2 Choices of multi-view</h2>
+							<h2 id="mvchoice">2.3.2 Choices of multi-view</h2>
 							<h3>Example 1</h3>
 							<div class="row">
 								<div class="col-xs-6 col-sm-4"><img alt="Multiview Object 1" src="../../images/2/mvchoice.png"></div>
@@ -394,7 +338,7 @@
 								<div class="col-xs-5 col-md-4"><img alt="Good Multiview 2" src="../../images/2/mvchoice2good.png"></div>
 								<div class="col-xs-7 col-md-6"><img alt="Bad Multiview 2" src="../../images/2/mvchoice2bad.png"></div>
 							</div>
-							<h2 id="mveg">2.4.3 Examples of multi-view projection</h2>
+							<h2 id="mveg">2.3.3 Examples of multi-view projection</h2>
 							<!-- Carousel -->
 							<div id="carousel2_4_3" class="carousel carousel-dark slide col-md-8 col-lg-6" data-ride="carousel" data-interval="0">
 								<ol class="carousel-indicators">
@@ -433,41 +377,41 @@
 								</div>
 								<a class="left carousel-control" href="#carousel2_4_3" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#carousel2_4_3" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>
 							</div>
-						</div><!--Section 4 ends-->
+						</div><!--Section 3 ends-->
 						
-						<!--Section 5-->
+						<!--Section 4-->
 						<div class="row">
-							<div class="section-header"><h1 id="auxproj">2.5 Auxiliary projection</h1></div>
+							<div class="section-header"><h1 id="auxproj">2.4 Auxiliary projection</h1></div>
 							<div class="row">
 								<div class="col-xs-5 col-lg-3"><img alt="Auxiliary Box" src="../../images/2/auxbox.png"/></div>
 								<div class="col-xs-7 col-lg-5"><img alt="Auxiliary View" src="../../images/2/auxview.png"/></div>
 							</div>
 							<p>An object may have inclined surfaces that are not perpendicular, or right angle, to the principal planes of projection. These surfaces appear to be distorted and their true shapes are not shown in a regular view having orthographic projection. To reveal the true shape of these distorted surfaces, auxiliary views are needed.</p>
 							<p>An auxiliary view is an orthographic view having a line of sight not perpendicular to the principal planes of projection.</p>
-							<h2 id="auxpur">2.5.1 Purpose</h2>
+							<h2 id="auxpur">2.4.1 Purpose</h2>
 							<ol>
 								<li>Finding the true length of a line</li>
 								<li>Finding the true shape and size of a plane</li>
 								<li>Dimensioning the auxiliary surface</li>
 							</ol>
-							<h2 id="auxdiff">2.5.2 Difference of aux projection</h2>
+							<h2 id="auxdiff">2.4.2 Difference of aux projection</h2>
 							<div class="row">
 								<div class="col-xs-6 col-lg-4"><img alt="Regular" src="../../images/2/regular.jpg"/></div>
 								<div class="col-xs-6 col-lg-4"><img alt="Auxiliary" src="../../images/2/auxiliary.jpg"/></div>
 							</div>
-							<h2 id="auxprojd">2.5.3 Drawing aux projection</h2>
+							<h2 id="auxprojd">2.4.3 Drawing aux projection</h2>
 							<div class="row">
 								<div class="col-xs-10 col-md-6"><figure id="auxstepsgif"><img alt="Drawing Auxiliary Projection Example 1" src="../../images/2/auxsteps.jpg" data-alt="../../images/2/auxsteps.gif"></figure></div>
 								<div class="col-xs-10 col-md-6"><figure id="auxsteps2gif"><img alt="Drawing Auxiliary Projection Example 2" src="../../images/2/auxsteps2.jpg" data-alt="../../images/2/auxsteps2.gif"></figure></div>
 							</div>
-							<h2 id="auxprojeg">2.5.4 Examples</h2>
-							<div id="carousel2_5_4" class="carousel carousel-dark slide col-md-8 col-lg-6" data-ride="carousel" data-interval="0">
+							<h2 id="auxprojeg">2.4.4 Examples</h2>
+							<div id="carousel2_4_4" class="carousel carousel-dark slide col-md-8 col-lg-6" data-ride="carousel" data-interval="0">
 								<ol class="carousel-indicators">
-									<li data-target="#carousel2_5_4" data-slide-to="0" class="active"></li>
-									<li data-target="#carousel2_5_4" data-slide-to="1"></li>
-									<li data-target="#carousel2_5_4" data-slide-to="2"></li>
-									<li data-target="#carousel2_5_4" data-slide-to="3"></li>
-									<li data-target="#carousel2_5_4" data-slide-to="4"></li>
+									<li data-target="#carousel2_4_4" data-slide-to="0" class="active"></li>
+									<li data-target="#carousel2_4_4" data-slide-to="1"></li>
+									<li data-target="#carousel2_4_4" data-slide-to="2"></li>
+									<li data-target="#carousel2_4_4" data-slide-to="3"></li>
+									<li data-target="#carousel2_4_4" data-slide-to="4"></li>
 								</ol>
 								<div class="carousel-inner" role="listbox">
 									<div class="item active"><img alt="Auxiliary Example 1" class="center-block" src="../../images/2/auxeg1.png">
@@ -491,13 +435,13 @@
 										</div>
 									</div>
 								</div>
-								<a class="left carousel-control" href="#carousel2_5_4" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#carousel2_5_4" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>
+								<a class="left carousel-control" href="#carousel2_4_4" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#carousel2_4_4" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>
 							</div>
-						</div><!--Section 5 ends-->
+						</div><!--Section 4 ends-->
 						
-						<!--Section 6-->
+						<!--Section 5-->
 						<div class="row">
-							<div class="section-header"><h1 id="truelength">2.6 True length</h1></div>
+							<div class="section-header"><h1 id="truelength">2.5 True length</h1></div>
 							<p>Many inclined or oblique objects, or surfaces, require the true length of the surface edges to be determined. This is important in the sheet metal development industry such as air-conditioning ducts making.</p>
 							<div class="row">
 								<div class="col-xs-6 col-md-4 col-lg-3">
@@ -509,11 +453,11 @@
 									<p class="text-center">An oblique plane</p>
 								</div>
 							</div>
-							<h2 id="truelengthproj">2.6.1 Projecting true lengths</h2>
+							<h2 id="truelengthproj">2.5.1 Projecting true lengths</h2>
 							<div class="row">
 								<img alt="Projecting True Lengths Example" class="col-md-10" src="../../images/2/trueproj3.jpg"/>
 							</div>
-							<h2 id="truelengthsurfproj">2.6.2 Projecting true lengths &amp; surfaces</h2>
+							<h2 id="truelengthsurfproj">2.5.2 Projecting true lengths &amp; surfaces</h2>
 							<div class="row">
 								<div class="col-md-11">
 									<img alt="Projecting True Lengths and Surfaces Example 1" src="../../images/2/trueproj1.jpg"/>
@@ -522,7 +466,7 @@
 									<img alt="Projecting True Lengths and Surfaces Example 2" src="../../images/2/trueproj2.jpg"/>
 								</div>
 							</div>
-							<h2 id="truelengtheg">2.6.3 Examples of true length projection</h2>
+							<h2 id="truelengtheg">2.5.3 Examples of true length projection</h2>
 							<div class="row">
 								<div class="col-md-9">
 									<img alt="Quadrilateral Frustum True Length Projection" src="../../images/2/tleg3.jpg"/>
@@ -537,7 +481,7 @@
 									<p class="text-center">Inclined quadrilateral frustum</p>
 								</div>
 							</div>
-						</div><!--Section 6 ends-->
+						</div><!--Section 5 ends-->
 					</div>
 				</div>
 				
@@ -558,7 +502,7 @@
 			<div class="container-fluid">
 				<div class="container">
 					<div class="row">
-						<div class="footer-left"><a role="button" href="../../misc/">&copy; 2015-2016 Chang Sin Fung. All rights reserved.</a></div>
+						<div class="footer-left"><a role="button" href="../../misc/">Designed by Chang Sin Fung 2016</a></div>
 						<div class="footer-right">
 							<a href="//www.nus.edu.sg/" title="National University of Singapore" target="_blank">
 								<img src="../../images/nuslogo.jpg" alt="NUS logo">				
@@ -596,7 +540,15 @@
 		
 		<!-- For IE9+ or others -->
 		<!--[if gte IE 9]><!-->
-		<script src="../../js/fallback.min.js"></script>
+		<script>
+			(function(l,k){var b={g:[],w:{},A:0,head:k.getElementsByTagName("head")[0],a:{},p:0,f:[],e:{},m:0,d:{},c:{},r:0,t:function(){for(var a in b.k)b.k[a]&&b.v(b.k[a])},k:["Array","Function","Object","String"],v:function(a){b["is_"+a.toLowerCase()]=function(f){return"undefined"!==typeof f&&Object.prototype.toString.call(f)=="[object "+a+"]"}},i:function(a){this.is_function(a)||(a=function(){});return a},n:function(a,f){for(var c in a)if(a[c]===f)return c;return-1},is_defined:function(a){try{if(eval("window."+
+			a))return!0}catch(f){}return!1},importer:function(a,f){var c,b,d,g,h,k,l,m={};for(d in a)if(g=a[d])this.is_string(g)&&(g=[g]),this.is_array(g)&&(c=[],this.is_array(this.a[d])&&(c=this.a[d]),m[d]=g,this.a[d]=c.concat(g));g={};if(this.is_object(f)&&(this.is_object(f.shim)||(this.is_object(f.deps)?f.shim=f.deps:this.is_object(f.dependencies)&&(f.shim=f.dependencies)),this.is_object(f.shim)))for(h in k=f.shim,k)if(c=k[h],this.a[h]&&c&&(this.is_string(c)&&(c=[c]),this.is_array(c))){l=[];for(b in c)d=c[b],
+			this.a[d]&&d!==h&&l.push(d);c=[];this.is_array(this.d[h])&&(c=this.d[h]);g[h]=l;this.d[h]=c.concat(l)}return{a:m,d:g}},css:{}};b.css.l=function(a){if(!k.styleSheets)return!1;var f,c,e;for(f in k.styleSheets)if(c=k.styleSheets[f],0!==c)try{if(c.rules&&(e=b.css.q(c.rules,a))||c.cssRules&&(e=b.css.q(c.cssRules,a)))return e}catch(d){}return!1};b.css.q=function(a,b){var c,e;for(c in a)if(e=a[c],e.selectorText===b)return!0;return!1};b.load=function(a,b,c){var e,d;if(!this.is_object(a))return!1;this.is_function(b)&&
+			(c=b,b={});this.is_object(b)||(b={});a=this.importer(a,b);for(e in a.a)d=a.a[e],this.d[e]||this.b(e,d);this.is_function(b.callback)&&this.ready([],b.callback);this.is_function(c)&&this.ready([],c)};b.ready=function(a,b){var c,e;if(this.is_function(a))b=a,a=[];else{if(!this.is_array(a)||this.is_string(a))a=[a];for(c in a)e=a[c],this.a[e]&&!this.d[e]&&this.b(e,this.a[e])}this.g.push({i:this.i(b),a:a});return this.j()};b.j=function(){var a,b,c,e,d,g=[],h=[];for(a in this.g)if(d=this.g[a],this.is_object(d)&&
+			this.is_array(d.a)&&this.is_function(d.i)){e=!1;if(0<d.a.length){b=0;for(c in this.c)0<=this.n(d.a,c)&&b++;b===d.a.length&&(e=!0)}else this.p===this.r+this.m&&(e=!0);e?h.push(d.i):g.push(this.g[a])}this.g=g;for(a in h)h[a](this.c,this.e)};b.u=function(){var a,b,c,e;for(c in this.d)if((e=this.d[c])&&!this.c[c]){a=0;for(b in e)this.c[e[b]]&&a++;a===e.length&&(this.b(c,this.a[c]),delete this.d[c])}};b.b=function(a,b){if(-1!==this.n(this.f,a))return!1;this.p++;this.f.push(a);return this.b.o(a,b)};b.b.o=
+			function(a,f){var c,e="js",d={loaded:!1,h:a,f:!0,url:f.shift(),s:f};if(-1<d.url.indexOf(".css")){e="css";if(b.css.l(a))return d.f=!1,b.b.c(d);c=k.createElement("link");c.B=!0;c.rel="stylesheet";c.href=d.url}else{if(b.is_defined(a))return d.f=!1,b.b.c(d);c=k.createElement("script");c.src=d.url}c.onload=function(){return"js"===e&&!b.is_defined(a)||"js"!==e&&!b.css.l(a)&&Object.hasOwnProperty.call(l,"ActiveXObject")&&!l.ActiveXObject?b.b.e(d):b.b.c(d)};c.onreadystatechange=function(){if(!this.readyState||
+			"loaded"===this.readyState||"complete"===this.readyState)return this.onreadystatechange=null,"js"!==e||b.is_defined(a)?b.b.c(d):b.b.e(d)};c.onerror=function(){return b.b.e(d)};return b.head.appendChild(c)};b.b.e=function(a){a.f=!1;b.e[a.h]||(b.e[a.h]=[]);b.e[a.h].push(a.url);return a.s.length?b.b.o(a.h,a.s):(b.m++,b.j())};b.b.c=function(a){a.loaded||(a.loaded=!0,b.c[a.h]=a.url,b.r++);b.u();return b.j()};b.t();l.fallback=l.fbk=b})(window,document);		
+		</script>
 		<script>
 			fallback.load({
 				jQuery: [

@@ -1,12 +1,11 @@
 @import 'compass';
 @import 'partials/base';
-$sidebarw: 270px;
+$sidebarw: 260px;
 $blue: #337ab7;
 $dblue: #23527c;
 $navbarh: 48px;
 $lgrey:#f2f2f2;
 $dgrey:#f2f2f2;
-$tr-speed:0.4s;
 
 html {
 	min-height:100%;
@@ -17,18 +16,17 @@ body {
 	//position:relative;
 	background-color:#f2f2f2;
 	padding-top: $navbarh;
-	padding-right:0 !important;
 	&.toggled {
 		@include maxwidth(mobile) {
 			overflow-y:hidden;
 			.footer {
-				//left:$sidebarw;
+				right:$sidebarw;
 			}
 			.btt {
-				//left:$sidebarw + 15px;
+				right:$sidebarw + 15px;
 			}
 			.fs-btn {
-				//left:$sidebarw +15px;
+				right:$sidebarw +15px;
 			}
 		}
 	}
@@ -110,8 +108,7 @@ h3 .gdt {
 	position: fixed;
 	//bottom:0;
 	bottom:10px;
-	right: 30px;
-	@include maxwidth(mobile) {right:15px};
+	right: 15px;
 	padding-top:9px;
 	padding-bottom:9px;
 	text-indent:1px;
@@ -122,10 +119,10 @@ h3 .gdt {
 	@include border-radius(50%); 
 	
 	@include hwaccel;
-	@include transition(all $tr-speed ease);
+	@include transition(all 0.3s ease);
 	@include transition-property(opacity, background, box-shadow, bottom, right, color);
 	@include minwidth(tablet) {
-		//right: 15px + $sidebarw;
+		right: 15px + $sidebarw;
 	}
 	z-index: 1;
 	&:active,&:focus,&.active,&:focus:active {
@@ -164,8 +161,7 @@ h3 .gdt {
 	position: fixed;
 	bottom:10px;
 	@include opacity(0.5);
-	right: 30px;
-	@include maxwidth(mobile) {right:15px};
+	right: 15px;
 	padding:10px 13px 8px;
 	border:none !important;
 	font-size:20px;
@@ -176,7 +172,7 @@ h3 .gdt {
 	@include border-radius(50%); 
 	
 	@include hwaccel;
-	@include transition(all $tr-speed ease);
+	@include transition(all 0.3s ease);
 	@include transition-property(opacity, background, box-shadow, bottom, right, color);
 	.glyphicon-resize-full {
 		display:inline-block;
@@ -185,7 +181,7 @@ h3 .gdt {
 		display:none;
 	}
 	@include minwidth(tablet) {
-		//right: 15px + $sidebarw;
+		right: 15px + $sidebarw;
 	}
 	&:active,&:focus,&.active,&:focus:active {
 		background-image: none;
@@ -405,9 +401,6 @@ h3 .gdt {
 #quizTrueModal, #quizFalseModal {
 	cursor: pointer;
 	padding-right:0!important;
-	@include minwidth(tablet) {
-		padding-left:$sidebarw;
-	}
 	.vertical-alignment-helper {
     display:table;
     height: 100%;
@@ -621,10 +614,10 @@ table{counter-reset:section;}
 	@include border-radius(0);
 	background-color:$blue;
 	border:none;
-	left:0;
+	right:0;
 	@include box-shadow(0 4px 8px rgba(0,0,0,0.2)); 
 	@include hwaccel;
-	@include transition(top $tr-speed ease);
+	@include transition(top 0.3s ease, right 0.3s ease);
 	&.nav-hide {
 		@include maxwidth(mobile) {
 			top:- $navbarh;
@@ -633,7 +626,7 @@ table{counter-reset:section;}
 	
 	&.nav-show {
 		@include maxwidth(mobile) {
-			//left:$sidebarw;
+			right:$sidebarw;
 		}
 	}
 	.navbar-header {
@@ -644,7 +637,6 @@ table{counter-reset:section;}
 		vertical-align:middle;
 		color:white;
 		font-size: 20px;
-		height:48px;
 		padding:0;
 		float:none;
 		&.active, &:hover, &:focus {
@@ -654,31 +646,24 @@ table{counter-reset:section;}
 	}
 	.container-navbar-brand {
 		display:table;
-		padding-left:15px;
+		padding-right:0;
 		@include maxwidth(mobile) {
 			margin-left:0;
-		}
-		@include minwidth(tablet) {
-			padding-left: 15px + $sidebarw;
 		}
 	}
 }
 
 /*Mobile navigation bar toggle button */
 .navbar-toggle{
-	float:left;
-	margin-left:5px;
-	margin-right:-10px;
+	float:right;
+	margin-right:5px;
 	margin-top:9px;
   border: none;
-	margin-bottom:7px;
   background-color: transparent !important;
-	//@include transition(all $tr-speed ease);
-	//@include transition-property(margin-left, margin-right);
   @include border-radius(0px);
 	.icon-bar {
 		background-color: white !important;
-		//@include transition(transform $tr-speed ease, transform-origin $tr-speed, opacity $tr-speed ease);
+		//@include transition(transform 0.5s ease, transform-origin 0.5s, opacity 0.5s ease);
 		/*@include minwidth(tablet) {
 			background-color:transparent !important;
 			@include transition(background-color 0.5s ease);
@@ -693,17 +678,9 @@ table{counter-reset:section;}
 	.bottom-bar {
 		@include transform(rotate(0));
 	}
-}
-#menu-toggle2 {
-	//float:right;
-	//margin-right:-40px;
-	margin-left:5px;
-}
-body.toggled {
-	.navbar-toggle {
-		//margin-left:-40px;
+	&.toggled {
 		.icon-bar {
-			//@include transition(transform $tr-speed ease, transform-origin $tr-speed, opacity $tr-speed ease);
+			//@include transition(transform 0.5s ease, transform-origin 0.5s, opacity 0.5s ease);
 		}
 		.top-bar {
 			@include transform(rotate(45deg));
@@ -717,9 +694,6 @@ body.toggled {
 			@include transform-origin(10%, 90%);
 		}
 	}
-	#menu-toggle2 {
-		//margin-right:0;
-	}
 }
 
 /* Body */
@@ -727,28 +701,26 @@ body.toggled {
 	padding-right: 0;
 	padding-left:0;
 	@include minwidth(tablet) {
-		padding-left: $sidebarw;
+		padding-right: $sidebarw;
 	}
-  //@include transition(padding-left 0.5s ease);
+  //@include transition(padding-right 0.5s ease);
 	
 	&.container {
-		padding-right:0;
+		padding-left:0;
 		margin-bottom:80px;
 	}
 	&.toggled {
-		padding-left: 0;
+		padding-right: 0;
 		@include minwidth(tablet) {
-			padding-left: $sidebarw;
+			padding-right: $sidebarw;
 		}
 		#sidebar-wrapper {
 			width: $sidebarw;
 			overflow-y:auto;
-			margin-left:0;
 		}
 		#page-content-wrapper {
 			//position: absolute;
-			margin-right: - $sidebarw; //Off-canvas body
-			//margin-left: $sidebarw;
+			margin-left: - $sidebarw; //Off-canvas body
 			overflow: hidden;
 			@include minwidth(tablet) {
 				position: relative;
@@ -759,7 +731,7 @@ body.toggled {
 			visibility: visible;
 			@include opacity(0.7);
 			@include hwaccel;
-			@include transition (opacity $tr-speed ease);
+			@include transition (opacity 0.5s ease);
 		}
 	}
 }
@@ -767,23 +739,20 @@ body.toggled {
 #sidebar-wrapper {
 	z-index: 1001;
 	position: fixed;
-	left: 0;
-	//width: $sidebarw;
-	margin-left: - $sidebarw;
-	//width:0;
+	right: $sidebarw;
+	width: 0;
+	margin-right: - $sidebarw;
 	overflow-y:hidden;
 	overflow-x: hidden;
 	top:0;
 	height:100%; 
 	background: white;
-	direction:rtl;
 	@include hwaccel;
-	@include transition(width $tr-speed ease, margin-left $tr-speed ease);
+	@include transition(width 0.3s ease, margin-right 0.3s ease);
 	@include minwidth(tablet) {
-		width:$sidebarw;
-		border-right: 1px solid white;
+		width: $sidebarw;
+		border-left: 1px solid white;
 		overflow-y:auto;
-		margin-left:0;
 	}
 }
 
@@ -793,7 +762,7 @@ body.toggled {
 	//position: absolute;
 	position: relative; 
 	@include hwaccel;
-	@include transition(margin-right $tr-speed ease); //Off-canvas body
+	@include transition(margin-left 0.3s ease); //Off-canvas body
 	@include minwidth(tablet) {
 		//position: relative;
 	}
@@ -841,7 +810,7 @@ body.toggled {
 	visibility:hidden;
 	@include opacity(0);
 	@include hwaccel;
-	@include transition (opacity $tr-speed ease, visibility 0s $tr-speed);
+	@include transition (opacity 0.3s ease, visibility 0s 0.3s);
 	@include minwidth(tablet) {
 		display:none;
 	}
@@ -936,7 +905,7 @@ body.toggled {
 			}
 		}
 		&.active {
-			> a{
+			> a {
 				background: $dgrey;
 			}
 		}
@@ -1008,7 +977,7 @@ body.toggled {
 			left:0;
 		}
 		@include minwidth(tablet) {
-			//margin-right:$sidebarw;
+			margin-right:$sidebarw;
 			//width:400px;
 		}
 		.modal-header {
@@ -1018,7 +987,6 @@ body.toggled {
 			.close {
 				@include opacity(0.5);
 				color:white;
-				@include minwidth(tablet) {margin-right:15px;};
 			}
 			.h2 {
 				margin-top:10px;
@@ -1029,10 +997,7 @@ body.toggled {
 			@include border-radius(1px);
 			.modal-body p {
 				text-align:right;
-				margin-right:75px;
-				@include maxwidth(mobile) {
-					margin-right:60px;
-				}
+				margin-right:60px;
 				font-weight:400;
 				&:first-of-type {
 					padding-bottom:15px;
@@ -1040,51 +1005,6 @@ body.toggled {
 				}
 				&:last-of-type{
 					margin-bottom:5px;
-				}
-			}
-		}
-	}
-}
-#cookie-alert-modal {
-	padding-left:0 !important;
-	padding-right:0 !important;
-	top:auto;
-	overflow:hidden;
-	@include box-shadow(0 -2px 10px rgba(0,0,0,0.3)); 
-	&.fade .modal-dialog {
-		@include transform(translate(0,14%));
-	}
-	&.in .modal-dialog {
-		@include transform(translate(0,0));
-	}
-	.modal-dialog {
-		margin:auto;
-		position:relative;
-		width:100%;
-		bottom:0;
-		right:0;
-		@include maxwidth(mobile) {
-			left:0;
-		}
-		.modal-content {
-			background-color:$blue;
-			color:white;
-			border:none;
-			@include border-radius(1px);
-			.modal-body p {
-				font-weight:400;
-				&:first-of-type {
-					margin-top:10px;
-				}
-				&:last-of-type{
-					margin-bottom:5px;
-				}
-			}
-			button {
-				font-weight:500;
-				@include border-radius(24px);
-				@include maxwidth(mobile) {
-					margin-top:10px;
 				}
 			}
 		}
@@ -1137,9 +1057,9 @@ body.toggled {
 	width: 100%;
 	bottom:0; 
 	height: 80px;
-	left:0;
+	right:0;
 	@include hwaccel;
-	@include transition(left $tr-speed ease);
+	@include transition(right 0.3s ease);
 	@include maxwidth(mobile) {
 		font-size: 0.7em; 
 	}
@@ -1162,7 +1082,7 @@ body.toggled {
 				width: 100%;
 			}
 			@include minwidth(tablet) {
-				padding-left: $sidebarw + 15px;
+				padding-right: $sidebarw + 15px;
 			}
 		}
 	}
@@ -1217,10 +1137,6 @@ body.toggled {
 		}
 	}
 	
-}
-//QR Code popover
-.popover-content {
-	padding:2px;
 }
 
 #ie8-modal {

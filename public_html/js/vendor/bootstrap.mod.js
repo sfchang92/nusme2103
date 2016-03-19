@@ -24,11 +24,11 @@ function insertPanel(data, dir) {
 		$.ajax({
 			url: dir + panelData.categorydir,
 			success: function (data) {
-				//List all pdf in the page
+				//List all pdf in the page				
 				var first = panelData.expandfirstitem ? 1:0;
 				
 				$(data).find("a").filter(function () {return regexp.test(this.href);}).each(function () {
-					var name = this.href.substr(this.href.lastIndexOf('/') + 1).replace(regexp, "").replace(/%20/g, " ").replace(/&frasl%3b/g, "/").split('_');
+					var name = this.href.substr(this.href.lastIndexOf('/') + 1).replace(regexp, "").replace(/%20/g, " ").replace(/frasl;/g, "/").split('_');
 					var isExpanded = first ? expandedSwitch[0] : expandedSwitch[1];
 					
 					//console.log("this.href: "+this.href);
@@ -61,8 +61,10 @@ function insertPanel(data, dir) {
 					if (panelData.itemtype === "table") {
 						addThead(panelData.th, "collapse" + count);
 					}
-					//console.log(location.href.slice(0,location.href.lastIndexOf('/') + 1) + dir + panelData.categorydir + this.getAttribute('href'));
-					appendToId(location.href.slice(0,location.href.lastIndexOf('/') + 1) + dir + panelData.categorydir + this.getAttribute('href'), name[0]);
+					//console.log(location.hostname + "," + location.hostname.slice(0,location.hostname.lastIndexOf('/')) +","+ this.getAttribute('href'));
+					//appendToId(location.href.slice(0,location.href.lastIndexOf('/') + 1) + dir + panelData.categorydir + this.getAttribute('href'), name[0]);
+					//appendToId(location.href.slice(0,location.href.lastIndexOf('/')) + this.getAttribute('href'), name[0]);
+					appendToId(this.getAttribute('href'), name[0]);
 					count++;
 					first = 0;
 				});
@@ -109,7 +111,8 @@ function insertDownload(id, filedir) {
 			$(data).find("a").filter(function () {return regexp.test(this.href);}).each(function () {
 				var name = this.href.substr(this.href.lastIndexOf('_') + 1).replace(regexp, "").replace(/%20/g, " ");
 				
-				$("#" + id + " ol").append("<li class='h4'><a href='"+ filedir + this.getAttribute('href') +"' title='Preview Online'>"+ name +"</a></li>");
+				//$("#" + id + " ol").append("<li class='h4'><a href='"+ filedir + this.getAttribute('href') +"' title='Preview Online'>"+ name +"</a></li>");
+				$("#" + id + " ol").append("<li class='h4'><a href='" + this.getAttribute('href') +"' title='Preview Online'>"+ name +"</a></li>");
 			});
 		}
 	});
@@ -125,22 +128,25 @@ function insertPreview(id, filedir, vjsdir, vjspdfdir) {
 			$(data).find("a").filter(function () {return regexp.test(this.href);}).each(function () {
 				var name = this.href.substr(this.href.lastIndexOf('_') + 1).replace(regexp, "").replace(/%20/g, " ");
 				
-				$("#" + id + " ol").append("<li class='h4'><a href='"+ vjsdir + "#" + vjspdfdir + "/" + filedir + this.getAttribute('href') + "' title='Download PDF'>"+ name +"</a></li>");
+				//$("#" + id + " ol").append("<li class='h4'><a href='"+ vjsdir + "#" + vjspdfdir + "/" + filedir + this.getAttribute('href') + "' title='Download PDF'>"+ name +"</a></li>");
+				$("#" + id + " ol").append("<li class='h4'><a href='"+ vjsdir + "#" + vjspdfdir + this.getAttribute('href').replace(location.pathname, "/") + "' title='Download PDF'>"+ name +"</a></li>");
 			});
 		}
 	});
 }
 
-function insertCarousel(root) {
+function insertCarousel(root, sub) {
 	"use strict";
-	var regexp = new RegExp("^[^/]+/$", "i");
+	var regexp = new RegExp("(.*?(\\b/" + sub + "/\\b)[^$]*)", "i");
+	//console.log(regexp);
 	$.ajax({
-		url: root,
+		url: root + sub,
 		success: function (data) {
 			$(data).find("a").filter(function () {return regexp.test(this.href.replace(location.href.slice(0,location.href.lastIndexOf('/') + 1),""));}).each(function () {
-				var dirname = this.href.replace(location.href.slice(0,location.href.lastIndexOf('/')+1),"").replace("/","");
+				var dirpath = this.href.slice(0,this.href.lastIndexOf('/'));
+				var dirname = dirpath.slice(dirpath.lastIndexOf('/')+1);
 				var id = dirname.replace(/%20/g,"");
-				
+				//console.log(dirname + ", " + id);
 				$("#carousel-insert").before("<div class='container container-carousel'>"+
 					"<div class='row'>"+
 						"<div id='"+ id +"' class='carousel slide carousel-fade' data-ride='carousel' data-interval='15000'>"+
@@ -153,7 +159,7 @@ function insertCarousel(root) {
 					"</div>"+
 				"</div>"
 				);
-				insertCarouselImage(root, dirname, id);
+				insertCarouselImage(root+sub+"/", dirname, id);
 			});
 		}
 	});
@@ -178,12 +184,13 @@ function insertCarouselImage(root, dirname, id){
 			$(data).find("a").filter(function () {return regexp.test(this.href);}).each(function () {
 				var name = this.href.substr(this.href.lastIndexOf('_') + 1).replace(regexp, "").replace(/%20/g, " ");
 				var isFirst = (!count ? "active":"");
+				//console.log(root + dirname);
 
 				$("#" + id + " .carousel-indicators").append("<li data-target='#" + id + "' data-slide-to='"+ count + "' class='" + isFirst + "'></li>");
 				
 				count++;
 				
-				$("#" + id + " .carousel-inner").append("<div class='item " + isFirst + "'><img src='" + root + dirname + "/" + this.getAttribute('href') + "' alt='" + name + "' onclick='goFullscreen(" + id + ")' role='fullscreen' class='center-block'><div class='carousel-caption'><h4 class='no-anchor'>" + name + "</h4></div></div>");
+				$("#" + id + " .carousel-inner").append("<div class='item " + isFirst + "'><img src='" + this.getAttribute('href') + "' alt='" + name + "' onclick='goFullscreen(" + id + ")' role='fullscreen' class='center-block'><div class='carousel-caption'><h4 class='no-anchor'>" + name + "</h4></div></div>");
 			}); 
 		}
 	});
@@ -254,27 +261,38 @@ $(document).ready(function() {
 	//Bootstrap Anchor initialisation
 	$(this).anchor();
 	
+	//Popover initialisation
+	$('[data-toggle="popover"]').popover({ html : true });
+	/*
+	$('[data-toggle="popover"]').each(function(i, el){
+		$(el).popover({ 
+			html : true,
+			content: $(el).attr('data-image')
+		});
+	});*/
+	
+
 	/* Go to download tab in Lecture Slides page */
 	$('#gotoDownload').on('click',function () {
 		$('html,body').animate({
-			scrollTop: $('#downloadTab').offset().top - $('div.alert').outerHeight(),
+			scrollTop: $('#pptslide').offset().top - $('div.alert').outerHeight(),
 	  }, 300);
 	});
 	
 	//Back to top button animation
-	$(window).on("load scroll", function() {
+	$(window).on("load scroll resize", function() {
 		
 		/*Btt button position*/
 		if($(this).scrollTop() < 100) {
 			$('.btt').removeClass('btt-show');
 			$('.btt').removeClass('btt-end');
-			$('.arrow').removeClass('arrow-hide');
+			$('.arrow-bounce').removeClass('arrow-hide');
 		}else if($(this).scrollTop() >= $(document).height() - $(this).height() - $('footer').height() ){
 			$('.btt').addClass('btt-end');
 		}else{
 			$('.btt').addClass('btt-show');
 			$('.btt').removeClass('btt-end');
-			$('.arrow').addClass('arrow-hide');
+			$('.arrow-bounce').addClass('arrow-hide');
 		}
 	});
 	

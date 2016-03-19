@@ -73,6 +73,11 @@ body {
 //Panel
 .panel-group .panel {
 	@include border-radius(20px); 
+	background-color:#f9f9f9;
+}
+.panel-collapse {
+	background-color:white;
+	@include border-bottom-radius(20px); 
 }
 .panel-default {
   .panel-title a {
@@ -278,11 +283,23 @@ body {
 		@include border-bottom-right-radius(18px);
 	}
 }
+
+//QR Code popover
+[data-toggle="popover"] {
+	@include border-radius(18px);
+}
+.popover-content {
+	padding:2px;
+}
+
 /*Back to top button*/
 .btt { 
 	position: fixed;
 	bottom: 0px;
-	right: 15px; 
+	right: 30px;
+	@include maxwidth(mobile) {
+		right: 15px;
+	}
 	padding-top:10px;
 	padding-bottom:10px;
 	text-indent:1px; 
@@ -290,7 +307,7 @@ body {
 	background-color:rgb(18,27,42);
 	@include border-radius(50%); 
 	@include hwaccel;
-	@include transition(all 0.5s ease);
+	@include transition(all 0.3s ease);
 	@include transition-property(background, bottom, box-shadow, color, opacity);
 	z-index: 1;
 	@include opacity(0);
@@ -374,14 +391,14 @@ body {
   border-style: none;
 	@include border-radius(0);
   //@include box-shadow(0px 3px 3px rgba(107, 107, 107, 0.65));
-	@include box-shadow(0 1px 2px rgba(0,0,0,0.2));	
+	@include box-shadow(0 4px 8px rgba(0,0,0,0.2));	
 	//Navbar branding
   .navbar-brand {
 		padding-top:15px;
     color: white;
 		text-transform: uppercase;
 		@include opacity(1);
-		@include transition(opacity 0.2s ease, padding 0.2s ease);
+		//@include transition(opacity 0.2s ease, padding 0.2s ease);
     &:focus, &:hover {
       color: white;
       background-color: transparent;
@@ -688,7 +705,7 @@ body {
 				> li {
 					> a {
 						color:$whitet;
-						padding-top:25px;
+						//padding-top:25px;
 						//padding-bottom:5px;
 						@include transition(color 0.2s ease);
 						&:focus , &:hover {
@@ -892,21 +909,22 @@ body.jerror {
 	padding-bottom:8px;
 	a.btn-primary {
 		background-color:inherit;
-		border-color:inherit;
+		border-color:white; 
 		&:hover{
 			background-color:$dblue;
 		}
 	}
 	> .btn-group {
+		color:black;
 		> .btn:last-child{
 			@include border-radius(20px);
 		}
 		> .btn-group:last-child {
-			> .btn:first-child {
+			> .btn:first-of-type {
 				border-top-left-radius: 20px;
 				border-bottom-left-radius: 20px;
 			}
-			> .btn:last-child {
+			> .btn:last-of-type {
 				border-top-right-radius: 20px;
 				border-bottom-right-radius: 20px;
 			}
@@ -977,7 +995,7 @@ body.jerror {
   }
 }
 
-.arrow {
+.arrow-bounce {
 	@include minwidth(tablet) {
 		display:none;
 	}
@@ -1083,12 +1101,16 @@ body.jerror {
 	.carousel-inner>.active{
 		position: relative;
 		top: 50%;
-		transform: translate3d(0, -50%, 0);
+		transform: translate(0, -50%);
 	}
 	.carousel-inner>.next,
-	.carousel-inner>.prev{
+	.carousel-inner>.prev,
+	.carousel-inner>.next.left,
+	.carousel-inner>.prev.right,
+	.carousel-inner>.active.left,
+	.carousel-inner>.active.right {
 		top: 50%;
-		transform: translate3d(0, -50%, 0);
+		transform: translate(0, -50%);
 	}
 	&.fullscreen {
 		width:100vw;
@@ -1117,12 +1139,16 @@ body.jerror {
 		.carousel-inner>.active{
 			position: relative;
 			top: 50%;
-			transform: translate3d(0, -50%, 0);
+			transform: translate(0, -50%);
 		}
 		.carousel-inner>.next,
-		.carousel-inner>.prev{
+		.carousel-inner>.prev,
+		.carousel-inner>.next.left,
+		.carousel-inner>.prev.right,
+		.carousel-inner>.active.left,
+		.carousel-inner>.active.right {
 			top: 50%;
-			transform: translate3d(0, -50%, 0);
+			transform: translate(0, -50%);
 		}
 		img {
 			max-height: 300px;
@@ -1172,7 +1198,7 @@ body.jerror {
 			//transform: translate3d(0, 0, 0);
 			//@include maxwidth(mobile) {
 				top: 50%;
-				transform: translate3d(0, -50%, 0);
+				transform: translate(0, -50%);
 			//}
 		}
 
@@ -1184,7 +1210,7 @@ body.jerror {
 			//transform: translate3d(0, 0, 0);
 			//@include maxwidth(mobile) {
 				top: 50%;
-				transform: translate3d(0, -50%, 0);
+				transform: translate(0, -50%);
 			//}
 		}
 	}
